@@ -1,0 +1,340 @@
+name: YEONJI FILM - YouTube hashtag discovery and review
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'scan_recent / scan_history = candidates only; approve / reject = manual decision'
+        type: choice
+        required: true
+        default: scan_recent
+        options:
+          - scan_recent
+          - scan_history
+          - approve
+          - reject
+      scan_year:
+        description: 'Historical scan: all or 2023 / 2024 / 2025 / 2026'
+        type: string
+        required: false
+        default: 'all'
+      search_order:
+        description: 'Search order (relevance or date). Repeat history with both for coverage.'
+        type: choice
+        required: false
+        default: relevance
+        options:
+          - relevance
+          - date
+      max_pages:
+        description: 'Pages per search query and period (1 or 2; max 50 per page)'
+        type: choice
+        required: false
+        default: '1'
+        options:
+          - '1'
+          - '2'
+      video_ids:
+        description: 'approve/reject: comma-separated 11-char YouTube IDs, after reviewing the videos'
+        type: string
+        required: false
+  schedule:
+    - cron: '38 2 * * 1'   # weekly Mon 11:38 KST; schedule may be delayed
+
+permissions:
+  contents: write
+
+concurrency:
+  group: yeonji-youtube-hashtag-review
+  cancel-in-progress: false
+
+jobs:
+  candidates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Scan hashtag videos or review chosen IDs
+        shell: bash
+        env:
+          YT_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          MODE: ${{ github.event_name == 'schedule' && 'scan_recent' || inputs.mode }}
+          SCAN_YEAR: ${{ inputs.scan_year }}
+          SEARCH_ORDER: ${{ inputs.search_order }}
+          MAX_PAGES: ${{ inputs.max_pages }}
+          VIDEO_IDS: ${{ inputs.video_ids }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import sys
+          import json
+          import re
+          import urllib.parse
+          import urllib.request
+          import urllib.error
+          from pathlib import Path
+          from datetime import datetime, timedelta, timezone
+
+          ROOT = Path.cwd()
+          CATALOG = ROOT / 'public/data/films.json'
+          QUEUE = ROOT / 'reports/yeonji-youtube-hashtag-review.json'
+          NOW = datetime.now(timezone.utc)
+          MODE = os.getenv('MODE', 'scan_recent').strip()
+          KEY = os.getenv('YT_API_KEY', '').strip()
+          YEAR = (os.getenv('SCAN_YEAR', 'all') or 'all').strip()
+          ORDER = (os.getenv('SEARCH_ORDER', 'relevance') or 'relevance').strip()
+          MAX_PAGES = max(1, min(2, int(os.getenv('MAX_PAGES', '1') or '1')))
+          VIDEO_IDS = os.getenv('VIDEO_IDS','').strip()
+          OFFICIAL_CHANNEL_ID = 'UCJnL-TBcsYrF2SLs7tmiC8Q'
+          SEARCH_TERMS = [
+              '#곽연지',
+              '곽연지 직캠',
+              'tripleS 연지',
+              '"Kwak YeonJi" tripleS',
+              '#YEONJI tripleS',
+              '#연지 tripleS',
+              'S12 YeonJi tripleS',
+          ]
+          ID_RE = re.compile(r'^[A-Za-z0-9_-]{11}$')
+          DIRECT_RE = re.compile(r'곽\s*연지|kwak[\s._-]*yeon[\s._-]*ji|#kwakyeonji', re.I)
+          NAME_RE = re.compile(r'(?<![가-힣])연지(?![가-힣])|yeon[\s._-]*ji', re.I)
+          GROUP_RE = re.compile(r'triple[\s._-]*s|트리플에스|\bS12\b|EVOLution|Visionary Vision|zenith|ASSEMBLE|LOVE\s*&\s*POP', re.I)
+          BROADCAST_RE = re.compile(r'MBC|KBS|SBS|Mnet|M2|M COUNTDOWN|THE K-POP|ALL THE K-POP|SHOW CHAMPION|STUDIO CHOOM|THE SHOW', re.I)
+
+
+          def load_catalog():
+              if not CATALOG.exists():
+                  raise ValueError(f'Missing {CATALOG}. Run the YEONJI film installation before scanning.')
+              obj = json.loads(CATALOG.read_text(encoding='utf-8'))
+              if isinstance(obj, list):
+                  return obj, obj
+              if isinstance(obj, dict):
+                  for key in ('items', 'videos'):
+                      if isinstance(obj.get(key),list):
+                          return obj, obj[key]
+              raise ValueError('films.json must be an array or object with items/videos array. Nothing was changed.')
+
+
+          def video_id(row):
+              if not isinstance(row,dict): return None
+              for key in ('youtubeId','videoId','id'):
+                  v=row.get(key)
+                  if isinstance(v,str) and ID_RE.fullmatch(v):return v
+              return None
+
+
+          def load_queue():
+              if not QUEUE.exists(): return {'version':1,'source':'YouTube Data API v3','candidates':[]}
+              data=json.loads(QUEUE.read_text(encoding='utf-8'))
+              if not isinstance(data,dict) or not isinstance(data.get('candidates'),list):
+                  raise ValueError('Invalid review queue. Nothing was changed.')
+              return data
+
+
+          def atomic_write(path,obj):
+              path.parent.mkdir(parents=True,exist_ok=True)
+              payload=json.dumps(obj,ensure_ascii=False,indent=2)+'\n'
+              if path.exists() and path.read_text(encoding='utf-8') == payload: return False
+              tmp=path.with_name(path.name+'.tmp')
+              tmp.write_text(payload,encoding='utf-8')
+              tmp.replace(path)
+              return True
+
+
+          def api(endpoint, params):
+              if not KEY: raise RuntimeError('YOUTUBE_API_KEY secret is missing. Set it in Settings > Secrets and variables > Actions.')
+              q=urllib.parse.urlencode({**params,'key':KEY})
+              req=urllib.request.Request('https://www.googleapis.com/youtube/v3/'+endpoint+'?'+q, headers={
+                  'Accept':'application/json','User-Agent':'YEONJI-ARCHIVE-YouTube-CandidateSearch/1.0'})
+              try:
+                  with urllib.request.urlopen(req,timeout=22) as response:
+                      if response.status != 200: raise RuntimeError(f'YouTube API HTTP {response.status}')
+                      data=json.loads(response.read(3000000).decode('utf-8'))
+              except urllib.error.HTTPError as error:
+                  detail=error.read(1000).decode('utf-8','replace')
+                  # Never show the API key in logs
+                  raise RuntimeError(f'YouTube API error HTTP {error.code}: {detail[:450]}') from None
+              if not isinstance(data,dict): raise RuntimeError('YouTube API returned non-object JSON')
+              return data
+
+
+          def periods():
+              if MODE=='scan_recent':
+                  start=(NOW-timedelta(days=180)).strftime('%Y-%m-%dT00:00:00Z')
+                  return [('recent',start, NOW.strftime('%Y-%m-%dT%H:%M:%SZ'))]
+              if MODE!='scan_history':raise ValueError('Invalid scan mode')
+              current=NOW.year
+              if YEAR not in {'all', *[str(y) for y in range(2023,current+1)]}:
+                  raise ValueError('scan_year must be all or a year from 2023 onward')
+              years=range(2023,current+1) if YEAR=='all' else [int(YEAR)]
+              return [(str(y),f'{y}-01-01T00:00:00Z',f'{y+1}-01-01T00:00:00Z') for y in years]
+
+
+          def classify(title, channel_id, channel_title):
+              t=title.lower()
+              kind='other'; category='other'
+              if re.search(r'직캠|fancam|focus|facecam',t,re.I): kind='fancam';category='performance'
+              elif re.search(r'\bsignal\b|시그널',t,re.I):kind='signal';category='signal'
+              elif re.search(r'behind|비하인드|vlog|브이로그|메이킹|making',t,re.I):kind='behind'
+              elif re.search(r'dance practice|choreography|안무|댄스',t,re.I):kind='dance';category='performance'
+              elif re.search(r'official mv|music video|\[mv\]|\bM/V\b',title,re.I):kind='mv';category='music'
+              elif re.search(r'라이브|\blive\b',t,re.I):kind='live';category='live'
+              elif re.search(r'무대|stage|performance',t,re.I):kind='stage';category='performance'
+              group='tripleS'
+              for name in ('EVOLution','Visionary Vision','zenith'):
+                  if name.lower() in t: group=name;break
+              scope='solo' if kind=='fancam' else ('unit' if group!='tripleS' else 'group')
+              publisher='official' if channel_id==OFFICIAL_CHANNEL_ID else 'broadcast' if BROADCAST_RE.search(channel_title) else 'fan'
+              return dict(kind=kind,category=category,group=group,scope=scope,publisher=publisher)
+
+
+          def relevant(snippet):
+              text=' '.join(str(snippet.get(k) or '') for k in ('title','description'))
+              tags=snippet.get('tags')
+              if isinstance(tags,list):text+=' '+' '.join(str(x) for x in tags)
+              if DIRECT_RE.search(text):return 'direct-name'
+              if NAME_RE.search(text) and GROUP_RE.search(text):return 'name-with-tripleS'
+              return None
+
+
+          def fetch_yt(ids):
+              rows={}
+              for p in range(0,len(ids),50):
+                  data=api('videos',{'part':'snippet,status','id':','.join(ids[p:p+50]),'maxResults':50})
+                  for item in data.get('items',[]):
+                      s=item.get('snippet',{}); v=item.get('id'); st=item.get('status',{})
+                      if isinstance(v,str) and ID_RE.fullmatch(v) and st.get('privacyStatus','public')=='public':
+                          rows[v]={'snippet':s,'status':st}
+              return rows
+
+
+          def scan(catalog,queue):
+              if ORDER not in ('date','relevance'):raise ValueError('search_order must be date or relevance')
+              existing={video_id(x) for x in catalog if video_id(x)}
+              previous={x.get('youtubeId'):x for x in queue['candidates'] if isinstance(x,dict) and ID_RE.fullmatch(x.get('youtubeId',''))}
+              hits={}; page_calls=0
+              for period,start,end in periods():
+                  for term in SEARCH_TERMS:
+                      token=None
+                      for i in range(MAX_PAGES):
+                          args={'part':'snippet','type':'video','maxResults':50,'q':term,'order':ORDER,
+                                'publishedAfter':start,'publishedBefore':end}
+                          if token:args['pageToken']=token
+                          data=api('search',args);page_calls+=1
+                          for obj in data.get('items',[]):
+                              v=(obj.get('id') or {}).get('videoId')
+                              if isinstance(v,str) and ID_RE.fullmatch(v):hits[v]=True
+                          token=data.get('nextPageToken')
+                          if not token:break
+              unseen=[v for v in hits if v not in existing and v not in previous]
+              discovered=fetch_yt(unseen)
+              added=0; excluded=0
+              for v in unseen:
+                  item=discovered.get(v)
+                  if not item:excluded+=1;continue
+                  s=item['snippet'];match=relevant(s)
+                  if not match:excluded+=1;continue
+                  title=str(s.get('title') or '').strip()
+                  if not title:excluded+=1;continue
+                  title=title[:190]
+                  raw_date=str(s.get('publishedAt') or '')[:10]
+                  date=raw_date if re.fullmatch(r'\d{4}-\d{2}-\d{2}',raw_date) else None
+                  channel_title=str(s.get('channelTitle') or 'YouTube')[:120]
+                  channel_id=str(s.get('channelId') or '')
+                  info=classify(title,channel_id,channel_title)
+                  previous[v]={
+                      'youtubeId':v,'title':title,'publishedAt':date,
+                      'url':f'https://www.youtube.com/watch?v={v}',
+                      'channelTitle':channel_title,'channelId':channel_id,
+                      'embeddable':item['status'].get('embeddable') is not False,
+                      'match':match,'status':'pending',
+                      'reviewNote':'영상에 곽연지가 실제 등장하는지 확인 후 승인. 해시태그만으로 출연 확정 불가.',
+                      **info,
+                  }
+                  added+=1
+              queue['candidates']=sorted(previous.values(), key=lambda x:((x.get('publishedAt') or ''),x.get('youtubeId','')),reverse=True)
+              pending=sum(x.get('status')=='pending' for x in queue['candidates'])
+              print(f'YouTube searches={page_calls}, discovered IDs={len(hits)}, new review candidates={added}, filtered/removed={excluded}, pending={pending}, already published={len(existing)}')
+              summary(f'### YouTube #곽연지 후보 탐색\n검색 요청: {page_calls}회 (약 {page_calls*100} quota units)\n검색에서 발견: {len(hits)}건\n신규 검토 후보: {added}건\n검토 대기: {pending}건\n**주의:** 검색 결과를 전수 보장하지 않으며, 승인 전에는 사이트에 게시하지 않습니다.\n')
+              return queue
+
+
+          def decide(catalog_obj,catalog,queue,action):
+              ids=[s.strip() for s in re.split(r'[,\s]+',VIDEO_IDS) if s.strip()]
+              if not ids or len(ids)>100 or any(not ID_RE.fullmatch(v) for v in ids):
+                  raise ValueError('approve/reject needs 1–100 valid YouTube IDs separated by commas or spaces.')
+              ids=list(dict.fromkeys(ids))
+              candidates={x.get('youtubeId'):x for x in queue['candidates'] if isinstance(x,dict)}
+              unknown=[v for v in ids if v not in candidates]
+              if unknown:raise ValueError('IDs not found in review queue: '+', '.join(unknown))
+              existing={video_id(x) for x in catalog if video_id(x)}
+              actor=os.getenv('GITHUB_ACTOR','manual-review')
+              added=0
+              for v in ids:
+                  x=candidates[v]
+                  if action=='reject':
+                      if v in existing:raise ValueError(f'Cannot reject already published ID {v} in this workflow. Remove it manually after separate review.')
+                      x['status']='rejected';x['reviewedBy']=actor
+                      continue
+                  if x.get('status')=='rejected':
+                      raise ValueError(f'Candidate {v} was rejected; review the record manually before approving.')
+                  if v not in existing:
+                      row={
+                          'youtubeId':v, 'title':x['title'], 'publishedAt':x.get('publishedAt'),
+                          'memberIds':['S12'], 'verified':True, 'category':x.get('category','other'),
+                          'kind':x.get('kind','other'), 'group':x.get('group','tripleS'),
+                          'scope':x.get('scope','group'), 'publisher':x.get('publisher','fan'),
+                          'source':x.get('channelTitle','YouTube'),
+                          'song':'', 'note':'YouTube에서 출연 확인 후 등록',
+                      }
+                      catalog.append(row);existing.add(v);added+=1
+                  x['status']='approved';x['reviewedBy']=actor
+              catalog.sort(key=lambda x:(str(x.get('publishedAt') or ''),str(x.get('youtubeId') or '')),reverse=True)
+              summary(f'### YouTube 영상 검토\n동작: {action}\n선택한 ID: {len(ids)}건\n새로 공개한 영상: {added}건\n직접 검증한 영상에만 approve를 사용하세요.\n')
+              print(f'{action}: selected={len(ids)}, added_to_public={added}')
+              return catalog_obj,queue
+
+
+          def summary(text):
+              path=os.getenv('GITHUB_STEP_SUMMARY')
+              if path:
+                  with open(path,'a',encoding='utf-8') as f:f.write(text+'\n')
+
+
+          def main():
+              catalog_obj, rows=load_catalog();queue=load_queue()
+              if MODE in ('scan_recent','scan_history'):
+                  if not KEY:raise ValueError('Missing YOUTUBE_API_KEY. Add a repository Actions secret with your YouTube Data API v3 key.')
+                  queue=scan(rows,queue)
+                  changed=atomic_write(QUEUE,queue)
+                  print('Review queue changed:',changed,'(the published films.json was NOT changed)')
+              elif MODE in ('approve','reject'):
+                  catalog_obj,queue=decide(catalog_obj,rows,queue,MODE)
+                  changed1=atomic_write(QUEUE,queue)
+                  changed2=atomic_write(CATALOG,catalog_obj)
+                  print('Queue changed:',changed1,'catalog changed:',changed2)
+              else:raise ValueError(f'Unsupported mode: {MODE}')
+
+          if __name__=='__main__':
+              try:main()
+              except Exception as error:
+                  print('YEONJI YouTube workflow failed:',str(error),file=sys.stderr)
+                  sys.exit(1)
+          PY
+      - name: Commit reviewed data without changing other workflows
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if test -f reports/yeonji-youtube-hashtag-review.json; then
+            git add reports/yeonji-youtube-hashtag-review.json
+          fi
+          git add public/data/films.json
+          if git diff --cached --quiet; then
+            echo 'No data changes; previous catalog preserved'
+          else
+            git commit -m 'data: scan/review YeonJi YouTube videos'
+            git push origin HEAD:main
+          fi

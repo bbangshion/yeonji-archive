@@ -37,7 +37,7 @@ export function parseActivityCatalog(raw: unknown): ActivityCatalog {
   const seen = new Set<string>();
   const entries: ActivityRecord[] = [];
   for (const item of rows) {
-    if (!isObject(item) || item.s20 !== true || typeof item.id !== 'string' || !item.id.trim() || seen.has(item.id)) continue;
+    if (!isObject(item) || item.s12 !== true || typeof item.id !== 'string' || !item.id.trim() || seen.has(item.id)) continue;
     if (!isValidActivityDate(item.date) || typeof item.kind !== 'string' || !ACTIVITY_KINDS.includes(item.kind as ActivityKind)) continue;
     if (!isLabel(item.title) || !isLabel(item.description)) continue;
     if (typeof item.source !== 'string' || !/^https:\/\//i.test(item.source)) continue;
@@ -58,7 +58,7 @@ let pending: Promise<ActivityCatalog> | null = null;
 export function loadActivityCatalog(refresh = false): Promise<ActivityCatalog> {
   if (refresh) pending = null;
   if (!pending) {
-    pending = fetch(`${import.meta.env.BASE_URL}data/shion-activities.json`, { cache: 'no-cache' })
+    pending = fetch(`${import.meta.env.BASE_URL}data/yeonji-activities.json`, { cache: 'no-cache' })
       .then((response) => {
         if (!response.ok) throw new Error(`Activity list: ${response.status}`);
         return response.json() as Promise<unknown>;

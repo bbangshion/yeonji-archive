@@ -43,7 +43,7 @@ export function Collection({ items, favorites, onToggleFavorite }: Props) {
       <div className="mb-5 flex flex-wrap items-end justify-between gap-2">
         <div>
           <h2 id="collection-title" className="text-[24px] font-semibold tracking-[-.045em] text-paper sm:text-[32px]"><Trans value="&#xA;            오브젝트 컬렉션&#xA;          "/></h2>
-          <p className="mt-1 text-[13px] text-ash"><Trans value="박시온 오브젝트 모아보기"/></p>
+          <p className="mt-1 text-[13px] text-ash"><Trans value="곽연지 오브젝트 모아보기"/></p>
         </div>
         <span className="pb-1 text-xs tabular-nums text-ash"><Trans value="전체 "/>{formatNumber(items.length)}<Trans value="개"/></span>
       </div>

@@ -16,7 +16,7 @@ function ResultImage({ entry, title }: { entry: SearchEntry; title: string }) {
   const [failed, setFailed] = useState(false);
   useEffect(() => setFailed(false), [entry.image]);
   return <span className="shion-search-result-image">
-    {entry.image && !failed ? <img src={entry.image} alt="" loading="lazy" decoding="async" onError={() => setFailed(true)}/> : <span aria-hidden="true">S20</span>}
+    {entry.image && !failed ? <img src={entry.image} alt="" loading="lazy" decoding="async" onError={() => setFailed(true)}/> : <span aria-hidden="true">S12</span>}
     <span className="sr-only">{title}</span>
   </span>;
 }
@@ -78,7 +78,7 @@ export default function SearchPage() {
   const showResult = (entry: SearchEntry) => setScreen(entry.category, entry.category === 'profile' ? undefined : entry.id);
   return <section className="shion-search-page animate-appear" aria-labelledby="shion-search-title">
     <header className="shion-search-heading">
-      <p className="shion-search-kicker">SHION ARCHIVE / SEARCH</p>
+      <p className="shion-search-kicker">YEONJI ARCHIVE / SEARCH</p>
       <h1 id="shion-search-title">{t('통합 검색')}</h1>
       <p>{t('사진 · 영상 · 오브젝트 · 프로필을 한곳에서 찾아보세요')}</p>
     </header>
@@ -112,6 +112,6 @@ export default function SearchPage() {
       </div>
       {visibleCount < results.length && <div className="shion-search-more"><button type="button" onClick={() => setVisibleCount((n) => n + PAGE_SIZE)}>{t('더 보기')} <span>{formatNumber(visible.length)} / {formatNumber(results.length)}</span></button></div>}
       </>}
-    <p className="shion-search-credit">ARCHIVED BY @bbangshion · SHION ARCHIVE</p>
+    <p className="shion-search-credit">ARCHIVED BY @bbangshion · YEONJI ARCHIVE</p>
   </section>;
 }

@@ -17,13 +17,13 @@ type Collection = {
 const UI = {
   ko: { title: '최근 사진 소식', caption: '확인된 게시물을 최신순으로 모았습니다.',
     original: '출처 보기', included: '사진 등록', reference: '외부 자료', more: '더 보기', less: '접기',
-    disclaimer: '외부 자료는 사진 장수에 포함하지 않습니다. 단체 게시물의 전체 사진 수는 시온 단독 사진 수와 다를 수 있습니다.' },
+    disclaimer: '외부 자료는 사진 장수에 포함하지 않습니다. 단체 게시물의 전체 사진 수는 연지 단독 사진 수와 다를 수 있습니다.' },
   en: { title: 'Recent photo sources', caption: 'Recent, source-linked posts in chronological order.',
     original: 'Open source', included: 'In gallery', reference: 'External', more: 'More sources', less: 'Show less',
-    disclaimer: 'External sources do not count as gallery images. Mixed-member gallery totals are not ShiOn-only counts.' },
+    disclaimer: 'External sources do not count as gallery images. Mixed-member gallery totals are not YeonJi-only counts.' },
   ja: { title: '最近の写真資料', caption: '確認できた投稿を新しい順に掲載しています。',
     original: '出典を見る', included: '登録済み', reference: '外部資料', more: 'もっと見る', less: '閉じる',
-    disclaimer: '外部資料はギャラリーの写真枚数に含みません。複数メンバーの総枚数はシオン単独写真の枚数ではありません。' },
+    disclaimer: '外部資料はギャラリーの写真枚数に含みません。複数メンバーの総枚数はヨンジ単独写真の枚数ではありません。' },
 } as const;
 const isLabel = (value: unknown): value is Label => {
   if (!value || typeof value !== 'object') return false;

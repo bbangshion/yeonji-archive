@@ -1,28 +1,28 @@
 /**
- * SHION ARCHIVE — S20 SNS Gallery synchronizer.
- * Source: https://triples.fandom.com/wiki/Park_ShiOn/Gallery/SNS_Archive
+ * YEONJI ARCHIVE — S12 SNS Gallery synchronizer.
+ * Source: https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive
  * Only keeps EXPLICITLY listed images from this single page. Does not download or
  * republish the image files; uses image URLs supplied by MediaWiki imageinfo.
  * This is a source reference, not verification of each photo's owner or license.
  *
  * Usage:
- *   node scripts/import-shion-fandom.mjs           # automatic API sync
- *   node scripts/import-shion-fandom.mjs --input path/to/page.wiki
- *   node scripts/import-shion-fandom.mjs --input path/to/saved-page.html
- *   node scripts/import-shion-fandom.mjs --self-test
+ *   node scripts/import-yeonji-fandom.mjs           # automatic API sync
+ *   node scripts/import-yeonji-fandom.mjs --input path/to/page.wiki
+ *   node scripts/import-yeonji-fandom.mjs --input path/to/saved-page.html
+ *   node scripts/import-yeonji-fandom.mjs --self-test
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import { pathToFileURL } from 'node:url';
 
-export const SOURCE_PAGE = 'https://triples.fandom.com/wiki/Park_ShiOn/Gallery/SNS_Archive';
+export const SOURCE_PAGE = 'https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive';
 const API = 'https://triples.fandom.com/api.php';
 const TARGET = 'public/data/photos.json';
-const REPORT = 'public/data/shion-fandom-sync.json';
+const REPORT = 'public/data/yeonji-fandom-sync.json';
 const MAX_BYTES = 15 * 1024 * 1024;
 const THUMB_WIDTH = 820;
-const UA = 'SHION-Archive-Fan-Index/1.6.4 (metadata-only, public wiki MediaWiki API)';
+const UA = 'YEONJI-Archive-Fan-Index/1.6.4 (metadata-only, public wiki MediaWiki API)';
 const MAX_ROWS = 5000;
 const INVALID_FILE = /(objekt|polaroid|\.gif$|\.svg$)/i;
 const VALID_FILE = /\.(?:jpe?g|png|webp|avif)$/i;
@@ -152,9 +152,9 @@ function params(input) { return `${API}?${new URLSearchParams(input)}`; }
 async function getWikiSource() {
   const errors=[];
   for (const endpoint of [
-    params({action:'parse',page:'Park_ShiOn/Gallery/SNS_Archive',prop:'wikitext',format:'json',formatversion:'2'}),
-    params({action:'query',prop:'revisions',titles:'Park ShiOn/Gallery/SNS Archive',rvprop:'content',rvslots:'main',format:'json',formatversion:'2'}),
-    'https://triples.fandom.com/wiki/Park_ShiOn/Gallery/SNS_Archive?action=raw',
+    params({action:'parse',page:'Kwak_YeonJi/Gallery/SNS_Archive',prop:'wikitext',format:'json',formatversion:'2'}),
+    params({action:'query',prop:'revisions',titles:'Kwak YeonJi/Gallery/SNS Archive',rvprop:'content',rvslots:'main',format:'json',formatversion:'2'}),
+    'https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?action=raw',
   ]) {
     try {
       const output=await fetchSafe(endpoint);
@@ -207,20 +207,20 @@ export function mergePhotos(existing, rows, infos) {
   for (const row of rows) {
     const info=infos.get(titleKey(row.file));
     if (!info || !isImageHTTPS(info.image)) continue;
-    const id=`fandom-s20-${fileIdentifier(row.file)}`;
+    const id=`fandom-s12-${fileIdentifier(row.file)}`;
     if (identifiers.has(id) || previousImages.has(info.image)) continue;
     const dateText=row.date?.replace(/-/g,'.');
-    const label=dateText ? `${dateText} 박시온` : '박시온 SNS 사진';
+    const label=dateText ? `${dateText} 곽연지` : '곽연지 SNS 사진';
     added.push({
-      id,category:'photo',memberId:'S20',identityVerified:false,
+      id,category:'photo',memberId:'S12',identityVerified:false,
       image:info.image,
-      title:{ko:label,en:dateText?`ShiOn · ${dateText}`:'ShiOn SNS photo',ja:dateText?`シオン · ${dateText}`:'シオン SNS写真'},
+      title:{ko:label,en:dateText?`YeonJi · ${dateText}`:'YeonJi SNS photo',ja:dateText?`ヨンジ · ${dateText}`:'ヨンジ SNS写真'},
       album:row.album,date:row.date,
       credit:{ko:'아카이브 정리 · @bbangshion',en:'Curated by @bbangshion',ja:'アーカイブ整理 · @bbangshion'},
       sourceUrl:info.page,
-      tags:['S20','ShiOn','박시온','시온','SNS',row.album.ko],
+      tags:['S12','YeonJi','곽연지','연지','SNS',row.album.ko],
       assetType:'external-link',rightsStatus:'media-license-not-confirmed',
-      identityStatus:'listed-on-S20-gallery-not-visually-verified',
+      identityStatus:'listed-on-S12-gallery-not-visually-verified',
       sourceCollection:SOURCE_PAGE,
       mediaLicense:info.license,
       originalArtistMetadata:info.artist,
@@ -247,18 +247,29 @@ async function sync(argv) {
     if (!infos.size) throw Error('No resolved images; refusing to replace existing photo data');
     const {photos,added}=mergePhotos(existing,rows,infos);
     report.added=added.length; report.total=photos.length; report.status='synced';
-    if (!dryRun) await fs.writeFile(TARGET,JSON.stringify(photos,null,2)+'\n');
-    console.log(`[S20 Fandom] source ${rows.length} / resolved ${infos.size} / new ${added.length} / total ${photos.length}`);
+    if (!dryRun) {
+      await fs.writeFile(TARGET,JSON.stringify(photos,null,2)+'\n');
+      const snsPhotos = photos.filter(p => p.memberId === 'S12' && p.sourceCollection === SOURCE_PAGE);
+      const years = [2026, 2025, 2024, 2023].map(year => ({year,count:snsPhotos.filter(p=>p.date?.startsWith(String(year))).length}));
+      const meta = {
+        schemaVersion:'1.0.0',memberId:'S12',generatedAt:report.attemptedAt,status:'synced',
+        source:{title:'Kwak YeonJi/Gallery/SNS Archive',page:SOURCE_PAGE,dateBasis:'Gallery caption date; not necessarily date of creation'},
+        totalPhotos:snsPhotos.length, years,
+        photos:snsPhotos.map(p=>({id:p.id,date:p.date,image:p.image,sourceUrl:p.sourceUrl,originalFileName:p.originalFileName})),
+      };
+      await fs.writeFile('public/data/yeonji-sns.json',JSON.stringify(meta,null,2)+'\n');
+    }
+    console.log(`[S12 Fandom] source ${rows.length} / resolved ${infos.size} / new ${added.length} / total ${photos.length}`);
   } catch(err) {
     report.status='unavailable'; report.total=existing.length; report.error=String(err?.message ?? err);
-    console.warn(`[S20 Fandom] Could not verify remote gallery: ${report.error}. Existing ${existing.length} entries preserved.`);
+    console.warn(`[S12 Fandom] Could not verify remote gallery: ${report.error}. Existing ${existing.length} entries preserved.`);
     if (argv.includes('--strict')) process.exitCode=1;
   }
   if (!dryRun) await fs.writeFile(REPORT,JSON.stringify(report,null,2)+'\n');
   return report;
 }
 function selfTest() {
-  const sample=`== 2025 ==\n=== Cosmo Exclusive ===\n<gallery>\nShiOn_Photo_A.jpg|09/18\nShiOn_Photo_B.jpg|09/18 (with JooBin)\nShiOn_Photo_B.jpg|09/18 duplicate\n</gallery>\n== 2024 ==\n=== SNS ===\n<gallery>\nShiOn_2024_C.png|03/04\nFake_Objekt.png|03/04\n</gallery>`;
+  const sample=`== 2025 ==\n=== Cosmo Exclusive ===\n<gallery>\nYeonJi_Photo_A.jpg|09/18\nYeonJi_Photo_B.jpg|09/18 (with JooBin)\nYeonJi_Photo_B.jpg|09/18 duplicate\n</gallery>\n== 2024 ==\n=== SNS ===\n<gallery>\nYeonJi_2024_C.png|03/04\nFake_Objekt.png|03/04\n</gallery>`;
   const items=parseWikitext(sample);
   assert.equal(items.length,3);
   assert.equal(items[0].date,'2025-09-18');
@@ -268,8 +279,8 @@ function selfTest() {
   const {photos,added}=mergePhotos([{id:'existing',image:'https://example.org/portrait.jpg'}],items,infos);
   assert.equal(photos.length,4); assert.equal(added.length,3);
   assert.equal(added[0].credit.ko,'아카이브 정리 · @bbangshion');
-  assert.ok(added.every(p=>p.memberId==='S20' && p.sourceUrl));
-  console.log('[S20 Fandom] self-test PASS: dated source items, duplicate filtering, merge, curator vs origin');
+  assert.ok(added.every(p=>p.memberId==='S12' && p.sourceUrl));
+  console.log('[S12 Fandom] self-test PASS: dated source items, duplicate filtering, merge, curator vs origin');
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   if (process.argv.includes('--self-test')) selfTest();

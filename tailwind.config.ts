@@ -5,14 +5,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        canvas: '#101014',
-        surface: '#17171C',
-        raised: '#202027',
-        line: '#35343C',
-        paper: '#F5F2F0',
-        ash: '#9C9AA3',
-        blush: '#D9C6D6',
-        violet: '#95859F',
+        canvas: '#0C0D11',
+        surface: '#141620',
+        raised: '#1A1D28',
+        line: '#30364C',
+        paper: '#F4F5F8',
+        ash: '#A7ADBD',
+        blush: '#A6B7FF',
+        violet: '#5974FF',
       },
       fontFamily: {
         sans: ['Inter', 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', 'system-ui', 'sans-serif'],

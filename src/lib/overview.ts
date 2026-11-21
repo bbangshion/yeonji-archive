@@ -1,4 +1,4 @@
-/** SHION ARCHIVE 2.0 — read-only, source-based overview.
+/** YEONJI ARCHIVE — read-only, source-based overview.
  * Reuse SEARCH OS normalization, so PHOTO and FILM counts are from current JSON.
  * Failures are independent: if one endpoint fails, the other sections remain usable.
  */
@@ -61,16 +61,16 @@ export function retryOverview(): Promise<Overview> {
 /** Historically sourced milestones. Do not infer a milestone from photo upload dates. */
 export const MILESTONES: readonly TimelineEntry[] = [
   {
-    key: 'milestone:nxt-2023', date: '2023-12-23', kind: 'milestone',
-    title: { ko: 'NXT 〈Just Do It〉 발매', en: 'NXT — Just Do It released', ja: 'NXT〈Just Do It〉リリース' },
-    description: { ko: '박시온이 참여한 NXT의 디지털 싱글', en: 'NXT digital single featuring ShiOn', ja: 'シオンが参加したNXTのデジタルシングル' },
-    entries: [], source: 'https://www.melon.com/album/detail.htm?albumId=11388823',
+    key: 'milestone:reveal-s12', date: '2023-01-18', kind: 'milestone',
+    title: { ko: 'S12 곽연지 공개', en: 'YeonJi revealed as S12', ja: 'S12 ヨンジ公開' },
+    description: { ko: 'tripleS의 열두 번째 멤버로 공개', en: 'Introduced as tripleS member S12', ja: 'tripleSの12番目のメンバーとして公開' },
+    entries: [], source: 'https://www.triplescosmos.com/member/s12-yeonji',
   },
   {
-    key: 'milestone:assemble24-2024', date: '2024-05-08', kind: 'milestone',
-    title: { ko: 'tripleS 〈ASSEMBLE24〉 발매', en: 'tripleS — ASSEMBLE24 released', ja: 'tripleS〈ASSEMBLE24〉リリース' },
-    description: { ko: '24인 완전체 앨범 · Girls Never Die', en: 'Full 24-member album · Girls Never Die', ja: '24人完全体アルバム・Girls Never Die' },
-    entries: [], source: 'https://music.apple.com/us/album/assemble24/1743890798',
+    key: 'milestone:evolution-debut', date: '2023-10-11', kind: 'milestone',
+    title: { ko: 'EVOLution 〈Invincible〉', en: 'EVOLution — Invincible', ja: 'EVOLution「Invincible」' },
+    description: { ko: '곽연지의 첫 유닛 음반 활동', en: 'Her first unit release', ja: '初のユニット音楽活動' },
+    entries: [], source: 'https://www.triplescosmos.com/member/s12-yeonji',
   },
 ];
 

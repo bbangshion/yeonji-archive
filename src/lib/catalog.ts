@@ -1,6 +1,6 @@
 import type { Catalog, Objekt, ObjektQuery, SortMode } from '../types/objekt';
 
-export const SHION_QUERY: ObjektQuery = Object.freeze({ member: 'S20_SHION' });
+export const YEONJI_QUERY: ObjektQuery = Object.freeze({ member: 'S12_YEONJI' });
 
 type JsonRecord = Record<string, unknown>;
 
@@ -31,14 +31,14 @@ function memberValueMatches(value: unknown): boolean {
     return ['code', 'id', 'member', 'memberCode', 'memberId', 'member_name', 'name', 'slug', 'number', 'sNumber']
       .some((key) => memberValueMatches(value[key]));
   }
-  if (typeof value === 'number') return value === 20;
+  if (typeof value === 'number') return value === 12;
   const text = asText(value);
   if (!text) return false;
   const clean = text.normalize('NFKC').toUpperCase().replace(/[\s.\-]/g, '');
-  return /^(S20|S20_SHION|S20SHION|SHION|PARKSHION|박시온|20)$/.test(clean);
+  return /^(S12|S12_YEONJI|S12YEONJI|YEONJI|KWAKYEONJI|곽연지|12)$/.test(clean);
 }
 
-export function isShionRecord(item: unknown): boolean {
+export function isYeonjiRecord(item: unknown): boolean {
   if (!isRecord(item)) return false;
   // IMPORTANT: only member-identifying fields qualify. A title containing '시온'
   // is not sufficient; this prevents other members' cards entering the catalog.
@@ -85,7 +85,7 @@ function normalize(item: JsonRecord, index: number): Objekt {
   const imageCandidate = firstDefined(item, ['imageUrl', 'image_url', 'image', 'thumbnail', 'photo', 'imagePath', 'image_path']);
   return {
     id,
-    member: 'S20_SHION',
+    member: 'S12_YEONJI',
     title: pickText(item, ['title', 'name', 'objektName', 'objekt_name', 'label']) ?? `Objekt ${id}`,
     imageUrl: readImage(imageCandidate),
     series: pickText(item, ['series', 'collection', 'edition', 'dimension']) ?? 'Uncategorized',
@@ -98,14 +98,14 @@ function normalize(item: JsonRecord, index: number): Objekt {
   };
 }
 
-export function createCatalog(raw: unknown, query: ObjektQuery = SHION_QUERY): Catalog {
+export function createCatalog(raw: unknown, query: ObjektQuery = YEONJI_QUERY): Catalog {
   const rows = extractArray(raw);
   if (!rows) throw new Error('Objekt 데이터 형식이 올바르지 않습니다. 배열 또는 { objekts: [...] } 형식을 사용하세요.');
   const seen = new Set<string>();
   const items: Objekt[] = [];
   for (let index = 0; index < rows.length; index += 1) {
     const row = rows[index];
-    if (query.member !== 'S20_SHION' || !isShionRecord(row) || !isRecord(row)) continue;
+    if (query.member !== 'S12_YEONJI' || !isYeonjiRecord(row) || !isRecord(row)) continue;
     const objekt = normalize(row, index);
     if (seen.has(objekt.id)) continue;
     seen.add(objekt.id);
@@ -144,5 +144,5 @@ export function filterObjekts(
 /** Readable card caption without repeated artist names or decorative punctuation. */
 export function objektLabel(item: Objekt): string {
   if (item.serial) return `#${item.serial.replace(/^#/, '')}`;
-  return item.title.replace(/^SHION\s*[·:—-]\s*/i, '').replace(/\.$/, '').trim() || 'Objekt';
+  return item.title.replace(/^YEONJI\s*[·:—-]\s*/i, '').replace(/\.$/, '').trim() || 'Objekt';
 }

@@ -43,7 +43,7 @@ const COPIES: Record<'ko' | 'en' | 'ja', Copy> = {
     copyFailed: '복사할 수 없습니다. 다시 시도해 주세요', shareFailed: '공유할 수 없습니다', saved: '결과 이미지를 저장했어요',
     reset: '설정으로', replay: '다시 하기', favorite: '즐겨찾기 추가', unfavorite: '즐겨찾기 해제',
     preview: '미리보기 카드로 진행 중입니다', editThird: '3·4위 다시 선택', progress: '진행도',
-    match: (n) => `${n}번째 대결`, round: (n) => `${n}강`, resultHeader: '박시온 오브젝트 월드컵', imageBlocked: '카드 원본 이미지가 일부 준비되지 않아 사진 4장이 포함된 PNG를 만들 수 없어요. GitHub Actions의 World Cup photo cache 로그를 확인해 주세요.', imageSaving: '카드 이미지로 PNG를 만드는 중…', imageOpen: '사진 크게 열기', imageClose: '닫기', imagePreview: '결과 사진 미리보기',
+    match: (n) => `${n}번째 대결`, round: (n) => `${n}강`, resultHeader: '곽연지 오브젝트 월드컵', imageBlocked: '카드 원본 이미지가 일부 준비되지 않아 사진 4장이 포함된 PNG를 만들 수 없어요. GitHub Actions의 World Cup photo cache 로그를 확인해 주세요.', imageSaving: '카드 이미지로 PNG를 만드는 중…', imageOpen: '사진 크게 열기', imageClose: '닫기', imagePreview: '결과 사진 미리보기',
     shareFileFallback: '이 브라우저는 사진 파일 직접 공유를 지원하지 않아요. PNG를 저장한 다음 갤러리에서 공유해 주세요.',
     imageDownloadHint: 'PNG 다운로드를 요청했어요. 저장이 안 되면 아래 사진을 길게 눌러 저장하거나 사진 크게 열기를 선택해 주세요.', shared: '결과 사진을 공유했어요',
   },
@@ -58,7 +58,7 @@ const COPIES: Record<'ko' | 'en' | 'ja', Copy> = {
     copyFailed: 'Could not copy the ranking', shareFailed: 'Could not share the results', saved: 'Result image saved',
     reset: 'Setup', replay: 'Play again', favorite: 'Add favorite', unfavorite: 'Remove favorite',
     preview: 'Using preview cards', editThird: 'Change third place', progress: 'Progress',
-    match: (n) => `Match ${n}`, round: (n) => `Round of ${n}`, resultHeader: 'ShiOn Objekt World Cup', imageBlocked: 'Some card images could not be prepared for PNG export. Please check the World Cup photo cache step in GitHub Actions.', imageSaving: 'Preparing your photo PNG…', imageOpen: 'Open full image', imageClose: 'Close', imagePreview: 'Result photo preview',
+    match: (n) => `Match ${n}`, round: (n) => `Round of ${n}`, resultHeader: 'YeonJi Objekt World Cup', imageBlocked: 'Some card images could not be prepared for PNG export. Please check the World Cup photo cache step in GitHub Actions.', imageSaving: 'Preparing your photo PNG…', imageOpen: 'Open full image', imageClose: 'Close', imagePreview: 'Result photo preview',
     shareFileFallback: 'This browser cannot share image files directly. Save the PNG and share it from your photo gallery.',
     imageDownloadHint: 'PNG download requested. If it does not save, long-press the preview image or open it full-size.', shared: 'Image shared',
   },
@@ -73,7 +73,7 @@ const COPIES: Record<'ko' | 'en' | 'ja', Copy> = {
     copyFailed: 'コピーできませんでした', shareFailed: '共有できませんでした', saved: '結果画像を保存しました',
     reset: '設定', replay: 'もう一度', favorite: 'お気に入りに追加', unfavorite: 'お気に入りを解除',
     preview: 'プレビューカードを使用中', editThird: '3位決定戦をやり直す', progress: '進行状況',
-    match: (n) => `第${n}対戦`, round: (n) => `${n}枚対戦`, resultHeader: 'シオンObjektワールドカップ', imageBlocked: '一部のカード画像をPNG用に準備できませんでした。GitHub ActionsのWorld Cup photo cacheを確認してください。', imageSaving: '写真入りPNGを作成しています…', imageOpen: '画像を開く', imageClose: '閉じる', imagePreview: '結果画像プレビュー',
+    match: (n) => `第${n}対戦`, round: (n) => `${n}枚対戦`, resultHeader: 'ヨンジObjektワールドカップ', imageBlocked: '一部のカード画像をPNG用に準備できませんでした。GitHub ActionsのWorld Cup photo cacheを確認してください。', imageSaving: '写真入りPNGを作成しています…', imageOpen: '画像を開く', imageClose: '閉じる', imagePreview: '結果画像プレビュー',
     shareFileFallback: 'このブラウザは画像ファイルの直接共有に非対応です。PNGを保存してギャラリーから共有してください。',
     imageDownloadHint: 'PNGのダウンロードを開始しました。保存されない場合は画像を長押しするか、大きく開いてください。', shared: '結果画像を共有しました',
   },
@@ -194,7 +194,7 @@ export function TournamentArena({ items, isDemo, favorites, onToggleFavorite }: 
 
   const shareText = () => `${copy.resultHeader} · ${size}${language === 'en' ? ' cards' : language === 'ja' ? '枚' : '강'}\n`
     + ranking.map((item, index) => `${rankLabels[index]}  ${item.season} ${objektLabel(item)}`).join('\n')
-    + '\nSHION ARCHIVE · @bbangshion';
+    + '\nYEONJI ARCHIVE · @bbangshion';
   const copyResult = async () => {
     if (ranking.length !== 4) return;
     const text = `${shareText()}\n${new URL(import.meta.env.BASE_URL, window.location.origin).href}`;
@@ -203,7 +203,7 @@ export function TournamentArena({ items, isDemo, favorites, onToggleFavorite }: 
       setNotice(copy.copied);
     } catch { setNotice(copy.copyFailed); }
   };
-  const posterFilename = `SHION-Objekt-Top4-${size}.png`;
+  const posterFilename = `YEONJI-Objekt-Top4-${size}.png`;
   const shareResult = async () => {
     if (ranking.length !== 4) return;
     if (!poster) {
@@ -313,7 +313,7 @@ export function TournamentArena({ items, isDemo, favorites, onToggleFavorite }: 
         <div className="shion-top-four mx-auto" aria-label={copy.finished}>
           <div className="shion-podium-header">
             <p className="shion-podium-eyebrow">OBJEKT WORLD CUP</p>
-            <h3>ShiOn</h3>
+            <h3>YeonJi</h3>
             <p className="shion-podium-subtitle">{copy.round(size)} · TOP 4</p>
           </div>
           <div className="shion-podium-stage">
@@ -336,7 +336,7 @@ export function TournamentArena({ items, isDemo, favorites, onToggleFavorite }: 
                 </div>
               ))}
             </div>
-            <p className="shion-podium-credit">SHION ARCHIVE <span>·</span> @bbangshion</p>
+            <p className="shion-podium-credit">YEONJI ARCHIVE <span>·</span> @bbangshion</p>
           </div>
           <div className="mt-7 flex flex-wrap justify-center gap-2">
             <button type="button" disabled={posterBusy} onClick={() => void shareResult()}

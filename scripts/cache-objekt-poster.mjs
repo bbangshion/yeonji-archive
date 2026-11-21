@@ -1,6 +1,6 @@
 /**
- * SHION ARCHIVE — first-party, lightweight images for World Cup PNG sharing.
- * Run AFTER sync-wav-s20.mjs, BEFORE vite build, in GitHub Actions.
+ * YEONJI ARCHIVE — first-party, lightweight images for World Cup PNG sharing.
+ * Run AFTER sync-wav-s12.mjs, BEFORE vite build, in GitHub Actions.
  * CORS prevents browser Canvas from exporting many externally hosted photos;
  * downloading publicly available card thumbnails during deployment makes
  * poster rendering use same-origin, safe images without a user-tracking proxy.
@@ -61,7 +61,7 @@ async function downloadAndOptimize(url, target) {
       redirect: 'follow',
       headers: {
         Accept: 'image/avif,image/webp,image/png,image/jpeg,image/*;q=0.8',
-        'User-Agent': 'Mozilla/5.0 (compatible; SHION-ARCHIVE-Poster/1.7.1)',
+        'User-Agent': 'Mozilla/5.0 (compatible; YEONJI-ARCHIVE-Poster/1.7.1)',
       },
     });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);

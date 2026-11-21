@@ -5,9 +5,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Objekt Collection",
     "ja": "Objektコレクション"
   },
-  "박시온 오브젝트 모아보기": {
-    "en": "Browse ShiOn's Objekt cards",
-    "ja": "シオンのObjektを探す"
+  "곽연지 오브젝트 모아보기": {
+    "en": "Browse YeonJi's Objekt cards",
+    "ja": "ヨンジのObjektを探す"
   },
   "전체": {
     "en": "All",
@@ -93,9 +93,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Member",
     "ja": "メンバー"
   },
-  "박시온 (S20)": {
-    "en": "Park ShiOn (S20)",
-    "ja": "パク・シオン (S20)"
+  "곽연지 (S12)": {
+    "en": "Kwak YeonJi (S12)",
+    "ja": "クァク・ヨンジ (S12)"
   },
   "시즌": {
     "en": "Season",
@@ -153,17 +153,17 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Photo provided by the archive creator",
     "ja": "提供された写真"
   },
-  "박시온": {
-    "en": "Park ShiOn",
-    "ja": "パク・シオン"
+  "곽연지": {
+    "en": "Kwak YeonJi",
+    "ja": "クァク・ヨンジ"
   },
   "이미지를 표시할 수 없습니다": {
     "en": "Unable to display this image",
     "ja": "画像を表示できません"
   },
-  "박시온의 사진과 오브젝트 이미지": {
-    "en": "Photos and Objekt artwork of ShiOn",
-    "ja": "シオンの写真とObjekt画像"
+  "곽연지의 사진과 오브젝트 이미지": {
+    "en": "Photos and Objekt artwork of YeonJi",
+    "ja": "ヨンジの写真とObjekt画像"
   },
   "사진 종류": {
     "en": "Photo type",
@@ -245,9 +245,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Name",
     "ja": "名前"
   },
-  "박시온 · Park ShiOn": {
-    "en": "Park ShiOn",
-    "ja": "パク・シオン"
+  "곽연지 · Kwak YeonJi": {
+    "en": "Kwak YeonJi",
+    "ja": "クァク・ヨンジ"
   },
   "영어 이름": {
     "en": "English name",
@@ -333,17 +333,17 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "NXT · Just Do It (December 23, 2023)",
     "ja": "NXT · Just Do It（2023年12月23日）"
   },
-  "오이시온": {
+  "오이연지": {
     "en": "OishiOn",
-    "ja": "おいシオン"
+    "ja": "おいヨンジ"
   },
-  "일본어의 ‘맛있다(おいしい)’와 시온을 합친 애칭": {
-    "en": "A nickname combining the Japanese oishii (delicious) with ShiOn",
-    "ja": "日本語の「おいしい」とシオンを組み合わせた愛称"
+  "일본어의 ‘맛있다(おいしい)’와 연지을 합친 애칭": {
+    "en": "A nickname combining the Japanese oishii (delicious) with YeonJi",
+    "ja": "日本語の「おいしい」とヨンジを組み合わせた愛称"
   },
-  "빵시온": {
-    "en": "BbangShiOn",
-    "ja": "パンシオン"
+  "빵연지": {
+    "en": "BbangYeonJi",
+    "ja": "パンヨンジ"
   },
   "빵과 디저트를 좋아하는 취향에서 알려진 애칭": {
     "en": "A nickname connected to her fondness for bread and desserts",
@@ -357,9 +357,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Shoni · Shon",
     "ja": "ショニ・ション"
   },
-  "시온의 이름을 줄여 부르는 친근한 호칭": {
-    "en": "Affectionate shortenings of ShiOn",
-    "ja": "シオンの名前を縮めた親しみある呼び方"
+  "연지의 이름을 줄여 부르는 친근한 호칭": {
+    "en": "Affectionate shortenings of YeonJi",
+    "ja": "ヨンジの名前を縮めた親しみある呼び方"
   },
   "애기 목소리": {
     "en": "Baby voice",
@@ -577,9 +577,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "S18 JooBin",
     "ja": "S18 ジュビン"
   },
-  "S20 박시온": {
-    "en": "S20 Park ShiOn",
-    "ja": "S20 パク・シオン"
+  "S12 곽연지": {
+    "en": "S12 Kwak YeonJi",
+    "ja": "S12 クァク・ヨンジ"
   },
   "S23 서아": {
     "en": "S23 SeoAh",
@@ -597,9 +597,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Aug 20–23, 2026 · COSMO Grand Gravity held",
     "ja": "2026.08.20–23 · COSMO Grand Gravity開催"
   },
-  "2026.08.23 · 최종 멤버 윤서연·주빈·박시온·서아 확정": {
-    "en": "Aug 23, 2026 · SeoYeon, JooBin, ShiOn and SeoAh confirmed",
-    "ja": "2026.08.23 · ソヨン、ジュビン、シオン、ソアに決定"
+  "2026.08.23 · 최종 멤버 윤서연·주빈·곽연지·서아 확정": {
+    "en": "Aug 23, 2026 · SeoYeon, JooBin, YeonJi and SeoAh confirmed",
+    "ja": "2026.08.23 · ソヨン、ジュビン、ヨンジ、ソアに決定"
   },
   "2026.10.10–11 · ANDLESS 서울 공연에서 Aura와 Dream Drip 무대 공개": {
     "en": "Oct 10–11, 2026 · Aura performed Dream Drip at ANDLESS in Seoul",
@@ -642,7 +642,7 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "ja": "Dream Dress — 日本オリジナル楽曲"
   },
   "msnz의 네 디멘션 중 하나로, 설린을 중심으로 구성된 6인조 유닛입니다. Beyond Beauty 수록곡 Cameo Love와 일본 오리지널 곡 Dream Dress에 참여했습니다.": {
-    "en": "One of the four msnz dimensions, Moon is a six-member unit centered on Sullin. ShiOn participated in Cameo Love from Beyond Beauty and the original Japanese song Dream Dress.",
+    "en": "One of the four msnz dimensions, Moon is a six-member unit centered on Sullin. YeonJi participated in Cameo Love from Beyond Beauty and the original Japanese song Dream Dress.",
     "ja": "msnzの4ディメンションの一つで、ソルリンを中心とする6人組。Beyond Beauty収録のCameo Loveと日本オリジナル曲Dream Dressに参加しました。"
   },
   "2025.11.24 · msnz Beyond Beauty 발표": {
@@ -737,13 +737,13 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "S16 Mayu",
     "ja": "S16 マユ"
   },
-  "일본 활동을 위한 8인조 디멘션. 박시온과 마유가 사전 선발됐으며, 나머지 멤버는 Gravity로 결정됐습니다. 구성 멤버가 바뀔 수 있는 로테이션 유닛입니다.": {
-    "en": "An eight-member dimension for Japanese promotions. ShiOn and Mayu were preselected and the remaining members chosen through Gravity. Its membership can rotate.",
-    "ja": "日本活動のための8人組ディメンション。シオンとマユは事前選抜され、残りのメンバーはGravityで決定しました。メンバーが入れ替わるローテーション型ユニットです。"
+  "일본 활동을 위한 8인조 디멘션. 곽연지과 마유가 사전 선발됐으며, 나머지 멤버는 Gravity로 결정됐습니다. 구성 멤버가 바뀔 수 있는 로테이션 유닛입니다.": {
+    "en": "An eight-member dimension for Japanese promotions. YeonJi and Mayu were preselected and the remaining members chosen through Gravity. Its membership can rotate.",
+    "ja": "日本活動のための8人組ディメンション。ヨンジとマユは事前選抜され、残りのメンバーはGravityで決定しました。メンバーが入れ替わるローテーション型ユニットです。"
   },
-  "2024.07 · 박시온과 마유 사전 선정, 나머지 멤버 Gravity 결정": {
-    "en": "Jul 2024 · ShiOn and Mayu preselected; other members chosen through Gravity",
-    "ja": "2024.07 · シオンとマユが事前選抜、他のメンバーはGravityで決定"
+  "2024.07 · 곽연지과 마유 사전 선정, 나머지 멤버 Gravity 결정": {
+    "en": "Jul 2024 · YeonJi and Mayu preselected; other members chosen through Gravity",
+    "ja": "2024.07 · ヨンジとマユが事前選抜、他のメンバーはGravityで決定"
   },
   "2024.11.20 · 일본 데뷔 싱글 Untitled": {
     "en": "Nov 20, 2024 · Japan debut single Untitled",
@@ -765,17 +765,17 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Starting point",
     "ja": "スタート"
   },
-  "2023년 12월 연이어 공개된 네 멤버로 구성된 디멘션. 박시온이 처음 참여한 유닛으로, Just Do It을 발표하며 활동을 시작했습니다.": {
-    "en": "A four-member dimension revealed consecutively in December 2023. This was ShiOn's first unit; it released Just Do It to launch its activities.",
-    "ja": "2023年12月に続けて公開された4人で構成されたディメンション。シオンが初めて参加したユニットで、「Just Do It」で活動を始めました。"
+  "2023년 12월 연이어 공개된 네 멤버로 구성된 디멘션. 곽연지이 처음 참여한 유닛으로, Just Do It을 발표하며 활동을 시작했습니다.": {
+    "en": "A four-member dimension revealed consecutively in December 2023. This was YeonJi's first unit; it released Just Do It to launch its activities.",
+    "ja": "2023年12月に続けて公開された4人で構成されたディメンション。ヨンジが初めて参加したユニットで、「Just Do It」で活動を始めました。"
   },
   "2023.12.23 · NXT Just Do It 공개": {
     "en": "Dec 23, 2023 · NXT Just Do It released",
     "ja": "2023.12.23 · NXT「Just Do It」公開"
   },
-  "2023.12.24 · 박시온 S20 개인 공개": {
-    "en": "Dec 24, 2023 · ShiOn revealed as S20",
-    "ja": "2023.12.24 · シオンがS20として公開"
+  "2023.12.24 · 곽연지 S12 개인 공개": {
+    "en": "Dec 24, 2023 · YeonJi revealed as S12",
+    "ja": "2023.12.24 · ヨンジがS12として公開"
   },
   "팬 투표로 결성된 유닛이 아닌 사전 구성 유닛": {
     "en": "A pre-formed unit rather than a fan-voted unit",
@@ -785,9 +785,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "tripleS official discography · fan archive",
     "ja": "tripleS公式ディスコグラフィー・ファンアーカイブ"
   },
-  "NXT의 4인조 구성으로 활동을 시작했고, 12월 24일 S20으로 공개됐습니다.": {
-    "en": "Debuted as part of four-member NXT and was revealed as S20 on December 24.",
-    "ja": "4人組NXTとして活動を始め、12月24日にS20として公開されました。"
+  "NXT의 4인조 구성으로 활동을 시작했고, 12월 24일 S12으로 공개됐습니다.": {
+    "en": "Debuted as part of four-member NXT and was revealed as S12 on December 24.",
+    "ja": "4人組NXTとして活動を始め、12月24日にS12として公開されました。"
   },
   "24인 완전체의 Girls Never Die 활동에 참여했습니다.": {
     "en": "Participated in the 24-member Girls Never Die promotions.",
@@ -913,9 +913,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Birthday · blood type · MBTI as listed officially",
     "ja": "生年月日・血液型・公式記載のMBTI"
   },
-  "Droptokyo · ShiOn 인터뷰": {
-    "en": "Droptokyo · ShiOn interview",
-    "ja": "Droptokyo・シオンのインタビュー"
+  "Droptokyo · YeonJi 인터뷰": {
+    "en": "Droptokyo · YeonJi interview",
+    "ja": "Droptokyo・ヨンジのインタビュー"
   },
   "애칭 · 옷 · 취미 · 여행 · 존경하는 아티스트": {
     "en": "Nickname · fashion · hobbies · travel · admired artist",
@@ -953,9 +953,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Nicknames · food · hobbies · skills",
     "ja": "愛称・食べ物・趣味・特技"
   },
-  "S20 공개 · 디멘션 · 멤버 활동 이력": {
-    "en": "S20 reveal · dimensions · activity history",
-    "ja": "S20公開・ディメンション・活動履歴"
+  "S12 공개 · 디멘션 · 멤버 활동 이력": {
+    "en": "S12 reveal · dimensions · activity history",
+    "ja": "S12公開・ディメンション・活動履歴"
   },
   "프로필 목차": {
     "en": "Profile contents",
@@ -993,12 +993,12 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Sources",
     "ja": "出典"
   },
-  "박시온 메인 프로필 사진": {
-    "en": "ShiOn portrait",
-    "ja": "シオンのプロフィール写真"
+  "곽연지 메인 프로필 사진": {
+    "en": "YeonJi portrait",
+    "ja": "ヨンジのプロフィール写真"
   },
   "tripleS의 스무 번째 멤버. 2023년 NXT로 활동을 시작했으며 일본 디멘션 ∞!, Alphie, Moon을 거쳐 2026년 발라드 디멘션 Aura의 멤버로 선정됐습니다.": {
-    "en": "The twentieth member of tripleS. ShiOn started in NXT in 2023 and joined the Japan-focused Hatchi, Alphie and Moon before being selected for the ballad dimension Aura in 2026.",
+    "en": "The twentieth member of tripleS. YeonJi started in NXT in 2023 and joined the Japan-focused Hatchi, Alphie and Moon before being selected for the ballad dimension Aura in 2026.",
     "ja": "tripleSの20番目のメンバー。2023年にNXTで活動を始め、日本活動のハッチ、Alphie、Moonを経て、2026年にバラードディメンションAuraのメンバーに選ばれました。"
   },
   "공식 프로필": {
@@ -1029,9 +1029,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Vocals and music",
     "ja": "ボーカルと音楽"
   },
-  "확인 가능한 참여 이력을 중심으로 정리한 박시온의 음악 활동": {
-    "en": "A record of ShiOn's musical activities based on documented participation",
-    "ja": "確認できる参加履歴を中心にまとめたシオンの音楽活動"
+  "확인 가능한 참여 이력을 중심으로 정리한 곽연지의 음악 활동": {
+    "en": "A record of YeonJi's musical activities based on documented participation",
+    "ja": "確認できる参加履歴を中心にまとめたヨンジの音楽活動"
   },
   "본인 인터뷰에 등장한 애칭과 팬 커뮤니티에서 사용하는 호칭을 구분했습니다.": {
     "en": "Nicknames mentioned in interviews and used within the fan community",
@@ -1041,9 +1041,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Hobbies and interests",
     "ja": "趣味と好み"
   },
-  "인터뷰에서 알게 된 시온": {
-    "en": "Getting to know ShiOn through interviews",
-    "ja": "インタビューで知るシオン"
+  "인터뷰에서 알게 된 연지": {
+    "en": "Getting to know YeonJi through interviews",
+    "ja": "インタビューで知るヨンジ"
   },
   "Droptokyo 인터뷰를 한국어로 간결하게 요약했습니다. 직접 인용이 아닌 요약입니다.": {
     "en": "A concise summary of the Droptokyo interview, not a direct quotation.",
@@ -1061,9 +1061,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Official sources and interviews take priority; fan-sourced details are labeled separately.",
     "ja": "公式資料と本人インタビューを優先し、ファン資料の情報は区別して表示しています。"
   },
-  "확인일 2026.11.14 · SHION ARCHIVE는 비공식 팬사이트입니다. MBTI, 별명, 유닛 활동 상태 등 변동 가능한 정보는 출처와 시점에 따라 차이가 있을 수 있습니다.": {
-    "en": "Checked Nov 14, 2026 · SHION ARCHIVE is an unofficial fan website. MBTI, nicknames and active-unit information may differ depending on the source and date.",
-    "ja": "確認日2026.11.14・SHION ARCHIVEは非公式ファンサイトです。MBTI、あだ名、ユニットの活動状況などは出典や時期によって異なる場合があります。"
+  "확인일 2026.11.14 · YEONJI ARCHIVE는 비공식 팬사이트입니다. MBTI, 별명, 유닛 활동 상태 등 변동 가능한 정보는 출처와 시점에 따라 차이가 있을 수 있습니다.": {
+    "en": "Checked Nov 14, 2026 · YEONJI ARCHIVE is an unofficial fan website. MBTI, nicknames and active-unit information may differ depending on the source and date.",
+    "ja": "確認日2026.11.14・YEONJI ARCHIVEは非公式ファンサイトです。MBTI、あだ名、ユニットの活動状況などは出典や時期によって異なる場合があります。"
   },
   "뮤직비디오": {
     "en": "Music videos",
@@ -1125,9 +1125,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Videos",
     "ja": "動画"
   },
-  "박시온 개인, 유닛, 완전체 공식 영상": {
-    "en": "Official solo, unit and group videos featuring ShiOn",
-    "ja": "シオンの個人・ユニット・完全体の公式動画"
+  "곽연지 개인, 유닛, 완전체 공식 영상": {
+    "en": "Official solo, unit and group videos featuring YeonJi",
+    "ja": "ヨンジの個人・ユニット・完全体の公式動画"
   },
   "영상 종류": {
     "en": "Video category",
@@ -1178,8 +1178,8 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "ja": "動画について"
   },
   "공식 채널과 방송사에서 공개한 영상 링크를 정리합니다. 출연 여부가 확인된 영상부터 등록하며, 전체 영상이 모두 수록된 것은 아닙니다. 재생은 YouTube에서 이루어집니다.": {
-    "en": "Links from official channels and broadcasters are collected here. Videos are added when ShiOn's participation can be confirmed; the archive is not exhaustive. Playback is provided by YouTube.",
-    "ja": "公式チャンネルと放送局が公開した動画をまとめています。シオンの出演が確認できた動画から掲載しており、すべての動画を網羅しているわけではありません。再生はYouTubeで行われます。"
+    "en": "Links from official channels and broadcasters are collected here. Videos are added when YeonJi's participation can be confirmed; the archive is not exhaustive. Playback is provided by YouTube.",
+    "ja": "公式チャンネルと放送局が公開した動画をまとめています。ヨンジの出演が確認できた動画から掲載しており、すべての動画を網羅しているわけではありません。再生はYouTubeで行われます。"
   },
   "tripleS 공식 채널": {
     "en": "tripleS official channel",
@@ -1193,9 +1193,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Could not start the World Cup",
     "ja": "ワールドカップを開始できません"
   },
-  "박시온 오브젝트 월드컵": {
-    "en": "ShiOn Objekt World Cup",
-    "ja": "シオンObjektワールドカップ"
+  "곽연지 오브젝트 월드컵": {
+    "en": "YeonJi Objekt World Cup",
+    "ja": "ヨンジObjektワールドカップ"
   },
   "결과를 복사했습니다": {
     "en": "Result copied",
@@ -1317,9 +1317,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "World Cup",
     "ja": "ワールドカップ"
   },
-  "SHION ARCHIVE 홈으로": {
-    "en": "Go to SHION ARCHIVE home",
-    "ja": "SHION ARCHIVEのホームへ"
+  "YEONJI ARCHIVE 홈으로": {
+    "en": "Go to YEONJI ARCHIVE home",
+    "ja": "YEONJI ARCHIVEのホームへ"
   },
   "주 메뉴": {
     "en": "Main navigation",
@@ -1337,17 +1337,17 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Mobile navigation",
     "ja": "モバイルメニュー"
   },
-  "tripleS 박시온 팬 아카이브": {
-    "en": "tripleS ShiOn fan archive",
-    "ja": "tripleSシオンのファンアーカイブ"
+  "tripleS 곽연지 팬 아카이브": {
+    "en": "tripleS YeonJi fan archive",
+    "ja": "tripleSヨンジのファンアーカイブ"
   },
-  "공항에서 촬영한 박시온 사진": {
-    "en": "ShiOn at the airport",
-    "ja": "空港で撮影されたシオン"
+  "공항에서 촬영한 곽연지 사진": {
+    "en": "YeonJi at the airport",
+    "ja": "空港で撮影されたヨンジ"
   },
-  "박시온의 사진과 기록을 모아둔 팬 아카이브": {
-    "en": "A fan archive of ShiOn's photos and activities",
-    "ja": "シオンの写真と活動をまとめたファンアーカイブ"
+  "곽연지의 사진과 기록을 모아둔 팬 아카이브": {
+    "en": "A fan archive of YeonJi's photos and activities",
+    "ja": "ヨンジの写真と活動をまとめたファンアーカイブ"
   },
   "프로필 보기": {
     "en": "View profile",
@@ -1369,9 +1369,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Member details and units",
     "ja": "基本情報と活動ユニット"
   },
-  "박시온 사진과 오브젝트 이미지": {
-    "en": "ShiOn photos and Objekt artwork",
-    "ja": "シオンの写真とObjekt画像"
+  "곽연지 사진과 오브젝트 이미지": {
+    "en": "YeonJi photos and Objekt artwork",
+    "ja": "ヨンジの写真とObjekt画像"
   },
   "SIGNAL과 공식 영상": {
     "en": "SIGNAL and official videos",
@@ -1401,9 +1401,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "No cards to display",
     "ja": "表示するカードがありません"
   },
-  "연결된 데이터에서 박시온 카드를 찾지 못했습니다": {
-    "en": "No ShiOn cards were found in the connected data",
-    "ja": "連携データにシオンのカードが見つかりません"
+  "연결된 데이터에서 곽연지 카드를 찾지 못했습니다": {
+    "en": "No YeonJi cards were found in the connected data",
+    "ja": "連携データにヨンジのカードが見つかりません"
   },
   "다시 확인": {
     "en": "Check again",
@@ -1417,9 +1417,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Skip to content",
     "ja": "本文へ移動"
   },
-  "tripleS S20 박시온 팬 아카이브": {
-    "en": "tripleS S20 ShiOn fan archive",
-    "ja": "tripleS S20 シオンのファンアーカイブ"
+  "tripleS S12 곽연지 팬 아카이브": {
+    "en": "tripleS S12 YeonJi fan archive",
+    "ja": "tripleS S12 ヨンジのファンアーカイブ"
   },
   "시그널": {
     "en": "SIGNAL",
@@ -1429,9 +1429,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Fancam",
     "ja": "チッケム"
   },
-  "시온": {
-    "en": "ShiOn",
-    "ja": "シオン"
+  "연지": {
+    "en": "YeonJi",
+    "ja": "ヨンジ"
   },
   "공식 영상 링크": {
     "en": "Official video link",
@@ -1537,9 +1537,9 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Unable to play",
     "ja": "再生できません"
   },
-  "박시온 오브젝트": {
-    "en": "ShiOn Objekt",
-    "ja": "シオンObjekt"
+  "곽연지 오브젝트": {
+    "en": "YeonJi Objekt",
+    "ja": "ヨンジObjekt"
   },
   "검색": {
     "en": "Search",
@@ -1564,29 +1564,29 @@ Object.assign(DICTIONARY, {
     "en": "View details",
     "ja": "詳細を見る"
   },
-  "시온이의 목소리가 너무 예뻐서 | SIGNAL 240325": {
-    "en": "ShiOn's lovely voice | SIGNAL 240325",
-    "ja": "シオンの声がきれいすぎる | SIGNAL 240325"
+  "연지이의 목소리가 너무 예뻐서 | SIGNAL 240325": {
+    "en": "YeonJi's lovely voice | SIGNAL 240325",
+    "ja": "ヨンジの声がきれいすぎる | SIGNAL 240325"
   },
-  "쇼챔피언 박시온 직캠 — Baby Flower": {
-    "en": "Show Champion ShiOn fancam — Baby Flower",
-    "ja": "ショーチャンピオン シオン チッケム — Baby Flower"
+  "쇼챔피언 곽연지 직캠 — Baby Flower": {
+    "en": "Show Champion YeonJi fancam — Baby Flower",
+    "ja": "ショーチャンピオン ヨンジ チッケム — Baby Flower"
   },
-  "뮤직뱅크 박시온 직캠 — Cameo Love": {
-    "en": "Music Bank ShiOn fancam — Cameo Love",
-    "ja": "ミュージックバンク シオン チッケム — Cameo Love"
+  "뮤직뱅크 곽연지 직캠 — Cameo Love": {
+    "en": "Music Bank YeonJi fancam — Cameo Love",
+    "ja": "ミュージックバンク ヨンジ チッケム — Cameo Love"
   },
-  "인기가요 박시온 직캠 — 깨어 (Are You Alive)": {
-    "en": "Inkigayo ShiOn fancam — Are You Alive",
-    "ja": "人気歌謡 シオン チッケム — Are You Alive"
+  "인기가요 곽연지 직캠 — 깨어 (Are You Alive)": {
+    "en": "Inkigayo YeonJi fancam — Are You Alive",
+    "ja": "人気歌謡 ヨンジ チッケム — Are You Alive"
   },
-  "쇼챔피언 박시온 직캠 — 깨어 (Are You Alive)": {
-    "en": "Show Champion ShiOn fancam — Are You Alive",
-    "ja": "ショーチャンピオン シオン チッケム — Are You Alive"
+  "쇼챔피언 곽연지 직캠 — 깨어 (Are You Alive)": {
+    "en": "Show Champion YeonJi fancam — Are You Alive",
+    "ja": "ショーチャンピオン ヨンジ チッケム — Are You Alive"
   },
-  "주간아이돌 박시온 직캠 — Girls Never Die": {
-    "en": "Weekly Idol ShiOn fancam — Girls Never Die",
-    "ja": "週刊アイドル シオン チッケム — Girls Never Die"
+  "주간아이돌 곽연지 직캠 — Girls Never Die": {
+    "en": "Weekly Idol YeonJi fancam — Girls Never Die",
+    "ja": "週刊アイドル ヨンジ チッケム — Girls Never Die"
   },
   "깨어 (Are You Alive) — Official MV": {
     "en": "Are You Alive — Official MV",
@@ -1608,9 +1608,9 @@ Object.assign(DICTIONARY, {
     "en": "Girls Never Die — Official Dance Practice",
     "ja": "Girls Never Die — 公式ダンス練習動画"
   },
-  "박시온의 사진과 오브젝트 이미지": {
-    "en": "Photos and Objekt artwork of ShiOn",
-    "ja": "シオンの写真とObjekt画像"
+  "곽연지의 사진과 오브젝트 이미지": {
+    "en": "Photos and Objekt artwork of YeonJi",
+    "ja": "ヨンジの写真とObjekt画像"
   },
   "영상 검색": {
     "en": "Search videos",
@@ -1632,9 +1632,9 @@ Object.assign(DICTIONARY, {
     "en": "Date unavailable",
     "ja": "日付未登録"
   },
-  "박시온": {
-    "en": "Park ShiOn",
-    "ja": "パク・シオン"
+  "곽연지": {
+    "en": "Kwak YeonJi",
+    "ja": "クァク・ヨンジ"
   }
 });
 
@@ -1643,9 +1643,9 @@ Object.assign(DICTIONARY, {
     "en": "SCROLL TO EXPLORE",
     "ja": "スクロールして見る"
   },
-  "S20 / PROFILE": {
-    "en": "S20 / PROFILE",
-    "ja": "S20 / プロフィール"
+  "S12 / PROFILE": {
+    "en": "S12 / PROFILE",
+    "ja": "S12 / プロフィール"
   },
   "PROFILE": {
     "en": "PROFILE",
@@ -1655,9 +1655,9 @@ Object.assign(DICTIONARY, {
     "en": "PHOTO ARCHIVE",
     "ja": "フォトアーカイブ"
   },
-  "SHION FILM": {
-    "en": "SHION FILM",
-    "ja": "シオンフィルム"
+  "YEONJI FILM": {
+    "en": "YEONJI FILM",
+    "ja": "ヨンジフィルム"
   },
   "DIMENSIONS": {
     "en": "UNITS",
@@ -1695,17 +1695,17 @@ Object.assign(DICTIONARY, {
     "en": "MUSIC",
     "ja": "楽曲"
   },
-  "ARCHIVE / S20": {
-    "en": "ARCHIVE / S20",
-    "ja": "アーカイブ / S20"
+  "ARCHIVE / S12": {
+    "en": "ARCHIVE / S12",
+    "ja": "アーカイブ / S12"
   },
   "프로필 목차": {
     "en": "Profile sections",
     "ja": "プロフィールの目次"
   },
-  "박시온 메인 프로필 사진": {
-    "en": "Main portrait of ShiOn",
-    "ja": "シオンのメインプロフィール写真"
+  "곽연지 메인 프로필 사진": {
+    "en": "Main portrait of YeonJi",
+    "ja": "ヨンジのメインプロフィール写真"
   },
   "트리플에스": {
     "en": "tripleS",
@@ -1727,8 +1727,8 @@ Object.assign(DICTIONARY, {
     "en": "Invalid Objekt data format. Expected an array or an objekts list.",
     "ja": "Objektデータ形式が不正です。配列またはobjektsリストを使用してください。"
   },
-  "박시온 사진과 날짜별 앨범": { "en": "Photos of ShiOn, organized by date and album", "ja": "日付とアルバムで探せるシオンの写真" },
-  "박시온 사진을 날짜와 앨범으로 모아봤어요": { "en": "ShiOn photos, organized by date and album", "ja": "シオンの写真を日付・アルバム別に整理しました" },
+  "곽연지 사진과 날짜별 앨범": { "en": "Photos of YeonJi, organized by date and album", "ja": "日付とアルバムで探せるヨンジの写真" },
+  "곽연지 사진을 날짜와 앨범으로 모아봤어요": { "en": "YeonJi photos, organized by date and album", "ja": "ヨンジの写真を日付・アルバム別に整理しました" },
   "사진 보기 방식": { "en": "Photo view", "ja": "写真の表示方法" },
   "날짜별": { "en": "By date", "ja": "日付別" },
   "앨범별": { "en": "By album", "ja": "アルバム別" },
@@ -1765,7 +1765,7 @@ Object.assign(DICTIONARY, {
   "다른 검색어나 분류를 선택해 보세요": { en: "Try another keyword or category", ja: "別のキーワードやカテゴリを選んでください" },
 });
 
-/* SHION ARCHIVE 2.0 — language-ready HOME and TIMELINE copy. */
+/* YEONJI ARCHIVE 2.0 — language-ready HOME and TIMELINE copy. */
 Object.assign(DICTIONARY, {
   "타임라인": { en: "Timeline", ja: "タイムライン" },
   "활동 타임라인": { en: "Activity timeline", ja: "活動タイムライン" },
@@ -1780,7 +1780,7 @@ Object.assign(DICTIONARY, {
   "최신 자료를 불러오는 중": { en: "Loading recent archive entries", ja: "最新の記録を読み込み中" },
   "일부 목록을 불러오지 못했습니다": { en: "Some archive data could not be loaded", ja: "一部のデータを読み込めませんでした" },
   "등록된 데이터에서 자동으로 표시하며 원본 자료의 날짜를 사용합니다": { en: "Automatically updated from indexed data and source dates", ja: "登録データと出典の日付に基づいて自動表示します" },
-  "박시온의 주요 활동과 날짜별 기록": { en: "Key ShiOn activities and dated archive records", ja: "シオンの主な活動と日付別の記録" },
+  "곽연지의 주요 활동과 날짜별 기록": { en: "Key YeonJi activities and dated archive records", ja: "ヨンジの主な活動と日付別の記録" },
   "주요 활동과 날짜별 사진·영상을 한곳에서 살펴보세요": { en: "Explore key activities, photos and videos in chronological order", ja: "主な活動と写真・動画を時系列で見られます" },
   "자료 분류": { en: "Archive type", ja: "資料の種類" },
   "주요 활동": { en: "Milestones", ja: "主な活動" },

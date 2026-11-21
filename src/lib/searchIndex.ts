@@ -1,4 +1,4 @@
-/** Search data adapter for the SHION ARCHIVE 1.9 interface.
+/** Search data adapter for the YEONJI ARCHIVE 1.9 interface.
  * All data stays in its original JSON source; the index is built in memory
  * only when someone opens SEARCH. No extra synchronization pipeline.
  */
@@ -40,6 +40,7 @@ export function indexPhotos(payload: unknown): SearchEntry[] {
   const results: SearchEntry[] = [];
   for (const row of rows) {
     if (!isRecord(row)) continue;
+    if (row.memberId && row.memberId !== 'S12') continue;
     if (typeof row.category === 'string' && row.category.toLowerCase() !== 'photo') continue;
     if (typeof row.type === 'string' && row.type.toLowerCase() !== 'photo') continue;
     const id = rawText(row.id);
@@ -54,11 +55,11 @@ export function indexPhotos(payload: unknown): SearchEntry[] {
     }
     if (!image) continue;
     seen.add(id);
-    const title = langText(row.title, '박시온');
+    const title = langText(row.title, '곽연지');
     const album = langText(row.album, '사진');
-    // SNS Archive is the legacy album label; the gallery displays 빵시온.
+    // SNS Archive is the legacy album label; the gallery displays 빵연지.
     if (/^SNS\s*(아카이브|Archive|アーカイブ)$/i.test(album.ko)) {
-      album.ko = '빵시온'; album.en = 'bbangshion'; album.ja = '빵시온';
+      album.ko = '빵연지'; album.en = 'bbangshion'; album.ja = '빵연지';
     }
     const date = /^\d{4}-\d\d-\d\d$/.test(rawText(row.date)) ? rawText(row.date) : null;
     const credit = langText(row.credit, '');
@@ -66,7 +67,7 @@ export function indexPhotos(payload: unknown): SearchEntry[] {
     results.push({
       key: `photos:${id}`, id, category: 'photos', title,
       description: album, image, date, year: date?.slice(0, 4) || null,
-      searchText: normalizeSearchText([id, ...Object.values(title), ...Object.values(album), ...Object.values(credit), ...tags, date, '박시온', 'S20', 'ShiOn', 'シオン', 'パク・シオン'].join(' ')),
+      searchText: normalizeSearchText([id, ...Object.values(title), ...Object.values(album), ...Object.values(credit), ...tags, date, '곽연지', 'S12', 'YeonJi', 'ヨンジ', 'クァク・ヨンジ'].join(' ')),
     });
   }
   return results;
@@ -80,7 +81,7 @@ export function indexFilms(payload: unknown): SearchEntry[] {
     image: filmThumbnail(film.id), date: film.publishedAt, year: film.publishedAt?.slice(0, 4) ?? null,
     searchText: normalizeSearchText([film.title, film.group, film.note, film.source, film.scope, film.category, film.publishedAt,
       film.category === 'signal' ? 'SIGNAL 시그널' : '', film.category === 'performance' ? '직캠 무대 fancam' : '',
-      '박시온 S20 ShiOn シオン パク・シオン', film.id].join(' ')),
+      '곽연지 S12 YeonJi ヨンジ クァク・ヨンジ', film.id].join(' ')),
   }));
 }
 
@@ -92,19 +93,16 @@ export function indexObjekts(items: Objekt[]): SearchEntry[] {
     image: objekt.imageUrl, date: objekt.issuedAt,
     year: objekt.issuedAt?.slice(0,4) || /20\d\d/.exec(objekt.season)?.[0] || null,
     searchText: normalizeSearchText([objekt.id, objekt.title, objekt.season, objekt.series, objekt.className,
-      objekt.serial, objekt.description, objekt.issuedAt, 'objekt 오브젝트 박시온 S20 ShiOn シオン パク・シオン'].join(' ')),
+      objekt.serial, objekt.description, objekt.issuedAt, 'objekt 오브젝트 곽연지 S12 YeonJi ヨンジ クァク・ヨンジ'].join(' ')),
   }));
 }
 
 export const PROFILE_ENTRY: SearchEntry = {
-  key: 'profile:S20', id: 'S20', category: 'profile',
-  title: { ko: '박시온 · S20', en: 'Park ShiOn · S20', ja: 'パク・シオン · S20' },
+  key: 'profile:S12', id: 'S12', category: 'profile',
+  title: { ko: '곽연지 · S12', en: 'Kwak YeonJi · S12', ja: 'クァク・ヨンジ · S12' },
   description: { ko: '프로필 · 취향 · 참여 유닛', en: 'Profile · interests · units', ja: 'プロフィール・趣味・ユニット' },
-  image: `${BASE}images/shion-home.jpg`, date: null, year: null,
-  searchText: normalizeSearchText('박시온 시온 park shion shion シオン パク・シオン S20 tripleS 트리플에스 프로필 profile member 취향 유닛 ユニット ' +
-    'NXT Moon Alphie Aura Hatchi 하치 메인보컬 Sophie Park 생일 4월 3일 2006 ' +
-    '빵시온 오이시온 쇼니 숀 크림빵 스콘 쿠키 떡볶이 피아노 사진 촬영 맛집 산책 ' +
-    'Generation 37.5 Just Do It Dream Dress Cameo Love Dream Drip' ),
+  image: `${BASE}images/yeonji-home.jpg`, date: null, year: null,
+  searchText: normalizeSearchText('곽연지 연지 Kwak YeonJi YeonJi S12 tripleS 트리플에스 프로필 취향 유닛 EVOLution Visionary Vision zenith Invincible Hit The Floor Q&A 곽곽곽연지 초월읍 미소녀 샤인 베러 곽부호 초코쿠키 피아노 게임 사진 망고'),
 };
 
 function rank(entry: SearchEntry, terms: string[]): number {

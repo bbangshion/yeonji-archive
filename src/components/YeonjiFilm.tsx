@@ -5,7 +5,7 @@ import { filmEmbedUrl, filmThumbnail, filmYoutubeUrl, normalizeFilms, readableFi
 import type { Film, FilmCategory } from '../lib/films';
 import { clearRouteItem, getRouteItem } from '../lib/archiveRoute';
 const DATA_PATH = `${import.meta.env.BASE_URL}data/films.json`;
-const STORAGE_KEY = 'shion-archive-film-favorites-v1';
+const STORAGE_KEY = 'yeonji-archive-film-favorites-v1';
 const PAGE_SIZE = 24;
 type FilmFilter = 'all' | FilmCategory | 'saved';
 const FILTERS: readonly {
@@ -106,7 +106,7 @@ function PlayerDialog({ video, onClose }: {
         onClose(); }}>
     <div id="shion-film-dialog" className="shion-film-dialog" role="dialog" aria-modal="true" aria-labelledby="shion-film-dialog-title">
       <div className="shion-film-dialog-head">
-        <div><span>SHION FILM</span><h2 id="shion-film-dialog-title"><Trans value={video.title}/></h2></div>
+        <div><span>YEONJI FILM</span><h2 id="shion-film-dialog-title"><Trans value={video.title}/></h2></div>
         <button type="button" className="shion-film-dialog-close" ref={closeRef} onClick={onClose} aria-label={t("영상 닫기")}><Trans value="닫기 "/><span aria-hidden="true">×</span></button>
       </div>
       <div className="shion-film-player">
@@ -119,7 +119,7 @@ function PlayerDialog({ video, onClose }: {
     </div>
   </div>;
 }
-export default function ShionFilm() {
+export default function YeonjiFilm() {
     const { t, formatNumber } = useI18n();
     const [films, setFilms] = useState<Film[]>([]);
     const [syncMessage, setSyncMessage] = useState('');
@@ -196,10 +196,10 @@ export default function ShionFilm() {
         });
     };
     return <div className="shion-film-page animate-appear">
-    <header className="shion-page-heading">
-      <span className="shion-page-kicker">SHION FILM</span>
+    <header className="yeonji-page-heading">
+      <span className="yeonji-page-kicker">YEONJI FILM</span>
       <h1><Trans value="영상"/></h1>
-      <p><Trans value="박시온 개인, 유닛, 완전체 공식 영상"/></p>
+      <p><Trans value="곽연지 개인, 유닛, 완전체 공식 영상"/></p>
     </header>
 
     <div className="shion-film-controls">

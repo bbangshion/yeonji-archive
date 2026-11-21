@@ -1,0 +1,186 @@
+{
+  "updatedAt": "2026-11-21",
+  "about": "S12 selected, source-linked milestones; not an exhaustive activity catalog.",
+  "activities": [
+    {
+      "id": "evt-2023-01-18-공개",
+      "s12": true,
+      "date": "2023-01-18",
+      "kind": "milestone",
+      "title": {
+        "ko": "S12 Kwak YeonJi 공개",
+        "en": "S12 Kwak YeonJi 공개",
+        "ja": "S12 Kwak YeonJi 공개"
+      },
+      "description": {
+        "ko": "tripleS의 12번째 멤버로 공개됐다.",
+        "en": "tripleS의 12번째 멤버로 공개됐다.",
+        "ja": "tripleS의 12번째 멤버로 공개됐다."
+      },
+      "scope": "공개",
+      "source": "https://www.youtube.com/watch?v=zm0RcfeLn5E",
+      "sourceName": "KwakYeonJi.SSS (2023-01-18)",
+      "scheduled": false
+    },
+    {
+      "id": "evt-2023-10-11-evolution",
+      "s12": true,
+      "date": "2023-10-11",
+      "kind": "release",
+      "title": {
+        "ko": "EVOLution 〈⟡〉",
+        "en": "EVOLution 〈⟡〉",
+        "ja": "EVOLution 〈⟡〉"
+      },
+      "description": {
+        "ko": "〈Invincible〉로 첫 유닛 음반 활동을 시작했다.",
+        "en": "〈Invincible〉로 첫 유닛 음반 활동을 시작했다.",
+        "ja": "〈Invincible〉로 첫 유닛 음반 활동을 시작했다."
+      },
+      "scope": "EVOLution",
+      "source": "https://www.triplescosmos.com/member/s12-yeonji",
+      "sourceName": "COSMO tripleS member page (EVOLution roster)",
+      "scheduled": false
+    },
+    {
+      "id": "evt-2024-05-08-triples",
+      "s12": true,
+      "date": "2024-05-08",
+      "kind": "release",
+      "title": {
+        "ko": "ASSEMBLE24 · Girls Never Die",
+        "en": "ASSEMBLE24 · Girls Never Die",
+        "ja": "ASSEMBLE24 · Girls Never Die"
+      },
+      "description": {
+        "ko": "24인 완전체 음반 활동에 참여했다.",
+        "en": "24인 완전체 음반 활동에 참여했다.",
+        "ja": "24인 완전체 음반 활동에 참여했다."
+      },
+      "scope": "tripleS",
+      "source": "https://www.namu.moe/w/%EA%B3%BD%EC%97%B0%EC%A7%80",
+      "sourceName": "나무위키 곽연지 (검증일 2026-11-21)",
+      "scheduled": false
+    },
+    {
+      "id": "evt-2024-10-23-visionary-vision",
+      "s12": true,
+      "date": "2024-10-23",
+      "kind": "release",
+      "title": {
+        "ko": "Performante · Hit The Floor",
+        "en": "Performante · Hit The Floor",
+        "ja": "Performante · Hit The Floor"
+      },
+      "description": {
+        "ko": "Visionary Vision의 정규 음반과 퍼포먼스 활동.",
+        "en": "Visionary Vision의 정규 음반과 퍼포먼스 활동.",
+        "ja": "Visionary Vision의 정규 음반과 퍼포먼스 활동."
+      },
+      "scope": "Visionary Vision",
+      "source": "https://www.nme.com/news/music/triples-visionary-vision-debut-hit-the-floor-single-release-3805706",
+      "sourceName": "NME · Visionary Vision debut 2024-10-23",
+      "scheduled": false
+    },
+    {
+      "id": "evt-2025-05-12-triples",
+      "s12": true,
+      "date": "2025-05-12",
+      "kind": "release",
+      "title": {
+        "ko": "ASSEMBLE25 · Are You Alive",
+        "en": "ASSEMBLE25 · Are You Alive",
+        "ja": "ASSEMBLE25 · Are You Alive"
+      },
+      "description": {
+        "ko": "tripleS 완전체 정규 음반 활동.",
+        "en": "tripleS 완전체 정규 음반 활동.",
+        "ja": "tripleS 완전체 정규 음반 활동."
+      },
+      "scope": "tripleS",
+      "source": "https://www.musickorea.asia/Product/Detail/view/pid/204156/cid/2133",
+      "sourceName": "ASSEMBLE25 (2025-05-12)",
+      "scheduled": false
+    },
+    {
+      "id": "evt-2025-11-24-zenith",
+      "s12": true,
+      "date": "2025-11-24",
+      "kind": "release",
+      "title": {
+        "ko": "msnz 〈Beyond Beauty〉 · Q&A",
+        "en": "msnz 〈Beyond Beauty〉 · Q&A",
+        "ja": "msnz 〈Beyond Beauty〉 · Q&A"
+      },
+      "description": {
+        "ko": "zenith 유닛의 〈Q&A〉 활동과 24인 완전체 수록곡.",
+        "en": "zenith 유닛의 〈Q&A〉 활동과 24인 완전체 수록곡.",
+        "ja": "zenith 유닛의 〈Q&A〉 활동과 24인 완전체 수록곡."
+      },
+      "scope": "zenith",
+      "source": "https://www.etnews.com/20251124000445",
+      "sourceName": "전자신문 · msnz Zenith roster",
+      "scheduled": false
+    },
+    {
+      "id": "evt-2026-06-01-triples",
+      "s12": true,
+      "date": "2026-06-01",
+      "kind": "release",
+      "title": {
+        "ko": "ASSEMBLE26 〈LOVE&POP pt.1〉",
+        "en": "ASSEMBLE26 〈LOVE&POP pt.1〉",
+        "ja": "ASSEMBLE26 〈LOVE&POP pt.1〉"
+      },
+      "description": {
+        "ko": "완전체 타이틀곡 〈Baby Flower〉 활동.",
+        "en": "완전체 타이틀곡 〈Baby Flower〉 활동.",
+        "ja": "완전체 타이틀곡 〈Baby Flower〉 활동."
+      },
+      "scope": "tripleS",
+      "source": "https://enews.imbc.com/News/ViewAmp/506908",
+      "sourceName": "iMBC · ASSEMBLE26 pt.1 (2026-06-01)",
+      "scheduled": false
+    },
+    {
+      "id": "evt-2026-10-16-triples",
+      "s12": true,
+      "date": "2026-10-16",
+      "kind": "release",
+      "title": {
+        "ko": "ASSEMBLE26 〈LOVE&POP pt.2〉 · Andless",
+        "en": "ASSEMBLE26 〈LOVE&POP pt.2〉 · Andless",
+        "ja": "ASSEMBLE26 〈LOVE&POP pt.2〉 · Andless"
+      },
+      "description": {
+        "ko": "완전체 음반의 〈Andless〉 공개.",
+        "en": "완전체 음반의 〈Andless〉 공개.",
+        "ja": "완전체 음반의 〈Andless〉 공개."
+      },
+      "scope": "tripleS",
+      "source": "https://www.triples-official.jp/profile/",
+      "sourceName": "tripleS Japan official / All Member",
+      "scheduled": false
+    },
+    {
+      "id": "evt-2026-11-13-triples",
+      "s12": true,
+      "date": "2026-11-13",
+      "kind": "release",
+      "title": {
+        "ko": "I Want You To Know",
+        "en": "I Want You To Know",
+        "ja": "I Want You To Know"
+      },
+      "description": {
+        "ko": "〈LOVE&POP pt.2〉 추가 공개곡.",
+        "en": "〈LOVE&POP pt.2〉 추가 공개곡.",
+        "ja": "〈LOVE&POP pt.2〉 추가 공개곡."
+      },
+      "scope": "tripleS",
+      "source": "https://knote.fan/news/triples-i-want-you-to-know-release",
+      "sourceName": "KNOTE · I Want You To Know (2026-11-13)",
+      "scheduled": false
+    }
+  ]
+}

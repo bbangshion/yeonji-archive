@@ -1,8 +1,8 @@
-export type ObjektQuery = Readonly<{ member: 'S20_SHION' }>;
+export type ObjektQuery = Readonly<{ member: 'S12_YEONJI' }>;
 
 export type Objekt = {
   id: string;
-  member: 'S20_SHION';
+  member: 'S12_YEONJI';
   title: string;
   imageUrl: string | null;
   series: string;

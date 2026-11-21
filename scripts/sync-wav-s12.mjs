@@ -1,9 +1,9 @@
 /**
- * SHION ARCHIVE | WAV ARCHIVE S20 Objekt snapshot converter
+ * YEONJI ARCHIVE | WAV ARCHIVE S12 Objekt snapshot converter
  *
  * Runs in GitHub Actions (Node 22), never in the visitor's browser.
  * Reads the publicly committed WAV ARCHIVE catalog and emits a small,
- * deduplicated SHION-only file compatible with the v1 React front-end.
+ * deduplicated YEONJI-only file compatible with the v1 React front-end.
  * No API key, no invented assets, no changes to WAV ARCHIVE itself.
  */
 import fs from 'node:fs/promises';
@@ -30,19 +30,19 @@ function text(obj, ...paths) {
   const value = get(obj, ...paths);
   return asText(isObject(value) ? get(value, 'name', 'code', 'slug', 'value') : value);
 }
-function isS20(value) {
-  if (Array.isArray(value)) return value.some(isS20);
-  if (isObject(value)) return ['id', 'code', 'member', 'memberId', 'slug', 'name', 'nameKo', 'nameEn', 'number'].some(k=>isS20(value[k]));
+function isS12(value) {
+  if (Array.isArray(value)) return value.some(isS12);
+  if (isObject(value)) return ['id', 'code', 'member', 'memberId', 'slug', 'name', 'nameKo', 'nameEn', 'number'].some(k=>isS12(value[k]));
   const label = asText(value).normalize('NFKC').toUpperCase().replace(/[\s._\-]/g, '');
-  return /^(S20|S20SHION|20|SHION|SION|PARKSHION|박시온)$/.test(label);
+  return /^(S12|S12YEONJI|12|YEONJI|KWAKYEONJI|곽연지)$/.test(label);
 }
-function isShion(row) {
+function isYeonji(row) {
   if (!isObject(row)) return false;
   return [
     'memberId', 'member', 'member.id', 'member.name', 'member.slug', 'memberCode',
     'member_code', 'member_id', 'memberName', 'member_name', 'memberSlug',
     'members', 'artistMember', 'artistMember.name', 'ownerMember',
-  ].some(k => isS20(get(row, k)));
+  ].some(k => isS12(get(row, k)));
 }
 function extractRows(raw) {
   if (Array.isArray(raw)) return raw;
@@ -76,7 +76,7 @@ function safeImage(raw) {
   } catch { return null; }
 }
 function normalize(row) {
-  if (!isShion(row)) return null;
+  if (!isYeonji(row)) return null;
   const season = text(row, 'season', 'season.name', 'seasonName', 'era', 'year');
   const no = text(row, 'collectionNo', 'collectionNumber', 'collection_no', 'collection.code', 'collection.collectionNo', 'collection.number', 'cardNumber', 'objektNumber', 'number', 'code', 'serial');
   // Required to preserve stable collection IDs and avoid mistaking mint serials for a design.
@@ -86,9 +86,9 @@ function normalize(row) {
   const remote = safeImage(get(row, 'frontImageUrl', 'frontImage', 'image.front', 'images.front', 'media.frontUrl', 'imageUrl', 'frontUrl', 'image.url', 'image', 'thumbnailUrl', 'images.thumbnail', 'thumbnail', 'metadata.imageUrl'));
   const date = text(row, 'issuedAt', 'issued_at', 'releaseDate', 'release_date', 'date', 'mintedAt');
   return {
-    id: `${season}:S20:${no}`,
-    member: 'S20_SHION',
-    title: text(row, 'title', 'objektName', 'objekt_name', 'label') || `SHION · ${season} #${no}`,
+    id: `${season}:S12:${no}`,
+    member: 'S12_YEONJI',
+    title: text(row, 'title', 'objektName', 'objekt_name', 'label') || `YEONJI · ${season} #${no}`,
     imageUrl: local ?? remote,
     series: text(row, 'series', 'edition', 'unitTag', 'unit', 'dimension') || klass,
     season,
@@ -104,7 +104,7 @@ async function download(file, optional = false) {
   const timer = setTimeout(() => controller.abort(), 55_000);
   try {
     const res = await fetch(SOURCE_PREFIX + file, {
-      headers: { Accept: 'application/json', 'User-Agent': 'SHION-ARCHIVE-GitHub-Actions/1.1' },
+      headers: { Accept: 'application/json', 'User-Agent': 'YEONJI-ARCHIVE-GitHub-Actions/1.1' },
       signal: controller.signal,
     });
     if (optional && res.status === 404) return null;
@@ -123,13 +123,13 @@ async function download(file, optional = false) {
 export function convert(feeds) {
   const items = new Map();
   let sourceCount = 0;
-  let shionRows = 0;
+  let yeonjiRows = 0;
   for (const { filename, rows } of feeds) {
     sourceCount += rows.length;
     for (const row of rows) {
       const item = normalize(row);
       if (!item) continue;
-      shionRows += 1;
+      yeonjiRows += 1;
       if (row.demo === true) continue;
       const old = items.get(item.id);
       if (old) {
@@ -144,24 +144,24 @@ export function convert(feeds) {
         items.set(item.id, item);
       }
     }
-    console.log(`[${filename}] source rows: ${rows.length}, S20 merged so far: ${items.size}`);
+    console.log(`[${filename}] source rows: ${rows.length}, S12 merged so far: ${items.size}`);
   }
-  return { objekts: [...items.values()], provenance: { source: 'WAV ARCHIVE', sourceCount, shionRows, uniqueShion: items.size, importedAt: new Date().toISOString() } };
+  return { objekts: [...items.values()], provenance: { source: 'WAV ARCHIVE', sourceCount, yeonjiRows, uniqueYeonji: items.size, importedAt: new Date().toISOString() } };
 }
 
 function selfTest() {
   const fixture = [
-    { member: 'shion', season: 'Cream02', collectionNo: '101Z', class: 'First', frontImageUrl: 'https://static.cosmo.fans/actual-test.webp' },
-    { memberId: 'S20', season: 'Atom01', collectionNo: '102Z', class: 'Special', frontImage: './cards/example.webp' },
-    { member: { name: '박시온' }, season: 'Binary01', collectionNo: '103Z', class: 'First' },
+    { member: 'yeonji', season: 'Cream02', collectionNo: '101Z', class: 'First', frontImageUrl: 'https://static.cosmo.fans/actual-test.webp' },
+    { memberId: 'S12', season: 'Atom01', collectionNo: '102Z', class: 'Special', frontImage: './cards/example.webp' },
+    { member: { name: '곽연지' }, season: 'Binary01', collectionNo: '103Z', class: 'First' },
     { member: 'chaewon', season: 'Cream02', collectionNo: '104Z', class: 'First' },
-    { member: 'shion', season: 'Cream02', collectionNo: '101Z', class: 'First' },
+    { member: 'yeonji', season: 'Cream02', collectionNo: '101Z', class: 'First' },
   ];
   const result = convert([{ filename: 'fixture', rows: fixture }]);
   if (result.objekts.length !== 3 || result.objekts[0].imageUrl !== 'https://static.cosmo.fans/actual-test.webp' || !result.objekts[1].imageUrl.includes('/wav-archive/objekt-collection/cards/')) {
-    throw Error('S20 strict-filter, deduplication or URL handling self-test failed');
+    throw Error('S12 strict-filter, deduplication or URL handling self-test failed');
   }
-  console.log('S20 catalog converter self-test: PASSED');
+  console.log('S12 catalog converter self-test: PASSED');
 }
 
 async function main() {
@@ -174,12 +174,12 @@ async function main() {
   const feeds = [{ filename: FEEDS[0], rows: mainRows }];
   if (apolloRows?.length) feeds.push({ filename: FEEDS[1], rows: apolloRows });
   const result = convert(feeds);
-  if (result.objekts.length < 20) throw Error(`S20 entries (${result.objekts.length}) unexpectedly low; refusing to publish incomplete data.`);
+  if (result.objekts.length < 20) throw Error(`S12 entries (${result.objekts.length}) unexpectedly low; refusing to publish incomplete data.`);
   await fs.mkdir(path.dirname(OUTPUT), { recursive: true });
   const tmp = `${OUTPUT}.tmp`;
   await fs.writeFile(tmp, JSON.stringify(result), 'utf8');
   await fs.rename(tmp, OUTPUT);
-  console.log(`SUCCESS: ${result.provenance.uniqueShion} SHION objects / ${result.provenance.sourceCount} raw rows; wrote ${OUTPUT}.`);
+  console.log(`SUCCESS: ${result.provenance.uniqueYeonji} YEONJI objects / ${result.provenance.sourceCount} raw rows; wrote ${OUTPUT}.`);
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

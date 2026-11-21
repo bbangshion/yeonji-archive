@@ -27,7 +27,7 @@ export default function HomeUpdates() {
   return <section className="shion-overview" aria-labelledby="shion-overview-title">
     <div className="shion-content-width">
       <div className="shion-section-lead shion-overview-lead">
-        <div><p className="shion-section-eyebrow">SHION ARCHIVE</p><h2 id="shion-overview-title"><Trans value="최근 기록" /></h2></div>
+        <div><p className="shion-section-eyebrow">YEONJI ARCHIVE</p><h2 id="shion-overview-title"><Trans value="최근 기록" /></h2></div>
         <button type="button" className="shion-overview-timeline-link" onClick={() => setScreen('timeline')}>
           <Trans value="활동 타임라인" /> <ArrowIcon width={16} height={16}/></button>
       </div>

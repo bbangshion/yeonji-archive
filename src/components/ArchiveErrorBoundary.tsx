@@ -18,7 +18,7 @@ export class ArchiveErrorBoundary extends Component<Props, State> {
 
   componentDidCatch(error: Error, info: ErrorInfo): void {
     // Local browser console only. No personal data or error telemetry is sent.
-    console.error('[SHION ARCHIVE] section render failed', error, info.componentStack);
+    console.error('[YEONJI ARCHIVE] section render failed', error, info.componentStack);
   }
 
   render(): ReactNode {

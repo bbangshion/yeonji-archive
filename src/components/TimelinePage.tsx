@@ -41,7 +41,7 @@ async function loadActivityEntries(refresh = false): Promise<ViewEntry[]> {
 const PAGE_SIZE = 24;
 const LABELS = {
   ko: {
-    title: '활동 타임라인', intro: '박시온이 함께한 활동과 남겨진 기록',
+    title: '활동 타임라인', intro: '곽연지이 함께한 활동과 남겨진 기록',
     all: '전체', release: '음반 · 음원', unit: '유닛', concert: '공연',
     appearance: '방송 · 행사', milestone: '기록', photos: '사진', film: '영상', signal: 'SIGNAL',
     search: '활동명, 유닛, 날짜 검색', years: '전체 연도', allScope: '등록된 참여 활동',
@@ -54,7 +54,7 @@ const LABELS = {
     notes: '개별 방송·행사 등은 확인된 자료부터 계속 추가합니다.',
   },
   en: {
-    title: 'Activity timeline', intro: 'Activities and archive records featuring ShiOn',
+    title: 'Activity timeline', intro: 'Activities and archive records featuring YeonJi',
     all: 'All', release: 'Releases', unit: 'Units', concert: 'Live',
     appearance: 'Media · Events', milestone: 'Milestones', photos: 'Photos', film: 'Videos', signal: 'SIGNAL',
     search: 'Search activity, unit or date', years: 'All years', allScope: 'Indexed activities',
@@ -67,7 +67,7 @@ const LABELS = {
     notes: 'Additional broadcasts and events are added as their sources are verified.',
   },
   ja: {
-    title: '活動タイムライン', intro: 'シオンが参加した活動とアーカイブ記録',
+    title: '活動タイムライン', intro: 'ヨンジが参加した活動とアーカイブ記録',
     all: 'すべて', release: '音楽', unit: 'ユニット', concert: '公演',
     appearance: '番組・イベント', milestone: '記録', photos: '写真', film: '動画', signal: 'SIGNAL',
     search: '活動名・ユニット・日付で検索', years: 'すべての年', allScope: '登録された参加活動',
@@ -176,7 +176,7 @@ export function TimelinePage() {
 
   return <div className="shion-timeline shion-timeline-refined" aria-labelledby="shion-timeline-title">
     <header className="shion-page-heading shion-timeline-header">
-      <span className="shion-page-kicker">PARK SHION / S20</span>
+      <span className="shion-page-kicker">KWAK YEONJI / S12</span>
       <h1 id="shion-timeline-title">{ui.title}</h1>
       <p>{ui.intro}</p>
     </header>

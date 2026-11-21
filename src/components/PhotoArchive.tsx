@@ -21,8 +21,8 @@ type ViewMode = 'date' | 'album';
 const BASE = import.meta.env.BASE_URL;
 const PAGE_SIZE = 36;
 const FALLBACK: Photo = {
-  id: 'airport-photo', image: `${BASE}images/shion-home.jpg`,
-  title: { ko: '공항에서', en: 'At the airport', ja: '空港にて' },
+  id: 'airport-photo', image: `${BASE}images/yeonji-home.jpg`,
+  title: { ko: '곽연지 아카이브 커버', en: 'YeonJi archive cover', ja: 'ヨンジのアーカイブ' },
   album: { ko: '일상', en: 'Daily life', ja: '日常' },
   date: null,
   credit: { ko: '사용자 제공 사진', en: 'User-provided photo', ja: 'ユーザー提供写真' },
@@ -67,6 +67,7 @@ function readPhotos(payload: unknown): Photo[] {
   for (const raw of items) {
     if (!isRecord(raw)) continue;
     if (typeof raw.category === 'string' && raw.category.toLowerCase() !== 'photo') continue;
+    if (raw.memberId && raw.memberId !== 'S12') continue;
     if (typeof raw.type === 'string' && raw.type.toLowerCase() !== 'photo') continue;
     const id = typeof raw.id === 'string' ? raw.id.trim() : '';
     const image = imageURL(raw.image);
@@ -75,7 +76,7 @@ function readPhotos(payload: unknown): Photo[] {
     ids.add(id);
     results.push({
       id, image,
-      title: localized(raw.title, '박시온'),
+      title: localized(raw.title, '곽연지'),
       album: localized(raw.album, '사진'),
       date: validDate(raw.date),
       credit: raw.credit ? localized(raw.credit, '') : null,
@@ -91,7 +92,7 @@ function isSNSArchiveAlbum(album: LocalizedText): boolean {
     typeof name === 'string' && /^(?:SNS\s*아카이브|SNS\s*Archive|SNS\s*アーカイブ)$/i.test(name.trim())
   );
 }
-function dateKey(photo: Photo): string { return photo.date?.slice(0, 7) ?? 'unknown'; }
+function dateKey(photo: Photo): string { return photo.date ?? 'unknown'; }
 function comparePhotos(a: Photo, b: Photo, order: SortOrder): number {
   if (a.date && !b.date) return -1;
   if (b.date && !a.date) return 1;
@@ -141,7 +142,7 @@ export function PhotoArchive(_legacyProps?: { objekts?: unknown[]; loading?: boo
   const swipeStart = useRef<number | null>(null);
   const deferred = useDeferredValue(query.trim().toLocaleLowerCase());
   const text = (label: LocalizedText): string => label[language] || t(label.ko);
-  const albumText = (label: LocalizedText): string => isSNSArchiveAlbum(label) ? '빵시온' : text(label);
+  const albumText = (label: LocalizedText): string => isSNSArchiveAlbum(label) ? '빵연지' : text(label);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -176,7 +177,7 @@ export function PhotoArchive(_legacyProps?: { objekts?: unknown[]; loading?: boo
     (month === 'all' || photo.date?.slice(5, 7) === month) &&
     (album === 'all' || photo.album.ko === album) &&
     (!deferred || [photo.title.ko, photo.title.en, photo.title.ja, photo.album.ko, photo.album.en,
-      photo.album.ja, isSNSArchiveAlbum(photo.album) ? '빵시온' : '', photo.date, photo.credit?.ko, ...photo.tags]
+      photo.album.ja, isSNSArchiveAlbum(photo.album) ? '빵연지' : '', photo.date, photo.credit?.ko, ...photo.tags]
       .filter(Boolean).join(' ').toLocaleLowerCase().includes(deferred))
   ).sort((a, b) => comparePhotos(a, b, sort)), [photos, year, month, album, deferred, sort, recentOnly, recentCutoff]);
   const visible = filtered.slice(0, limit);
@@ -226,13 +227,13 @@ export function PhotoArchive(_legacyProps?: { objekts?: unknown[]; loading?: boo
   const monthLabel = (monthValue: string) => new Intl.DateTimeFormat(language === 'en' ? 'en-US' : language === 'ja' ? 'ja-JP' : 'ko-KR', { month: 'long' }).format(new Date(2020, Number(monthValue) - 1, 1));
   const groupLabel = (key: string) => mode === 'album'
     ? (albumNames.get(key) ?? key)
-    : (key === 'unknown' ? t('날짜 미상') : `${key.replace('-', '.')}`);
+    : (key === 'unknown' ? t('날짜 미상') : `${key.replace(/-/g, '.')}`);
 
   return <section className="shion-photos shion-photo-v2 animate-appear" aria-labelledby="photos-heading">
     <header className="shion-page-heading">
       <span className="shion-page-kicker">PHOTO ARCHIVE</span>
       <h1 id="photos-heading">{t('사진')}</h1>
-      <p>{t('박시온 사진을 날짜와 앨범으로 모아봤어요')}</p>
+      <p>{t('곽연지 사진을 날짜와 앨범으로 모아봤어요')}</p>
       <p className="shion-source-note">{language === 'en' ? 'Curated by @bbangshion' : language === 'ja' ? 'アーカイブ編集 · @bbangshion' : '아카이브 정리 · @bbangshion'}</p>
     </header>
     <RecentPhotoSources />
@@ -294,7 +295,7 @@ export function PhotoArchive(_legacyProps?: { objekts?: unknown[]; loading?: boo
       </div>
       <div className="shion-lightbox-caption shion-lightbox-caption-v2"><div><strong>{text(selected.title)}</strong>
         <span>{albumText(selected.album)} · {photoDate(selected.date)}</span>
-        {selected.credit && <span>{selected.id.startsWith('fandom-s20-') ? text(selected.credit) : `${t('출처')}: ${text(selected.credit)}`}</span>}</div>
+        {selected.credit && <span>{selected.id.startsWith('fandom-s12-') ? text(selected.credit) : `${t('출처')}: ${text(selected.credit)}`}</span>}</div>
         {selected.source && <a href={selected.source} target="_blank" rel="noopener noreferrer">{t('원본 게시물')}</a>}
       </div>
     </div>, document.body)}

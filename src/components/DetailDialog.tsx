@@ -53,7 +53,7 @@ export function DetailDialog({ item, isFavorite, onToggleFavorite, onClose }: Pr
     if (!item)
         return null;
     const details = [
-        ['멤버', '박시온 (S20)'],
+        ['멤버', '곽연지 (S12)'],
         ['시즌', item.season],
         ['시리즈', item.series],
         ['클래스', item.className],

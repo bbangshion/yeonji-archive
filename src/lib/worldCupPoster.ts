@@ -117,7 +117,7 @@ function photo(ctx: CanvasRenderingContext2D, img: HTMLImageElement | null, box:
     ctx.font = '600 29px system-ui, sans-serif';
     ctx.textAlign = 'center';
     ctx.fillStyle = '#706B76';
-    ctx.fillText('SHION', box.x + box.w / 2, box.y + box.h / 2);
+    ctx.fillText('YEONJI', box.x + box.w / 2, box.y + box.h / 2);
   }
   ctx.restore();
   ctx.strokeStyle = border;
@@ -155,7 +155,7 @@ export async function renderWorldCupPoster(entries: readonly PosterEntry[], brac
   ctx.fillText('O B J E K T   W O R L D C U P', 540, 76);
   ctx.fillStyle = '#FBF8FC';
   ctx.font = '700 72px system-ui, sans-serif';
-  ctx.fillText('ShiOn', 540, 156);
+  ctx.fillText('YeonJi', 540, 156);
   ctx.fillStyle = '#9B94A3';
   ctx.font = '26px system-ui, sans-serif';
   ctx.fillText(`${bracketSize} · TOP 4`, 540, 200);
@@ -200,7 +200,7 @@ export async function renderWorldCupPoster(entries: readonly PosterEntry[], brac
   ctx.textAlign = 'center';
   ctx.fillStyle = '#77737F';
   ctx.font = '18px system-ui, sans-serif';
-  ctx.fillText('SHION ARCHIVE  ·  @bbangshion', 540, 1361);
+  ctx.fillText('YEONJI ARCHIVE  ·  @bbangshion', 540, 1361);
   // All drawn photos are same-origin or loaded with CORS; toBlob remains safe.
   return { blob: await canvasBlob(canvas), missingImages };
 }

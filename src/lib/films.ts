@@ -38,12 +38,12 @@ function findVideoId(value: unknown): string {
     return /^[\w-]{11}$/.test(raw) ? raw : '';
   } catch { return ''; }
 }
-function hasS20(row: Record<string, unknown>): boolean {
+function hasS12(row: Record<string, unknown>): boolean {
   const possible = row.memberIds ?? row.members ?? row.memberId ?? row.member;
   const list = Array.isArray(possible) ? possible : [possible];
   return list.some((value) => {
     const s = (isObject(value) ? asText(value.id ?? value.name ?? value.memberId) : asText(value)).toLowerCase().replace(/[\s._-]/g, '');
-    return ['s20','s20shion','shion','parkshion','박시온','시온'].includes(s);
+    return ['s12','s12yeonji','yeonji','kwakyeonji','곽연지','연지'].includes(s);
   });
 }
 function validDate(value: unknown): string | null {
@@ -57,7 +57,7 @@ export function normalizeFilms(input: unknown): Film[] {
   const rows: unknown[] = Array.isArray(input) ? input : isObject(input) && Array.isArray(input.items) ? input.items : isObject(input) && Array.isArray(input.videos) ? input.videos : [];
   const seen = new Map<string,Film>();
   for (const v of rows) {
-    if (!isObject(v) || !hasS20(v)) continue;
+    if (!isObject(v) || !hasS12(v)) continue;
     const id = findVideoId(v.youtubeId ?? v.youtubeUrl ?? v.videoId ?? v.videoUrl ?? v.url);
     const title = asText(v.title);
     if (!id || title.length < 1 || title.length > 190) continue;

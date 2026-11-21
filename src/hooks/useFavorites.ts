@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const STORAGE_KEY = 'shion-archive:favorites:v1';
+const STORAGE_KEY = 'yeonji-archive:favorites:v1';
 
 function loadFavorites(): Set<string> {
   try {

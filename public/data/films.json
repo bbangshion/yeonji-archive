@@ -1,278 +1,32 @@
 {
-  "version": 2,
-  "generatedAt": "2026-11-14T05:41:20.783Z",
+  "version": 1,
+  "updatedAt": "2026-11-21",
   "items": [
     {
-      "youtubeId": "uqJ6GDJSyfY",
-      "title": "Andless — Official MV",
-      "category": "music",
-      "publishedAt": "2026-10-16",
-      "memberIds": [
-        "S20"
-      ],
-      "group": "tripleS",
-      "scope": "group",
-      "source": "tripleS official",
-      "verified": true,
-      "note": ""
-    },
-    {
-      "youtubeId": "dVJ_CVEkECs",
-      "title": "msnz moon — World Wild Women",
-      "category": "music",
-      "publishedAt": "2026-08-17",
-      "memberIds": [
-        "S20"
-      ],
-      "group": "Moon",
-      "scope": "unit",
-      "source": "tripleS official",
-      "verified": false,
-      "note": ""
-    },
-    {
-      "youtubeId": "zqUO3zwllhc",
-      "title": "msnz moon — Dream Dress",
-      "category": "music",
-      "publishedAt": "2026-08-01",
-      "memberIds": [
-        "S20"
-      ],
-      "group": "Moon",
-      "scope": "unit",
-      "source": "tripleS official",
-      "verified": false,
-      "note": ""
-    },
-    {
-      "youtubeId": "bscJoTwnLQI",
-      "title": "쇼챔피언 박시온 직캠 — Baby Flower",
-      "category": "performance",
-      "publishedAt": "2026-06-10",
-      "memberIds": [
-        "S20"
-      ],
-      "group": "박시온",
-      "scope": "solo",
-      "source": "tripleS official",
-      "verified": false,
-      "note": ""
-    },
-    {
-      "youtubeId": "6q8UMVXhXsE",
-      "title": "Baby Flower — Official MV",
-      "category": "music",
-      "publishedAt": "2026-06-01",
-      "memberIds": [
-        "S20"
-      ],
-      "group": "tripleS (24인)",
-      "scope": "group",
-      "source": "tripleS official",
-      "verified": true,
-      "note": ""
-    },
-    {
-      "youtubeId": "4DK4IsVjO70",
-      "title": "뮤직뱅크 박시온 직캠 — Cameo Love",
-      "category": "performance",
-      "publishedAt": "2025-12-05",
-      "memberIds": [
-        "S20"
-      ],
-      "group": "박시온",
-      "scope": "solo",
-      "source": "tripleS official",
-      "verified": false,
-      "note": ""
-    },
-    {
-      "youtubeId": "With0YDpuWQ",
-      "title": "msnz moon — Cameo Love",
-      "category": "music",
-      "publishedAt": "2025-11-24",
-      "memberIds": [
-        "S20"
-      ],
-      "group": "Moon",
-      "scope": "unit",
-      "source": "tripleS official",
-      "verified": false,
-      "note": ""
-    },
-    {
-      "youtubeId": "m25wQkLg1jc",
-      "title": "∞! (Hatchi) — Password",
-      "category": "music",
-      "publishedAt": "2025-10-01",
-      "memberIds": [
-        "S20"
-      ],
-      "group": "∞! (Hatchi)",
-      "scope": "unit",
-      "source": "tripleS official",
-      "verified": false,
-      "note": ""
-    },
-    {
-      "youtubeId": "50RzJKcLpXk",
-      "title": "인기가요 박시온 직캠 — 깨어 (Are You Alive)",
-      "category": "performance",
-      "publishedAt": "2025-05-27",
-      "memberIds": [
-        "S20"
-      ],
-      "group": "박시온",
-      "scope": "solo",
-      "source": "tripleS official",
-      "verified": false,
-      "note": ""
-    },
-    {
-      "youtubeId": "5q6JlZjBX2E",
-      "title": "쇼챔피언 박시온 직캠 — 깨어 (Are You Alive)",
-      "category": "performance",
-      "publishedAt": "2025-05-21",
-      "memberIds": [
-        "S20"
-      ],
-      "group": "박시온",
-      "scope": "solo",
-      "source": "tripleS official",
-      "verified": false,
-      "note": ""
-    },
-    {
-      "youtubeId": "pTycfmVzdl8",
-      "title": "깨어 (Are You Alive) — Official MV",
-      "category": "music",
-      "publishedAt": "2025-05-12",
-      "memberIds": [
-        "S20"
-      ],
-      "group": "tripleS (24인)",
-      "scope": "group",
-      "source": "tripleS official",
-      "verified": true,
-      "note": ""
-    },
-    {
-      "youtubeId": "2EtFv4apgvo",
-      "title": "∞! (Hatchi) — Untitled",
-      "category": "music",
-      "publishedAt": "2024-11-20",
-      "memberIds": [
-        "S20"
-      ],
-      "group": "∞! (Hatchi)",
-      "scope": "unit",
-      "source": "tripleS official",
-      "verified": false,
-      "note": ""
-    },
-    {
-      "youtubeId": "jAtTsrvfuVY",
-      "title": "주간아이돌 박시온 직캠 — Girls Never Die",
-      "category": "performance",
-      "publishedAt": "2024-05-09",
-      "memberIds": [
-        "S20"
-      ],
-      "group": "박시온",
-      "scope": "solo",
-      "source": "tripleS official",
-      "verified": false,
-      "note": ""
-    },
-    {
-      "youtubeId": "2tda_TCjz8w",
-      "title": "Girls Never Die — Official MV",
-      "category": "music",
-      "publishedAt": "2024-05-08",
-      "memberIds": [
-        "S20"
-      ],
-      "group": "tripleS (24인)",
-      "scope": "group",
-      "source": "tripleS official",
-      "verified": true,
-      "note": ""
-    },
-    {
-      "youtubeId": "DvHr1Qz5olg",
-      "title": "시온이의 목소리가 너무 예뻐서 | SIGNAL 240325",
+      "youtubeId": "dzzlMvM6w6M",
+      "title": "SecretBase 250926 KwakYeonJi.SSS",
       "category": "signal",
-      "publishedAt": "2024-03-25",
+      "publishedAt": "2025-09-28",
       "memberIds": [
-        "S20"
+        "S12"
       ],
-      "group": "SIGNAL",
+      "group": "YeonJi",
       "scope": "solo",
       "source": "tripleS official",
-      "verified": true,
-      "note": ""
+      "verified": true
     },
     {
-      "youtubeId": "s3IfM-u5hVc",
-      "title": "tripleS NXT 'Just Do It' Performance",
-      "category": "performance",
-      "publishedAt": "2023-12-30",
-      "memberIds": [
-        "S20"
-      ],
-      "group": "NXT",
-      "scope": "unit",
-      "source": "tripleS official",
-      "verified": true,
-      "note": ""
-    },
-    {
-      "youtubeId": "_OTK4AZ0uHc",
-      "title": "ParkShiOn.SSS",
-      "category": "other",
-      "publishedAt": "2023-12-24",
-      "memberIds": [
-        "S20"
-      ],
-      "group": "박시온",
-      "scope": "solo",
-      "source": "tripleS official",
-      "verified": true,
-      "note": ""
-    },
-    {
-      "youtubeId": "Aa6JpEXDkQw",
-      "title": "Girls Never Die — Official Dance Practice",
-      "category": "performance",
+      "youtubeId": "cfUfSuLsGVc",
+      "title": "SecretBase 250429 KwakYeonJi.SSS",
+      "category": "signal",
       "publishedAt": null,
       "memberIds": [
-        "S20"
+        "S12"
       ],
-      "group": "tripleS (24인)",
-      "scope": "group",
+      "group": "YeonJi",
+      "scope": "solo",
       "source": "tripleS official",
-      "verified": false,
-      "note": ""
+      "verified": true
     }
-  ],
-  "coverage": {
-    "description": "공식 링크 중심, S20 명시 또는 확인된 참여 유닛/완전체 영상. 모든 출연 영상의 완전 수록을 보장하지 않습니다.",
-    "shionCount": 18,
-    "categoryCounts": {
-      "signal": 1,
-      "music": 9,
-      "performance": 7,
-      "live": 0,
-      "other": 1
-    },
-    "wav": {
-      "status": "offline"
-    },
-    "official": {
-      "status": "disabled"
-    },
-    "atom": {
-      "status": "offline"
-    }
-  }
+  ]
 }

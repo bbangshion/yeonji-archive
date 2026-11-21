@@ -4,8 +4,8 @@ import { DICTIONARY } from './messages';
 import type { Language } from './messages';
 
 export type Theme = 'obsidian' | 'violet' | 'navy' | 'rose' | 'aqua';
-const LANG_KEY = 'shion-archive-lang-v1';
-const THEME_KEY = 'shion-archive-theme-v1';
+const LANG_KEY = 'yeonji-archive-lang-v1';
+const THEME_KEY = 'yeonji-archive-theme-v1';
 const THEMES: readonly Theme[] = ['obsidian', 'violet', 'navy', 'rose', 'aqua'];
 
 function initialLanguage(): Language {
@@ -68,7 +68,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   }, [language]);
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
-    const colors: Record<Theme, string> = { obsidian: '#0b0b0e', violet: '#110d1e', navy: '#0a1426', rose: '#190f19', aqua: '#091b20' };
+    const colors: Record<Theme, string> = { obsidian: '#0C0D11', violet: '#110d1e', navy: '#0a1426', rose: '#141620', aqua: '#091b20' };
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content', colors[theme]);
   }, [theme]);
   const t = useCallback((source: string) => translate(source, language), [language]);

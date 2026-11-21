@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0C0D11">
+<title>YEONJI ARCHIVE — PHOTO GALLERY</title>
+<meta name="description" content="tripleS S12 곽연지 사진 아카이브 · 연도와 날짜별로 만나는 곽연지의 기록">
+<style>
+  :root { color-scheme:dark; --bg:#0c0d11; --panel:#151820; --stroke:#303445; --ink:#f0f2f8; --sub:#9299ac; --blue:#7a91f5; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:system-ui,-apple-system,"Pretendard","Noto Sans KR",sans-serif; -webkit-font-smoothing:antialiased; }
+  button,select,input { font:inherit; }
+  button,a { -webkit-tap-highlight-color:transparent; }
+  a { color:inherit; }
+  button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible { outline:2px solid var(--blue);outline-offset:3px; }
+  .shell { width:min(1340px,calc(100% - 44px)); margin:0 auto; }
+  header { border-bottom:1px solid var(--stroke); background:#0e0e15; }
+  .top { height:80px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .brand { display:flex; gap:13px; align-items:center; text-decoration:none; font-weight:700; font-size:12px; letter-spacing:.16em; }
+  .brand-mark { font:italic 28px/1 Georgia,serif; border:1px solid var(--blue);border-radius:50%;width:42px;height:42px;display:grid;place-items:center;color:var(--blue); }
+  .back { color:var(--sub);font-size:12px;text-decoration:none; letter-spacing:.08em; white-space:nowrap; }
+  .back:hover { color:var(--ink); }
+  .hero { padding:70px 0 39px; border-bottom:1px solid var(--stroke); }
+  .eyebrow { display:block; letter-spacing:.25em; font-size:11px; font-weight:700; color:var(--blue); margin-bottom:20px; }
+  h1 { margin:0; font-size:clamp(46px,8vw,108px); line-height:.95;letter-spacing:-.065em;font-weight:640; }
+  h1 em { color:var(--blue); font-weight:400; font-family:Georgia,serif; }
+  .intro { margin-top:28px; display:flex;gap:24px;align-items:end; justify-content:space-between; }
+  .intro p { color:var(--sub);max-width:560px;line-height:1.75;font-size:14px;margin:0; }
+  #total { color:var(--ink);font-weight:650;white-space:nowrap;font-size:12px;letter-spacing:.12em; }
+  .filters { display:flex; flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding:27px 0 22px; }
+  .tabs {display:flex;gap:4px;align-items:center;overflow-x:auto;max-width:100%;scrollbar-width:none;}
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab {border:0;background:transparent;color:var(--sub);padding:12px 13px;white-space:nowrap;cursor:pointer;font-size:12px;letter-spacing:.06em;}
+  .tab.is-active{color:var(--ink);background:#252a3e;border-radius:4px;}
+  .controls {display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+  select,input[type="search"]{background:#141620;color:var(--ink);border:1px solid #383d4a;border-radius:3px;min-height:42px;padding:0 12px;font-size:12px;}
+  input[type="search"] {width:min(240px,43vw);}
+  input[type="search"]::placeholder {color:var(--sub);}
+  .gallery {columns:4 220px;column-gap:16px;min-height:120px;}
+  .card {display:block;break-inside:avoid;margin:0 0 22px;}
+  .open-photo {border:0; background:#191c27; padding:0; width:100%; overflow:hidden;cursor:zoom-in;position:relative;display:block;border-radius:2px; }
+  .open-photo img {width:100%;height:auto;display:block;transition:transform .35s ease;object-fit:cover;background:#1b1e2b;}
+  .open-photo:hover img {transform:scale(1.018);}
+  .image-failed {font-size:12px;color:#bac0d0;min-height:180px;display:grid;place-items:center;text-align:center;padding:25px;}
+  .tag{position:absolute;left:10px;top:10px;background:rgba(8,10,16,.85);border:1px solid rgba(255,255,255,.15);padding:5px 7px;letter-spacing:.08em;font-size:10px;color:#e7eaff;}
+  .meta{padding:11px 0 0;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .date {font-size:11px;color:var(--sub);font-variant-numeric:tabular-nums;}
+  .credit{color:var(--blue);font-size:10px;white-space:nowrap;letter-spacing:.06em;}
+  .caption {font-size:12px;line-height:1.6;color:#d4d6df;margin:7px 0 0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;overflow-wrap:anywhere;}
+  .empty {text-align:center;color:var(--sub);font-size:14px;padding:80px 20px;border:1px solid var(--stroke);}
+  .empty[hidden],.more[hidden],.modal[hidden]{display:none !important;}
+  .more {margin:45px auto 75px;background:transparent;color:var(--ink);padding:16px 45px;border:1px solid #484e60;display:block;cursor:pointer;font-size:12px;letter-spacing:.1em;}
+  footer{margin-top:50px;border-top:1px solid var(--stroke);padding:30px 0 60px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px;font-size:11px;color:var(--sub);}
+  .modal {position:fixed;inset:0;z-index:3000;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.93);}
+  .dialog {display:grid;grid-template-rows:auto minmax(0,1fr) auto;width:min(1180px,100%);height:min(91dvh,950px);background:#0e1017;border:1px solid #434857;}
+  .dialog-head {display:flex;justify-content:space-between;gap:10px;align-items:center;padding:14px 19px;border-bottom:1px solid #333847;}
+  .dialog-head h2{font-size:12px;margin:0;color:var(--blue);letter-spacing:.16em;font-weight:650;}
+  .icon-btn{color:var(--ink);background:none;border:1px solid #444b5d;padding:8px 12px;min-width:40px;cursor:pointer;}
+  .view {display:flex;align-items:center;justify-content:center;min-height:0;position:relative;background:#050608;overflow:hidden;}
+  #full-img {max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;}
+  .nav-btn {position:absolute;top:50%;transform:translateY(-50%);border:0;background:rgba(15,16,23,.75);width:38px;height:54px;cursor:pointer;color:#fff;font-size:22px;}
+  .nav-btn.prev {left:6px;}.nav-btn.next{right:6px;}
+  .detail {display:flex;gap:22px;justify-content:space-between;align-items:center;padding:15px 18px;flex-wrap:wrap;}
+  .detail h3 {font-size:13px;font-weight:600;margin:0 0 5px;overflow-wrap:anywhere;}
+  .detail p {color:var(--sub);font-size:11px;margin:0;line-height:1.6;}
+  #source-link {text-decoration:none;background:#222b48;border:1px solid #485988;padding:12px 16px;border-radius:2px;white-space:nowrap;font-size:11px;}
+  #source-link[hidden]{display:none;}
+  @media(max-width:750px){.shell{width:calc(100% - 30px)}.top{height:70px}.hero{padding:52px 0 29px}.intro{display:block}.intro #total{display:block;margin-top:20px}.filters{padding-top:14px}.controls{width:100%}.controls select{flex:0 0 95px}.controls input{flex:1;width:120px;min-width:0}.gallery{columns:2;column-gap:11px}.card{margin-bottom:16px}.meta{display:block}.credit{display:block;margin-top:4px}.dialog{height:min(95dvh,950px)}.dialog-head{padding:11px 12px}.detail{padding:11px 12px}.caption{font-size:11px}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.open-photo img{transition:none}}
+</style>
+</head>
+<body>
+<header><div class="shell top">
+  <a href="../" class="brand" aria-label="YEONJI ARCHIVE 홈"><span class="brand-mark" aria-hidden="true">Y</span>YEONJI ARCHIVE</a>
+  <a class="back" href="../">← BACK TO ARCHIVE</a>
+</div></header>
+<main class="shell">
+<section class="hero" aria-labelledby="page-title">
+  <span class="eyebrow">TRIPLES S12 · PHOTO COLLECTION</span>
+  <h1 id="page-title">Frames of<br><em>YeonJi</em></h1>
+  <div class="intro"><p>사진으로 남긴 곽연지의 시간<br>공식 사진과 확인된 기록을 날짜별로 모았습니다</p><span id="total" aria-live="polite">LOADING…</span></div>
+</section>
+<section aria-label="사진 탐색">
+  <div class="filters"><div class="tabs" role="group" aria-label="사진 유형">
+    <button class="tab is-active" data-filter="all" type="button" aria-pressed="true">ALL</button>
+    <button class="tab" data-filter="official" type="button" aria-pressed="false">OFFICIAL</button>
+    <button class="tab" data-filter="sns" type="button" aria-pressed="false">SNS</button>
+    <button class="tab" data-filter="stage" type="button" aria-pressed="false">STAGE</button>
+    <button class="tab" data-filter="other" type="button" aria-pressed="false">OTHER</button>
+  </div>
+  <div class="controls"><label for="year" class="sr-only">연도</label><select id="year"><option value="all">ALL YEARS</option></select>
+  <label for="search" class="sr-only">검색</label><input id="search" type="search" placeholder="날짜·키워드 검색" autocomplete="off"></div></div>
+  <div id="gallery" class="gallery" aria-live="polite"></div>
+  <p id="empty" class="empty" hidden>표시할 사진이 없습니다. 등록 상태와 출처를 확인해 주세요</p>
+  <button id="more" class="more" type="button" hidden>더 보기</button>
+</section>
+</main>
+<footer class="shell"><span>YEONJI ARCHIVE · FAN CURATED</span><span>CREATED BY @bbangshion · 원본 사진의 권리는 각 출처에 있습니다</span></footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="detail-title" hidden>
+  <div class="dialog">
+    <div class="dialog-head"><h2>YEONJI / PHOTO VIEWER</h2><button type="button" class="icon-btn" id="close" aria-label="닫기">✕</button></div>
+    <div class="view"><button type="button" class="nav-btn prev" id="prev" aria-label="이전 사진">‹</button><img id="full-img" alt=""><button type="button" class="nav-btn next" id="next" aria-label="다음 사진">›</button></div>
+    <div class="detail"><div><h3 id="detail-title">곽연지</h3><p id="detail-info"></p></div><a id="source-link" href="#" rel="noopener noreferrer" target="_blank">원본 게시물 ↗</a></div>
+  </div>
+</div>
+<script>
+(() => {
+  'use strict';
+  const $ = s => document.querySelector(s);
+  const gallery = $('#gallery'), empty = $('#empty'), more = $('#more');
+  const filterButtons = [...document.querySelectorAll('.tab')];
+  let photos = [], filtered = [], shown = 0, chosen = 'all', openIndex = -1, returnFocus = null;
+  const PAGE = 42;
+  const dateDisplay = x => /^\d{4}-\d{2}-\d{2}$/.test(x || '') ? x.replace(/-/g, '.') : '날짜 미확인';
+  const safeURL = x => { try {const url = new URL(x, window.location.href); return ['http:','https:'].includes(url.protocol) ? url.href : ''; } catch {return '';} };
+  const imageURL = x => typeof x === 'string' && !/^\s*(data:|javascript:|\/\/)/i.test(x) ? safeURL(x) : '';
+  const sourceKind = p => {
+    const s = String(p.source || '').toLowerCase();
+    if (/official|modhaus|concept/.test(s)) return 'official';
+    if (/instagram|sns|twitter|x\.com/.test(s)) return 'sns';
+    if (/stage|fancam|concert|music|broadcast/.test(s)) return 'stage';
+    return 'other';
+  };
+  function renderRows() {
+    const next = filtered.slice(shown, shown + PAGE);
+    const frag = document.createDocumentFragment();
+    next.forEach((p, offset) => {
+      const index = shown + offset;
+      const card = document.createElement('article'); card.className = 'card';
+      const opener = document.createElement('button'); opener.className='open-photo'; opener.type='button';
+      opener.setAttribute('aria-label', `${p.title || '곽연지'} 사진 확대`);
+      const img = document.createElement('img'); img.src = imageURL(p.thumb || p.image); img.alt = p.title || '곽연지 사진';
+      img.loading='lazy'; img.decoding='async';
+      if (Number.isFinite(p.width) && Number.isFinite(p.height) && p.width > 0 && p.height > 0) {
+        img.width = p.width;img.height = p.height;
+      }
+      img.addEventListener('error', () => {img.remove(); const note=document.createElement('div');note.className='image-failed';note.textContent='이미지를 불러오지 못했습니다';opener.append(note);},{once:true});
+      opener.append(img);
+      const kind = document.createElement('span');kind.className='tag';kind.textContent=sourceKind(p).toUpperCase();opener.append(kind);
+      opener.addEventListener('click', () => showModal(index));card.append(opener);
+      const meta=document.createElement('div');meta.className='meta';
+      const date=document.createElement('span');date.className='date';date.textContent=dateDisplay(p.date);
+      const credit=document.createElement('span');credit.className='credit';credit.textContent='빵시온';
+      meta.append(date,credit);card.append(meta);
+      const title=document.createElement('p');title.className='caption';title.textContent=p.title || '곽연지';card.append(title);
+      frag.append(card);
+    });
+    gallery.append(frag);
+    shown+=next.length;
+    more.hidden = shown >= filtered.length;
+    more.textContent = `더 보기  ${shown} / ${filtered.length}`;
+    empty.hidden = filtered.length !== 0;
+    $('#total').textContent = `${filtered.length.toLocaleString('ko-KR')} PHOTOS`;
+  }
+  function applyFilters() {
+    const year = $('#year').value, q = $('#search').value.trim().toLowerCase();
+    filtered = photos.filter(p => (chosen === 'all' || sourceKind(p) === chosen)
+      && (year === 'all' || String(p.date || '').startsWith(year))
+      && (!q || [p.title, p.date, p.source, ...(p.tags||[])].join(' ').toLowerCase().includes(q)));
+    gallery.replaceChildren();shown=0;renderRows();
+  }
+  function showModal(index) {
+    if (index < 0 || index >= filtered.length) return;
+    if ($('#modal').hidden) returnFocus = document.activeElement;
+    const p = filtered[index];openIndex=index;
+    $('#full-img').src = imageURL(p.image);$('#full-img').alt = p.title || '곽연지 사진';
+    $('#detail-title').textContent = p.title || '곽연지';
+    $('#detail-info').textContent = `${dateDisplay(p.date)} · ${p.originalCreator ? `원본: ${p.originalCreator} · ` : ''}아카이브: 빵시온`;
+    const a=$('#source-link');const href = safeURL(p.sourceUrl);
+    a.hidden=!href; if (href) a.href=href; else a.removeAttribute('href');
+    $('#modal').hidden=false;document.body.style.overflow='hidden';$('#close').focus();
+  }
+  function hideModal() {$('#modal').hidden=true;document.body.style.overflow='';$('#full-img').removeAttribute('src');openIndex=-1;if(returnFocus?.focus) returnFocus.focus();}
+  filterButtons.forEach(btn => btn.addEventListener('click', () => {
+    chosen=btn.dataset.filter;
+    filterButtons.forEach(x => {x.classList.toggle('is-active',x===btn);x.setAttribute('aria-pressed',String(x===btn));});
+    applyFilters();
+  }));
+  $('#year').addEventListener('change', applyFilters);
+  $('#search').addEventListener('input', applyFilters);
+  more.addEventListener('click', renderRows);
+  $('#close').addEventListener('click', hideModal);
+  $('#prev').addEventListener('click', () => showModal((openIndex - 1 + filtered.length) % filtered.length));
+  $('#next').addEventListener('click', () => showModal((openIndex + 1) % filtered.length));
+  $('#modal').addEventListener('click', e => {if (e.target === $('#modal')) hideModal();});
+  document.addEventListener('keydown', e => {
+    if ($('#modal').hidden) return;
+    if (e.key === 'Escape') hideModal();
+    if (e.key === 'ArrowLeft' && filtered.length) showModal((openIndex - 1 + filtered.length) % filtered.length);
+    if (e.key === 'ArrowRight' && filtered.length) showModal((openIndex + 1) % filtered.length);
+    if (e.key === 'Tab') { const focusables=[...$('#modal').querySelectorAll('button,a[href]')].filter(x => !x.hidden);let i=focusables.indexOf(document.activeElement);e.preventDefault();focusables[(i+(e.shiftKey?-1:1)+focusables.length)%focusables.length].focus(); }
+  });
+  async function start() {
+    try {
+      const response = await fetch('./gallery_data.json', {cache:'no-store'});
+      if(!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      const all = Array.isArray(data) ? data : data.photos;
+      if (!Array.isArray(all)) throw new Error('JSON 형식을 확인해 주세요');
+      photos=all.filter(p => p && p.status === 'approved' && imageURL(p.image))
+        .sort((a,b) => String(b.date||'').localeCompare(String(a.date||'')) || String(a.id).localeCompare(String(b.id)));
+      const years=[...new Set(photos.map(p => String(p.date||'').slice(0,4)).filter(x=>/^\d{4}$/.test(x)))].sort().reverse();
+      years.forEach(y=>{const o=document.createElement('option');o.value=y;o.textContent=y;$('#year').append(o);});
+      applyFilters();
+    } catch(error){console.error(error);$('#total').textContent='LOAD ERROR';empty.hidden=false;empty.textContent='사진 데이터를 불러오지 못했습니다. gallery_data.json 경로를 확인해 주세요';}
+  }
+  start();
+})();
+</script>
+</body>
+</html>

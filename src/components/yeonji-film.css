@@ -48,3 +48,129 @@
 .yfilm-modal-actions button{min-height:32px;padding:0 12px;border:1px solid rgba(166,183,255,.44);background:transparent;color:#d4deff;font-size:11px}
 @media(max-width:900px){.yfilm-selects{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:640px){.yfilm-summary{grid-template-columns:repeat(3,minmax(0,1fr))}.yfilm-summary>div{border-bottom:1px solid var(--yfilm-border)}.yfilm-summary>div:nth-child(3){border-right:0}.yfilm-summary>div:nth-last-child(-n+2){border-bottom:0}.yfilm-selects{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+
+/* YEONJI FILM / mobile viewport-safe player · 2026-11-21 */
+/* Portal mounts this overlay at document.body, not inside an animated page. */
+.yfilm-modal-layer {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483000 !important;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: max(12px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) max(12px, env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px));
+  background: rgba(4, 6, 12, 0.96);
+}
+.yfilm-modal {
+  box-sizing: border-box;
+  flex: 0 1 auto;
+  width: min(100%, 1120px);
+  max-height: calc(100vh - 24px);
+  max-height: calc(100dvh - 24px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  margin: auto;
+  border-radius: 8px;
+  padding: clamp(12px, 2.4vw, 22px);
+}
+.yfilm-modal-top { min-width: 0; }
+.yfilm-modal-top > div { min-width: 0; }
+.yfilm-modal-top h2 { overflow-wrap: anywhere; }
+.yfilm-player {
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  max-width: 100%;
+  overflow: hidden;
+  background: #05070b;
+}
+.yfilm-player iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.yfilm-modal-layer button:focus-visible,
+.yfilm-modal-layer a:focus-visible {
+  outline: 2px solid #a6b7ff;
+  outline-offset: 3px;
+}
+@media (max-width: 700px) {
+  .yfilm-modal-layer {
+    padding: 0;
+    align-items: stretch;
+  }
+  .yfilm-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: safe center;
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: none;
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    padding: max(12px, env(safe-area-inset-top, 0px)) 0 max(12px, env(safe-area-inset-bottom, 0px));
+    border: 0;
+    border-radius: 0;
+    background: #0b0d14;
+  }
+  .yfilm-modal-top {
+    padding: 0 14px 12px;
+    gap: 10px;
+  }
+  .yfilm-modal-top h2 {
+    font-size: 15px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .yfilm-kicker { margin-bottom: 5px; }
+  .yfilm-close { width: 42px; height: 42px; flex: 0 0 42px; }
+  .yfilm-player { width: 100%; aspect-ratio: 16 / 9; flex: 0 0 auto; }
+  .yfilm-modal-bottom { padding: 14px 14px 0; }
+  .yfilm-player-note { padding: 0 14px; margin-bottom: 0; }
+}
+@media (orientation: landscape) and (max-height: 550px) {
+  .yfilm-modal-layer { padding: 0; }
+  .yfilm-modal {
+    width: 100%;
+    max-width: none;
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    border: 0;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: safe center;
+    align-items: center;
+    margin: 0;
+    padding: 6px max(12px, env(safe-area-inset-right, 0px)) 6px max(12px, env(safe-area-inset-left, 0px));
+  }
+  .yfilm-modal-top { width: 100%; padding: 0 0 5px; }
+  .yfilm-modal-top h2 { font-size: 12px; line-height: 1.2; max-height: 1.2em; overflow: hidden; }
+  .yfilm-kicker { display: none; }
+  .yfilm-close { height: 30px; width: 36px; flex: 0 0 36px; font-size: 23px; }
+  .yfilm-player {
+    width: min(100%, 160dvh);
+    height: auto;
+    max-height: calc(100dvh - 51px);
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+  .yfilm-player iframe { width: 100%; height: 100%; }
+  .yfilm-modal-bottom, .yfilm-player-note { display: none; }
+}

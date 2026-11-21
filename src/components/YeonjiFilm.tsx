@@ -1,3 +1,4 @@
+import { createPortal } from 'react-dom';
 import '../i18n/yeonji-film-messages';
 import { Trans, useI18n } from '../i18n/I18nContext';
 import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
@@ -87,14 +88,14 @@ function VideoDialog({video,onClose}:{video:Film;onClose:()=>void}) {
     document.addEventListener('keydown',onKeyDown);
     return ()=>{document.removeEventListener('keydown',onKeyDown);document.body.style.overflow=previousOverflow;previous?.focus();};
   },[onClose]);
-  return <div className="yfilm-modal-layer" onMouseDown={e=>{if(e.target===e.currentTarget)onClose();}}>
+  return createPortal(<div className="yfilm-modal-layer" onMouseDown={e=>{if(e.target===e.currentTarget)onClose();}}>
     <div className="yfilm-modal" ref={panel} role="dialog" aria-modal="true" aria-labelledby="yfilm-modal-title">
       <div className="yfilm-modal-top"><div><span className="yfilm-kicker">YEONJI FILM / {video.group}</span><h2 id="yfilm-modal-title">{t(video.title)}</h2></div><button ref={closeButton} className="yfilm-close" type="button" onClick={onClose} aria-label={t('닫기')}>×</button></div>
       <div className="yfilm-player"><iframe title={t(video.title)} src={filmEmbedUrl(video.youtubeId)} allow="autoplay; encrypted-media; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/></div>
       <div className="yfilm-modal-bottom"><span>{t(filmPublisherLabel(video.publisher))} · {readableFilmDate(video.publishedAt)} · {video.source}</span><div className="yfilm-modal-actions"><button type="button" onClick={share}>{t(copied?'링크 복사됨':'공유')}</button><a target="_blank" rel="noopener noreferrer" href={filmYoutubeUrl(video.youtubeId)}>{t('YouTube에서 보기')} <ArrowIcon width={15} height={15}/></a></div></div>
       <p className="yfilm-player-note">{t('재생되지 않는 영상은 YouTube에서 확인하세요')}</p>
     </div>
-  </div>;
+  </div>, document.body);
 }
 export default function YeonjiFilm(){
   const {t,formatNumber} = useI18n();

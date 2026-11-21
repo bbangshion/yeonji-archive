@@ -1,0 +1,160 @@
+name: Connect YEONJI PHOTO Gallery
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: yeonji-photo-gallery-build
+  cancel-in-progress: false
+
+jobs:
+  connect-gallery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Connect existing PHOTO and unified gallery
+        shell: bash
+        run: |
+          python3 - <<'PYCODE'
+          from pathlib import Path
+          import re
+          p=Path('src/components/PhotoArchive.tsx')
+          h=Path('public/gallery/index.html')
+          assert p.is_file() and h.is_file(), 'Missing PhotoArchive.tsx or public/gallery/index.html; check paths'
+          s=p.read_text(encoding='utf-8'); html=h.read_text(encoding='utf-8')
+          if 'YEONJI_GALLERY_LINK_V1' not in s:
+              pattern=r'(<div\b[^\n]*className="shion-photo-view-tabs"[^\n]*>\s*\n)([\s\S]*?)(\n\s*</div>)'
+              matches=list(re.finditer(pattern,s))
+              if len(matches)!=1 or 'setMode' not in matches[0][2]: raise SystemExit('PHOTO view tabs changed; no files written')
+              m=matches[0]
+              link='''
+                  {/* YEONJI_GALLERY_LINK_V1 */}
+                  <a href={`${import.meta.env.BASE_URL}gallery/`} style={{display:'inline-flex',alignItems:'center',justifyContent:'center',minHeight:39,padding:'0 12px',border:'1px solid var(--theme-line, #444)',borderRadius:3,fontSize:12,whiteSpace:'nowrap',color:'inherit',textDecoration:'none'}}>{language === 'en' ? 'Gallery' : language === 'ja' ? 'ギャラリー' : '전시관'} <span aria-hidden="true" style={{marginLeft:5}}>↗</span></a>'''
+              if not re.search(r'\bconst\s*\{[^}]*\blanguage\b[^}]*\}\s*=\s*useI18n\(',s): raise SystemExit('Missing language context; no files written')
+              s=s[:m.end(2)]+link+s[m.end(2):]
+          if 'YEONJI_UNIFIED_GALLERY_V1' not in html:
+              # Preserve the original viewer, filters, and styling. Only change the data loader.
+              start='  async function start() {'
+              end='  start();'
+              if html.count(start)!=1 or html.count(end)!=1 or html.index(start)>=html.index(end): raise SystemExit('Unexpected gallery loader; no files written')
+              new=r'''  // YEONJI_UNIFIED_GALLERY_V1
+            const label = x => typeof x === 'string' ? x.trim() : x && typeof x === 'object' ? (x.ko || x.en || x.ja || '') : '';
+            function absoluteImage(value, base) {
+              if (typeof value !== 'string' || !value.trim()) return '';
+              try { const u = new URL(value, base); return ['http:', 'https:'].includes(u.protocol) && !u.username && !u.password ? u.href : ''; } catch { return ''; }
+            }
+            function dateValue(x) {
+              if (typeof x !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(x)) return '';
+              const d = new Date(x+'T00:00:00Z');
+              return Number.isFinite(d.valueOf()) && d.toISOString().slice(0,10) === x ? x : '';
+            }
+            function normalizedRows(payload, gallerySource, pageURL = window.location.href) {
+              const rows = Array.isArray(payload) ? payload : payload?.photos;
+              if (!Array.isArray(rows)) throw new Error('Invalid photo list');
+              const base = new URL(gallerySource ? './' : '../', pageURL);
+              return rows.flatMap(p => {
+                if (!p || typeof p !== 'object' || (p.memberId && p.memberId !== 'S12') || (p.category && String(p.category).toLowerCase() !== 'photo') || (p.type && String(p.type).toLowerCase() !== 'photo')) return [];
+                const status = String(p.status || '').toLowerCase();
+                if (gallerySource ? status !== 'approved' : (status && !['approved','published','verified'].includes(status))) return [];
+                if (p.approved === false) return [];
+                const image = absoluteImage(p.image,base);
+                if (!image || /(?:^|\/)objekt(?:-collection)?\//i.test(new URL(image).pathname)) return [];
+                const sourceUrl = [p.sourceUrl,p.source].find(x => typeof x === 'string' && /^https?:\/\//i.test(x)) || '';
+                const date = dateValue(p.date);
+                const year = date ? date.slice(0,4) : /^20\d{2}$/.test(String(p.sourceYear || p.year || '')) ? String(p.sourceYear || p.year) : '';
+                const thumb = absoluteImage(p.thumb || p.thumbnail,base) || image;
+                return [{id:String(p.id || image), image, thumb, date, year, sourceUrl,
+                  source:[label(p.source),label(p.album),sourceUrl,Array.isArray(p.tags)?p.tags.join(' '):''].filter(Boolean).join(' '),
+                  originalCreator:label(p.originalCreator || p.author), title:label(p.title) || '곽연지',
+                  tags:Array.isArray(p.tags)?p.tags.filter(t=>typeof t==='string'):[],
+                  sha256:typeof p.sha256==='string' && /^[a-f0-9]{64}$/i.test(p.sha256)?p.sha256.toLowerCase():'',
+                  width:Number(p.width)||0,height:Number(p.height)||0}];
+              });
+            }
+            function mergeRows(rows) {
+              const byKey = new Map(), result=[];
+              const keyFor = p => { const u=new URL(p.image);u.hash='';return ['id:'+p.id,'url:'+u.href,...(p.sha256?['hash:'+p.sha256]:[])]; };
+              for (const p of rows) {
+                const keys=keyFor(p), old=keys.map(k=>byKey.get(k)).find(Boolean);
+                if (old) {
+                  for (const field of ['date','year','sourceUrl','originalCreator','sha256','width','height']) if (!old[field] && p[field]) old[field]=p[field];
+                  if (old.thumb === old.image && p.thumb !== p.image) old.thumb=p.thumb;
+                  old.tags=[...new Set([...old.tags,...p.tags])];
+                  keys.forEach(k=>byKey.set(k,old));
+                } else { result.push(p); keys.forEach(k=>byKey.set(k,p)); }
+              }
+              return result.sort((a,b)=>(b.date || b.year || '').localeCompare(a.date || a.year || '') || a.id.localeCompare(b.id));
+            }
+            async function start() {
+              const sources=[['./gallery_data.json',true],['../data/photos.json',false]];
+              const results=await Promise.allSettled(sources.map(async ([url,kind])=>{
+                const response=await fetch(url,{cache:'no-cache'});
+                if(!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
+                return normalizedRows(await response.json(),kind);
+              }));
+              try {
+                if(results.every(r=>r.status==='rejected')) throw new Error('Both photo sources failed');
+                photos=mergeRows(results.flatMap(r=>r.status==='fulfilled'?r.value:[]));
+                const years=[...new Set(photos.map(p=>p.year).filter(Boolean))].sort().reverse();
+                years.forEach(y=>{const o=document.createElement('option');o.value=y;o.textContent=y;$('#year').append(o);});
+                applyFilters();
+                if(results.some(r=>r.status==='rejected')) {
+                  const note=document.createElement('p');note.setAttribute('role','status');note.textContent='일부 사진 목록을 불러오지 못했습니다';note.style.color='var(--sub)';note.style.fontSize='12px';gallery.before(note);
+                }
+              } catch(error){console.error(error);$('#total').textContent='LOAD ERROR';empty.hidden=false;empty.textContent='사진 데이터를 불러오지 못했습니다';}
+            }
+          '''
+              html=html[:html.index(start)]+new+html[html.index(end):]
+              html=html.replace("String(p.date || '').startsWith(year)","p.year === year")
+              html=html.replace("dateDisplay(p.date)","(p.date ? dateDisplay(p.date) : p.year ? `${p.year} · 날짜 미확인` : '날짜 미확인')")
+              html=html.replace('class="back" href="../">← BACK TO ARCHIVE','class="back" href="../#photos">← PHOTO')
+              # Avoid a broken source button when a row has no original post link.
+              html=html.replace("const href = safeURL(p.sourceUrl);", "const href = p.sourceUrl ? safeURL(p.sourceUrl) : '';")
+              # Archive sources may use Korean labels as well as English.
+              html=html.replace('/official|modhaus|concept/', '/official|modhaus|concept|공식|콘셉트|화보/')
+              html=html.replace('/instagram|sns|twitter|x\\.com/', '/instagram|sns|twitter|x\\.com|인스타|트위터/')
+              html=html.replace('/stage|fancam|concert|music|broadcast/', '/stage|fancam|concert|music|broadcast|무대|직캠|공연/')
+              html=html.replace('if (/official|modhaus|concept|공식|콘셉트|화보/.test(s))', 'if (/official|modhaus|concept|공식|콘셉트|화보/.test(s))')
+              # More accessible label styling in standalone gallery.
+              if '.sr-only{' not in html and '.sr-only {' not in html:
+                  html=html.replace('</style>', '.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}\n</style>',1)
+          p.write_text(s,encoding='utf-8');h.write_text(html,encoding='utf-8')
+          print('PHOTO link and unified gallery ready; original JSON files untouched.')
+          PYCODE
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate gallery JavaScript and application build
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PYCODE'
+          from pathlib import Path
+          import re
+          html = Path('public/gallery/index.html').read_text(encoding='utf-8')
+          blocks = re.findall(r'<script>([\s\S]*?)</script>', html)
+          assert len(blocks) == 1, 'Unexpected standalone gallery script structure'
+          Path('/tmp/yeonji-gallery-check.js').write_text(blocks[0], encoding='utf-8')
+          PYCODE
+          node --check /tmp/yeonji-gallery-check.js
+          if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then npm ci --no-audit --no-fund; else npm install --no-package-lock --no-audit --no-fund; fi
+          npm run build
+      - name: Commit only the two interface files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- src/components/PhotoArchive.tsx public/gallery/index.html
+          if git diff --cached --quiet; then
+            echo 'Already applied; no changes'
+          else
+            git commit -m 'ui: connect YEONJI PHOTO and unified gallery'
+            git push
+          fi
+          echo '## PHOTO Gallery connected' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Existing PHOTO and gallery JSON are read together. No original photo records were modified. Deploy manually to publish.' >> "$GITHUB_STEP_SUMMARY"

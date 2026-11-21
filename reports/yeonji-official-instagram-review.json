@@ -8,6 +8,8 @@
     "incompleteCarousels": [],
     "apiIssue": null
   },
+  "mode": "discover",
+  "selectedCount": 0,
   "added": 0,
   "duplicates": 0,
   "publishErrors": [],

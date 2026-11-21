@@ -1,0 +1,296 @@
+name: YEONJI Gallery - Social photo expansion
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'publish = apply approved images; discover = API search and publish approved images'
+        type: choice
+        options: [publish, discover]
+        default: publish
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: yeonji-photo-gallery-build
+  cancel-in-progress: false
+jobs:
+  social-gallery:
+    if: github.ref == 'refs/heads/main' && github.repository == 'bbangshion/yeonji-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install image support
+        run: python -m pip install 'Pillow>=10.4,<13'
+      - name: Extend existing gallery data loader
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PATCH_PY'
+          FALLBACK='PCFkb2N0eXBlIGh0bWw+CjxodG1sIGxhbmc9ImtvIj4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLCB2aWV3cG9ydC1maXQ9Y292ZXIiPgo8bWV0YSBuYW1lPSJ0aGVtZS1jb2xvciIgY29udGVudD0iIzBDMEQxMSI+Cjx0aXRsZT5ZRU9OSkkgQVJDSElWRSDigJQgUEhPVE8gR0FMTEVSWTwvdGl0bGU+CjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSJ0cmlwbGVTIFMxMiDqs73sl7Dsp4Ag7IKs7KeEIOyVhOy5tOydtOu4jCDCtyDsl7Drj4TsmYAg64Kg7Kec67OE66GcIOunjOuCmOuKlCDqs73sl7Dsp4DsnZgg6riw66GdIj4KPHN0eWxlPgogIDpyb290IHsgY29sb3Itc2NoZW1lOmRhcms7IC0tYmc6IzBjMGQxMTsgLS1wYW5lbDojMTUxODIwOyAtLXN0cm9rZTojMzAzNDQ1OyAtLWluazojZjBmMmY4OyAtLXN1YjojOTI5OWFjOyAtLWJsdWU6IzdhOTFmNTsgfQogICogeyBib3gtc2l6aW5nOmJvcmRlci1ib3g7IH0KICBodG1sIHsgc2Nyb2xsLWJlaGF2aW9yOnNtb290aDsgfQogIGJvZHkgeyBtYXJnaW46MDsgYmFja2dyb3VuZDp2YXIoLS1iZyk7IGNvbG9yOnZhcigtLWluayk7IGZvbnQtZmFtaWx5OnN5c3RlbS11aSwtYXBwbGUtc3lzdGVtLCJQcmV0ZW5kYXJkIiwiTm90byBTYW5zIEtSIixzYW5zLXNlcmlmOyAtd2Via2l0LWZvbnQtc21vb3RoaW5nOmFudGlhbGlhc2VkOyB9CiAgYnV0dG9uLHNlbGVjdCxpbnB1dCB7IGZvbnQ6aW5oZXJpdDsgfQogIGJ1dHRvbixhIHsgLXdlYmtpdC10YXAtaGlnaGxpZ2h0LWNvbG9yOnRyYW5zcGFyZW50OyB9CiAgYSB7IGNvbG9yOmluaGVyaXQ7IH0KICBidXR0b246Zm9jdXMtdmlzaWJsZSxhOmZvY3VzLXZpc2libGUsc2VsZWN0OmZvY3VzLXZpc2libGUsaW5wdXQ6Zm9jdXMtdmlzaWJsZSB7IG91dGxpbmU6MnB4IHNvbGlkIHZhcigtLWJsdWUpO291dGxpbmUtb2Zmc2V0OjNweDsgfQogIC5zaGVsbCB7IHdpZHRoOm1pbigxMzQwcHgsY2FsYygxMDAlIC0gNDRweCkpOyBtYXJnaW46MCBhdXRvOyB9CiAgaGVhZGVyIHsgYm9yZGVyLWJvdHRvbToxcHggc29saWQgdmFyKC0tc3Ryb2tlKTsgYmFja2dyb3VuZDojMGUwZTE1OyB9CiAgLnRvcCB7IGhlaWdodDo4MHB4OyBkaXNwbGF5OmZsZXg7IGFsaWduLWl0ZW1zOmNlbnRlcjsganVzdGlmeS1jb250ZW50OnNwYWNlLWJldHdlZW47IGdhcDoxNnB4OyB9CiAgLmJyYW5kIHsgZGlzcGxheTpmbGV4OyBnYXA6MTNweDsgYWxpZ24taXRlbXM6Y2VudGVyOyB0ZXh0LWRlY29yYXRpb246bm9uZTsgZm9udC13ZWlnaHQ6NzAwOyBmb250LXNpemU6MTJweDsgbGV0dGVyLXNwYWNpbmc6LjE2ZW07IH0KICAuYnJhbmQtbWFyayB7IGZvbnQ6aXRhbGljIDI4cHgvMSBHZW9yZ2lhLHNlcmlmOyBib3JkZXI6MXB4IHNvbGlkIHZhcigtLWJsdWUpO2JvcmRlci1yYWRpdXM6NTAlO3dpZHRoOjQycHg7aGVpZ2h0OjQycHg7ZGlzcGxheTpncmlkO3BsYWNlLWl0ZW1zOmNlbnRlcjtjb2xvcjp2YXIoLS1ibHVlKTsgfQogIC5iYWNrIHsgY29sb3I6dmFyKC0tc3ViKTtmb250LXNpemU6MTJweDt0ZXh0LWRlY29yYXRpb246bm9uZTsgbGV0dGVyLXNwYWNpbmc6LjA4ZW07IHdoaXRlLXNwYWNlOm5vd3JhcDsgfQogIC5iYWNrOmhvdmVyIHsgY29sb3I6dmFyKC0taW5rKTsgfQogIC5oZXJvIHsgcGFkZGluZzo3MHB4IDAgMzlweDsgYm9yZGVyLWJvdHRvbToxcHggc29saWQgdmFyKC0tc3Ryb2tlKTsgfQogIC5leWVicm93IHsgZGlzcGxheTpibG9jazsgbGV0dGVyLXNwYWNpbmc6LjI1ZW07IGZvbnQtc2l6ZToxMXB4OyBmb250LXdlaWdodDo3MDA7IGNvbG9yOnZhcigtLWJsdWUpOyBtYXJnaW4tYm90dG9tOjIwcHg7IH0KICBoMSB7IG1hcmdpbjowOyBmb250LXNpemU6Y2xhbXAoNDZweCw4dncsMTA4cHgpOyBsaW5lLWhlaWdodDouOTU7bGV0dGVyLXNwYWNpbmc6LS4wNjVlbTtmb250LXdlaWdodDo2NDA7IH0KICBoMSBlbSB7IGNvbG9yOnZhcigtLWJsdWUpOyBmb250LXdlaWdodDo0MDA7IGZvbnQtZmFtaWx5Okdlb3JnaWEsc2VyaWY7IH0KICAuaW50cm8geyBtYXJnaW4tdG9wOjI4cHg7IGRpc3BsYXk6ZmxleDtnYXA6MjRweDthbGlnbi1pdGVtczplbmQ7IGp1c3RpZnktY29udGVudDpzcGFjZS1iZXR3ZWVuOyB9CiAgLmludHJvIHAgeyBjb2xvcjp2YXIoLS1zdWIpO21heC13aWR0aDo1NjBweDtsaW5lLWhlaWdodDoxLjc1O2ZvbnQtc2l6ZToxNHB4O21hcmdpbjowOyB9CiAgI3RvdGFsIHsgY29sb3I6dmFyKC0taW5rKTtmb250LXdlaWdodDo2NTA7d2hpdGUtc3BhY2U6bm93cmFwO2ZvbnQtc2l6ZToxMnB4O2xldHRlci1zcGFjaW5nOi4xMmVtOyB9CiAgLmZpbHRlcnMgeyBkaXNwbGF5OmZsZXg7IGZsZXgtd3JhcDp3cmFwO2dhcDoxMnB4O2p1c3RpZnktY29udGVudDpzcGFjZS1iZXR3ZWVuO2FsaWduLWl0ZW1zOmNlbnRlcjtwYWRkaW5nOjI3cHggMCAyMnB4OyB9CiAgLnRhYnMge2Rpc3BsYXk6ZmxleDtnYXA6NHB4O2FsaWduLWl0ZW1zOmNlbnRlcjtvdmVyZmxvdy14OmF1dG87bWF4LXdpZHRoOjEwMCU7c2Nyb2xsYmFyLXdpZHRoOm5vbmU7fQogIC50YWJzOjotd2Via2l0LXNjcm9sbGJhcntkaXNwbGF5Om5vbmU7fQogIC50YWIge2JvcmRlcjowO2JhY2tncm91bmQ6dHJhbnNwYXJlbnQ7Y29sb3I6dmFyKC0tc3ViKTtwYWRkaW5nOjEycHggMTNweDt3aGl0ZS1zcGFjZTpub3dyYXA7Y3Vyc29yOnBvaW50ZXI7Zm9udC1zaXplOjEycHg7bGV0dGVyLXNwYWNpbmc6LjA2ZW07fQogIC50YWIuaXMtYWN0aXZle2NvbG9yOnZhcigtLWluayk7YmFja2dyb3VuZDojMjUyYTNlO2JvcmRlci1yYWRpdXM6NHB4O30KICAuY29udHJvbHMge2Rpc3BsYXk6ZmxleDtmbGV4LXdyYXA6d3JhcDtnYXA6MTBweDthbGlnbi1pdGVtczpjZW50ZXI7fQogIHNlbGVjdCxpbnB1dFt0eXBlPSJzZWFyY2giXXtiYWNrZ3JvdW5kOiMxNDE2MjA7Y29sb3I6dmFyKC0taW5rKTtib3JkZXI6MXB4IHNvbGlkICMzODNkNGE7Ym9yZGVyLXJhZGl1czozcHg7bWluLWhlaWdodDo0MnB4O3BhZGRpbmc6MCAxMnB4O2ZvbnQtc2l6ZToxMnB4O30KICBpbnB1dFt0eXBlPSJzZWFyY2giXSB7d2lkdGg6bWluKDI0MHB4LDQzdncpO30KICBpbnB1dFt0eXBlPSJzZWFyY2giXTo6cGxhY2Vob2xkZXIge2NvbG9yOnZhcigtLXN1Yik7fQogIC5nYWxsZXJ5IHtjb2x1bW5zOjQgMjIwcHg7Y29sdW1uLWdhcDoxNnB4O21pbi1oZWlnaHQ6MTIwcHg7fQogIC5jYXJkIHtkaXNwbGF5OmJsb2NrO2JyZWFrLWluc2lkZTphdm9pZDttYXJnaW46MCAwIDIycHg7fQogIC5vcGVuLXBob3RvIHtib3JkZXI6MDsgYmFja2dyb3VuZDojMTkxYzI3OyBwYWRkaW5nOjA7IHdpZHRoOjEwMCU7IG92ZXJmbG93OmhpZGRlbjtjdXJzb3I6em9vbS1pbjtwb3NpdGlvbjpyZWxhdGl2ZTtkaXNwbGF5OmJsb2NrO2JvcmRlci1yYWRpdXM6MnB4OyB9CiAgLm9wZW4tcGhvdG8gaW1nIHt3aWR0aDoxMDAlO2hlaWdodDphdXRvO2Rpc3BsYXk6YmxvY2s7dHJhbnNpdGlvbjp0cmFuc2Zvcm0gLjM1cyBlYXNlO29iamVjdC1maXQ6Y292ZXI7YmFja2dyb3VuZDojMWIxZTJiO30KICAub3Blbi1waG90bzpob3ZlciBpbWcge3RyYW5zZm9ybTpzY2FsZSgxLjAxOCk7fQogIC5pbWFnZS1mYWlsZWQge2ZvbnQtc2l6ZToxMnB4O2NvbG9yOiNiYWMwZDA7bWluLWhlaWdodDoxODBweDtkaXNwbGF5OmdyaWQ7cGxhY2UtaXRlbXM6Y2VudGVyO3RleHQtYWxpZ246Y2VudGVyO3BhZGRpbmc6MjVweDt9CiAgLnRhZ3twb3NpdGlvbjphYnNvbHV0ZTtsZWZ0OjEwcHg7dG9wOjEwcHg7YmFja2dyb3VuZDpyZ2JhKDgsMTAsMTYsLjg1KTtib3JkZXI6MXB4IHNvbGlkIHJnYmEoMjU1LDI1NSwyNTUsLjE1KTtwYWRkaW5nOjVweCA3cHg7bGV0dGVyLXNwYWNpbmc6LjA4ZW07Zm9udC1zaXplOjEwcHg7Y29sb3I6I2U3ZWFmZjt9CiAgLm1ldGF7cGFkZGluZzoxMXB4IDAgMDtkaXNwbGF5OmZsZXg7YWxpZ24taXRlbXM6Y2VudGVyO2p1c3RpZnktY29udGVudDpzcGFjZS1iZXR3ZWVuO2dhcDoxMnB4O30KICAuZGF0ZSB7Zm9udC1zaXplOjExcHg7Y29sb3I6dmFyKC0tc3ViKTtmb250LXZhcmlhbnQtbnVtZXJpYzp0YWJ1bGFyLW51bXM7fQogIC5jcmVkaXR7Y29sb3I6dmFyKC0tYmx1ZSk7Zm9udC1zaXplOjEwcHg7d2hpdGUtc3BhY2U6bm93cmFwO2xldHRlci1zcGFjaW5nOi4wNmVtO30KICAuY2FwdGlvbiB7Zm9udC1zaXplOjEycHg7bGluZS1oZWlnaHQ6MS42O2NvbG9yOiNkNGQ2ZGY7bWFyZ2luOjdweCAwIDA7ZGlzcGxheTotd2Via2l0LWJveDstd2Via2l0LWJveC1vcmllbnQ6dmVydGljYWw7LXdlYmtpdC1saW5lLWNsYW1wOjI7b3ZlcmZsb3c6aGlkZGVuO292ZXJmbG93LXdyYXA6YW55d2hlcmU7fQogIC5lbXB0eSB7dGV4dC1hbGlnbjpjZW50ZXI7Y29sb3I6dmFyKC0tc3ViKTtmb250LXNpemU6MTRweDtwYWRkaW5nOjgwcHggMjBweDtib3JkZXI6MXB4IHNvbGlkIHZhcigtLXN0cm9rZSk7fQogIC5lbXB0eVtoaWRkZW5dLC5tb3JlW2hpZGRlbl0sLm1vZGFsW2hpZGRlbl17ZGlzcGxheTpub25lICFpbXBvcnRhbnQ7fQogIC5tb3JlIHttYXJnaW46NDVweCBhdXRvIDc1cHg7YmFja2dyb3VuZDp0cmFuc3BhcmVudDtjb2xvcjp2YXIoLS1pbmspO3BhZGRpbmc6MTZweCA0NXB4O2JvcmRlcjoxcHggc29saWQgIzQ4NGU2MDtkaXNwbGF5OmJsb2NrO2N1cnNvcjpwb2ludGVyO2ZvbnQtc2l6ZToxMnB4O2xldHRlci1zcGFjaW5nOi4xZW07fQogIGZvb3RlcnttYXJnaW4tdG9wOjUwcHg7Ym9yZGVyLXRvcDoxcHggc29saWQgdmFyKC0tc3Ryb2tlKTtwYWRkaW5nOjMwcHggMCA2MHB4O2Rpc3BsYXk6ZmxleDtqdXN0aWZ5LWNvbnRlbnQ6c3BhY2UtYmV0d2VlbjtmbGV4LXdyYXA6d3JhcDtnYXA6MTVweDtmb250LXNpemU6MTFweDtjb2xvcjp2YXIoLS1zdWIpO30KICAubW9kYWwge3Bvc2l0aW9uOmZpeGVkO2luc2V0OjA7ei1pbmRleDozMDAwO2Rpc3BsYXk6ZmxleDthbGlnbi1pdGVtczpjZW50ZXI7anVzdGlmeS1jb250ZW50OmNlbnRlcjtwYWRkaW5nOjE4cHg7YmFja2dyb3VuZDpyZ2JhKDAsMCwwLC45Myk7fQogIC5kaWFsb2cge2Rpc3BsYXk6Z3JpZDtncmlkLXRlbXBsYXRlLXJvd3M6YXV0byBtaW5tYXgoMCwxZnIpIGF1dG87d2lkdGg6bWluKDExODBweCwxMDAlKTtoZWlnaHQ6bWluKDkxZHZoLDk1MHB4KTtiYWNrZ3JvdW5kOiMwZTEwMTc7Ym9yZGVyOjFweCBzb2xpZCAjNDM0ODU3O30KICAuZGlhbG9nLWhlYWQge2Rpc3BsYXk6ZmxleDtqdXN0aWZ5LWNvbnRlbnQ6c3BhY2UtYmV0d2VlbjtnYXA6MTBweDthbGlnbi1pdGVtczpjZW50ZXI7cGFkZGluZzoxNHB4IDE5cHg7Ym9yZGVyLWJvdHRvbToxcHggc29saWQgIzMzMzg0Nzt9CiAgLmRpYWxvZy1oZWFkIGgye2ZvbnQtc2l6ZToxMnB4O21hcmdpbjowO2NvbG9yOnZhcigtLWJsdWUpO2xldHRlci1zcGFjaW5nOi4xNmVtO2ZvbnQtd2VpZ2h0OjY1MDt9CiAgLmljb24tYnRue2NvbG9yOnZhcigtLWluayk7YmFja2dyb3VuZDpub25lO2JvcmRlcjoxcHggc29saWQgIzQ0NGI1ZDtwYWRkaW5nOjhweCAxMnB4O21pbi13aWR0aDo0MHB4O2N1cnNvcjpwb2ludGVyO30KICAudmlldyB7ZGlzcGxheTpmbGV4O2FsaWduLWl0ZW1zOmNlbnRlcjtqdXN0aWZ5LWNvbnRlbnQ6Y2VudGVyO21pbi1oZWlnaHQ6MDtwb3NpdGlvbjpyZWxhdGl2ZTtiYWNrZ3JvdW5kOiMwNTA2MDg7b3ZlcmZsb3c6aGlkZGVuO30KICAjZnVsbC1pbWcge21heC13aWR0aDoxMDAlO21heC1oZWlnaHQ6MTAwJTt3aWR0aDphdXRvO2hlaWdodDphdXRvO29iamVjdC1maXQ6Y29udGFpbjt9CiAgLm5hdi1idG4ge3Bvc2l0aW9uOmFic29sdXRlO3RvcDo1MCU7dHJhbnNmb3JtOnRyYW5zbGF0ZVkoLTUwJSk7Ym9yZGVyOjA7YmFja2dyb3VuZDpyZ2JhKDE1LDE2LDIzLC43NSk7d2lkdGg6MzhweDtoZWlnaHQ6NTRweDtjdXJzb3I6cG9pbnRlcjtjb2xvcjojZmZmO2ZvbnQtc2l6ZToyMnB4O30KICAubmF2LWJ0bi5wcmV2IHtsZWZ0OjZweDt9Lm5hdi1idG4ubmV4dHtyaWdodDo2cHg7fQogIC5kZXRhaWwge2Rpc3BsYXk6ZmxleDtnYXA6MjJweDtqdXN0aWZ5LWNvbnRlbnQ6c3BhY2UtYmV0d2VlbjthbGlnbi1pdGVtczpjZW50ZXI7cGFkZGluZzoxNXB4IDE4cHg7ZmxleC13cmFwOndyYXA7fQogIC5kZXRhaWwgaDMge2ZvbnQtc2l6ZToxM3B4O2ZvbnQtd2VpZ2h0OjYwMDttYXJnaW46MCAwIDVweDtvdmVyZmxvdy13cmFwOmFueXdoZXJlO30KICAuZGV0YWlsIHAge2NvbG9yOnZhcigtLXN1Yik7Zm9udC1zaXplOjExcHg7bWFyZ2luOjA7bGluZS1oZWlnaHQ6MS42O30KICAjc291cmNlLWxpbmsge3RleHQtZGVjb3JhdGlvbjpub25lO2JhY2tncm91bmQ6IzIyMmI0ODtib3JkZXI6MXB4IHNvbGlkICM0ODU5ODg7cGFkZGluZzoxMnB4IDE2cHg7Ym9yZGVyLXJhZGl1czoycHg7d2hpdGUtc3BhY2U6bm93cmFwO2ZvbnQtc2l6ZToxMXB4O30KICAjc291cmNlLWxpbmtbaGlkZGVuXXtkaXNwbGF5Om5vbmU7fQogIEBtZWRpYShtYXgtd2lkdGg6NzUwcHgpey5zaGVsbHt3aWR0aDpjYWxjKDEwMCUgLSAzMHB4KX0udG9we2hlaWdodDo3MHB4fS5oZXJve3BhZGRpbmc6NTJweCAwIDI5cHh9LmludHJve2Rpc3BsYXk6YmxvY2t9LmludHJvICN0b3RhbHtkaXNwbGF5OmJsb2NrO21hcmdpbi10b3A6MjBweH0uZmlsdGVyc3twYWRkaW5nLXRvcDoxNHB4fS5jb250cm9sc3t3aWR0aDoxMDAlfS5jb250cm9scyBzZWxlY3R7ZmxleDowIDAgOTVweH0uY29udHJvbHMgaW5wdXR7ZmxleDoxO3dpZHRoOjEyMHB4O21pbi13aWR0aDowfS5nYWxsZXJ5e2NvbHVtbnM6Mjtjb2x1bW4tZ2FwOjExcHh9LmNhcmR7bWFyZ2luLWJvdHRvbToxNnB4fS5tZXRhe2Rpc3BsYXk6YmxvY2t9LmNyZWRpdHtkaXNwbGF5OmJsb2NrO21hcmdpbi10b3A6NHB4fS5kaWFsb2d7aGVpZ2h0Om1pbig5NWR2aCw5NTBweCl9LmRpYWxvZy1oZWFke3BhZGRpbmc6MTFweCAxMnB4fS5kZXRhaWx7cGFkZGluZzoxMXB4IDEycHh9LmNhcHRpb257Zm9udC1zaXplOjExcHh9fQogIEBtZWRpYShwcmVmZXJzLXJlZHVjZWQtbW90aW9uOnJlZHVjZSl7aHRtbHtzY3JvbGwtYmVoYXZpb3I6YXV0b30ub3Blbi1waG90byBpbWd7dHJhbnNpdGlvbjpub25lfX0KPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KPGhlYWRlcj48ZGl2IGNsYXNzPSJzaGVsbCB0b3AiPgogIDxhIGhyZWY9Ii4uLyIgY2xhc3M9ImJyYW5kIiBhcmlhLWxhYmVsPSJZRU9OSkkgQVJDSElWRSDtmYgiPjxzcGFuIGNsYXNzPSJicmFuZC1tYXJrIiBhcmlhLWhpZGRlbj0idHJ1ZSI+WTwvc3Bhbj5ZRU9OSkkgQVJDSElWRTwvYT4KICA8YSBjbGFzcz0iYmFjayIgaHJlZj0iLi4vIj7ihpAgQkFDSyBUTyBBUkNISVZFPC9hPgo8L2Rpdj48L2hlYWRlcj4KPG1haW4gY2xhc3M9InNoZWxsIj4KPHNlY3Rpb24gY2xhc3M9Imhlcm8iIGFyaWEtbGFiZWxsZWRieT0icGFnZS10aXRsZSI+CiAgPHNwYW4gY2xhc3M9ImV5ZWJyb3ciPlRSSVBMRVMgUzEyIMK3IFBIT1RPIENPTExFQ1RJT048L3NwYW4+CiAgPGgxIGlkPSJwYWdlLXRpdGxlIj5GcmFtZXMgb2Y8YnI+PGVtPlllb25KaTwvZW0+PC9oMT4KICA8ZGl2IGNsYXNzPSJpbnRybyI+PHA+7IKs7KeE7Jy866GcIOuCqOq4tCDqs73sl7Dsp4DsnZgg7Iuc6rCEPGJyPuqzteyLnSDsgqzsp4Tqs7wg7ZmV7J2465CcIOq4sOuhneydhCDrgqDsp5zrs4TroZwg66qo7JWY7Iq164uI64ukPC9wPjxzcGFuIGlkPSJ0b3RhbCIgYXJpYS1saXZlPSJwb2xpdGUiPkxPQURJTkfigKY8L3NwYW4+PC9kaXY+Cjwvc2VjdGlvbj4KPHNlY3Rpb24gYXJpYS1sYWJlbD0i7IKs7KeEIO2DkOyDiSI+CiAgPGRpdiBjbGFzcz0iZmlsdGVycyI+PGRpdiBjbGFzcz0idGFicyIgcm9sZT0iZ3JvdXAiIGFyaWEtbGFiZWw9IuyCrOynhCDsnKDtmJUiPgogICAgPGJ1dHRvbiBjbGFzcz0idGFiIGlzLWFjdGl2ZSIgZGF0YS1maWx0ZXI9ImFsbCIgdHlwZT0iYnV0dG9uIiBhcmlhLXByZXNzZWQ9InRydWUiPkFMTDwvYnV0dG9uPgogICAgPGJ1dHRvbiBjbGFzcz0idGFiIiBkYXRhLWZpbHRlcj0ib2ZmaWNpYWwiIHR5cGU9ImJ1dHRvbiIgYXJpYS1wcmVzc2VkPSJmYWxzZSI+T0ZGSUNJQUw8L2J1dHRvbj4KICAgIDxidXR0b24gY2xhc3M9InRhYiIgZGF0YS1maWx0ZXI9InNucyIgdHlwZT0iYnV0dG9uIiBhcmlhLXByZXNzZWQ9ImZhbHNlIj5TTlM8L2J1dHRvbj4KICAgIDxidXR0b24gY2xhc3M9InRhYiIgZGF0YS1maWx0ZXI9InN0YWdlIiB0eXBlPSJidXR0b24iIGFyaWEtcHJlc3NlZD0iZmFsc2UiPlNUQUdFPC9idXR0b24+CiAgICA8YnV0dG9uIGNsYXNzPSJ0YWIiIGRhdGEtZmlsdGVyPSJvdGhlciIgdHlwZT0iYnV0dG9uIiBhcmlhLXByZXNzZWQ9ImZhbHNlIj5PVEhFUjwvYnV0dG9uPgogIDwvZGl2PgogIDxkaXYgY2xhc3M9ImNvbnRyb2xzIj48bGFiZWwgZm9yPSJ5ZWFyIiBjbGFzcz0ic3Itb25seSI+7Jew64+EPC9sYWJlbD48c2VsZWN0IGlkPSJ5ZWFyIj48b3B0aW9uIHZhbHVlPSJhbGwiPkFMTCBZRUFSUzwvb3B0aW9uPjwvc2VsZWN0PgogIDxsYWJlbCBmb3I9InNlYXJjaCIgY2xhc3M9InNyLW9ubHkiPuqygOyDiTwvbGFiZWw+PGlucHV0IGlkPSJzZWFyY2giIHR5cGU9InNlYXJjaCIgcGxhY2Vob2xkZXI9IuuCoOynnMK37YKk7JuM65OcIOqygOyDiSIgYXV0b2NvbXBsZXRlPSJvZmYiPjwvZGl2PjwvZGl2PgogIDxkaXYgaWQ9ImdhbGxlcnkiIGNsYXNzPSJnYWxsZXJ5IiBhcmlhLWxpdmU9InBvbGl0ZSI+PC9kaXY+CiAgPHAgaWQ9ImVtcHR5IiBjbGFzcz0iZW1wdHkiIGhpZGRlbj7tkZzsi5ztlaAg7IKs7KeE7J20IOyXhuyKteuLiOuLpC4g65Ox66GdIOyDge2DnOyZgCDstpzsspjrpbwg7ZmV7J247ZW0IOyjvOyEuOyalDwvcD4KICA8YnV0dG9uIGlkPSJtb3JlIiBjbGFzcz0ibW9yZSIgdHlwZT0iYnV0dG9uIiBoaWRkZW4+642UIOuztOq4sDwvYnV0dG9uPgo8L3NlY3Rpb24+CjwvbWFpbj4KPGZvb3RlciBjbGFzcz0ic2hlbGwiPjxzcGFuPllFT05KSSBBUkNISVZFIMK3IEZBTiBDVVJBVEVEPC9zcGFuPjxzcGFuPkNSRUFURUQgQlkgQGJiYW5nc2hpb24gwrcg7JuQ67O4IOyCrOynhOydmCDqtozrpqzripQg6rCBIOy2nOyymOyXkCDsnojsirXri4jri6Q8L3NwYW4+PC9mb290ZXI+CjxkaXYgY2xhc3M9Im1vZGFsIiBpZD0ibW9kYWwiIHJvbGU9ImRpYWxvZyIgYXJpYS1tb2RhbD0idHJ1ZSIgYXJpYS1sYWJlbGxlZGJ5PSJkZXRhaWwtdGl0bGUiIGhpZGRlbj4KICA8ZGl2IGNsYXNzPSJkaWFsb2ciPgogICAgPGRpdiBjbGFzcz0iZGlhbG9nLWhlYWQiPjxoMj5ZRU9OSkkgLyBQSE9UTyBWSUVXRVI8L2gyPjxidXR0b24gdHlwZT0iYnV0dG9uIiBjbGFzcz0iaWNvbi1idG4iIGlkPSJjbG9zZSIgYXJpYS1sYWJlbD0i64ur6riwIj7inJU8L2J1dHRvbj48L2Rpdj4KICAgIDxkaXYgY2xhc3M9InZpZXciPjxidXR0b24gdHlwZT0iYnV0dG9uIiBjbGFzcz0ibmF2LWJ0biBwcmV2IiBpZD0icHJldiIgYXJpYS1sYWJlbD0i7J207KCEIOyCrOynhCI+4oC5PC9idXR0b24+PGltZyBpZD0iZnVsbC1pbWciIGFsdD0iIj48YnV0dG9uIHR5cGU9ImJ1dHRvbiIgY2xhc3M9Im5hdi1idG4gbmV4dCIgaWQ9Im5leHQiIGFyaWEtbGFiZWw9IuuLpOydjCDsgqzsp4QiPuKAujwvYnV0dG9uPjwvZGl2PgogICAgPGRpdiBjbGFzcz0iZGV0YWlsIj48ZGl2PjxoMyBpZD0iZGV0YWlsLXRpdGxlIj7qs73sl7Dsp4A8L2gzPjxwIGlkPSJkZXRhaWwtaW5mbyI+PC9wPjwvZGl2PjxhIGlkPSJzb3VyY2UtbGluayIgaHJlZj0iIyIgcmVsPSJub29wZW5lciBub3JlZmVycmVyIiB0YXJnZXQ9Il9ibGFuayI+7JuQ67O4IOqyjOyLnOusvCDihpc8L2E+PC9kaXY+CiAgPC9kaXY+CjwvZGl2Pgo8c2NyaXB0PgooKCkgPT4gewogICd1c2Ugc3RyaWN0JzsKICBjb25zdCAkID0gcyA9PiBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKHMpOwogIGNvbnN0IGdhbGxlcnkgPSAkKCcjZ2FsbGVyeScpLCBlbXB0eSA9ICQoJyNlbXB0eScpLCBtb3JlID0gJCgnI21vcmUnKTsKICBjb25zdCBmaWx0ZXJCdXR0b25zID0gWy4uLmRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJy50YWInKV07CiAgbGV0IHBob3RvcyA9IFtdLCBmaWx0ZXJlZCA9IFtdLCBzaG93biA9IDAsIGNob3NlbiA9ICdhbGwnLCBvcGVuSW5kZXggPSAtMSwgcmV0dXJuRm9jdXMgPSBudWxsOwogIGNvbnN0IFBBR0UgPSA0MjsKICBjb25zdCBkYXRlRGlzcGxheSA9IHggPT4gL15cZHs0fS1cZHsyfS1cZHsyfSQvLnRlc3QoeCB8fCAnJykgPyB4LnJlcGxhY2UoLy0vZywgJy4nKSA6ICfrgqDsp5wg66+47ZmV7J24JzsKICBjb25zdCBzYWZlVVJMID0geCA9PiB7IHRyeSB7Y29uc3QgdXJsID0gbmV3IFVSTCh4LCB3aW5kb3cubG9jYXRpb24uaHJlZik7IHJldHVybiBbJ2h0dHA6JywnaHR0cHM6J10uaW5jbHVkZXModXJsLnByb3RvY29sKSA/IHVybC5ocmVmIDogJyc7IH0gY2F0Y2gge3JldHVybiAnJzt9IH07CiAgY29uc3QgaW1hZ2VVUkwgPSB4ID0+IHR5cGVvZiB4ID09PSAnc3RyaW5nJyAmJiAhL15ccyooZGF0YTp8amF2YXNjcmlwdDp8XC9cLykvaS50ZXN0KHgpID8gc2FmZVVSTCh4KSA6ICcnOwogIGNvbnN0IHNvdXJjZUtpbmQgPSBwID0+IHsKICAgIGNvbnN0IHMgPSBTdHJpbmcocC5zb3VyY2UgfHwgJycpLnRvTG93ZXJDYXNlKCk7CiAgICBpZiAoL29mZmljaWFsfG1vZGhhdXN8Y29uY2VwdC8udGVzdChzKSkgcmV0dXJuICdvZmZpY2lhbCc7CiAgICBpZiAoL2luc3RhZ3JhbXxzbnN8dHdpdHRlcnx4XC5jb20vLnRlc3QocykpIHJldHVybiAnc25zJzsKICAgIGlmICgvc3RhZ2V8ZmFuY2FtfGNvbmNlcnR8bXVzaWN8YnJvYWRjYXN0Ly50ZXN0KHMpKSByZXR1cm4gJ3N0YWdlJzsKICAgIHJldHVybiAnb3RoZXInOwogIH07CiAgZnVuY3Rpb24gcmVuZGVyUm93cygpIHsKICAgIGNvbnN0IG5leHQgPSBmaWx0ZXJlZC5zbGljZShzaG93biwgc2hvd24gKyBQQUdFKTsKICAgIGNvbnN0IGZyYWcgPSBkb2N1bWVudC5jcmVhdGVEb2N1bWVudEZyYWdtZW50KCk7CiAgICBuZXh0LmZvckVhY2goKHAsIG9mZnNldCkgPT4gewogICAgICBjb25zdCBpbmRleCA9IHNob3duICsgb2Zmc2V0OwogICAgICBjb25zdCBjYXJkID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnYXJ0aWNsZScpOyBjYXJkLmNsYXNzTmFtZSA9ICdjYXJkJzsKICAgICAgY29uc3Qgb3BlbmVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnYnV0dG9uJyk7IG9wZW5lci5jbGFzc05hbWU9J29wZW4tcGhvdG8nOyBvcGVuZXIudHlwZT0nYnV0dG9uJzsKICAgICAgb3BlbmVyLnNldEF0dHJpYnV0ZSgnYXJpYS1sYWJlbCcsIGAke3AudGl0bGUgfHwgJ+qzveyXsOyngCd9IOyCrOynhCDtmZXrjIBgKTsKICAgICAgY29uc3QgaW1nID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnaW1nJyk7IGltZy5zcmMgPSBpbWFnZVVSTChwLnRodW1iIHx8IHAuaW1hZ2UpOyBpbWcuYWx0ID0gcC50aXRsZSB8fCAn6rO97Jew7KeAIOyCrOynhCc7CiAgICAgIGltZy5sb2FkaW5nPSdsYXp5JzsgaW1nLmRlY29kaW5nPSdhc3luYyc7CiAgICAgIGlmIChOdW1iZXIuaXNGaW5pdGUocC53aWR0aCkgJiYgTnVtYmVyLmlzRmluaXRlKHAuaGVpZ2h0KSAmJiBwLndpZHRoID4gMCAmJiBwLmhlaWdodCA+IDApIHsKICAgICAgICBpbWcud2lkdGggPSBwLndpZHRoO2ltZy5oZWlnaHQgPSBwLmhlaWdodDsKICAgICAgfQogICAgICBpbWcuYWRkRXZlbnRMaXN0ZW5lcignZXJyb3InLCAoKSA9PiB7aW1nLnJlbW92ZSgpOyBjb25zdCBub3RlPWRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO25vdGUuY2xhc3NOYW1lPSdpbWFnZS1mYWlsZWQnO25vdGUudGV4dENvbnRlbnQ9J+ydtOuvuOyngOulvCDrtojrn6zsmKTsp4Ag66q77ZaI7Iq164uI64ukJztvcGVuZXIuYXBwZW5kKG5vdGUpO30se29uY2U6dHJ1ZX0pOwogICAgICBvcGVuZXIuYXBwZW5kKGltZyk7CiAgICAgIGNvbnN0IGtpbmQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzcGFuJyk7a2luZC5jbGFzc05hbWU9J3RhZyc7a2luZC50ZXh0Q29udGVudD1zb3VyY2VLaW5kKHApLnRvVXBwZXJDYXNlKCk7b3BlbmVyLmFwcGVuZChraW5kKTsKICAgICAgb3BlbmVyLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgKCkgPT4gc2hvd01vZGFsKGluZGV4KSk7Y2FyZC5hcHBlbmQob3BlbmVyKTsKICAgICAgY29uc3QgbWV0YT1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTttZXRhLmNsYXNzTmFtZT0nbWV0YSc7CiAgICAgIGNvbnN0IGRhdGU9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc3BhbicpO2RhdGUuY2xhc3NOYW1lPSdkYXRlJztkYXRlLnRleHRDb250ZW50PWRhdGVEaXNwbGF5KHAuZGF0ZSk7CiAgICAgIGNvbnN0IGNyZWRpdD1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzcGFuJyk7Y3JlZGl0LmNsYXNzTmFtZT0nY3JlZGl0JztjcmVkaXQudGV4dENvbnRlbnQ9J+u5teyLnOyYqCc7CiAgICAgIG1ldGEuYXBwZW5kKGRhdGUsY3JlZGl0KTtjYXJkLmFwcGVuZChtZXRhKTsKICAgICAgY29uc3QgdGl0bGU9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgncCcpO3RpdGxlLmNsYXNzTmFtZT0nY2FwdGlvbic7dGl0bGUudGV4dENvbnRlbnQ9cC50aXRsZSB8fCAn6rO97Jew7KeAJztjYXJkLmFwcGVuZCh0aXRsZSk7CiAgICAgIGZyYWcuYXBwZW5kKGNhcmQpOwogICAgfSk7CiAgICBnYWxsZXJ5LmFwcGVuZChmcmFnKTsKICAgIHNob3duKz1uZXh0Lmxlbmd0aDsKICAgIG1vcmUuaGlkZGVuID0gc2hvd24gPj0gZmlsdGVyZWQubGVuZ3RoOwogICAgbW9yZS50ZXh0Q29udGVudCA9IGDrjZQg67O06riwICAke3Nob3dufSAvICR7ZmlsdGVyZWQubGVuZ3RofWA7CiAgICBlbXB0eS5oaWRkZW4gPSBmaWx0ZXJlZC5sZW5ndGggIT09IDA7CiAgICAkKCcjdG90YWwnKS50ZXh0Q29udGVudCA9IGAke2ZpbHRlcmVkLmxlbmd0aC50b0xvY2FsZVN0cmluZygna28tS1InKX0gUEhPVE9TYDsKICB9CiAgZnVuY3Rpb24gYXBwbHlGaWx0ZXJzKCkgewogICAgY29uc3QgeWVhciA9ICQoJyN5ZWFyJykudmFsdWUsIHEgPSAkKCcjc2VhcmNoJykudmFsdWUudHJpbSgpLnRvTG93ZXJDYXNlKCk7CiAgICBmaWx0ZXJlZCA9IHBob3Rvcy5maWx0ZXIocCA9PiAoY2hvc2VuID09PSAnYWxsJyB8fCBzb3VyY2VLaW5kKHApID09PSBjaG9zZW4pCiAgICAgICYmICh5ZWFyID09PSAnYWxsJyB8fCBTdHJpbmcocC5kYXRlIHx8ICcnKS5zdGFydHNXaXRoKHllYXIpKQogICAgICAmJiAoIXEgfHwgW3AudGl0bGUsIHAuZGF0ZSwgcC5zb3VyY2UsIC4uLihwLnRhZ3N8fFtdKV0uam9pbignICcpLnRvTG93ZXJDYXNlKCkuaW5jbHVkZXMocSkpKTsKICAgIGdhbGxlcnkucmVwbGFjZUNoaWxkcmVuKCk7c2hvd249MDtyZW5kZXJSb3dzKCk7CiAgfQogIGZ1bmN0aW9uIHNob3dNb2RhbChpbmRleCkgewogICAgaWYgKGluZGV4IDwgMCB8fCBpbmRleCA+PSBmaWx0ZXJlZC5sZW5ndGgpIHJldHVybjsKICAgIGlmICgkKCcjbW9kYWwnKS5oaWRkZW4pIHJldHVybkZvY3VzID0gZG9jdW1lbnQuYWN0aXZlRWxlbWVudDsKICAgIGNvbnN0IHAgPSBmaWx0ZXJlZFtpbmRleF07b3BlbkluZGV4PWluZGV4OwogICAgJCgnI2Z1bGwtaW1nJykuc3JjID0gaW1hZ2VVUkwocC5pbWFnZSk7JCgnI2Z1bGwtaW1nJykuYWx0ID0gcC50aXRsZSB8fCAn6rO97Jew7KeAIOyCrOynhCc7CiAgICAkKCcjZGV0YWlsLXRpdGxlJykudGV4dENvbnRlbnQgPSBwLnRpdGxlIHx8ICfqs73sl7Dsp4AnOwogICAgJCgnI2RldGFpbC1pbmZvJykudGV4dENvbnRlbnQgPSBgJHtkYXRlRGlzcGxheShwLmRhdGUpfSDCtyAke3Aub3JpZ2luYWxDcmVhdG9yID8gYOybkOuzuDogJHtwLm9yaWdpbmFsQ3JlYXRvcn0gwrcgYCA6ICcnfeyVhOy5tOydtOu4jDog67m17Iuc7JioYDsKICAgIGNvbnN0IGE9JCgnI3NvdXJjZS1saW5rJyk7Y29uc3QgaHJlZiA9IHNhZmVVUkwocC5zb3VyY2VVcmwpOwogICAgYS5oaWRkZW49IWhyZWY7IGlmIChocmVmKSBhLmhyZWY9aHJlZjsgZWxzZSBhLnJlbW92ZUF0dHJpYnV0ZSgnaHJlZicpOwogICAgJCgnI21vZGFsJykuaGlkZGVuPWZhbHNlO2RvY3VtZW50LmJvZHkuc3R5bGUub3ZlcmZsb3c9J2hpZGRlbic7JCgnI2Nsb3NlJykuZm9jdXMoKTsKICB9CiAgZnVuY3Rpb24gaGlkZU1vZGFsKCkgeyQoJyNtb2RhbCcpLmhpZGRlbj10cnVlO2RvY3VtZW50LmJvZHkuc3R5bGUub3ZlcmZsb3c9Jyc7JCgnI2Z1bGwtaW1nJykucmVtb3ZlQXR0cmlidXRlKCdzcmMnKTtvcGVuSW5kZXg9LTE7aWYocmV0dXJuRm9jdXM/LmZvY3VzKSByZXR1cm5Gb2N1cy5mb2N1cygpO30KICBmaWx0ZXJCdXR0b25zLmZvckVhY2goYnRuID0+IGJ0bi5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsICgpID0+IHsKICAgIGNob3Nlbj1idG4uZGF0YXNldC5maWx0ZXI7CiAgICBmaWx0ZXJCdXR0b25zLmZvckVhY2goeCA9PiB7eC5jbGFzc0xpc3QudG9nZ2xlKCdpcy1hY3RpdmUnLHg9PT1idG4pO3guc2V0QXR0cmlidXRlKCdhcmlhLXByZXNzZWQnLFN0cmluZyh4PT09YnRuKSk7fSk7CiAgICBhcHBseUZpbHRlcnMoKTsKICB9KSk7CiAgJCgnI3llYXInKS5hZGRFdmVudExpc3RlbmVyKCdjaGFuZ2UnLCBhcHBseUZpbHRlcnMpOwogICQoJyNzZWFyY2gnKS5hZGRFdmVudExpc3RlbmVyKCdpbnB1dCcsIGFwcGx5RmlsdGVycyk7CiAgbW9yZS5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsIHJlbmRlclJvd3MpOwogICQoJyNjbG9zZScpLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgaGlkZU1vZGFsKTsKICAkKCcjcHJldicpLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgKCkgPT4gc2hvd01vZGFsKChvcGVuSW5kZXggLSAxICsgZmlsdGVyZWQubGVuZ3RoKSAlIGZpbHRlcmVkLmxlbmd0aCkpOwogICQoJyNuZXh0JykuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCAoKSA9PiBzaG93TW9kYWwoKG9wZW5JbmRleCArIDEpICUgZmlsdGVyZWQubGVuZ3RoKSk7CiAgJCgnI21vZGFsJykuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCBlID0+IHtpZiAoZS50YXJnZXQgPT09ICQoJyNtb2RhbCcpKSBoaWRlTW9kYWwoKTt9KTsKICBkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCdrZXlkb3duJywgZSA9PiB7CiAgICBpZiAoJCgnI21vZGFsJykuaGlkZGVuKSByZXR1cm47CiAgICBpZiAoZS5rZXkgPT09ICdFc2NhcGUnKSBoaWRlTW9kYWwoKTsKICAgIGlmIChlLmtleSA9PT0gJ0Fycm93TGVmdCcgJiYgZmlsdGVyZWQubGVuZ3RoKSBzaG93TW9kYWwoKG9wZW5JbmRleCAtIDEgKyBmaWx0ZXJlZC5sZW5ndGgpICUgZmlsdGVyZWQubGVuZ3RoKTsKICAgIGlmIChlLmtleSA9PT0gJ0Fycm93UmlnaHQnICYmIGZpbHRlcmVkLmxlbmd0aCkgc2hvd01vZGFsKChvcGVuSW5kZXggKyAxKSAlIGZpbHRlcmVkLmxlbmd0aCk7CiAgICBpZiAoZS5rZXkgPT09ICdUYWInKSB7IGNvbnN0IGZvY3VzYWJsZXM9Wy4uLiQoJyNtb2RhbCcpLnF1ZXJ5U2VsZWN0b3JBbGwoJ2J1dHRvbixhW2hyZWZdJyldLmZpbHRlcih4ID0+ICF4LmhpZGRlbik7bGV0IGk9Zm9jdXNhYmxlcy5pbmRleE9mKGRvY3VtZW50LmFjdGl2ZUVsZW1lbnQpO2UucHJldmVudERlZmF1bHQoKTtmb2N1c2FibGVzWyhpKyhlLnNoaWZ0S2V5Py0xOjEpK2ZvY3VzYWJsZXMubGVuZ3RoKSVmb2N1c2FibGVzLmxlbmd0aF0uZm9jdXMoKTsgfQogIH0pOwogIGFzeW5jIGZ1bmN0aW9uIHN0YXJ0KCkgewogICAgdHJ5IHsKICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaCgnLi9nYWxsZXJ5X2RhdGEuanNvbicsIHtjYWNoZTonbm8tc3RvcmUnfSk7CiAgICAgIGlmKCFyZXNwb25zZS5vaykgdGhyb3cgbmV3IEVycm9yKGBIVFRQICR7cmVzcG9uc2Uuc3RhdHVzfWApOwogICAgICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuanNvbigpOwogICAgICBjb25zdCBhbGwgPSBBcnJheS5pc0FycmF5KGRhdGEpID8gZGF0YSA6IGRhdGEucGhvdG9zOwogICAgICBpZiAoIUFycmF5LmlzQXJyYXkoYWxsKSkgdGhyb3cgbmV3IEVycm9yKCdKU09OIO2YleyLneydhCDtmZXsnbjtlbQg7KO87IS47JqUJyk7CiAgICAgIHBob3Rvcz1hbGwuZmlsdGVyKHAgPT4gcCAmJiBwLnN0YXR1cyA9PT0gJ2FwcHJvdmVkJyAmJiBpbWFnZVVSTChwLmltYWdlKSkKICAgICAgICAuc29ydCgoYSxiKSA9PiBTdHJpbmcoYi5kYXRlfHwnJykubG9jYWxlQ29tcGFyZShTdHJpbmcoYS5kYXRlfHwnJykpIHx8IFN0cmluZyhhLmlkKS5sb2NhbGVDb21wYXJlKFN0cmluZyhiLmlkKSkpOwogICAgICBjb25zdCB5ZWFycz1bLi4ubmV3IFNldChwaG90b3MubWFwKHAgPT4gU3RyaW5nKHAuZGF0ZXx8JycpLnNsaWNlKDAsNCkpLmZpbHRlcih4PT4vXlxkezR9JC8udGVzdCh4KSkpXS5zb3J0KCkucmV2ZXJzZSgpOwogICAgICB5ZWFycy5mb3JFYWNoKHk9Pntjb25zdCBvPWRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ29wdGlvbicpO28udmFsdWU9eTtvLnRleHRDb250ZW50PXk7JCgnI3llYXInKS5hcHBlbmQobyk7fSk7CiAgICAgIGFwcGx5RmlsdGVycygpOwogICAgfSBjYXRjaChlcnJvcil7Y29uc29sZS5lcnJvcihlcnJvcik7JCgnI3RvdGFsJykudGV4dENvbnRlbnQ9J0xPQUQgRVJST1InO2VtcHR5LmhpZGRlbj1mYWxzZTtlbXB0eS50ZXh0Q29udGVudD0n7IKs7KeEIOuNsOydtO2EsOulvCDrtojrn6zsmKTsp4Ag66q77ZaI7Iq164uI64ukLiBnYWxsZXJ5X2RhdGEuanNvbiDqsr3roZzrpbwg7ZmV7J247ZW0IOyjvOyEuOyalCc7fQogIH0KICBzdGFydCgpOwp9KSgpOwo8L3NjcmlwdD4KPC9ib2R5Pgo8L2h0bWw+Cg=='
+          LOADER="  // YEONJI_UNIFIED_GALLERY_V2\n  const label = x => typeof x === 'string' ? x.trim() : x && typeof x === 'object' ? (x.ko || x.en || x.ja || '') : '';\n  function absoluteImage(value, base) {\n    if (typeof value !== 'string' || !value.trim()) return '';\n    try { const u=new URL(value,base);return ['http:','https:'].includes(u.protocol)&&!u.username&&!u.password?u.href:''; } catch {return '';}\n  }\n  function normalizedRows(payload,kind,pageURL=location.href) {\n    const rows=Array.isArray(payload)?payload:payload?.photos;\n    if(!Array.isArray(rows))throw new Error('Invalid photo list');\n    const local=kind==='gallery'||kind==='social';const base=new URL(local?'./':'../',pageURL);\n    return rows.flatMap(p=>{\n      if(!p||typeof p!=='object'||(p.memberId&&p.memberId!=='S12')||(p.category&&String(p.category).toLowerCase()!=='photo')||(p.type&&String(p.type).toLowerCase()!=='photo'))return [];\n      const status=String(p.status||p.reviewStatus||'').toLowerCase();\n      if(p.approved===false|| (local&&status!=='approved') || (!local&&status&&!['approved','published','verified'].includes(status)))return [];\n      const image=absoluteImage(p.image||p.imageUrl||p.src,base);if(!image||/\\/(?:objekt|objekt-collection)\\//i.test(new URL(image).pathname))return [];\n      const day=typeof p.date==='string'&&/^\\d{4}-\\d{2}-\\d{2}$/.test(p.date)?p.date:'';\n      const year=day?day.slice(0,4):/^20\\d{2}$/.test(String(p.sourceYear||p.year||''))?String(p.sourceYear||p.year):'';\n      const sourceUrl=[p.sourceUrl,p.permalink,p.source].find(x=>typeof x==='string'&&/^https?:\\/\\//i.test(x))||'';\n      return [{id:String(p.id||image),image,thumb:absoluteImage(p.thumb||p.thumbnail||p.thumbnailUrl,base)||image,date:day,year,sourceUrl,source:[label(p.source),label(p.album),p.sourceSection,sourceUrl,Array.isArray(p.tags)?p.tags.join(' '):''].filter(Boolean).join(' '),originalCreator:label(p.originalCreator||p.originalAuthor||p.author),title:label(p.title)||'곽연지',tags:Array.isArray(p.tags)?p.tags.filter(t=>typeof t==='string'):[],sha256:typeof p.sha256==='string'&&/^[a-f0-9]{64}$/i.test(p.sha256)?p.sha256.toLowerCase():'',width:Number(p.width)||0,height:Number(p.height)||0}];\n    });\n  }\n  function mergeRows(rows) {\n    const result=[], keys=new Map();\n    const photoURL = s => {const u=new URL(s);u.hash='';if(/(?:^|\\.)wikia\\.nocookie\\.net$/.test(u.hostname)){u.pathname=u.pathname.replace(/\\/revision\\/.*$/,'');u.search='';}return u.href;};\n    for(const p of rows){const ids=['id:'+p.id,'url:'+photoURL(p.image),...(p.sha256?['sha:'+p.sha256]:[])];const old=ids.map(k=>keys.get(k)).find(Boolean);if(old){for(const field of ['date','year','sourceUrl','originalCreator','sha256','width','height'])if(!old[field]&&p[field])old[field]=p[field];if(old.thumb===old.image&&p.thumb!==p.image)old.thumb=p.thumb;old.tags=[...new Set([...old.tags,...p.tags])];ids.forEach(k=>keys.set(k,old));}else{result.push(p);ids.forEach(k=>keys.set(k,p));}}\n    return result.sort((a,b)=>(b.date||b.year||'').localeCompare(a.date||a.year||'')||a.id.localeCompare(b.id));\n  }\n  async function start() {\n    const sources=[['./social_photos.json','social'],['./gallery_data.json','gallery'],['../data/photos.json','archive'],['../data/yeonji-sns.json','sns']];\n    const results=await Promise.allSettled(sources.map(async ([url,kind])=>{const r=await fetch(url,{cache:'no-cache'});if(!r.ok)throw new Error(url+' HTTP '+r.status);return normalizedRows(await r.json(),kind);}));\n    try{if(results.every(r=>r.status==='rejected'))throw new Error('Photo lists unavailable');photos=mergeRows(results.flatMap(r=>r.status==='fulfilled'?r.value:[]));const years=[...new Set(photos.map(p=>p.year).filter(Boolean))].sort().reverse();years.forEach(y=>{const o=document.createElement('option');o.value=y;o.textContent=y;$('#year').append(o);});applyFilters();if(results.slice(0,3).some(r=>r.status==='rejected')){const note=document.createElement('p');note.setAttribute('role','status');note.textContent='일부 사진 목록을 불러오지 못했습니다';note.style.color='var(--sub)';note.style.fontSize='12px';gallery.before(note);}}\n    catch(error){console.error(error);$('#total').textContent='LOAD ERROR';empty.hidden=false;empty.textContent='사진 데이터를 불러오지 못했습니다';}\n  }\n"
+          from pathlib import Path
+          import re,base64,os
+          p=Path('public/gallery/index.html')
+          # Preserve the installed template; only use original supplied template if missing.
+          html=p.read_text(encoding='utf-8') if p.is_file() else base64.b64decode(FALLBACK).decode('utf-8')
+          start=html.find('  // YEONJI_UNIFIED_GALLERY_V2')
+          if start<0:start=html.find('  // YEONJI_UNIFIED_GALLERY_V1')
+          if start<0:start=html.find('  async function start() {')
+          end=html.find('  start();',start)
+          if start<0 or end<0:raise SystemExit('Unrecognized existing gallery loader; no template changes made')
+          html=html[:start]+LOADER+html[end:]
+          html=html.replace("String(p.date || '').startsWith(year)","p.year === year")
+          html=html.replace('dateDisplay(p.date)',"(p.date ? dateDisplay(p.date) : p.year ? `${p.year} · 날짜 미확인` : '날짜 미확인')") if 'p.year ? `${p.year}' not in html else html
+          # Ensure both thumbnail and original are attempted, retaining original modal UI.
+          old="img.addEventListener('error', () => {img.remove(); const note=document.createElement('div');note.className='image-failed';note.textContent='이미지를 불러오지 못했습니다';opener.append(note);},{once:true});"
+          new="""img.addEventListener('error', () => { if (!img.dataset.retry && p.thumb && p.thumb !== p.image) {img.dataset.retry='1';img.src=imageURL(p.image);return;} img.remove();const note=document.createElement('div');note.className='image-failed';note.textContent='이미지를 불러오지 못했습니다';opener.append(note); });"""
+          html=html.replace(old,new)
+          html=html.replace("const href = safeURL(p.sourceUrl);", "const href = p.sourceUrl ? safeURL(p.sourceUrl) : '';")
+          html=html.replace('/official|modhaus|concept/', '/official|modhaus|concept|공식|콘셉트|화보/')
+          html=html.replace('/instagram|sns|twitter|x\\.com/', '/instagram|sns|twitter|x\\.com|인스타|트위터/')
+          html=html.replace('/stage|fancam|concert|music|broadcast/', '/stage|fancam|concert|music|broadcast|무대|직캠|공연/')
+          # allow hashtag queries whether stored with # or without
+          if ".replace(/^#/, '')" not in html:html=html.replace("$('#search').value.trim().toLowerCase()", "$('#search').value.trim().toLowerCase().replace(/^#/, '')")
+          if '.sr-only{' not in html and '.sr-only {' not in html:html=html.replace('</style>', '.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}\n</style>',1)
+          p.parent.mkdir(parents=True,exist_ok=True);p.write_text(html,encoding='utf-8')
+          blocks=re.findall(r'<script>([\s\S]*?)</script>',html)
+          if len(blocks)!=1:raise SystemExit('Unexpected script count')
+          Path('/tmp/yeonji-social-gallery-check.js').write_text(blocks[0],encoding='utf-8')
+          PATCH_PY
+          node --check /tmp/yeonji-social-gallery-check.js
+      - name: Discover and publish cleared photo assets
+        env:
+          MODE: ${{ inputs.mode }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_GRAPH_API_VERSION: ${{ vars.IG_GRAPH_API_VERSION }}
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'SOCIAL_PY'
+          from pathlib import Path
+          import os, re, json, csv, hashlib, shutil, time, urllib.request, urllib.error, urllib.parse, datetime, io
+          from PIL import Image, ImageOps
+          ROOT=Path('.')
+          G=Path('public/gallery'); REPORT=Path('reports/yeonji-gallery-social-review.json'); INBOX=Path('photo_sources/social_approved.json')
+          TAGS=('연지','yeonji','곽연지','kwakyeonji')
+          TAG_RE=re.compile(r'(?<!\w)#(연지|yeonji|곽연지|kwakyeonji)(?!\w)',re.I)
+          GROUP=re.compile(r'(?<!\w)#?(triple\s*s|트리플에스|S12|곽연지|kwak\s*yeon\s*ji)(?!\w)',re.I)
+
+          def read(p, default):
+              return json.loads(p.read_text(encoding='utf-8')) if p.is_file() else default
+
+          def write(p, data):
+              p.parent.mkdir(parents=True,exist_ok=True)
+              temp=p.with_suffix(p.suffix+'.tmp');temp.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');temp.replace(p)
+
+          def rows(x):
+              x=x.get('photos',[]) if isinstance(x,dict) else x
+              if not isinstance(x,list): raise ValueError('Expected photo array')
+              return x
+
+          def https(x):
+              try:
+                  u=urllib.parse.urlsplit(x or '');return bool(u.scheme=='https' and u.hostname and not u.username and not u.password)
+              except (ValueError,TypeError):return False
+
+          def date(x):
+              try: return datetime.date.fromisoformat(str(x)[:10]).isoformat()
+              except ValueError: return None
+
+          def tags(txt): return sorted({m.group(1).lower() for m in TAG_RE.finditer(txt or '')})
+
+          def request_json(host,path,params,token):
+              url='https://'+host+'/'+path.lstrip('/')+'?'+urllib.parse.urlencode(params)
+              req=urllib.request.Request(url,headers={'Authorization':'Bearer '+token,'Accept':'application/json','User-Agent':'YEONJI-Archive/1.0'})
+              try:
+                  with urllib.request.urlopen(req,timeout=25) as r: return json.loads(r.read(8_000_000))
+              except urllib.error.HTTPError as e: raise RuntimeError(f'{host} HTTP {e.code}') from None
+              except Exception as e: raise RuntimeError(f'{host}: {type(e).__name__}') from None
+
+          def candidate(platform,post,media,src,caption,when,official=False,found=()):
+              if not https(src):return None
+              # The hashtag endpoint itself establishes a match even if caption is absent.
+              t=sorted(set(tags(caption))|set(found))
+              if not t and not (official and GROUP.search(caption or '') and re.search(r'곽연지|(?<!\w)연지(?!\w)|yeonji|S12',caption or '',re.I)):return None
+              return {'id':platform+':'+str(media or post),'platform':platform,'postId':str(post),'mediaId':str(media or post),'sourceUrl':src,'date':date(when),'tags':t,'official':official,'groupHint':bool(official or GROUP.search(caption or '')),'status':'pending'}
+
+          def instagram(token,user,version,limit=2):
+              host='graph.facebook.com';out=[];errors=[]
+              if not re.fullmatch(r'v\d+\.\d+',version):return [],['Invalid API version']
+              def call(p,params):return request_json(host,version+'/'+p,params,token)
+              def collect(post,official=False,found=()):
+                  kind=post.get('media_type'); cap=post.get('caption') or ''
+                  if kind not in ('IMAGE','CAROUSEL_ALBUM'):return
+                  if kind=='CAROUSEL_ALBUM':
+                      children=post.get('children',{}).get('data',[])
+                      images=[p for p in children if p.get('media_type')=='IMAGE']
+                      # If children unavailable, preserve post for manual photo import, not a pretend photo.
+                      if not children:images=[{}]
+                  else:images=[post]
+                  for p in images:
+                      c=candidate('instagram',post.get('id'),p.get('id'),post.get('permalink'),cap,post.get('timestamp'),official,found)
+                      if c:out.append(c)
+              def pages(first, fetch_next, handler):
+                  data=first
+                  for _ in range(limit):
+                      for post in data.get('data',[]):handler(post)
+                      cursor=data.get('paging',{}).get('cursors',{}).get('after')
+                      if not cursor or not data.get('paging',{}).get('next'):break
+                      time.sleep(1);data=fetch_next(cursor)
+              for tag in TAGS:
+                  try:
+                      hit=call('ig_hashtag_search',{'user_id':user,'q':tag}).get('data',[])
+                      if not hit:continue
+                      for edge in ('recent_media','top_media'):
+                          params={'user_id':user,'fields':'id,caption,media_type,permalink,timestamp,children{id,media_type}','limit':50}
+                          # Some approved app scopes do not expose children on hashtag media.
+                          def fetch(cursor=None):
+                              q=dict(params)
+                              if cursor:q['after']=cursor
+                              try:return call(str(hit[0]['id'])+'/'+edge,q)
+                              except RuntimeError as e:
+                                  if 'HTTP 400' not in str(e):raise
+                                  q['fields']='id,caption,media_type,permalink,timestamp';return call(str(hit[0]['id'])+'/'+edge,q)
+                          pages(fetch(),fetch,lambda p:collect(p,found=(tag,)))
+                          time.sleep(1)
+                  except RuntimeError as e:
+                      errors.append(tag+': '+str(e))
+                      if any('HTTP '+s in str(e) for s in ('401','403','429')):break
+              # Business Discovery for official public professional account; limited by app access.
+              try:
+                  account=os.getenv('IG_OFFICIAL_ACCOUNT','triplescosmos');
+                  if not re.fullmatch(r'[a-zA-Z0-9_.]+',account):raise RuntimeError('Invalid official account')
+                  def official_page(cursor=None):
+                      if cursor and not re.fullmatch(r'[A-Za-z0-9_\-+=/]+',cursor):raise RuntimeError('Unexpected cursor')
+                      after='.after('+cursor+')' if cursor else ''
+                      field=f'business_discovery.username({account}){{media.limit(50){after}{{id,caption,media_type,permalink,timestamp,children{{id,media_type}}}}}}'
+                      return call(user,{'fields':field}).get('business_discovery',{}).get('media',{})
+                  pages(official_page(),official_page,lambda p:collect(p,True))
+              except RuntimeError as e:errors.append('official: '+str(e))
+              return out,errors
+
+          def x_scan(token,limit=2):
+              out=[];errors=[];cursor=None
+              query='(#연지 OR #yeonji OR #곽연지 OR #kwakyeonji) has:images -is:retweet'
+              for _ in range(limit):
+                  params={'query':query,'max_results':100,'tweet.fields':'created_at,attachments','expansions':'attachments.media_keys','media.fields':'type,url'}
+                  if cursor:params['next_token']=cursor
+                  try:d=request_json('api.x.com','2/tweets/search/recent',params,token)
+                  except RuntimeError as e:errors.append(str(e));break
+                  media={x['media_key']:x for x in d.get('includes',{}).get('media',[]) if x.get('type')=='photo'}
+                  for p in d.get('data',[]):
+                      for k in p.get('attachments',{}).get('media_keys',[]):
+                          if k not in media:continue
+                          c=candidate('x',p['id'],k,'https://x.com/i/web/status/'+p['id'],p.get('text',''),p.get('created_at'))
+                          if c:out.append(c)
+                  cursor=d.get('meta',{}).get('next_token');
+                  if not cursor:break
+                  time.sleep(1)
+              return out,errors
+
+          # Local images supplied by the owner (with permission), or direct HTTPS images
+          # explicitly cleared for copying. Never scrape or download using account cookies.
+          ALLOWED_HOSTS=('cdninstagram.com','fbcdn.net','pbs.twimg.com','wikia.nocookie.net','fandom.com')
+          def allowed(url):
+              if not https(url):return False
+              h=urllib.parse.urlsplit(url).hostname.lower()
+              return any(h==x or h.endswith('.'+x) for x in ALLOWED_HOSTS)
+          class SafeRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self,req,fp,code,msg,headers,newurl):
+                  if not allowed(newurl):raise ValueError('Disallowed redirect')
+                  return super().redirect_request(req,fp,code,msg,headers,newurl)
+
+          def asset(entry):
+              if entry.get('file'):
+                  base=Path('photo_sources').resolve();p=(base/entry['file']).resolve()
+                  if not p.is_relative_to(base) or not p.is_file():raise ValueError('Missing local image')
+                  if p.stat().st_size>20_000_000:raise ValueError('Image exceeds 20 MB')
+                  return p.read_bytes()
+              u=entry.get('imageUrl','')
+              if not allowed(u):raise ValueError('Remote host not allowlisted; use local image file')
+              req=urllib.request.Request(u,headers={'User-Agent':'YEONJI-Archive/1.0','Accept':'image/*'})
+              with urllib.request.build_opener(SafeRedirect()).open(req,timeout=25) as r:
+                  if not r.headers.get_content_type().startswith('image/'):raise ValueError('Not image response')
+                  data=r.read(20_000_001)
+              if len(data)>20_000_000:raise ValueError('Image exceeds 20 MB')
+              return data
+
+          def publish(entries,existing):
+              byhash={p.get('sha256') for p in existing if p.get('sha256')};byid={p.get('id') for p in existing};sourcekeys={(p.get('sourceUrl'),p.get('mediaId')) for p in existing if p.get('mediaId')};out=list(existing);errors=[];added=0;dup=0
+              for e in entries:
+                  if not isinstance(e,dict) or not all(e.get(k) is True for k in ('approved','memberVerified','rightsConfirmed')):continue
+                  src=e.get('sourceUrl'); day=date(e.get('date'))
+                  if not https(src) or not day or not e.get('author') or not isinstance(e.get('tags'),list) or not any(str(t).lstrip('#').casefold() in TAGS for t in e['tags']):errors.append('Missing source/date/author/tags');continue
+                  mid=str(e.get('mediaId') or '')
+                  if mid and (src,mid) in sourcekeys:dup+=1;continue
+                  try:
+                      b=asset(e);h=hashlib.sha256(b).hexdigest();id='yj-social-'+h[:32]
+                      if h in byhash or id in byid:dup+=1;continue
+                      with Image.open(io.BytesIO(b)) as check:check.verify()
+                      with Image.open(io.BytesIO(b)) as im:
+                          ext={'JPEG':'jpg','PNG':'png','WEBP':'webp'}.get(im.format)
+                          if not ext:raise ValueError('Unsupported image type')
+                          pic=ImageOps.exif_transpose(im);w,z=pic.size
+                          if min(w,z)<64:raise ValueError('Image too small')
+                          pic.thumbnail((750,1050));pic=pic.convert('RGB')
+                          original=G/'assets/social'/f'{h}.{ext}'; thumb=G/'assets/social'/f'{h}.thumb.webp';original.parent.mkdir(parents=True,exist_ok=True)
+                          original.write_bytes(b);pic.save(thumb,'WEBP',quality=82)
+                      p={'id':id,'memberId':'S12','status':'approved','category':'photo','image':original.relative_to(G).as_posix(),'thumb':thumb.relative_to(G).as_posix(),'sha256':h,'date':day,'title':str(e.get('caption') or '곽연지'),'sourceUrl':src,'source':str(e.get('source') or 'SNS'),'originalCreator':str(e['author']),'tags':[str(t).lstrip('#') for t in e['tags']],'mediaId':mid,'width':w,'height':z,'curator':'빵시온'}
+                      out.append(p);byhash.add(h);byid.add(id);sourcekeys.add((src,mid));added+=1
+                  except Exception as ex:errors.append(f'{mid or "entry"}: {type(ex).__name__}')
+              return out,added,dup,errors
+
+          def main():
+              mode=os.getenv('MODE','publish');G.mkdir(parents=True,exist_ok=True)
+              if not INBOX.exists():write(INBOX,[])
+              prior=rows(read(G/'social_photos.json',{'photos':[]}));entries=read(INBOX,[])
+              if not isinstance(entries,list):raise ValueError('social_approved.json must be array')
+              # Preserve local galleries, only count existing approved photos for hash dedupe.
+              base=rows(read(Path('public/data/photos.json'),[]));local=rows(read(G/'gallery_data.json',{'photos':[]}))
+              combined=prior+[x for x in base+local if isinstance(x,dict) and x.get('memberId','S12')=='S12' and x.get('status','approved')=='approved' and x.get('sha256')]
+              if mode=='discover':
+                  old=read(REPORT,{}).get('candidates',[]);found=[];errors=[];configured=[]
+                  if os.getenv('IG_ACCESS_TOKEN') and os.getenv('IG_USER_ID'):
+                      configured.append('instagram');a,b=instagram(os.environ['IG_ACCESS_TOKEN'],os.environ['IG_USER_ID'],os.getenv('IG_GRAPH_API_VERSION') or 'v24.0');found+=a;errors+=b
+                  if os.getenv('X_BEARER_TOKEN'):
+                      configured.append('x');a,b=x_scan(os.environ['X_BEARER_TOKEN']);found+=a;errors+=b
+                  if not configured:errors.append('No Instagram/X API credentials: no new discovery performed')
+                  merged={p['id']:p for p in old if isinstance(p,dict) and p.get('id')}
+                  for p in found:
+                      if p['id'] in merged:p['tags']=sorted(set(p['tags'])|set(merged[p['id']].get('tags',[])))
+                      merged[p['id']]=p
+                  write(REPORT,{'coverage':'partial; photo candidates, not identity or rights verification','configured':configured,'errors':errors,'candidates':sorted(merged.values(),key=lambda p:p.get('date') or '',reverse=True)})
+                  print(f'Discovery: {len(found)} returned, {len(merged)} stored, {len(errors)} API issues')
+                  if os.getenv('GITHUB_STEP_SUMMARY'):
+                      with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:f.write(f'\nAPI candidates: {len(found)} returned / {len(merged)} total; issues: {len(errors)}. See reports/yeonji-gallery-social-review.json.\n')
+              allrows,n,d,err=publish(entries,combined)
+              # Only save prior social entries and newly added rows, not base photos.
+              result=prior+allrows[len(combined):]
+              write(G/'social_photos.json',{'schemaVersion':1,'photos':result})
+              print(f'Published social: {len(result)}; new: {n}; duplicates: {d}; failures: {len(err)}')
+              write(Path('reports/yeonji-social-publish.json'),{'published':len(result),'added':n,'duplicates':d,'errors':err,'legacyPhotoRows':len(base),'localGalleryRows':len(local)})
+              if os.getenv('GITHUB_STEP_SUMMARY'):
+                  with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:f.write(f'\nSocial photo records: {len(result)}; new: {n}; duplicate: {d}; failed: {len(err)}. Existing PHOTO rows: {len(base)}. Deploy manually after success.\n')
+          if __name__=='__main__': main()
+          SOCIAL_PY
+      - name: Commit only gallery assets and review records
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- public/gallery/index.html public/gallery/social_photos.json photo_sources/social_approved.json reports/yeonji-social-publish.json
+          for p in public/gallery/assets/social reports/yeonji-gallery-social-review.json; do
+            if [ -e "$p" ]; then git add -- "$p"; fi
+          done
+          if git diff --cached --quiet; then echo 'No changes'; else git commit -m 'data: extend YEONJI social gallery'; git push; fi

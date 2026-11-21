@@ -1,0 +1,1771 @@
+{
+  "updatedAt": "2026-11-21T06:30:27.933019+00:00",
+  "explanation": "제목·메타데이터 기반 자동 분류이며 실제 영상 출연 여부 검증 결과가 아닙니다",
+  "summary": {
+    "catalogRows": 438,
+    "uniqueYoutubeIds": 438,
+    "duplicateYoutubeIds": 0,
+    "withoutYeonjiNameInTitle": 43,
+    "soloScopeWithOtherMemberNames": 6,
+    "missingPublishedAt": 1,
+    "missingTitle": 0,
+    "kindOtherOrMissing": 241
+  },
+  "queues": {
+    "withoutYeonjiNameInTitle": [
+      {
+        "id": "y_VWjGXOJOk",
+        "title": "your birthday, your tripleS song! (part three) │ #kpop #triples #wav #kpopsong #birthday #viral #fyp",
+        "source": "𝐚𝐬𝐡 ⛄︎",
+        "publishedAt": "2026-11-20"
+      },
+      {
+        "id": "ouFe0tHgnss",
+        "title": "tripleS · I Want You To Know Official Dance Practice",
+        "source": "tripleS official",
+        "publishedAt": "2026-11-13"
+      },
+      {
+        "id": "xdhVCmW_6WY",
+        "title": "트리플에스 덕질하기 좋은 5명",
+        "source": "인플루 KPOP",
+        "publishedAt": "2026-10-27"
+      },
+      {
+        "id": "uqJ6GDJSyfY",
+        "title": "tripleS · Andless Official MV",
+        "source": "tripleS official",
+        "publishedAt": "2026-10-16"
+      },
+      {
+        "id": "fjQfmlyd3uk",
+        "title": "작정하고 누나들 꼬시는 중;;",
+        "source": "곽잡아연지",
+        "publishedAt": "2026-10-13"
+      },
+      {
+        "id": "AT6pUVE_hCA",
+        "title": "몇 년이 지나도 비주얼샘은 마르지 않는구나",
+        "source": "30초 인물소개",
+        "publishedAt": "2026-10-13"
+      },
+      {
+        "id": "j3mOnoxl5gc",
+        "title": "라디오체질 아이돌",
+        "source": "곽잡아연지",
+        "publishedAt": "2026-08-04"
+      },
+      {
+        "id": "zU35l43xIuM",
+        "title": "누가 언니일까요? | 이번달도곽곽 6월호 🦆",
+        "source": "끼루룩연지 🦆",
+        "publishedAt": "2026-07-01"
+      },
+      {
+        "id": "TO0gIKmQ9jA",
+        "title": "바뀐 안무, 당신의 최애는?",
+        "source": "곽잡아연지",
+        "publishedAt": "2026-06-14"
+      },
+      {
+        "id": "HVmfOZ18JIo",
+        "title": "tripleS · Baby Flower Official Dance Practice",
+        "source": "tripleS official",
+        "publishedAt": "2026-06-07"
+      },
+      {
+        "id": "6q8UMVXhXsE",
+        "title": "tripleS · Baby Flower Official MV",
+        "source": "tripleS official",
+        "publishedAt": "2026-06-01"
+      },
+      {
+        "id": "kuYpGEW6ogo",
+        "title": "the main yapper of tripleS",
+        "source": "KiwiKoko",
+        "publishedAt": "2026-01-07"
+      },
+      {
+        "id": "HqywR0J_diA",
+        "title": "[트리플에스]곽곽곽시절 그립다",
+        "source": "대한코코볼",
+        "publishedAt": "2025-12-25"
+      },
+      {
+        "id": "dkSHv-mr29M",
+        "title": "앞머리 내리고 역대급 미모 갱신한 아이돌🔥[tripleS 미소녀즈 - Christmas Alone]",
+        "source": "나만 듣기 아까운 노래",
+        "publishedAt": "2025-12-05"
+      },
+      {
+        "id": "TvmLPQ7iBLQ",
+        "title": "tripleS msnz zenith · Q&A Official MV",
+        "source": "tripleS official",
+        "publishedAt": "2025-11-24"
+      },
+      {
+        "id": "xOJN32iFVYk",
+        "title": "레전드 조합…",
+        "source": "숨숨봐봐",
+        "publishedAt": "2025-10-29"
+      },
+      {
+        "id": "uRJlaGMdHKI",
+        "title": "수상할 정도로 막내가 제일 의젓한 어떤 그룹",
+        "source": "딸기농장주🍓",
+        "publishedAt": "2025-09-17"
+      },
+      {
+        "id": "yVhRkjLALNs",
+        "title": "[트리플에스]공식 잼민이들",
+        "source": "파도SSS",
+        "publishedAt": "2025-07-23"
+      },
+      {
+        "id": "vIRnMcAL3OU",
+        "title": "막내와 놀아주기 위해서는 23명의 언니가 필요하다..!",
+        "source": "딸기농장주🍓",
+        "publishedAt": "2025-07-16"
+      },
+      {
+        "id": "0hNuXQ0-FZM",
+        "title": "24인조 걸그룹 목소리만 듣고 멤버 이름 맞히기👂🏻 #tripleS #트리플에스 #BadgeWar3 #배지전쟁3",
+        "source": "1theK Originals - 원더케이 오리지널",
+        "publishedAt": "2025-06-04"
+      },
+      {
+        "id": "Q0wDEu0nfPI",
+        "title": "[트리플에스 배지전쟁] 동생들 보내버리는 맏언니",
+        "source": "혜리니이리네",
+        "publishedAt": "2025-05-18"
+      },
+      {
+        "id": "pTycfmVzdl8",
+        "title": "tripleS · 깨어 (Are You Alive) Official MV",
+        "source": "tripleS official",
+        "publishedAt": "2025-05-12"
+      },
+      {
+        "id": "EiLKYOhjFN0",
+        "title": "넘어지는게 퍼스널컬러인 걸그룹이 있다? [트리플에스 라이브]",
+        "source": "씃다운코미디",
+        "publishedAt": "2024-12-01"
+      },
+      {
+        "id": "aKyt6Ahxwss",
+        "title": "tripleS Visionary Vision · Hit the Floor Official MV",
+        "source": "tripleS official",
+        "publishedAt": "2024-10-23"
+      },
+      {
+        "id": "aOPxABRucSU",
+        "title": "[트리플에스] 데뷔 예정 댄스 유닛 VV 멤버들 댄스 미리보기",
+        "source": "원투트리플데이",
+        "publishedAt": "2024-08-30"
+      },
+      {
+        "id": "2tda_TCjz8w",
+        "title": "tripleS · Girls Never Die Official MV",
+        "source": "tripleS official",
+        "publishedAt": "2024-05-08"
+      },
+      {
+        "id": "91Ay6mPHnoY",
+        "title": "CG 없이 진짜로 하는 트리플에스 #triples #evolution #invincible",
+        "source": "원투트리플데이",
+        "publishedAt": "2023-11-06"
+      },
+      {
+        "id": "IsbJldbOU7Q",
+        "title": "tripleS funny moments to celebrate EVOLution's debut | TripleS funny moments part 2",
+        "source": "Amtiny",
+        "publishedAt": "2023-10-12"
+      },
+      {
+        "id": "KMythzAnNK0",
+        "title": "tripleS EVOLution · Invincible MV",
+        "source": "tripleS official",
+        "publishedAt": "2023-10-11"
+      },
+      {
+        "id": "4S6iOrQu7L0",
+        "title": "tripleS funny moments to celebrate LOVElution's debut",
+        "source": "Amtiny",
+        "publishedAt": "2023-08-16"
+      },
+      {
+        "id": "pBuWNF3TZcw",
+        "title": "tripleS 트리플에스 : sweets ‘어려운 한국말이 없는 비결은 무엇??’",
+        "source": "tripleS official",
+        "publishedAt": "2023-07-06"
+      },
+      {
+        "id": "oyR_LIl46DE",
+        "title": "상상 이상의 NEW HAUS | EN JP CN ES ID l SIGNAL 230703",
+        "source": "tripleS official",
+        "publishedAt": "2023-07-03"
+      },
+      {
+        "id": "pyfCbKkqfSs",
+        "title": "도쿄즈 추억상자 OPEN! feat. 디즈니랜드｜EN JP ES ID｜BEHIND",
+        "source": "tripleS official",
+        "publishedAt": "2023-07-01"
+      },
+      {
+        "id": "2EBWziiPzaA",
+        "title": "등장! 초월읍 최고 미소녀 | EN JP CN ES | SIGNAL 230630",
+        "source": "tripleS official",
+        "publishedAt": "2023-06-30"
+      },
+      {
+        "id": "rDeWHAmADb4",
+        "title": "[4K] 230623 트리플에스(tripleS) 이지우 구독, 좋아요!으아~직캠(제 2회 트리플에스 오브젝트 교환 카페 이벤트) #트리플에스 #tripleS #shorts #쇼츠",
+        "source": "쌈디",
+        "publishedAt": "2023-06-29"
+      },
+      {
+        "id": "O52vmYpENIw",
+        "title": "tripleS 트리플에스 : sweets ‘그네로 알아보는 극과 극 성격차이’",
+        "source": "tripleS official",
+        "publishedAt": "2023-05-24"
+      },
+      {
+        "id": "orz7puyzLO4",
+        "title": "Reacting To - 트리플에스(tripleS) \"Rising\"",
+        "source": "Jeremiah Yockey",
+        "publishedAt": "2023-04-17"
+      },
+      {
+        "id": "iAEUrkLmpcs",
+        "title": "생토네 | EN JP CN ES ID | SIGNAL 230310",
+        "source": "tripleS official",
+        "publishedAt": "2023-03-10"
+      },
+      {
+        "id": "Us64P4zzVPY",
+        "title": "tripleS 진짜 ASSEMBLE | EN JP CN ES ID｜SIGNAL 230303",
+        "source": "tripleS official",
+        "publishedAt": "2023-03-03"
+      },
+      {
+        "id": "4aNThq33Mzg",
+        "title": "열두가지 컬러｜EN JP CN ES ID｜SIGNAL 230228",
+        "source": "tripleS official",
+        "publishedAt": "2023-02-28"
+      },
+      {
+        "id": "k8F3NRbqVHk",
+        "title": "Reacting to TripleS Signal - Tokyo haus in seoul? NEW GRAVITY???",
+        "source": "Jojobas Reacts",
+        "publishedAt": "2023-02-25"
+      },
+      {
+        "id": "FpzIw-g5guU",
+        "title": "Tokyo HAUS로 갑니다 | tripleS 트리플에스 : SIGNAL 230120",
+        "source": "tripleS official",
+        "publishedAt": "2023-01-20"
+      },
+      {
+        "id": "bXPUipNiT2I",
+        "title": "Reacting To - 트리플에스(tripleS) \"Generation\"",
+        "source": "Jeremiah Yockey",
+        "publishedAt": "2023-01-14"
+      }
+    ],
+    "soloScopeWithOtherMemberNames": [
+      {
+        "id": "vz6_vdEkP_I",
+        "title": "[4K] tripleS 곽연지(Kwak YeonJi) 김수민(Kim SooMin) 세로 직캠 | ASSEMBLE26 LOVE&POP Special Offline Event",
+        "source": "THE IDOL × Nikon",
+        "publishedAt": "2026-06-01"
+      },
+      {
+        "id": "rDeWHAmADb4",
+        "title": "[4K] 230623 트리플에스(tripleS) 이지우 구독, 좋아요!으아~직캠(제 2회 트리플에스 오브젝트 교환 카페 이벤트) #트리플에스 #tripleS #shorts #쇼츠",
+        "source": "쌈디",
+        "publishedAt": "2023-06-29"
+      },
+      {
+        "id": "9x8yA09pN70",
+        "title": "[4K] 230623 트리플에스(tripleS) 니엔, 곽연지 직캠 (제2회 트리플에스 오브젝트 교환 카페 이벤트 1부)(케이포타운포유)(케타포코엑스) #트리플에스 #tripleS",
+        "source": "쌈디",
+        "publishedAt": "2023-06-29"
+      },
+      {
+        "id": "tSNeRj3GhZo",
+        "title": "트리플에스 이벤트 소감 직캠(곽연지, 김수민, 김유연, 서다현, 윤서연, 정혜린)  오브젝트 트레이딩 카페 이벤트 TripleS Fancam | 4K 230319 eyecatch",
+        "source": "eyecatch",
+        "publishedAt": "2023-03-19"
+      },
+      {
+        "id": "ZJXAjv8lgsM",
+        "title": "트리플에스 오브젝트 트레이딩 카페 이벤트 포토타임 직캠(카에데, 코토네, 공유빈, 이지우, 김나경, 곽연지) TripleS Fancam | 4K 230318 eyecatch",
+        "source": "eyecatch",
+        "publishedAt": "2023-03-18"
+      },
+      {
+        "id": "nQA5SIQH8PY",
+        "title": "[4K] 230317 트리플에스(tripleS)(코토네, 카에데, 곽연지, 서다현, 공유빈, 김나경) 포토타임 직캠 (1회 오브젝트 교환 카페 이벤트) #트리플에스 #tripleS",
+        "source": "쌈디",
+        "publishedAt": "2023-03-17"
+      }
+    ],
+    "missingPublishedAt": [
+      {
+        "id": "_B9ChtoW64k",
+        "title": "수민 언니가 찍어준 연지의 졸업식 브이로그",
+        "source": "tripleS official",
+        "publishedAt": null
+      }
+    ],
+    "kindOtherOrMissing": [
+      {
+        "id": "y_VWjGXOJOk",
+        "title": "your birthday, your tripleS song! (part three) │ #kpop #triples #wav #kpopsong #birthday #viral #fyp",
+        "source": "𝐚𝐬𝐡 ⛄︎",
+        "publishedAt": "2026-11-20"
+      },
+      {
+        "id": "kXde0-PE2jo",
+        "title": "연지의 사랑스러운 표정에 심쿵 💗 | tripleS YEONJI – Love2Love #shorts",
+        "source": "Idol TimeCode",
+        "publishedAt": "2026-11-20"
+      },
+      {
+        "id": "C43fV731zOA",
+        "title": "공유빈? 곽연지? 신위랑 소현은 안 나와서 의외네ㅋㅋㅋㅋㅋ",
+        "source": "주주",
+        "publishedAt": "2026-11-19"
+      },
+      {
+        "id": "vRf20fekzZg",
+        "title": "탕비실간식털이범 곽연지 | 2026 곽연지",
+        "source": "끼루룩연지 🦆",
+        "publishedAt": "2026-11-15"
+      },
+      {
+        "id": "7wquEy_t5I8",
+        "title": "바지 자체는 예쁜데 #트리플에스 #triples #곽연지 #연지 #트리플에스연지 #yeonji",
+        "source": "오리배선장연지",
+        "publishedAt": "2026-11-15"
+      },
+      {
+        "id": "o4W544U-auQ",
+        "title": "?? : 자 이게 클릭이야 | 2026 곽연지 (멧차 카멜레온 1편)",
+        "source": "끼루룩연지 🦆",
+        "publishedAt": "2026-11-09"
+      },
+      {
+        "id": "uwo8UheHYaU",
+        "title": "끝까지 Andless, 이번 달도 곽연지였다 | 이번달도곽곽 10월호 🦆",
+        "source": "끼루룩연지 🦆",
+        "publishedAt": "2026-10-31"
+      },
+      {
+        "id": "jXqSeX0I4xs",
+        "title": "너무 맛이 없어서 #트리플에스 #triples #곽연지 #연지 #트리플에스연지",
+        "source": "오리배선장연지",
+        "publishedAt": "2026-10-29"
+      },
+      {
+        "id": "xdhVCmW_6WY",
+        "title": "트리플에스 덕질하기 좋은 5명",
+        "source": "인플루 KPOP",
+        "publishedAt": "2026-10-27"
+      },
+      {
+        "id": "zNTBfFlKoro",
+        "title": "어른과 곧 어른의 품격 있는 대화 #트리플에스 #triples #곽연지 #정하연 #주빈 #트리플에스연지",
+        "source": "오리배선장연지",
+        "publishedAt": "2026-10-25"
+      },
+      {
+        "id": "v7_3z7nUqSk",
+        "title": "tripleS ot24 songs, but it's just yeonji │ #kpop #triples #yeonji #kwakyeonji #fyp #viral #kpopedit",
+        "source": "𝐚𝐬𝐡 ⛄︎",
+        "publishedAt": "2026-10-25"
+      },
+      {
+        "id": "LeQ6Q2VW8KY",
+        "title": ". #triples #assemble25 #yeonji #girlgroup #kpop #edit #stantriples #kwakyeonji",
+        "source": "starryyeonjii ",
+        "publishedAt": "2026-10-24"
+      },
+      {
+        "id": "U4RBmxmOgXA",
+        "title": "261022 출국 곽연지",
+        "source": "말랑모찌상큼07정하연",
+        "publishedAt": "2026-10-22"
+      },
+      {
+        "id": "tJVKrta3ewA",
+        "title": "[#tripleS #트리플에스] 물 마시는 #KwakYeonJi #곽연지: 261010 ANDLESS in Seoul",
+        "source": "거북목",
+        "publishedAt": "2026-10-21"
+      },
+      {
+        "id": "6y7qUDeTX5s",
+        "title": "6초만에 입덕하는 ### 곽연지",
+        "source": "끼루룩연지 🦆",
+        "publishedAt": "2026-10-18"
+      },
+      {
+        "id": "b79SyUJ8qOo",
+        "title": "[4k] tripleS - 곽연지 Hit the Floor│261011 ANDLESS IN SEOUL",
+        "source": "탐정단_fancam",
+        "publishedAt": "2026-10-16"
+      },
+      {
+        "id": "VKAR2CFfvrA",
+        "title": "[4K] 261011 ‘ANDLESS’ 트리플에스 곽연지 tripleS YEONJI fan cam @2026 World tour in Seoul",
+        "source": "𝗦𝘂𝗺𝗺𝗲𝗿.",
+        "publishedAt": "2026-10-16"
+      },
+      {
+        "id": "t27LLjRPzTI",
+        "title": "261011 트리플에스(tripleS) 곽연지 Fan Cam - 누난 너무 예뻐 (4K) @  2026 tripleS World Tour ANDLESS in Seoul",
+        "source": "Cloud blue",
+        "publishedAt": "2026-10-13"
+      },
+      {
+        "id": "fjQfmlyd3uk",
+        "title": "작정하고 누나들 꼬시는 중;;",
+        "source": "곽잡아연지",
+        "publishedAt": "2026-10-13"
+      },
+      {
+        "id": "CdilWE5yo7c",
+        "title": "tripleS(트리플에스) 곽연지 Fan Cam 누난 너무 예뻐  #triples #연지 #YeonJi",
+        "source": "Cloud blue",
+        "publishedAt": "2026-10-13"
+      },
+      {
+        "id": "AT6pUVE_hCA",
+        "title": "몇 년이 지나도 비주얼샘은 마르지 않는구나",
+        "source": "30초 인물소개",
+        "publishedAt": "2026-10-13"
+      },
+      {
+        "id": "gOMIjXOlWA0",
+        "title": "261010 트리플에스(tripleS) 공유빈(Gong YuBin) 곽연지(Kwak YeonJi) Love2Love ANDLESS 콘서트",
+        "source": "카르바할 CARVAJAL",
+        "publishedAt": "2026-10-10"
+      },
+      {
+        "id": "wZXjMWMot1s",
+        "title": "알고 보면 팀내 청순 & 귀여움 치트키 🩷 #연지 #트리플에스 ♬ 깨어 (Are You Alive) #tripleS #KwakYeonJi #곽연지",
+        "source": "K-POP 날것이 좋아",
+        "publishedAt": "2026-10-05"
+      },
+      {
+        "id": "iYCy_LHORQI",
+        "title": "Kwak YeonJi TripleS 'Rising' 261003 #연지 #곽연지 #트리플에스 #yeonji #triples  #idolkpop #kpopidol #idol",
+        "source": "K-iDOL Focus",
+        "publishedAt": "2026-10-04"
+      },
+      {
+        "id": "4P05C0hEPQY",
+        "title": "261003 트리플에스(tripleS) 곽연지 - Rising / 부여 백제문화제",
+        "source": "Today's Sunshine (레뮤라스)",
+        "publishedAt": "2026-10-04"
+      },
+      {
+        "id": "g63sLeOMh3c",
+        "title": "La LaLaLa💖 | 트리플에스 곽연지 KWAK YEONJI “Baby Flower” #tripleS #kpop",
+        "source": "나의달 NAEDAL",
+        "publishedAt": "2026-10-03"
+      },
+      {
+        "id": "L1_tVyM1hDI",
+        "title": "고개를 들어💖 | 트리플에스 곽연지 KWAK YEONJI “Baby Flower” #tripleS #kpop",
+        "source": "나의달 NAEDAL",
+        "publishedAt": "2026-10-03"
+      },
+      {
+        "id": "-bYzxk3RCfQ",
+        "title": "트리플에스 곽연지, 상처, 고난, 또 눈물 #tripleS",
+        "source": "펌킨이야",
+        "publishedAt": "2026-10-03"
+      },
+      {
+        "id": "5UA6D7pJliQ",
+        "title": "이누야샤의 환생 [트리플에스 연지]",
+        "source": "하연지존",
+        "publishedAt": "2026-09-25"
+      },
+      {
+        "id": "Rs6D49ld4lw",
+        "title": "변해버린 곽연지",
+        "source": "말랑모찌상큼07정하연",
+        "publishedAt": "2026-09-18"
+      },
+      {
+        "id": "1Nxf_pA1pJo",
+        "title": "260917 트리플에스(tripleS) 곽연지 - Rising / 국립공주대학교 천안캠퍼스 축제",
+        "source": "Today's Sunshine (레뮤라스)",
+        "publishedAt": "2026-09-18"
+      },
+      {
+        "id": "HOJJy7wFF9U",
+        "title": "Kwak YeonJi TripleS 'Baby Flower' 260915 #곽연지 #트리플에스 #kwakyeonji #yeonji #triples  #kpop",
+        "source": "K-iDOL Focus",
+        "publishedAt": "2026-09-16"
+      },
+      {
+        "id": "Jtz3qv2NZYE",
+        "title": "가라 연지몬! #트리플에스 #triples #곽연지 #김수민 #김유연 #윤서연 #배지전쟁",
+        "source": "오리배선장연지",
+        "publishedAt": "2026-09-11"
+      },
+      {
+        "id": "YkfvjsV0Dt0",
+        "title": "[트리플에스] 곽연지) 야구장 여신 등장",
+        "source": "단풍유연",
+        "publishedAt": "2026-09-08"
+      },
+      {
+        "id": "R4cFN4XnlGY",
+        "title": "기분 좋은 연지 #트리플에스 #triples #곽연지 #주빈 #김나경 #김수민",
+        "source": "오리배선장연지",
+        "publishedAt": "2026-09-06"
+      },
+      {
+        "id": "RiuXu5bZabU",
+        "title": "260901 Pretty Yeonji #곽연지 #트리플에스 #tripleS #연지 #Yeonji #seoulfashionweek #トリプルs #kfashion #shorts",
+        "source": "TripleS Zone",
+        "publishedAt": "2026-09-01"
+      },
+      {
+        "id": "K3GCfxUe5Pg",
+        "title": "[트리플에스] 곽초딩 연지와 동생들한테 인기 넘치는 하연이 #shorts #트리플에스 #tripleS",
+        "source": "병아리콩주빈",
+        "publishedAt": "2026-08-19"
+      },
+      {
+        "id": "choJblDK-ic",
+        "title": "tripleS - Kwak YeonJi SSS - Legendado",
+        "source": "tripleS x ARTMS Brasil",
+        "publishedAt": "2026-08-14"
+      },
+      {
+        "id": "MTnK8dFQX6s",
+        "title": "곽연지 말실수",
+        "source": "말랑모찌상큼07정하연",
+        "publishedAt": "2026-08-07"
+      },
+      {
+        "id": "j3mOnoxl5gc",
+        "title": "라디오체질 아이돌",
+        "source": "곽잡아연지",
+        "publishedAt": "2026-08-04"
+      },
+      {
+        "id": "11iiTl_e2e0",
+        "title": "쓰러져도 일어나 #곽연지 #트리플에스 #tripleS #GirlsNeverDie",
+        "source": "펌킨이야",
+        "publishedAt": "2026-07-27"
+      },
+      {
+        "id": "gd4Xk9etKJA",
+        "title": "YEONJI SHORT HAIRR #tripleS #WAV #YeonJi #KwakYeonJi #S12 #kpop #트리플에스 #연지 #곽연지",
+        "source": "oversoul",
+        "publishedAt": "2026-07-26"
+      },
+      {
+        "id": "fy6NICHIu8M",
+        "title": "Kwak YeonJi TripleS '깨어' 260725 #곽연지 #연지 #트리플에스 #kwakyeonji #yeonji #triples #kpopidol",
+        "source": "K-iDOL Focus",
+        "publishedAt": "2026-07-26"
+      },
+      {
+        "id": "F-69eOUQ71s",
+        "title": "섹시해진 곽연지 공항룩 #YEONJI #tripleS #트리플에스",
+        "source": "Spinel CAM",
+        "publishedAt": "2026-07-18"
+      },
+      {
+        "id": "nj_tW4BBBcI",
+        "title": "잠만보 곽연지",
+        "source": "말랑모찌상큼07정하연",
+        "publishedAt": "2026-07-09"
+      },
+      {
+        "id": "77mc9b-9KA8",
+        "title": "시험 잘 보셨나요? #트리플에스 #triples #곽연지 #연지",
+        "source": "오리배선장연지",
+        "publishedAt": "2026-07-02"
+      },
+      {
+        "id": "zU35l43xIuM",
+        "title": "누가 언니일까요? | 이번달도곽곽 6월호 🦆",
+        "source": "끼루룩연지 🦆",
+        "publishedAt": "2026-07-01"
+      },
+      {
+        "id": "gBNPnFJuUZ0",
+        "title": "하연이와 나눠 먹고 싶은 연지 #트리플에스 #triples #곽연지 #연지 #정하연 #하연",
+        "source": "오리배선장연지",
+        "publishedAt": "2026-06-22"
+      },
+      {
+        "id": "9F_DXG11R3w",
+        "title": "CHOOM Kwak Yeonji.",
+        "source": "tripleS-nanana",
+        "publishedAt": "2026-06-12"
+      },
+      {
+        "id": "gNYJUGHfe9s",
+        "title": "트리플에스 곽연지 '붐팔라' LE SSERAFIM 챌린지 #tripleS #YeonJi #트리플에스 #곽연지 #BOOMPALA",
+        "source": "비몽 BIMONG",
+        "publishedAt": "2026-06-06"
+      },
+      {
+        "id": "WVrrZQ9Vpag",
+        "title": "[4K] 260530 ‘Baby Flower’ 트리플에스 곽연지 tripleS YEONJI fan cam | 2026 M COUNTDOWN X MEGACONCERT",
+        "source": "𝗦𝘂𝗺𝗺𝗲𝗿.",
+        "publishedAt": "2026-06-03"
+      },
+      {
+        "id": "OG_06JcZB6Y",
+        "title": "붐팔라 챌린지 #곽연지 #tripleS #BOOMPALA",
+        "source": "걸그룹갤러리",
+        "publishedAt": "2026-06-03"
+      },
+      {
+        "id": "bOAm95S10nM",
+        "title": "눈물 없이 못 듣는 연지의 연습생 시절 | 2026 곽연지",
+        "source": "끼루룩연지 🦆",
+        "publishedAt": "2026-05-17"
+      },
+      {
+        "id": "x0dhonZIqm8",
+        "title": "단발머리 곽연지",
+        "source": "말랑모찌상큼07정하연",
+        "publishedAt": "2026-05-11"
+      },
+      {
+        "id": "Mq5YdXdxIkU",
+        "title": "‘트리플에스 곽연지’ 데뷔초 팬들이 아쉽다고 말하는 이유 #아이돌 #케이팝 #트리플에스 #곽연지 #shorts",
+        "source": "매혹의 향수",
+        "publishedAt": "2026-05-01"
+      },
+      {
+        "id": "cAatBa8KdjQ",
+        "title": "tripleS - S12 곽연지",
+        "source": "두룽지",
+        "publishedAt": "2026-04-30"
+      },
+      {
+        "id": "s9IVDlAGog8",
+        "title": "Love2Love #트리플에스 #곽연지",
+        "source": "걸그룹갤러리",
+        "publishedAt": "2026-04-21"
+      },
+      {
+        "id": "9Jb6iXQ8rNE",
+        "title": "[트리플에스] 곽연지) 연지의 성장은 떡과 함께",
+        "source": "단풍유연",
+        "publishedAt": "2026-04-19"
+      },
+      {
+        "id": "S6OGG9gOdj0",
+        "title": "트리플에스(tripleS) 곽연지(Kwak YeonJi) - 걸스네버다이(Girls Never Die) 4.19혁명 락뮤직페스티벌",
+        "source": "카르바할 CARVAJAL",
+        "publishedAt": "2026-04-18"
+      },
+      {
+        "id": "29awxrIqBVk",
+        "title": "YeonJi TripleS 'Speed Love' 260405 #곽연지 #트리플에스 #yeonji #triples #idol",
+        "source": "K-iDOL Focus",
+        "publishedAt": "2026-04-17"
+      },
+      {
+        "id": "uBBBzJMaNGE",
+        "title": "[4K] 260404 tripleS zenith 곽연지 - Q&A | My Secret New Zone Seoul Day 1",
+        "source": "Zereu",
+        "publishedAt": "2026-04-14"
+      },
+      {
+        "id": "117gxR2rEic",
+        "title": "2026 콘서트 곽연지 모음",
+        "source": "걸그룹갤러리",
+        "publishedAt": "2026-04-08"
+      },
+      {
+        "id": "rwoSy7gELng",
+        "title": "요즘 폼 미쳤다 곽 곽연지 ! #트리플에스 #콘서트 #triples #YeonJi",
+        "source": "신짱캠",
+        "publishedAt": "2026-04-05"
+      },
+      {
+        "id": "7zbhPNteh6w",
+        "title": "가을 타는 여자 곽연지",
+        "source": "끼루룩연지 🦆",
+        "publishedAt": "2026-04-05"
+      },
+      {
+        "id": "asFkkZ2kB-c",
+        "title": "학생들 앞에서 의상이 과감했던 연지🫣 #곽연지 #트리플에스 #KwakYeonJi #tripleS",
+        "source": "그냥취미활동",
+        "publishedAt": "2026-04-02"
+      },
+      {
+        "id": "X-kSArjafOY",
+        "title": "S12, 𝓭𝓪𝔂 𝓸𝓷𝓮, #fypシ #kpop #triples #kwakyeonji #yeonji",
+        "source": "𝓢𝓽𝓪𝓻𝓰𝓪𝔃𝓲𝓷𝓰ིྀ🧷",
+        "publishedAt": "2026-03-15"
+      },
+      {
+        "id": "26RfLkoUKPk",
+        "title": "[4K] 260228 트리플에스 곽연지 ‘Diablo’ | My Secret New Zone in Taipei - tripleS KwakYeonji",
+        "source": "𝗦𝘂𝗺𝗺𝗲𝗿.",
+        "publishedAt": "2026-03-09"
+      },
+      {
+        "id": "DMolDP0IIPA",
+        "title": "[4K] 260215 트리플에스 곽연지 Q&A | 2025 한터뮤직어워즈 - tripleS KwakYeonji",
+        "source": "𝗦𝘂𝗺𝗺𝗲𝗿.",
+        "publishedAt": "2026-02-22"
+      },
+      {
+        "id": "kuYpGEW6ogo",
+        "title": "the main yapper of tripleS",
+        "source": "KiwiKoko",
+        "publishedAt": "2026-01-07"
+      },
+      {
+        "id": "ijRqc6taLHU",
+        "title": "MBTI는 과학이다 | 2025 곽연지 (2025 연말결산 2편)",
+        "source": "끼루룩연지 🦆",
+        "publishedAt": "2026-01-02"
+      },
+      {
+        "id": "368g3i_-Lug",
+        "title": "연지는 마유의 사랑이 부담스럽다",
+        "source": "끼루룩연지 🦆",
+        "publishedAt": "2025-12-30"
+      },
+      {
+        "id": "DIJZZ9BeQ2E",
+        "title": "[트리플에스] 곽연지) 크리스마스는 일브부터",
+        "source": "단풍유연",
+        "publishedAt": "2025-12-29"
+      },
+      {
+        "id": "HqywR0J_diA",
+        "title": "[트리플에스]곽곽곽시절 그립다",
+        "source": "대한코코볼",
+        "publishedAt": "2025-12-25"
+      },
+      {
+        "id": "4-WFlggKT_E",
+        "title": "[4K] 251219 트리플에스 곽연지 으르렁 (Growl) | KBS 가요대축제 - tripleS KwakYeonji",
+        "source": "𝗦𝘂𝗺𝗺𝗲𝗿.",
+        "publishedAt": "2025-12-25"
+      },
+      {
+        "id": "nZnAxnfQ0B8",
+        "title": "My heart is racing, how can Yeonji be this cute? She looks so \"shaky\" 🥺💖✨😂 | tripleS Christmas Alone",
+        "source": "Young Games",
+        "publishedAt": "2025-12-23"
+      },
+      {
+        "id": "f33W89soVL8",
+        "title": "알고 보니 내가 발레 재능자?! | tripleS | 정혜린 곽연지 지연",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-12-23"
+      },
+      {
+        "id": "gMRm_YCmkuA",
+        "title": "클리셰처럼 못 고르는 곽연지 앞머리 있 vs 없",
+        "source": "딸기농장주🍓",
+        "publishedAt": "2025-12-15"
+      },
+      {
+        "id": "n90NKG4OZj0",
+        "title": "Q&A | tripleS zenith | 곽연지 파트 모음",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-12-13"
+      },
+      {
+        "id": "8qtXygsp9AE",
+        "title": "아이돌이 카메라에게 살아남는 방법 | tripleS | 윤서연 이지우 곽연지",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-12-12"
+      },
+      {
+        "id": "hZ5JA0oCKco",
+        "title": "또 당신입니까? | tripleS | 윤서연 이지우 곽연지",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-12-11"
+      },
+      {
+        "id": "XPxttHk1rvs",
+        "title": "윙크요정 곽연지✨ #tripleS #트리플에스 #トリプルS #YeonJi #연지 #ヨンジ",
+        "source": "주주",
+        "publishedAt": "2025-12-08"
+      },
+      {
+        "id": "dkSHv-mr29M",
+        "title": "앞머리 내리고 역대급 미모 갱신한 아이돌🔥[tripleS 미소녀즈 - Christmas Alone]",
+        "source": "나만 듣기 아까운 노래",
+        "publishedAt": "2025-12-05"
+      },
+      {
+        "id": "cYeRg2kdKpk",
+        "title": "앞머리 풀뱅 백설공주 #곽연지",
+        "source": "오늘의음악",
+        "publishedAt": "2025-12-03"
+      },
+      {
+        "id": "bkkhHDLUeI0",
+        "title": "트리플에스 곽연지 'NOT CUTE ANYMORE' #tripleS #트리플에스 #곽연지",
+        "source": "비몽 BIMONG",
+        "publishedAt": "2025-12-03"
+      },
+      {
+        "id": "SsLpkuPA0No",
+        "title": "반해버렸어~~ 트리플에스 미소녀즈 곽연지 Christmas Alone 버스킹 #곽연지 #트리플에스 #트리플에스미소녀즈",
+        "source": "벤뎅이.VENDENGE",
+        "publishedAt": "2025-12-03"
+      },
+      {
+        "id": "0qICO7MkGyw",
+        "title": "너무 이쁜 트리플에스 미소녀즈 곽연지 Christmas Alone 버스킹 #곽연지 #트리플에스 #트리플에스미소녀즈",
+        "source": "벤뎅이.VENDENGE",
+        "publishedAt": "2025-12-03"
+      },
+      {
+        "id": "tXojnvV6PMY",
+        "title": "아직 귀여워! YeonJi tripleS - NOT CUTE ANYMORE @251202",
+        "source": "The Sin",
+        "publishedAt": "2025-12-02"
+      },
+      {
+        "id": "tEPY_wzg2M4",
+        "title": "트리플에스 미소녀즈 (tripleS msnz) 곽연지 NOT CUTE ANYMORE",
+        "source": "my way",
+        "publishedAt": "2025-12-02"
+      },
+      {
+        "id": "r0-Z5cE93QU",
+        "title": "성숙해진 연지 크리스마스 얼론 #곽연지 #Yeonji #트리플에스 #tripleS",
+        "source": "Spinel CAM",
+        "publishedAt": "2025-12-02"
+      },
+      {
+        "id": "lLslTLxmATM",
+        "title": "08년생의 NOT CUTE ANYMORE 챌린지 #곽연지 #tripleS #msnz #막내즈",
+        "source": "smile -wA-",
+        "publishedAt": "2025-12-02"
+      },
+      {
+        "id": "j0FpY43xwBA",
+        "title": "트리플에스 미소녀즈 (tripleS MSNZ) 버스킹 곽연지(Kwak YeonJi) NOT CUTE ANYMORE 챌린지",
+        "source": "카르바할 CARVAJAL",
+        "publishedAt": "2025-12-02"
+      },
+      {
+        "id": "a01CrWLsj90",
+        "title": "Q&A 챌린지 #곽연지 #tripleS #msnz",
+        "source": "smile -wA-",
+        "publishedAt": "2025-12-02"
+      },
+      {
+        "id": "_imhbkBX1AI",
+        "title": "더이상 NOT CUTE 한 연지 #곽연지 #YeonJi #트리플에스 #triples",
+        "source": "Spinel CAM",
+        "publishedAt": "2025-12-02"
+      },
+      {
+        "id": "7DZ0KOBZPww",
+        "title": "위에서 찍어도 미친 비율 #곽연지 #tripleS #msnz #KwakYeonJi",
+        "source": "smile -wA-",
+        "publishedAt": "2025-12-02"
+      },
+      {
+        "id": "mTk_Wmwdxck",
+        "title": "간식털이 현장 포착 | tripleS zenith | 곽연지 주빈",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-11-30"
+      },
+      {
+        "id": "7VfNfXus8iQ",
+        "title": "Christmas Alone | tripleS msnz | 곽연지 파트 모음",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-11-29"
+      },
+      {
+        "id": "1-nHfsJxSoM",
+        "title": "꽉꽉이의 시즌 1호 첫눈 챌린지 YeonJi tripleS - The First Snow @251122",
+        "source": "The Sin",
+        "publishedAt": "2025-11-25"
+      },
+      {
+        "id": "-0iC8AUFekQ",
+        "title": "스타일링마다 달라지는 연지의 분위기 #트리플에스 #triples #곽연지 #yeonji",
+        "source": "깨어나이제",
+        "publishedAt": "2025-11-15"
+      },
+      {
+        "id": "pK8QUDIl26c",
+        "title": "tripleS - Yeonji perfect sneeze timing 240104",
+        "source": "Marty",
+        "publishedAt": "2025-11-11"
+      },
+      {
+        "id": "xOJN32iFVYk",
+        "title": "레전드 조합…",
+        "source": "숨숨봐봐",
+        "publishedAt": "2025-10-29"
+      },
+      {
+        "id": "7olavBz0oT8",
+        "title": "S7 To S12 tripleS Videos Nakyoung, Yubin, Kaede, Dahyun, Kotone & Yeonji",
+        "source": "triple SSS * [S25 i]",
+        "publishedAt": "2025-10-22"
+      },
+      {
+        "id": "qMjBxq8jXDE",
+        "title": "뽑기 실패 | tripleS | 곽연지",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-10-14"
+      },
+      {
+        "id": "H6EoxiH3-7k",
+        "title": "초월소녀 네버 크라이 YeonJi tripleS - Girls Never Die @251011",
+        "source": "The Sin",
+        "publishedAt": "2025-10-11"
+      },
+      {
+        "id": "Wk6f1zmNPyU",
+        "title": "초록 머리도 소화하는 최강 미소녀 | tripleS | 곽연지",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-10-04"
+      },
+      {
+        "id": "XADX_hZMtsQ",
+        "title": "김나경 뒤에서 신남;; YeonJi tripleS - Love2Love @251002",
+        "source": "The Sin",
+        "publishedAt": "2025-10-02"
+      },
+      {
+        "id": "IC_oqdwKbsw",
+        "title": "[트리플에스] 곽연지) 나는 아무 생각이 업따...",
+        "source": "단풍유연",
+        "publishedAt": "2025-09-23"
+      },
+      {
+        "id": "4zQIQSIX8yw",
+        "title": "YeonJi tripleS - Are You Alive @250920",
+        "source": "The Sin",
+        "publishedAt": "2025-09-20"
+      },
+      {
+        "id": "2YBnSwcVMu8",
+        "title": "kwak yeonji, how fast the night changes? 🥺🥺 #kpop #triples #yeonji #fyp",
+        "source": "minssamchaeyen",
+        "publishedAt": "2025-09-18"
+      },
+      {
+        "id": "uRJlaGMdHKI",
+        "title": "수상할 정도로 막내가 제일 의젓한 어떤 그룹",
+        "source": "딸기농장주🍓",
+        "publishedAt": "2025-09-17"
+      },
+      {
+        "id": "h3kVwfZZPgI",
+        "title": "tripleS S12 Yeonji editing clips/scene pack",
+        "source": "20mirunz",
+        "publishedAt": "2025-09-15"
+      },
+      {
+        "id": "X0z4R0OXW8I",
+        "title": "Too Hot | tripleS | 곽연지 파트 모음",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-09-11"
+      },
+      {
+        "id": "CwAHYo-XXAQ",
+        "title": "걸그룹도 K-학생이다 | tripleS | 정혜린 곽연지",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-08-22"
+      },
+      {
+        "id": "4kTMhwg63EY",
+        "title": "20250807 트리플에스 tripleS 곽연지 KWAK YEONJI \"Are You Alive\" [900회 특집 엠카운트다운 인 보령] @보령머드엑스포광장",
+        "source": "덕질창고",
+        "publishedAt": "2025-08-08"
+      },
+      {
+        "id": "DlDbiGe9mdU",
+        "title": "흔한 아이돌의 잠금화면 | tripleS | 곽연지",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-08-03"
+      },
+      {
+        "id": "w_DJUZAxtsw",
+        "title": "I CAN'T STOP ME (원곡: 트와이스) | tripleS | 곽연지 파트 모음",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-07-29"
+      },
+      {
+        "id": "l4viX6AT-jA",
+        "title": "숙소에서 벌레 키우고 싶었던 곽연지",
+        "source": "맛있는 말차",
+        "publishedAt": "2025-07-25"
+      },
+      {
+        "id": "yVhRkjLALNs",
+        "title": "[트리플에스]공식 잼민이들",
+        "source": "파도SSS",
+        "publishedAt": "2025-07-23"
+      },
+      {
+        "id": "bexMk-R_UqI",
+        "title": "[트리플에스] 곽연지) 한결같은 잼민연지",
+        "source": "단풍유연",
+        "publishedAt": "2025-07-23"
+      },
+      {
+        "id": "rRvpulLip7A",
+        "title": "끈 떨어진 트리플에스 곽연지",
+        "source": "연예인움짤",
+        "publishedAt": "2025-07-20"
+      },
+      {
+        "id": "4Y9Ii4aSZHA",
+        "title": "초월급 미소녀 [트리플에스 곽연지]",
+        "source": "곽곽물결",
+        "publishedAt": "2025-07-20"
+      },
+      {
+        "id": "vIRnMcAL3OU",
+        "title": "막내와 놀아주기 위해서는 23명의 언니가 필요하다..!",
+        "source": "딸기농장주🍓",
+        "publishedAt": "2025-07-16"
+      },
+      {
+        "id": "5z31v1-yWks",
+        "title": "Nadine Abigail & Kwak Yeonji 💙🤍 #🇮🇩 #🇰🇷 #NadineAbigail #KwakYeonji #tripleS #kpop #ai #shorts",
+        "source": "The KingX Entertainment",
+        "publishedAt": "2025-07-16"
+      },
+      {
+        "id": "0bm1WCfpWOU",
+        "title": "Hit the Floor = 곽연지 쇼타임🎤 강렬 카리스마 터진 날 #트리플에스 #tripleS",
+        "source": "펌킨이야",
+        "publishedAt": "2025-07-16"
+      },
+      {
+        "id": "9XqBvLooVl0",
+        "title": "250712 트리플에스(tripleS) 콘서트 사운드체크 곽연지(Kwak YeonJi)",
+        "source": "카르바할 CARVAJAL",
+        "publishedAt": "2025-07-12"
+      },
+      {
+        "id": "0k72D_etL7M",
+        "title": "Black Soul Dress | tripleS | 곽연지 파트 모음",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-07-08"
+      },
+      {
+        "id": "0hNuXQ0-FZM",
+        "title": "24인조 걸그룹 목소리만 듣고 멤버 이름 맞히기👂🏻 #tripleS #트리플에스 #BadgeWar3 #배지전쟁3",
+        "source": "1theK Originals - 원더케이 오리지널",
+        "publishedAt": "2025-06-04"
+      },
+      {
+        "id": "T-je5KlEFCY",
+        "title": "연지의 3년이 담긴 #배지전쟁 #tripleS #트리플에스",
+        "source": "S25",
+        "publishedAt": "2025-06-03"
+      },
+      {
+        "id": "CjvXajAxAuU",
+        "title": "추리소설 (Detective Soseol) | tripleS | 곽연지 파트 모음",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-06-03"
+      },
+      {
+        "id": "r2_8npFmALI",
+        "title": "Rating Kwak YeonJi TripleS Are You Alive Outfit #kpop #triples #areyoualive #kwakyeonji #트리플에스 #깨어",
+        "source": "Fairy Yoona",
+        "publishedAt": "2025-06-01"
+      },
+      {
+        "id": "jRddY6B55uM",
+        "title": "연지가 울음을 터트린 타이밍: 오열하는 다현이를 발견한 순간 🥺 #tripleS #트리플에스 #トリプルS",
+        "source": "24명인데1명쯤은",
+        "publishedAt": "2025-05-20"
+      },
+      {
+        "id": "Q0wDEu0nfPI",
+        "title": "[트리플에스 배지전쟁] 동생들 보내버리는 맏언니",
+        "source": "혜리니이리네",
+        "publishedAt": "2025-05-18"
+      },
+      {
+        "id": "FHlVuMKSg38",
+        "title": "tripleS 연지 '깨어 (Are You Alive)' 사비 파트 (Comeback Showcase / 2025.05.12)",
+        "source": "SB GOM for tripleS🐱",
+        "publishedAt": "2025-05-14"
+      },
+      {
+        "id": "6q2cO_tkN68",
+        "title": "프리티걸 챌린지 하는 트리플에스 곽연지 tripleS Kwak YeonJi",
+        "source": "카르바할 CARVAJAL",
+        "publishedAt": "2025-05-13"
+      },
+      {
+        "id": "O-Aa43COtts",
+        "title": "《트리플에스》 연지의 입단속",
+        "source": "트에왔토네",
+        "publishedAt": "2025-05-06"
+      },
+      {
+        "id": "4t0JPaly_fU",
+        "title": "이런 누추한 곳에 귀한 분이🤩 트리플에스(tripleS) 곽연지의 본격 김유연 기 살리기 프로젝트🔥｜극과극 리뷰 Lady & Gentleman 8화",
+        "source": "스튜디오 훜 : STUDIO HOOK",
+        "publishedAt": "2025-05-06"
+      },
+      {
+        "id": "pcKPaGOZAGQ",
+        "title": "일본인들에게 포위된 연지짱 🇰🇷 #tripleS #트리플에스 #YeonJi #곽연지",
+        "source": "케냠이",
+        "publishedAt": "2025-04-25"
+      },
+      {
+        "id": "BE7pT1LRlIA",
+        "title": "인간이 어떻게 봄오리°.⋆ 🦆 #tripleS #트리플에스 #YeonJi #곽연지",
+        "source": "케냠이",
+        "publishedAt": "2025-04-14"
+      },
+      {
+        "id": "gIZk4AUJWjY",
+        "title": "[트리플에스] 본인을 너무 잘아는 곽연지ㅋㅋㅋ",
+        "source": "신위는못말려",
+        "publishedAt": "2025-04-10"
+      },
+      {
+        "id": "Xy9dJ8eWZSI",
+        "title": "### | tripleS | 곽연지 파트 모음",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-03-31"
+      },
+      {
+        "id": "r6aXZkCBA8k",
+        "title": "[트리플에스] 곽연지) 양갈래 곽연지 초월급으로 귀여움",
+        "source": "단풍유연",
+        "publishedAt": "2025-03-24"
+      },
+      {
+        "id": "XvT7XNQxBi8",
+        "title": "다시 F가 된 연지와 확신의 T수민 #tripleS #트리플에스 #トリプルS #トリプルエス #トエス #YeonJi #연지 #곽연지 #ヨンジ #SooMin #수민 #김수민 #スミン",
+        "source": "케냠이",
+        "publishedAt": "2025-02-21"
+      },
+      {
+        "id": "4yx4zaLcUsE",
+        "title": "그 날 연지의 세상은 끝났다 | tripleS | 정혜린 공유빈 곽연지",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-02-10"
+      },
+      {
+        "id": "ia3AD-k2_GA",
+        "title": "[트리플에스] 곽연지) 탕후루 먹을 때 귀여운 아이돌",
+        "source": "단풍유연",
+        "publishedAt": "2025-01-25"
+      },
+      {
+        "id": "PORr-5V74ek",
+        "title": "little kwak 💗 #yeonji #곽연지 #triples #트리플에스 #トリプルs #maknae #kpop #kpopshorts #viralshorts #shorts",
+        "source": "takyoS",
+        "publishedAt": "2025-01-17"
+      },
+      {
+        "id": "j9FJBcvDPxk",
+        "title": "동생 강하게 키우기 | tripleS | 코토네 곽연지",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-01-16"
+      },
+      {
+        "id": "41etdetHiiw",
+        "title": "Invincible | tripleS EVOLution | 곽연지 파트 모음",
+        "source": "오늘의SSS",
+        "publishedAt": "2025-01-09"
+      },
+      {
+        "id": "ma0HTBZrJ5o",
+        "title": "Non Scale | tripleS | 곽연지 파트 모음",
+        "source": "오늘의SSS",
+        "publishedAt": "2024-12-22"
+      },
+      {
+        "id": "4wqrGOoAjNs",
+        "title": "❤️ 초코송이 곽연지 🍓 When Yeonji stares at me, It’s a Pure Magic ✨️ #트리플에스 #곽연지 #triples #yeonji #vv",
+        "source": "REIH",
+        "publishedAt": "2024-12-14"
+      },
+      {
+        "id": "zNKdfYqrlSM",
+        "title": "기다리고 기다리던 연지혜린 이글루 챌린지 | #tripleS #혜린 #연지",
+        "source": "유연연연",
+        "publishedAt": "2024-12-12"
+      },
+      {
+        "id": "4KUvfFuStj4",
+        "title": "kwak yeonji sleeps core #triples #트리플에스 #kwakyeonji #곽연지 #kpopshorts #shorts #kpopedit #funny #kpop",
+        "source": "takyoS",
+        "publishedAt": "2024-12-03"
+      },
+      {
+        "id": "11gyvzBGoX8",
+        "title": "❤️ My heart is dugeun dugeun to Kwak Yeonji 🦆💛 #tripleS #Yeonji #트리플에스 #곽연지 #연지",
+        "source": "REIH",
+        "publishedAt": "2024-11-28"
+      },
+      {
+        "id": "RJ_9FePnTls",
+        "title": "#tripleS Kwak YeonJi #트리플에스 곽연지 Simply K-Pop on @arirangworld",
+        "source": "Arirang TV",
+        "publishedAt": "2024-11-15"
+      },
+      {
+        "id": "pM4oJ7y_aW8",
+        "title": "[트리플에스] 곽연지) 초월읍 최고 미소년 등장",
+        "source": "단풍유연",
+        "publishedAt": "2024-11-11"
+      },
+      {
+        "id": "HhneI0Adw5g",
+        "title": "말 많이 할 수 있어 신난 곽곽이 | tripleS Visionary Vision | 곽연지",
+        "source": "오늘의SSS",
+        "publishedAt": "2024-11-11"
+      },
+      {
+        "id": "rpR1B7gYEL8",
+        "title": "[트리플에스] 곽연지) 귤 먹을 때 귀여운 아이돌",
+        "source": "단풍유연",
+        "publishedAt": "2024-11-10"
+      },
+      {
+        "id": "joJevLh2P7U",
+        "title": "공포증 발음 안되는 한국인 | tripleS Visionary Vision | 곽연지",
+        "source": "오늘의SSS",
+        "publishedAt": "2024-11-06"
+      },
+      {
+        "id": "yPDdCNZevkM",
+        "title": "[트리플에스]다시 거실로 나간 연지",
+        "source": "대한코코볼",
+        "publishedAt": "2024-11-05"
+      },
+      {
+        "id": "PxqG7_ePGFE",
+        "title": "241030 청운대학교 트리플에스VV 곽연지 - 인빈시블 /  tripleS VV Kwak YeonJi - Invincible",
+        "source": "카르바할",
+        "publishedAt": "2024-10-30"
+      },
+      {
+        "id": "OJj9ei5jb_Y",
+        "title": "241030 청운대학교 트리플에스VV 곽연지 - Choom /  tripleS VV Kwak YeonJi - Choom",
+        "source": "카르바할",
+        "publishedAt": "2024-10-30"
+      },
+      {
+        "id": "DLejKGtmHMM",
+        "title": "Choom | tripleS Visionary Vision | 곽연지 파트 모음",
+        "source": "오늘의SSS",
+        "publishedAt": "2024-10-30"
+      },
+      {
+        "id": "gixboPWaT7k",
+        "title": "(4K) [NPOP CAM] tripleS VV(트리플에스 VV) YeonJi 'Hit the Floor' Ι NPOP LIMITED EDITION - SIDE B",
+        "source": "NPOP",
+        "publishedAt": "2024-10-29"
+      },
+      {
+        "id": "zRw5LVS6hAM",
+        "title": "Hit the Floor | tripleS Visionary Vision | 곽연지 파트 모음",
+        "source": "오늘의SSS",
+        "publishedAt": "2024-10-27"
+      },
+      {
+        "id": "DvniXLvc75k",
+        "title": "도쿄즈 미쳤다 ㅋㅋㅋㅋ | tripleS Visionary Vision | 코토네 곽연지",
+        "source": "오늘의SSS",
+        "publishedAt": "2024-10-27"
+      },
+      {
+        "id": "O8_jlkNAOQk",
+        "title": "[NPOP Challenge] tripleS VV's YeonJi, HyeRin, YooYeon 'Hit the Floor' l NAVER NPOP 10/28 7PM",
+        "source": "NPOP",
+        "publishedAt": "2024-10-26"
+      },
+      {
+        "id": "IbnTQaGVPRA",
+        "title": "냅다 방패가 되.. | tripleS Visionary Vision | 곽연지 니엔",
+        "source": "오늘의SSS",
+        "publishedAt": "2024-10-26"
+      },
+      {
+        "id": "F9Zh98F4puM",
+        "title": "냥냥펀치! | tripleS Visionary Vision | 곽연지",
+        "source": "오늘의SSS",
+        "publishedAt": "2024-10-25"
+      },
+      {
+        "id": "btdpqhH1IeY",
+        "title": "[트리플에스]곽곽곽연지 한때는 곽연지였다.",
+        "source": "대한코코볼",
+        "publishedAt": "2024-10-23"
+      },
+      {
+        "id": "LNUMUMwRkYA",
+        "title": "연지 곽곽 | tripleS",
+        "source": "오늘의SSS",
+        "publishedAt": "2024-10-14"
+      },
+      {
+        "id": "0dReNBTnzVQ",
+        "title": "tripleS 연지 '미열 37.5' 싸비 파트 (Authentic EVOlution / 2024.02.03)",
+        "source": "SB GOM for tripleS🐱",
+        "publishedAt": "2024-10-09"
+      },
+      {
+        "id": "p-MRg351Jy8",
+        "title": "241003 전주페스타 트리플에스 곽연지 - 인빈시블 /  tripleS Kwak YeonJi - Invincible",
+        "source": "카르바할",
+        "publishedAt": "2024-10-03"
+      },
+      {
+        "id": "gfdVQrUIgPU",
+        "title": "[4K] 241003 트리플에스 곽연지(tripleS KwakYeonJi) 'Invincible' 전주페스타",
+        "source": "cherish Soda",
+        "publishedAt": "2024-10-03"
+      },
+      {
+        "id": "b65_kSrEee8",
+        "title": "241003 전주페스타 트리플에스 곽연지 - 라이징 / tripleS Kwak YeonJi - RISING",
+        "source": "카르바할",
+        "publishedAt": "2024-10-03"
+      },
+      {
+        "id": "NRZGEvNFQWQ",
+        "title": "241003 전주페스타 트리플에스 곽연지 - 걸스캐피탈리즘 /  tripleS Kwak YeonJi - Girls' Capitalism",
+        "source": "카르바할",
+        "publishedAt": "2024-10-03"
+      },
+      {
+        "id": "CGU3OlNRNpc",
+        "title": "[4K] 241003 트리플에스 곽연지(tripleS KwakYeonJi) 'Girls Never Die' 전주페스타",
+        "source": "cherish Soda",
+        "publishedAt": "2024-10-03"
+      },
+      {
+        "id": "UkvR7EmLyLw",
+        "title": "241001 강릉원주대 해람대동제 트리플에스 곽연지 / tripleS Kwak YeonJi",
+        "source": "카르바할 CARVAJAL",
+        "publishedAt": "2024-10-02"
+      },
+      {
+        "id": "tLVloF69KO4",
+        "title": "241001 강릉원주대 해람대동제 트리플에스 곽연지 - 라이징 / tripleS Kwak YeonJi - RISING",
+        "source": "카르바할",
+        "publishedAt": "2024-10-01"
+      },
+      {
+        "id": "37veH-qBJCI",
+        "title": "막내는 놀려야 제 맛 | tripleS Visionary Vision | 곽연지",
+        "source": "오늘의SSS",
+        "publishedAt": "2024-09-25"
+      },
+      {
+        "id": "VpjaOBfyqrU",
+        "title": "바라만 봐도 미소가 저절로 번지는 WAV의 \"smiley\" 연지 #tripleS, #트리플에스,  #EVOlution, #YeonJi, #SMILEY, #예나",
+        "source": "너구리 아니고 레서판다",
+        "publishedAt": "2024-09-24"
+      },
+      {
+        "id": "74Wr6lDIRP8",
+        "title": "240718 트리플에스 곽연지",
+        "source": "Kolbe",
+        "publishedAt": "2024-09-20"
+      },
+      {
+        "id": "bHM-ExeF3nk",
+        "title": "곽연지여서 서운한 곽연지..",
+        "source": "트리플에스타일",
+        "publishedAt": "2024-09-12"
+      },
+      {
+        "id": "c8oDWi7V0yY",
+        "title": "tripleS - 5 Soomin vs 5 Yeonji 240903",
+        "source": "Marty",
+        "publishedAt": "2024-09-04"
+      },
+      {
+        "id": "PM9F9aWUFUc",
+        "title": "[트리플에스] 곽연지) 유명대학 학생들의 과외를 무료로 받는 초월급 고등학생",
+        "source": "단풍유연",
+        "publishedAt": "2024-08-31"
+      },
+      {
+        "id": "9ES93d21dQA",
+        "title": "[트리플에스] 곽연지) 연지는 말을 하고 싶다",
+        "source": "단풍유연",
+        "publishedAt": "2024-08-16"
+      },
+      {
+        "id": "uC6VxmUyZ44",
+        "title": "#곽연지 #트리플에스 #girlsneverdie #triples 여름아 놀자 in 울산",
+        "source": "WINDFALL FANCAM",
+        "publishedAt": "2024-08-05"
+      },
+      {
+        "id": "7bPTYilNWfw",
+        "title": "TRIPLE S YEONJI VIRAL VISUAL BEAUTY #kpop #triples #yeonji",
+        "source": "Kpop Angels",
+        "publishedAt": "2024-07-30"
+      },
+      {
+        "id": "_WSQtY98JHc",
+        "title": "[트리플에스] 곽연지) 떡 먹을 때 귀여운 아이돌",
+        "source": "단풍유연",
+        "publishedAt": "2024-07-29"
+      },
+      {
+        "id": "hny7ZFRwQRI",
+        "title": "240720 트리플에스 트레이딩 카페 곽연지 / tripleS Kwak YeonJi",
+        "source": "카르바할 CARVAJAL",
+        "publishedAt": "2024-07-20"
+      },
+      {
+        "id": "EMe65lsC_UU",
+        "title": "곽연지와 채원이가 미래다!👐 #tripleS #트리플에스 #トリプルS #연지 #YeonJi #채원 #ChaeWon",
+        "source": "tripleS official",
+        "publishedAt": "2024-07-12"
+      },
+      {
+        "id": "4WATdak03rA",
+        "title": "곽곽곽곽곽연지",
+        "source": "24명은 너무 많지 않아요?",
+        "publishedAt": "2024-06-01"
+      },
+      {
+        "id": "_0bgwTYcBpk",
+        "title": "[tripleS 곽연지]낙엽만 떨어져도 웃는 소녀 곽곽곽연지",
+        "source": "雲",
+        "publishedAt": "2024-05-27"
+      },
+      {
+        "id": "JkFH3iiFoms",
+        "title": "[트리플에스] 정하연/곽연지) 빛보다 빠른 곽연지의 옷단속",
+        "source": "단풍유연",
+        "publishedAt": "2024-05-22"
+      },
+      {
+        "id": "xdyCNU3vlPY",
+        "title": "생애 처음 일일 팬매로 나선 tripleS 연지, 채원 (240517 뮤직뱅크)",
+        "source": "탐정단_fancam",
+        "publishedAt": "2024-05-18"
+      },
+      {
+        "id": "rNn2hukig70",
+        "title": "[트리플애스]정든 초월을 떠난 연지 #triples #yeonji #곽연지",
+        "source": "낼빛",
+        "publishedAt": "2024-04-25"
+      },
+      {
+        "id": "sh--UzJoL2U",
+        "title": "[EN] tripleS - Yooyeon messing with Yeonji 231128",
+        "source": "Marty",
+        "publishedAt": "2024-04-02"
+      },
+      {
+        "id": "BxbeHT2MY0A",
+        "title": "벚꽃 연지 등장🌸 #tripleS #트리플에스 #곽연지 #YeonJi",
+        "source": "tripleS official",
+        "publishedAt": "2024-03-27"
+      },
+      {
+        "id": "QQG9iimsr5M",
+        "title": "tripleS - Yeonji yapping too much for Joobin and Soomin 240313",
+        "source": "Marty",
+        "publishedAt": "2024-03-13"
+      },
+      {
+        "id": "CLWcsywkh_s",
+        "title": "바라만 봐도 미소가 저절로 번지는 WAV의 \"smiley\" 연지 #tripleS, #트리플에스,  #EVOlution, #YeonJi, #SMILEY, #예나",
+        "source": "너구리 아니고 레서판다",
+        "publishedAt": "2024-03-06"
+      },
+      {
+        "id": "kktnWyx2v24",
+        "title": "240203 트리플에스 곽연지",
+        "source": "Kolbe",
+        "publishedAt": "2024-02-28"
+      },
+      {
+        "id": "RjxBslErvb8",
+        "title": "240203 트리플에스 곽연지 GET A GUITAR",
+        "source": "Kolbe",
+        "publishedAt": "2024-02-26"
+      },
+      {
+        "id": "7qS1-oWHg9I",
+        "title": "240203 트리플에스 곽연지",
+        "source": "Kolbe",
+        "publishedAt": "2024-02-26"
+      },
+      {
+        "id": "kI9jJYhawvg",
+        "title": "240204 트리플에스 콘서트 서연 연지 - 디멘션 / tripleS Concert Yoon SeoYeon & Kwak YeonJi - Dimension",
+        "source": "카르바할",
+        "publishedAt": "2024-02-12"
+      },
+      {
+        "id": "p9UbBg9aDHo",
+        "title": "240203 트리플에스 에볼루션 콘서트 곽연지 - 뉴 룩 / tripleS evolution-Con Kwak YeonJi - New Look",
+        "source": "카르바할",
+        "publishedAt": "2024-02-10"
+      },
+      {
+        "id": "f9K9Nq66Mkc",
+        "title": "트리플에스 곽연지 마유 Get a Guitar Cover 에볼루션 콘서트 tripleS Yeonji Mayu EVOLution Concert 240203",
+        "source": "abcdess",
+        "publishedAt": "2024-02-03"
+      },
+      {
+        "id": "uovHKo9gclI",
+        "title": "트리플에스 막내즈 수민 연지 크로스!!! (feat.진지함)",
+        "source": "DaHyun my sun",
+        "publishedAt": "2024-01-17"
+      },
+      {
+        "id": "u6-ERYYS9HI",
+        "title": "트리플에스 곽연지 팬밋업 인터렉티브 tripleS Yeonji",
+        "source": "abcdess",
+        "publishedAt": "2023-12-23"
+      },
+      {
+        "id": "8V29Y0-JLKQ",
+        "title": "[트리플에스] 곽연지 15년동안 얼굴변화 #tripleS #곽연지",
+        "source": "올잇슈",
+        "publishedAt": "2023-11-14"
+      },
+      {
+        "id": "91Ay6mPHnoY",
+        "title": "CG 없이 진짜로 하는 트리플에스 #triples #evolution #invincible",
+        "source": "원투트리플데이",
+        "publishedAt": "2023-11-06"
+      },
+      {
+        "id": "FJ8tBkVs_u4",
+        "title": "[플리캠 4K] tripleS EVOLution Kwak YeonJi 'INVINCIBLE' (트리플에스 에볼루션 곽연지) l Simply K-Pop CON-TOUR Ep.589",
+        "source": "ARIRANG K-POP",
+        "publishedAt": "2023-10-18"
+      },
+      {
+        "id": "sy_Oolz0ULA",
+        "title": "231011 tripleS EVOLution 곽연지 by ODS",
+        "source": "ODS",
+        "publishedAt": "2023-10-12"
+      },
+      {
+        "id": "IsbJldbOU7Q",
+        "title": "tripleS funny moments to celebrate EVOLution's debut | TripleS funny moments part 2",
+        "source": "Amtiny",
+        "publishedAt": "2023-10-12"
+      },
+      {
+        "id": "t3UqZzbhOzs",
+        "title": "231011 트리플에스 에볼루션 쇼케이스 곽연지  / tripleS EVOLution Showcase Kwak Yeonji",
+        "source": "카르바할 CARVAJAL",
+        "publishedAt": "2023-10-11"
+      },
+      {
+        "id": "hQNca4wJ07Q",
+        "title": "231011 트리플에스 에볼루션 쇼케이스 곽연지 - 로단테 / tripleS EVOLution Showcase Kwak Yeonji - Rhodanthe",
+        "source": "카르바할",
+        "publishedAt": "2023-10-11"
+      },
+      {
+        "id": "e0XmulbAdqI",
+        "title": "231011 트리플에스 에볼루션 쇼케이스 곽연지 - 뉴 룩 / tripleS EVOLution Showcase Kwak Yeonji - New Look",
+        "source": "카르바할",
+        "publishedAt": "2023-10-11"
+      },
+      {
+        "id": "HY2COle8hAg",
+        "title": "tripleS 연지 'Invincible' 엔딩 파트 컷 (EVOLution Comeback Showcase / 2023.10.11)",
+        "source": "SB GOM KPOP🧸",
+        "publishedAt": "2023-10-11"
+      },
+      {
+        "id": "BzVT5ifzvj8",
+        "title": "231011 트리플에스 에볼루션 쇼케이스 곽연지 - 인빈서블 / tripleS EVOLution Showcase Kwak Yeonji - Invincible",
+        "source": "카르바할",
+        "publishedAt": "2023-10-11"
+      },
+      {
+        "id": "nAYJUd8wtQM",
+        "title": "SecretBase 230114 KwakYeonJi.SSS ｜EN JP CN ｜",
+        "source": "tripleS official",
+        "publishedAt": "2023-10-01"
+      },
+      {
+        "id": "e0PEPaCxRfk",
+        "title": "[트리플에스] 곽연지) 냠냠연지",
+        "source": "단풍유연",
+        "publishedAt": "2023-09-19"
+      },
+      {
+        "id": "DWI3kfWEodU",
+        "title": "230920 인천공항 트리플에스 출국 수민 연지 위주 / tripleS Kim SooMin, Kwak YeonJi",
+        "source": "카르바할 CARVAJAL",
+        "publishedAt": "2023-09-19"
+      },
+      {
+        "id": "7a6z3PmbBs8",
+        "title": "수다쟁이 곽연지 | tripleS 트리플에스",
+        "source": "트에는커여워",
+        "publishedAt": "2023-09-01"
+      },
+      {
+        "id": "4S6iOrQu7L0",
+        "title": "tripleS funny moments to celebrate LOVElution's debut",
+        "source": "Amtiny",
+        "publishedAt": "2023-08-16"
+      },
+      {
+        "id": "_xea12vWygU",
+        "title": "[트리플에스] 곽곽곽신위 #triples #트리플에스 #박소현 #신위 #곽연지",
+        "source": "윤서연서윤",
+        "publishedAt": "2023-08-02"
+      },
+      {
+        "id": "lbQh-6qpWhY",
+        "title": "편집된 ★유연X연지 빙고 게임★ 주워 왔습니다 | #tripleS #김유연 #곽연지",
+        "source": "내가",
+        "publishedAt": "2023-07-27"
+      },
+      {
+        "id": "moRCIDqfhfo",
+        "title": "S6 수민, 16살 연지, S16 마유｜EN JP CN｜SSSIGNAL 230723",
+        "source": "tripleS official",
+        "publishedAt": "2023-07-23"
+      },
+      {
+        "id": "cIS2GLbm41I",
+        "title": "시골 통학하는 16세 아이돌/#tripleS #곽연지",
+        "source": "광안리꿀주먹",
+        "publishedAt": "2023-07-07"
+      },
+      {
+        "id": "pBuWNF3TZcw",
+        "title": "tripleS 트리플에스 : sweets ‘어려운 한국말이 없는 비결은 무엇??’",
+        "source": "tripleS official",
+        "publishedAt": "2023-07-06"
+      },
+      {
+        "id": "TLR0QP1RX1s",
+        "title": "#트리플에스 #추천 #팬게임 #추천영상 곽연지 사진 모음!#아이브 #아이엠",
+        "source": "트리플에스 팬 계정",
+        "publishedAt": "2023-06-13"
+      },
+      {
+        "id": "0K0vRGvvIrs",
+        "title": "\"일으켜 주실 곽연지or김나경 구함ㅋ\" (트리플에스 다현)",
+        "source": "로드 업",
+        "publishedAt": "2023-06-08"
+      },
+      {
+        "id": "yk1-_SrARsQ",
+        "title": "tripleS 트리플에스 : sweets ‘곽 곽 곽연지의 일인칭 화법 feat. 저가’",
+        "source": "tripleS official",
+        "publishedAt": "2023-06-03"
+      },
+      {
+        "id": "O52vmYpENIw",
+        "title": "tripleS 트리플에스 : sweets ‘그네로 알아보는 극과 극 성격차이’",
+        "source": "tripleS official",
+        "publishedAt": "2023-05-24"
+      },
+      {
+        "id": "orz7puyzLO4",
+        "title": "Reacting To - 트리플에스(tripleS) \"Rising\"",
+        "source": "Jeremiah Yockey",
+        "publishedAt": "2023-04-17"
+      },
+      {
+        "id": "QiQ5wG057Z4",
+        "title": "Kotone and Yeonji 트리플에스 (tripleS) Compilation",
+        "source": "QuadrupleS",
+        "publishedAt": "2023-04-03"
+      },
+      {
+        "id": "TjqvprZQZzw",
+        "title": "트리플에스 러키더키 MD 카페 곽연지 #곽연지 #트리플에스 #tripleS",
+        "source": "Cloud blue",
+        "publishedAt": "2023-03-19"
+      },
+      {
+        "id": "ttypOjlsX8w",
+        "title": "tripleS Member Profile Part 4 | Get to know Dahyun, Kotone and Yeonji! (S10, S11, S12)",
+        "source": "GYeon Reacts ",
+        "publishedAt": "2023-03-17"
+      },
+      {
+        "id": "e_CVkKdSHgg",
+        "title": "tripleS : 'KwakYeonJi.Objekt' | PTBR",
+        "source": "tripleS braSil",
+        "publishedAt": "2023-02-23"
+      },
+      {
+        "id": "GXgpvoGhLrI",
+        "title": "‘Rising’ MV 리액션 (코토네, 연지 Ver.) | tripleS ASSEMBLE [ EN JP CN ES ID ]",
+        "source": "tripleS official",
+        "publishedAt": "2023-02-19"
+      },
+      {
+        "id": "sUth810d1R8",
+        "title": "tripleS : Blue Check │ Kotone, YeonJi",
+        "source": "tripleS official",
+        "publishedAt": "2023-02-18"
+      },
+      {
+        "id": "q0hN0ujOxiA",
+        "title": "\"연지 왜 이렇게 귀엽냥 진짜 애깅\" @triplescosmos @스푼04 #곽연지 #코토네",
+        "source": "빈이가제일좋아",
+        "publishedAt": "2023-02-02"
+      },
+      {
+        "id": "OgKAAJIV1CE",
+        "title": "Kwak Yeonji, the youngest member of tripleS 💕",
+        "source": "The KingX Entertainment",
+        "publishedAt": "2023-01-25"
+      },
+      {
+        "id": "dTI9o0gUE5I",
+        "title": "Reacting to TripleS - Kwak Yeonji Enters The Haus",
+        "source": "Jojobas Reacts",
+        "publishedAt": "2023-01-23"
+      },
+      {
+        "id": "zm0RcfeLn5E",
+        "title": "tripleS 트리플에스 : KwakYeonJi.SSS",
+        "source": "tripleS official",
+        "publishedAt": "2023-01-18"
+      },
+      {
+        "id": "bXPUipNiT2I",
+        "title": "Reacting To - 트리플에스(tripleS) \"Generation\"",
+        "source": "Jeremiah Yockey",
+        "publishedAt": "2023-01-14"
+      }
+    ],
+    "duplicateYoutubeIds": []
+  }
+}

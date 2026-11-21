@@ -11,11 +11,11 @@ import './yeonji-film.css';
 const DATA_PATH = `${import.meta.env.BASE_URL}data/films.json`;
 const STORAGE_KEY = 'yeonji-archive-film-favorites-v1';
 const PAGE_SIZE = 18;
-type FilmFilter = 'all' | 'fancam' | 'music' | 'signal' | 'performance' | 'live' | 'behind' | 'saved';
+type FilmFilter = 'all' | 'review' | 'fancam' | 'music' | 'signal' | 'performance' | 'live' | 'behind' | 'saved';
 type PublisherFilter = 'all' | FilmPublisher;
 type ScopeFilter = 'all' | Film['scope'];
 const TABS: { id: FilmFilter; label: string }[] = [
-  { id: 'all', label: '전체' }, { id: 'fancam', label: '연지 직캠' },
+  { id: 'all', label: '전체' }, { id: 'review', label: '검토 필요' }, { id: 'fancam', label: '연지 직캠' },
   { id: 'music', label: '공식 MV' }, { id: 'signal', label: 'SIGNAL' },
   { id: 'performance', label: '무대·안무' }, { id: 'live', label: '라이브' },
   { id: 'behind', label: '비하인드' }, { id: 'saved', label: '저장한 영상' },
@@ -31,6 +31,27 @@ const getSavedIds = (): Set<string> => {
   } catch { return new Set(); }
 };
 
+
+/* Film quality v3 — title-only hints; never substitute for manual attendance checks */
+const YEONJI_TITLE_MARKER = /곽\s*연지|#?연지|kwak[\s._-]*yeon[\s._-]*ji|yeon[\s._-]*ji/i;
+const OTHER_MEMBER_IN_TITLE = /공유빈|김유연|김나경|정혜린|이지우|윤서연|김수민|김채연|김채원|정하연|박시온|김수민|김주빈|코토네|서다현|신위|니엔|마유|설린/i;
+function filmNeedsReview(video: Film): boolean {
+  const direct = YEONJI_TITLE_MARKER.test(video.title);
+  // A group title may still contain YeonJi; only mark ambiguous solo metadata for review.
+  return !direct || (video.scope === 'solo' && OTHER_MEMBER_IN_TITLE.test(video.title));
+}
+function filmBadgeText(video: Film): string {
+  const title = video.title;
+  if (/(?:#shorts|\bshorts\b|쇼츠)/i.test(title)) return 'SHORTS';
+  if (video.kind === 'fancam' || /(?:직캠|fancam|focus\s*cam|최애직캠|입덕직캠|페이스캠)/i.test(title)) return 'FANCAM';
+  if (video.kind === 'signal' || /(?:\bsignal\b|시그널)/i.test(title)) return 'SIGNAL';
+  if (video.kind === 'dance' || /(?:dance\s*practice|안무\s*영상|안무\s*연습)/i.test(title)) return 'PRACTICE';
+  if (video.kind === 'mv' || /(?:official\s*(?:mv|music\s*video)|\bm\/v\b|뮤직비디오)/i.test(title)) return 'MV';
+  if (video.kind === 'behind' || /(?:behind|비하인드|making\s*film)/i.test(title)) return 'BEHIND';
+  if (video.kind === 'live' || /(?:\blivestream\b|\blive\b|라이브)/i.test(title)) return 'LIVE';
+  return 'VIDEO';
+}
+
 function FilmImage({video}: {video:Film}) {
   const [failed, setFailed] = useState(false);
   useEffect(() => setFailed(false),[video.id]);
@@ -38,17 +59,17 @@ function FilmImage({video}: {video:Film}) {
     {failed ? <span className="yfilm-image-fallback">YEONJI ARCHIVE<br/><small>WATCH ON YOUTUBE</small></span>
       : <img alt="" src={filmThumbnail(video.youtubeId)} width="480" height="270" loading="lazy" decoding="async" referrerPolicy="no-referrer" onError={() => setFailed(true)}/>}
     <span className="yfilm-play" aria-hidden="true">▶</span>
-    <span className="yfilm-image-badge">{video.kind === 'fancam' ? 'FANCAM' : video.kind === 'mv' ? 'MV' : video.kind === 'dance' ? 'PRACTICE' : video.kind === 'signal' ? 'SIGNAL' : video.kind === 'behind' ? 'BEHIND' : 'VIDEO'}</span>
+    <span className="yfilm-image-badge">{filmBadgeText(video)}</span>
   </div>;
 }
 function FilmCard({video,saved,onPlay,onSave}:{video:Film;saved:boolean;onPlay:()=>void;onSave:()=>void}) {
   const {t} = useI18n();
   return <article className="yfilm-card">
-    <button className="yfilm-card-main" type="button" onClick={onPlay} aria-label={`${t(video.title)} · ${t('영상 재생')}`}>
+    <button className="yfilm-card-main" type="button" title={video.title} onClick={onPlay} aria-label={`${t(video.title)} · ${t('영상 재생')}`}>
       <FilmImage video={video}/>
       <div className="yfilm-card-info">
         <span className="yfilm-eyeline">{t(filmPublisherLabel(video.publisher))} <i>·</i> {readableFilmDate(video.publishedAt)}</span>
-        <strong>{t(video.title)}</strong>
+        <strong>{t(video.title)}</strong>{filmNeedsReview(video) && <span className="yfilm-review-flag">제목 기준 확인 필요</span>}
         <span className="yfilm-card-extra">{video.group} <i> / </i> {t(filmScopeLabel(video.scope))}{video.song ? ` · ${video.song}` : ''}</span>
       </div>
     </button>
@@ -130,7 +151,7 @@ export default function YeonjiFilm(){
   const groups=useMemo(()=>[...new Set(films.map(f=>f.group))].sort((a,b)=>a.localeCompare(b)),[films]);
   const stats=useMemo(()=>({total:films.length,fancams:films.filter(f=>f.kind==='fancam').length,official:films.filter(f=>f.publisher==='official').length, signal:films.filter(f=>f.category==='signal').length, behind:films.filter(f=>f.kind==='behind').length}),[films]);
   const filtered=useMemo(()=>films.filter(f=>
-    (filter==='all'||filter==='saved'&&saved.has(f.id)||filter==='fancam'&&f.kind==='fancam'||filter==='music'&&f.category==='music'||filter==='signal'&&f.category==='signal'||filter==='performance'&&f.category==='performance'||filter==='live'&&f.category==='live'||filter==='behind'&&f.kind==='behind')&&
+    (filter==='all'||filter==='review'&&filmNeedsReview(f)||filter==='saved'&&saved.has(f.id)||filter==='fancam'&&f.kind==='fancam'||filter==='music'&&f.category==='music'||filter==='signal'&&f.category==='signal'||filter==='performance'&&f.category==='performance'||filter==='live'&&f.category==='live'||filter==='behind'&&f.kind==='behind')&&
     (publisher==='all'||f.publisher===publisher)&&
     (scope==='all'||f.scope===scope)&&
     (group==='all'||f.group===group)&&
@@ -158,12 +179,12 @@ export default function YeonjiFilm(){
         <label><span>{t('정렬')}</span><select value={sort} onChange={e=>setSort(e.target.value as 'newest'|'oldest')}><option value="newest">{t('최신순')}</option><option value="oldest">{t('오래된 순')}</option></select></label>
       </div>
     </div>
-    <div className="yfilm-results"><span>{loading?t('불러오는 중'):`${formatNumber(filtered.length)} ${t('영상')}`}</span><span>{t('출처와 연지의 출연 여부를 확인한 영상만 표시합니다')}</span></div>
+    <div className="yfilm-results"><span>{loading?t('불러오는 중'):`${formatNumber(filtered.length)} ${t('영상')}`}</span><span>{t('일괄 등록 영상 포함 · 출연 여부는 순차 검수 중')} · {t('검토 필요')} {formatNumber(films.filter(f=>filmNeedsReview(f)).length)}</span></div>
     {loading?<div className="yfilm-grid" role="status" aria-label={t('불러오는 중')}>{Array.from({length:6},(_,i)=><div key={i} className="yfilm-skeleton"><div/><span/></div>)}</div>:
       error?<div className="yfilm-empty" role="alert"><h2>{t('영상 데이터를 불러오지 못했습니다')}</h2><p>{error}</p><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@triplescosmos">tripleS official ↗</a></div>:
       filtered.length?<><div className="yfilm-grid">{filtered.slice(0,visible).map(f=><FilmCard key={f.id} video={f} saved={saved.has(f.id)} onPlay={()=>setPlayingId(f.id)} onSave={()=>toggleSaved(f.id)}/>)}</div>{visible<filtered.length&&<div className="yfilm-more"><button type="button" onClick={()=>setVisible(v=>v+PAGE_SIZE)}>{t('더 보기')} <span>{Math.min(visible,filtered.length)} / {filtered.length}</span></button></div>}</>:
       <div className="yfilm-empty"><h2>{t('표시할 영상이 없습니다')}</h2><p>{t('검색어나 필터를 변경해 보세요')}</p><button type="button" onClick={reset}>{t('전체 보기')}</button></div>}
-    <aside className="yfilm-note"><span>ARCHIVE NOTE</span><p>{t('공식 영상과 직캠은 출처와 출연 여부를 확인한 뒤 등록합니다. 새 영상은 검토 후 추가합니다')}</p><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@triplescosmos">tripleS official ↗</a></aside>
+    <aside className="yfilm-note"><span>ARCHIVE NOTE</span><p>{t('검색 결과로 등록한 영상은 출연 여부를 확인하는 중입니다. 제목에 연지의 이름이 있어도 실제 출연은 별도 검수가 필요합니다. 원본 영상은 YouTube에서 재생합니다.')}</p><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@triplescosmos">tripleS official ↗</a></aside>
     {selected&&<VideoDialog video={selected} onClose={closePlayer}/>}
   </section>;
 }

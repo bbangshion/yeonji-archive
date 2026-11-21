@@ -174,3 +174,9 @@
   .yfilm-player iframe { width: 100%; height: 100%; }
   .yfilm-modal-bottom, .yfilm-player-note { display: none; }
 }
+
+/* YEONJI FILM QUALITY V3: readable card titles / review label */
+.yfilm-card-info strong { -webkit-line-clamp: 3; min-height: 63px; overflow-wrap: anywhere; }
+.yfilm-review-flag { justify-self:start; width:fit-content; border:1px solid rgba(166,183,255,.32); padding:2px 6px; color:#b8c7ff; background:rgba(42,55,94,.16); font-size:10px; line-height:1.5; }
+.yfilm-review-flag::before { content:"◦ "; }
+@media(max-width:560px) { .yfilm-card-info strong { -webkit-line-clamp: 3; min-height:54px; overflow-wrap:anywhere; } .yfilm-review-flag { font-size:9px; } .yfilm-results { align-items:start; } }

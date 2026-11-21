@@ -1,0 +1,61 @@
+/* YEONJI ARCHIVE · timeline v3 — scoped editorial layer, no global overrides. */
+.yeonji-timeline-v3 { --yj-blue: #8197ff; --yj-line: rgba(172,189,255,.2); --yj-muted: #aeb6c9; max-width: 1130px; }
+.yeonji-timeline-v3 .yeonji-timeline-hero { padding: clamp(18px,3vw,38px) 0 26px; border-bottom: 1px solid var(--yj-line); }
+.yeonji-timeline-v3 .yeonji-timeline-hero-row { display: flex; gap: 30px; align-items: flex-end; justify-content: space-between; }
+.yeonji-timeline-v3 .yeonji-timeline-hero h1 { font-size: clamp(34px,6vw,70px); letter-spacing: -.06em; line-height: 1.1; margin: 11px 0 15px; }
+.yeonji-timeline-v3 .yeonji-timeline-hero p { max-width: 710px; color: var(--yj-muted); line-height: 1.85; word-break: keep-all; }
+.yeonji-timeline-eyebrow { display: block; color: var(--yj-blue); font-size: 10px; letter-spacing: .19em; }
+.yeonji-timeline-monogram { flex: 0 0 auto; color: rgba(124,146,248,.19); font-size: clamp(90px,15vw,190px); font-weight: 200; line-height: .8; letter-spacing: -.12em; user-select: none; }
+.yeonji-timeline-v3 .yeonji-timeline-period-mark { color: var(--yj-blue); }
+.yeonji-timeline-overview { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); padding: 0; margin: 25px 0 45px; border: 1px solid var(--yj-line); background: rgba(20,23,35,.72); }
+.yeonji-timeline-overview > div { min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 22px 25px; }
+.yeonji-timeline-overview > div + div { border-left: 1px solid var(--yj-line); }
+.yeonji-timeline-overview small { color: #91a6f5; font-size: 10px; letter-spacing: .14em; }
+.yeonji-timeline-overview strong { font-variant-numeric: tabular-nums; color: #f4f5fd; font-weight: 500; font-size: clamp(21px,3vw,34px); letter-spacing: -.045em; overflow-wrap: anywhere; }
+.yeonji-timeline-overview span { color: var(--yj-muted); font-size: 11px; }
+.yeonji-timeline-section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; margin: 0 0 18px; }
+.yeonji-timeline-section-heading > span { color: #8298e8; font-size: 10px; letter-spacing: .12em; }
+.yeonji-timeline-section-heading h2 { font-weight: 450; color: #e6eaf8; font-size: clamp(15px,2.4vw,22px); letter-spacing: -.04em; }
+.yeonji-timeline-chapters { margin-bottom: 42px; }
+.yeonji-timeline-chapter-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px; }
+.yeonji-timeline-chapter-grid button { min-width: 0; min-height: 168px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch; gap: 20px; text-align: left; color: #e8ebfa; padding: 17px; border: 1px solid var(--yj-line); border-radius: 3px; background: #151826; transition: border-color .18s ease, transform .18s ease; }
+.yeonji-timeline-chapter-grid button:hover { border-color: rgba(151,173,255,.66); transform: translateY(-2px); }
+.yeonji-timeline-chapter-number { color: #9daefa; font-size: 10px; font-variant-numeric: tabular-nums; letter-spacing: .08em; }
+.yeonji-timeline-chapter-grid strong { font-size: clamp(13px,1.4vw,16px); line-height: 1.55; font-weight: 490; word-break: keep-all; }
+.yeonji-timeline-chapter-bottom { display: flex; align-items: center; justify-content: space-between; color: #aeb9d9; font-size: 10px; }
+.yeonji-timeline-yearbar { display: flex; flex-wrap: nowrap; gap: 6px; overflow-x: auto; margin: 0 0 13px; padding-bottom: 9px; scrollbar-width: thin; }
+.yeonji-timeline-yearbar button { flex: 0 0 auto; padding: 9px 16px; color: #adb5c9; background: #10131d; border: 1px solid var(--yj-line); border-radius: 2px; font-size: 12px; font-variant-numeric: tabular-nums; }
+.yeonji-timeline-yearbar button.is-active { color: #f5f7ff; background: #243156; border-color: #839aff; }
+.yeonji-timeline-v3 .shion-timeline-filter-scroll button.is-active { color: #f4f6ff; border-color: #7b94ee; background: rgba(114,146,255,.14); }
+.yeonji-timeline-v3 .shion-timeline-filter-row :is(input,select) { background: #151826; color: #e6eafd; border-color: var(--yj-line); }
+.yeonji-timeline-v3 :is(button,input,select,a):focus-visible { outline: 2px solid #9bacff; outline-offset: 2px; }
+.yeonji-timeline-v3 .shion-timeline-meta { margin: 15px 0 12px; scroll-margin-top: 100px; }
+.yeonji-timeline-v3 .shion-timeline-meta b { color: #ecf0ff; font-weight: 600; }
+.yeonji-timeline-v3 .yeonji-timeline-list { border-left-color: var(--yj-line); }
+.yeonji-timeline-month-divider { position: relative; margin: 12px 0 5px -21px; padding: 14px 0 7px 23px; display: flex; align-items: baseline; gap: 11px; color: #98a9ff; border-bottom: 1px solid rgba(128,151,255,.13); }
+.yeonji-timeline-month-divider > span { font-size: 16px; font-variant-numeric: tabular-nums; }
+.yeonji-timeline-month-divider b { font-size: 24px; font-weight: 450; letter-spacing: -.04em; }
+.yeonji-timeline-v3 .shion-timeline-entry::before { background: #15203b; border-color: #91a8ff; }
+.yeonji-timeline-v3 .shion-timeline-entry-body { background: #141723; border: 1px solid rgba(146,164,228,.13); }
+.yeonji-timeline-v3 .shion-timeline-entry.is-featured .shion-timeline-entry-body { border-color: rgba(127,155,255,.4); }
+.yeonji-timeline-v3 .shion-timeline-entry > time { color: #a3b4f1; font-variant-numeric: tabular-nums; }
+.yeonji-timeline-v3 .shion-timeline-entry-body h3 { font-size: clamp(15px,2.1vw,18px); font-weight: 520; color: #f3f5ff; word-break: keep-all; margin: 12px 0 8px; line-height: 1.5; }
+.yeonji-timeline-v3 .shion-timeline-entry-body p { color: #bbc3d4; font-size: 12px; line-height: 1.85; word-break: keep-all; }
+.yeonji-timeline-v3 .shion-timeline-kind { color: #a8baff; }
+.yeonji-timeline-v3 .shion-timeline-scope { color: #a6aebf; }
+.yeonji-timeline-featured-marker { color: #708cff; margin-left: auto; font-size: 9px; }
+.yeonji-timeline-media button { overflow: hidden; }
+.yeonji-timeline-detail-button { padding: 9px 2px; display: inline-flex; gap: 14px; align-items: center; border: 0; background: none; color: #b7c6ff; font-size: 11px; cursor: pointer; }
+.yeonji-timeline-detail-button span { font-size: 17px; line-height: 1; }
+.yeonji-timeline-detail { border-top: 1px solid var(--yj-line); padding: 16px 0 2px; margin-top: 8px; display: flex; align-items: flex-start; flex-direction: column; gap: 10px; }
+.yeonji-timeline-detail-kicker { color: #97a8ea; font-size: 10px; letter-spacing: .1em; }
+.yeonji-timeline-detail > a { display: inline-flex; gap: 10px; align-items: center; color: #d6defe; font-size: 12px; text-underline-offset: 4px; }
+.yeonji-timeline-related-media { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 9px; }
+.yeonji-timeline-related-media button { padding: 9px 11px; border: 1px solid var(--yj-line); border-radius: 3px; color: #d6dfff; background: #1d263e; font-size: 11px; display: inline-flex; align-items: center; gap: 9px; }
+.yeonji-timeline-related-media small { flex: 1 1 100%; font-size: 10px; color: #aab1c6; line-height: 1.7; }
+.yeonji-timeline-footer { border-top: 1px solid var(--yj-line); margin-top: 37px; padding-top: 21px; display: flex; gap: 20px; flex-wrap: wrap; color: #a8b2c8; }
+.yeonji-timeline-footer p { margin: 0; flex: 1 1 320px; font-size: 11px; line-height: 1.8; }
+.yeonji-timeline-footer span { color: #b8c7ff; font-size: 10px; letter-spacing: .08em; }
+@media (max-width: 820px) { .yeonji-timeline-chapter-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .yeonji-timeline-monogram { display: none; } }
+@media (max-width: 600px) { .yeonji-timeline-v3 .yeonji-timeline-hero { padding-top: 12px; } .yeonji-timeline-overview > div { padding: 13px 9px; } .yeonji-timeline-overview strong { font-size: clamp(14px,3.9vw,21px); } .yeonji-timeline-overview small { font-size: 8px; } .yeonji-timeline-overview span { font-size: 9px; } .yeonji-timeline-chapter-grid button { min-height: 147px; padding: 13px; } .yeonji-timeline-month-divider { margin-left: -19px; padding-left: 21px; } .yeonji-timeline-v3 .shion-timeline-entry { grid-template-columns: 46px minmax(0,1fr); gap: 9px; } .yeonji-timeline-v3 .shion-timeline-entry > time { font-size: 11px; padding-top: 17px; } .yeonji-timeline-v3 .shion-timeline-entry-body { padding: 14px; } .yeonji-timeline-v3 .shion-timeline-list { padding-left: 16px; } }
+@media (prefers-reduced-motion: reduce) { .yeonji-timeline-v3 *, .yeonji-timeline-v3 *::before { transition: none !important; scroll-behavior: auto !important; } }

@@ -3,184 +3,340 @@
   "about": "S12 selected, source-linked milestones; not an exhaustive activity catalog.",
   "activities": [
     {
-      "id": "evt-2023-01-18-공개",
-      "s12": true,
-      "date": "2023-01-18",
-      "kind": "milestone",
-      "title": {
-        "ko": "S12 Kwak YeonJi 공개",
-        "en": "S12 Kwak YeonJi 공개",
-        "ja": "S12 Kwak YeonJi 공개"
-      },
-      "description": {
-        "ko": "tripleS의 12번째 멤버로 공개됐다.",
-        "en": "tripleS의 12번째 멤버로 공개됐다.",
-        "ja": "tripleS의 12번째 멤버로 공개됐다."
-      },
-      "scope": "공개",
-      "source": "https://www.youtube.com/watch?v=zm0RcfeLn5E",
-      "sourceName": "KwakYeonJi.SSS (2023-01-18)",
-      "scheduled": false
-    },
-    {
-      "id": "evt-2023-10-11-evolution",
-      "s12": true,
-      "date": "2023-10-11",
-      "kind": "release",
-      "title": {
-        "ko": "EVOLution 〈⟡〉",
-        "en": "EVOLution 〈⟡〉",
-        "ja": "EVOLution 〈⟡〉"
-      },
-      "description": {
-        "ko": "〈Invincible〉로 첫 유닛 음반 활동을 시작했다.",
-        "en": "〈Invincible〉로 첫 유닛 음반 활동을 시작했다.",
-        "ja": "〈Invincible〉로 첫 유닛 음반 활동을 시작했다."
-      },
-      "scope": "EVOLution",
-      "source": "https://www.triplescosmos.com/member/s12-yeonji",
-      "sourceName": "COSMO tripleS member page (EVOLution roster)",
-      "scheduled": false
-    },
-    {
-      "id": "evt-2024-05-08-triples",
-      "s12": true,
-      "date": "2024-05-08",
-      "kind": "release",
-      "title": {
-        "ko": "ASSEMBLE24 · Girls Never Die",
-        "en": "ASSEMBLE24 · Girls Never Die",
-        "ja": "ASSEMBLE24 · Girls Never Die"
-      },
-      "description": {
-        "ko": "24인 완전체 음반 활동에 참여했다.",
-        "en": "24인 완전체 음반 활동에 참여했다.",
-        "ja": "24인 완전체 음반 활동에 참여했다."
-      },
-      "scope": "tripleS",
-      "source": "https://www.namu.moe/w/%EA%B3%BD%EC%97%B0%EC%A7%80",
-      "sourceName": "나무위키 곽연지 (검증일 2026-11-21)",
-      "scheduled": false
-    },
-    {
-      "id": "evt-2024-10-23-visionary-vision",
-      "s12": true,
-      "date": "2024-10-23",
-      "kind": "release",
-      "title": {
-        "ko": "Performante · Hit The Floor",
-        "en": "Performante · Hit The Floor",
-        "ja": "Performante · Hit The Floor"
-      },
-      "description": {
-        "ko": "Visionary Vision의 정규 음반과 퍼포먼스 활동.",
-        "en": "Visionary Vision의 정규 음반과 퍼포먼스 활동.",
-        "ja": "Visionary Vision의 정규 음반과 퍼포먼스 활동."
-      },
-      "scope": "Visionary Vision",
-      "source": "https://www.nme.com/news/music/triples-visionary-vision-debut-hit-the-floor-single-release-3805706",
-      "sourceName": "NME · Visionary Vision debut 2024-10-23",
-      "scheduled": false
-    },
-    {
-      "id": "evt-2025-05-12-triples",
-      "s12": true,
-      "date": "2025-05-12",
-      "kind": "release",
-      "title": {
-        "ko": "ASSEMBLE25 · Are You Alive",
-        "en": "ASSEMBLE25 · Are You Alive",
-        "ja": "ASSEMBLE25 · Are You Alive"
-      },
-      "description": {
-        "ko": "tripleS 완전체 정규 음반 활동.",
-        "en": "tripleS 완전체 정규 음반 활동.",
-        "ja": "tripleS 완전체 정규 음반 활동."
-      },
-      "scope": "tripleS",
-      "source": "https://www.musickorea.asia/Product/Detail/view/pid/204156/cid/2133",
-      "sourceName": "ASSEMBLE25 (2025-05-12)",
-      "scheduled": false
-    },
-    {
-      "id": "evt-2025-11-24-zenith",
-      "s12": true,
-      "date": "2025-11-24",
-      "kind": "release",
-      "title": {
-        "ko": "msnz 〈Beyond Beauty〉 · Q&A",
-        "en": "msnz 〈Beyond Beauty〉 · Q&A",
-        "ja": "msnz 〈Beyond Beauty〉 · Q&A"
-      },
-      "description": {
-        "ko": "zenith 유닛의 〈Q&A〉 활동과 24인 완전체 수록곡.",
-        "en": "zenith 유닛의 〈Q&A〉 활동과 24인 완전체 수록곡.",
-        "ja": "zenith 유닛의 〈Q&A〉 활동과 24인 완전체 수록곡."
-      },
-      "scope": "zenith",
-      "source": "https://www.etnews.com/20251124000445",
-      "sourceName": "전자신문 · msnz Zenith roster",
-      "scheduled": false
-    },
-    {
-      "id": "evt-2026-06-01-triples",
-      "s12": true,
-      "date": "2026-06-01",
-      "kind": "release",
-      "title": {
-        "ko": "ASSEMBLE26 〈LOVE&POP pt.1〉",
-        "en": "ASSEMBLE26 〈LOVE&POP pt.1〉",
-        "ja": "ASSEMBLE26 〈LOVE&POP pt.1〉"
-      },
-      "description": {
-        "ko": "완전체 타이틀곡 〈Baby Flower〉 활동.",
-        "en": "완전체 타이틀곡 〈Baby Flower〉 활동.",
-        "ja": "완전체 타이틀곡 〈Baby Flower〉 활동."
-      },
-      "scope": "tripleS",
-      "source": "https://enews.imbc.com/News/ViewAmp/506908",
-      "sourceName": "iMBC · ASSEMBLE26 pt.1 (2026-06-01)",
-      "scheduled": false
-    },
-    {
-      "id": "evt-2026-10-16-triples",
-      "s12": true,
-      "date": "2026-10-16",
-      "kind": "release",
-      "title": {
-        "ko": "ASSEMBLE26 〈LOVE&POP pt.2〉 · Andless",
-        "en": "ASSEMBLE26 〈LOVE&POP pt.2〉 · Andless",
-        "ja": "ASSEMBLE26 〈LOVE&POP pt.2〉 · Andless"
-      },
-      "description": {
-        "ko": "완전체 음반의 〈Andless〉 공개.",
-        "en": "완전체 음반의 〈Andless〉 공개.",
-        "ja": "완전체 음반의 〈Andless〉 공개."
-      },
-      "scope": "tripleS",
-      "source": "https://www.triples-official.jp/profile/",
-      "sourceName": "tripleS Japan official / All Member",
-      "scheduled": false
-    },
-    {
       "id": "evt-2026-11-13-triples",
       "s12": true,
       "date": "2026-11-13",
       "kind": "release",
+      "scope": "tripleS",
       "title": {
         "ko": "I Want You To Know",
         "en": "I Want You To Know",
         "ja": "I Want You To Know"
       },
       "description": {
-        "ko": "〈LOVE&POP pt.2〉 추가 공개곡.",
-        "en": "〈LOVE&POP pt.2〉 추가 공개곡.",
-        "ja": "〈LOVE&POP pt.2〉 추가 공개곡."
+        "ko": "완전체 신곡 〈I Want You To Know〉 공개.",
+        "en": "Release of the full-group single I Want You To Know.",
+        "ja": "完全体シングル「I Want You To Know」発売。"
       },
+      "source": "https://music.apple.com/us/album/i-want-you-to-know-single/6832001414",
+      "sourceName": "Apple Music",
+      "scheduled": false,
+      "featured": true
+    },
+    {
+      "id": "evt-2026-10-16-triples",
+      "s12": true,
+      "date": "2026-10-16",
+      "kind": "release",
       "scope": "tripleS",
-      "source": "https://knote.fan/news/triples-i-want-you-to-know-release",
-      "sourceName": "KNOTE · I Want You To Know (2026-11-13)",
-      "scheduled": false
+      "title": {
+        "ko": "〈LOVE&POP pt.2〉 · Andless",
+        "en": "LOVE&POP pt.2 — Andless",
+        "ja": "LOVE&POP pt.2「Andless」"
+      },
+      "description": {
+        "ko": "완전체 싱글 〈Andless〉 공개.",
+        "en": "The full-group single Andless was released.",
+        "ja": "完全体シングル「Andless」発売。"
+      },
+      "source": "https://music.bugs.co.kr/album/4156636",
+      "sourceName": "Bugs Music",
+      "scheduled": false,
+      "featured": true
+    },
+    {
+      "id": "evt-2026-10-11-andless-seoul",
+      "s12": true,
+      "date": "2026-10-11",
+      "kind": "concert",
+      "scope": "tripleS",
+      "title": {
+        "ko": "ANDLESS in Seoul · Day 2",
+        "en": "ANDLESS in Seoul — Day 2",
+        "ja": "ANDLESS in Seoul — 2日目"
+      },
+      "description": {
+        "ko": "2026 tripleS World Tour 서울 공연 둘째 날.",
+        "en": "Day two of the ANDLESS in Seoul concerts.",
+        "ja": "ANDLESSソウル公演2日目。"
+      },
+      "source": "https://www.etnews.com/20261012000170",
+      "sourceName": "전자신문",
+      "scheduled": false,
+      "featured": false
+    },
+    {
+      "id": "evt-2026-10-10-andless-seoul",
+      "s12": true,
+      "date": "2026-10-10",
+      "kind": "concert",
+      "scope": "tripleS",
+      "title": {
+        "ko": "ANDLESS in Seoul · Day 1",
+        "en": "ANDLESS in Seoul — Day 1",
+        "ja": "ANDLESS in Seoul — 1日目"
+      },
+      "description": {
+        "ko": "장충체육관에서 진행된 2026 tripleS World Tour 서울 공연 첫날.",
+        "en": "Day one of tripleS ANDLESS in Seoul at Jangchung Arena.",
+        "ja": "奨忠体育館で開催されたANDLESSソウル公演初日。"
+      },
+      "source": "https://www.etnews.com/20261012000170",
+      "sourceName": "전자신문",
+      "scheduled": false,
+      "featured": false
+    },
+    {
+      "id": "evt-2026-06-01-triples",
+      "s12": true,
+      "date": "2026-06-01",
+      "kind": "release",
+      "scope": "tripleS",
+      "title": {
+        "ko": "ASSEMBLE26 〈LOVE&POP pt.1〉",
+        "en": "ASSEMBLE26 — LOVE&POP pt.1",
+        "ja": "ASSEMBLE26「LOVE&POP pt.1」"
+      },
+      "description": {
+        "ko": "완전체 앨범과 타이틀곡 〈Baby Flower〉 발매.",
+        "en": "Full-group LOVE&POP pt.1 release, led by Baby Flower.",
+        "ja": "完全体アルバム「LOVE&POP pt.1」発売。"
+      },
+      "source": "https://www.soompi.com/article/1846043wpp/triples-breaks-their-1st-week-sales-record-with-love-pop-pt-1",
+      "sourceName": "Soompi",
+      "scheduled": false,
+      "featured": true
+    },
+    {
+      "id": "evt-2026-03-12-signal",
+      "s12": true,
+      "date": "2026-03-12",
+      "kind": "appearance",
+      "scope": "SIGNAL",
+      "title": {
+        "ko": "tripleS의 평범한 나날들 (feat. 연지)",
+        "en": "Everyday tripleS (feat. YeonJi)",
+        "ja": "tripleSの日常 (feat. ヨンジ)"
+      },
+      "description": {
+        "ko": "연지가 등장하는 공식 SIGNAL 콘텐츠 공개일.",
+        "en": "Release date of an official SIGNAL featuring YeonJi.",
+        "ja": "ヨンジが出演した公式SIGNALの公開日。"
+      },
+      "source": "https://www.youtube.com/watch?v=2hg-ezffEbI",
+      "sourceName": "tripleS official",
+      "scheduled": false,
+      "featured": false
+    },
+    {
+      "id": "evt-2025-11-24-zenith",
+      "s12": true,
+      "date": "2025-11-24",
+      "kind": "release",
+      "scope": "zenith",
+      "title": {
+        "ko": "msnz 〈Beyond Beauty〉 · Q&A",
+        "en": "msnz / zenith — Q&A",
+        "ja": "msnz / zenith「Q&A」"
+      },
+      "description": {
+        "ko": "연지가 속한 zenith의 〈Q&A〉가 〈Beyond Beauty〉에 수록되어 공개됐다.",
+        "en": "The zenith unit, featuring YeonJi, released Q&A on Beyond Beauty.",
+        "ja": "ヨンジが所属するzenithの「Q&A」を収録した「Beyond Beauty」発売。"
+      },
+      "source": "https://www.soompi.com/article/1794588wpp/triples-msnz-announces-upcoming-release-beyond-beauty",
+      "sourceName": "Soompi",
+      "scheduled": false,
+      "featured": true
+    },
+    {
+      "id": "evt-2025-05-12-triples",
+      "s12": true,
+      "date": "2025-05-12",
+      "kind": "release",
+      "scope": "tripleS",
+      "title": {
+        "ko": "ASSEMBLE25 · 깨어",
+        "en": "ASSEMBLE25 — Are You Alive",
+        "ja": "ASSEMBLE25「Are You Alive」"
+      },
+      "description": {
+        "ko": "24인 완전체 앨범과 타이틀곡 〈깨어〉 발매.",
+        "en": "Full-group ASSEMBLE25 release, led by Are You Alive.",
+        "ja": "24人完全体アルバム「ASSEMBLE25」発売。"
+      },
+      "source": "https://music.apple.com/us/album/assemble25/1809896514",
+      "sourceName": "Apple Music",
+      "scheduled": false,
+      "featured": true
+    },
+    {
+      "id": "evt-2024-10-23-visionary-vision",
+      "s12": true,
+      "date": "2024-10-23",
+      "kind": "release",
+      "scope": "Visionary Vision",
+      "title": {
+        "ko": "Performante · Hit the Floor",
+        "en": "Visionary Vision — Hit the Floor",
+        "ja": "Visionary Vision「Hit the Floor」"
+      },
+      "description": {
+        "ko": "Visionary Vision 정규 앨범 〈Performante〉 발매.",
+        "en": "Visionary Vision released the album Performante.",
+        "ja": "Visionary Visionのアルバム「Performante」発売。"
+      },
+      "source": "https://music.apple.com/us/album/visionary-vision-performante/1773026296",
+      "sourceName": "Apple Music",
+      "scheduled": false,
+      "featured": true
+    },
+    {
+      "id": "evt-2024-05-08-triples",
+      "s12": true,
+      "date": "2024-05-08",
+      "kind": "release",
+      "scope": "tripleS",
+      "title": {
+        "ko": "ASSEMBLE24 · Girls Never Die",
+        "en": "ASSEMBLE24 — Girls Never Die",
+        "ja": "ASSEMBLE24「Girls Never Die」"
+      },
+      "description": {
+        "ko": "24인 완전체 앨범 〈ASSEMBLE24〉가 공개됐다.",
+        "en": "Release of the 24-member album ASSEMBLE24.",
+        "ja": "24人完全体アルバム「ASSEMBLE24」発売。"
+      },
+      "source": "https://music.bugs.co.kr/album/4100945",
+      "sourceName": "Bugs Music",
+      "scheduled": false,
+      "featured": true
+    },
+    {
+      "id": "evt-2024-02-04-authentic",
+      "s12": true,
+      "date": "2024-02-04",
+      "kind": "concert",
+      "scope": "tripleS",
+      "title": {
+        "ko": "Authentic in Seoul · tripleS",
+        "en": "Authentic in Seoul — tripleS",
+        "ja": "Authentic in Seoul — tripleS"
+      },
+      "description": {
+        "ko": "서울에서 진행된 tripleS 공연 일정. 곽연지의 참여가 확인된 공연 기록.",
+        "en": "A tripleS concert in Seoul with YeonJi in the lineup.",
+        "ja": "ヨンジの参加が確認されたソウル公演。"
+      },
+      "source": "https://www.setlist.fm/setlist/triples/2024/blue-square-mastercard-hall-seoul-south-korea-2bac0cfa.html",
+      "sourceName": "Setlist.fm",
+      "scheduled": false,
+      "featured": false
+    },
+    {
+      "id": "evt-2024-02-03-authentic-evo",
+      "s12": true,
+      "date": "2024-02-03",
+      "kind": "concert",
+      "scope": "EVOLution",
+      "title": {
+        "ko": "Authentic in Seoul · EVOLution",
+        "en": "Authentic in Seoul — EVOLution",
+        "ja": "Authentic in Seoul — EVOLution"
+      },
+      "description": {
+        "ko": "서울 블루스퀘어에서 열린 EVOLution 공연.",
+        "en": "EVOLution concert at Blue Square in Seoul.",
+        "ja": "ソウル・ブルースクエアでのEVOLution公演。"
+      },
+      "source": "https://sports.khan.co.kr/article/202402052323003",
+      "sourceName": "스포츠경향",
+      "scheduled": false,
+      "featured": false
+    },
+    {
+      "id": "evt-2023-10-11-evolution",
+      "s12": true,
+      "date": "2023-10-11",
+      "kind": "release",
+      "scope": "EVOLution",
+      "title": {
+        "ko": "EVOLution 〈⟡〉 · Invincible",
+        "en": "EVOLution — Invincible",
+        "ja": "EVOLution「Invincible」"
+      },
+      "description": {
+        "ko": "EVOLution의 첫 미니 앨범이 발매됐다. 연지가 참여한 첫 유닛 음반 활동.",
+        "en": "EVOLution released its first mini album, YeonJi’s first unit music release.",
+        "ja": "EVOLutionの初ミニアルバム発売。ヨンジにとって初のユニット音楽活動。"
+      },
+      "source": "https://music.bugs.co.kr/album/4091886",
+      "sourceName": "Bugs Music",
+      "scheduled": false,
+      "featured": true
+    },
+    {
+      "id": "evt-2023-05-18-signal",
+      "s12": true,
+      "date": "2023-05-18",
+      "kind": "appearance",
+      "scope": "SIGNAL",
+      "title": {
+        "ko": "펌프 여신 곽곽 곽연지",
+        "en": "Pump legend YeonJi · SIGNAL",
+        "ja": "ポンプの女神クァク・ヨンジ"
+      },
+      "description": {
+        "ko": "곽연지를 중심으로 한 공식 SIGNAL 콘텐츠가 공개됐다.",
+        "en": "An official SIGNAL episode centering YeonJi was published.",
+        "ja": "ヨンジが中心の公式SIGNALコンテンツが公開された。"
+      },
+      "source": "https://www.youtube.com/watch?v=ZFO2w3TDpb4",
+      "sourceName": "tripleS official",
+      "scheduled": false,
+      "featured": false
+    },
+    {
+      "id": "evt-2023-03-01-signal",
+      "s12": true,
+      "date": "2023-03-01",
+      "kind": "appearance",
+      "scope": "SIGNAL",
+      "title": {
+        "ko": "코토네와 연지, 서울에 등장",
+        "en": "Kotone & YeonJi in Seoul",
+        "ja": "コトネとヨンジ、ソウルに登場"
+      },
+      "description": {
+        "ko": "곽연지가 등장하는 공식 SIGNAL 영상 공개일.",
+        "en": "Release date of an official SIGNAL featuring YeonJi.",
+        "ja": "ヨンジが登場する公式SIGNALの公開日。"
+      },
+      "source": "https://www.youtube.com/watch?v=O583LWP68Ic",
+      "sourceName": "tripleS official",
+      "scheduled": false,
+      "featured": false
+    },
+    {
+      "id": "evt-2023-01-18-공개",
+      "s12": true,
+      "date": "2023-01-18",
+      "kind": "milestone",
+      "scope": "S12",
+      "title": {
+        "ko": "S12 곽연지 공개",
+        "en": "YeonJi revealed as S12",
+        "ja": "S12 クァク・ヨンジ公開"
+      },
+      "description": {
+        "ko": "tripleS의 열두 번째 멤버로 처음 소개됐다.",
+        "en": "Introduced to the public as tripleS member S12.",
+        "ja": "tripleSの12番目のメンバーとして公開された。"
+      },
+      "source": "https://www.youtube.com/watch?v=zm0RcfeLn5E",
+      "sourceName": "tripleS official",
+      "scheduled": false,
+      "featured": true
     }
   ]
 }

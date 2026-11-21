@@ -14,6 +14,7 @@ export type ActivityRecord = {
   scope?: string;
   /** Announced itinerary, NOT yet independently verified as an appearance. */
   scheduled: boolean;
+  featured?: boolean;
 };
 export type ActivityCatalog = { entries: ActivityRecord[]; updatedAt: string };
 
@@ -48,6 +49,7 @@ export function parseActivityCatalog(raw: unknown): ActivityCatalog {
       sourceName: typeof item.sourceName === 'string' ? item.sourceName : undefined,
       scope: typeof item.scope === 'string' && item.scope.trim() ? item.scope : undefined,
       scheduled: item.scheduled === true,
+      featured: item.featured === true,
     });
   }
   entries.sort((a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id));

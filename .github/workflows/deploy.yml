@@ -33,8 +33,23 @@ jobs:
         run: node scripts/sync-wav-s12.mjs --self-test
       - name: Import verified S12 Objekts from WAV ARCHIVE
         run: node scripts/sync-wav-s12.mjs
-      - name: Install dependencies
-        run: npm install --no-audit --no-fund
+      - name: Install dependencies (Rollup registry fix)
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Pin the published Rollup version for this build only.
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const p = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+          const version = '4.68.7';
+          for (const section of ['dependencies', 'devDependencies', 'optionalDependencies']) {
+            if (p[section] && Object.hasOwn(p[section], 'rollup')) p[section].rollup = version;
+          }
+          p.overrides = { ...p.overrides, rollup: version };
+          fs.writeFileSync('package.json', JSON.stringify(p, null, 2) + '\n');
+          NODE
+          npm install --package-lock=false --prefer-online --include=optional --no-audit --no-fund
+          node --input-type=module -e "import { VERSION } from 'rollup'; if (VERSION !== '4.68.7') throw new Error('Unexpected Rollup version: ' + VERSION); console.log('Verified Rollup ' + VERSION)"
       - name: Cache optimized World Cup artwork
         uses: actions/cache@v4
         with:

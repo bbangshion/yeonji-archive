@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0",
+  "memberId": "S12",
+  "generatedAt": null,
+  "status": "not_populated",
+  "source": {
+    "title": "Kwak YeonJi/Gallery/SNS Archive",
+    "page": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "dateBasis": "팬 위키 갤러리의 캡션 날짜 (촬영·최초 게시 날짜와 다를 수 있음)"
+  },
+  "totalPhotos": 0,
+  "years": [
+    {
+      "year": 2026,
+      "count": 0
+    },
+    {
+      "year": 2025,
+      "count": 0
+    },
+    {
+      "year": 2024,
+      "count": 0
+    },
+    {
+      "year": 2023,
+      "count": 0
+    }
+  ],
+  "photos": []
+}

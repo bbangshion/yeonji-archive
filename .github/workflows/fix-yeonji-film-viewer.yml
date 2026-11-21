@@ -1,0 +1,84 @@
+name: Fix YEONJI FILM full-screen viewer
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: yeonji-video-viewer-fix
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Patch viewer (no workflow files modified)
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          root=Path.cwd()
+          tsx_path=root/'src/components/YeonjiFilm.tsx'
+          css_path=root/'src/components/yeonji-film.css'
+          if not tsx_path.is_file() or not css_path.is_file():
+              raise SystemExit('YeonjiFilm.tsx and yeonji-film.css not found; no files changed')
+          code=tsx_path.read_text(encoding='utf-8')
+          if "import { createPortal } from 'react-dom';" not in code:
+              code="import { createPortal } from 'react-dom';\n"+code
+          start=code.find('function VideoDialog(')
+          end=code.find('export default function YeonjiFilm',start)
+          if start<0 or end<0:
+              raise SystemExit('VideoDialog structure not recognized; no files changed')
+          dialog=code[start:end]
+          if 'return createPortal(' not in dialog:
+              anchor='return <div className="yfilm-modal-layer"'
+              if dialog.count(anchor)!=1:
+                  raise SystemExit('Dialog opening not recognized; no files changed')
+              dialog=dialog.replace(anchor,'return createPortal(<div className="yfilm-modal-layer"',1)
+              close='</div>;'
+              if dialog.count(close)<1:
+                  raise SystemExit('Dialog closing not recognized; no files changed')
+              pos=dialog.rfind(close)
+              dialog=dialog[:pos]+dialog[pos:].replace(close,'</div>, document.body);',1)
+              code=code[:start]+dialog+code[end:]
+          else:
+              if 'document.body)' not in dialog:
+                  raise SystemExit('Found portal but not document.body; manual inspection required')
+          # No change to video content, title, YouTube URL, saved state or search.
+          css=css_path.read_text(encoding='utf-8')
+          marker='/* YEONJI FILM / mobile viewport-safe player · 2026-11-21 */'
+          if marker not in css:
+              css += '\n' + '\n/* YEONJI FILM / mobile viewport-safe player · 2026-11-21 */\n/* Portal mounts this overlay at document.body, not inside an animated page. */\n.yfilm-modal-layer {\n  position: fixed !important;\n  inset: 0 !important;\n  z-index: 2147483000 !important;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100vh;\n  height: 100dvh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow-x: hidden;\n  overflow-y: auto;\n  overscroll-behavior: contain;\n  padding: max(12px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) max(12px, env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px));\n  background: rgba(4, 6, 12, 0.96);\n}\n.yfilm-modal {\n  box-sizing: border-box;\n  flex: 0 1 auto;\n  width: min(100%, 1120px);\n  max-height: calc(100vh - 24px);\n  max-height: calc(100dvh - 24px);\n  overflow-y: auto;\n  overscroll-behavior: contain;\n  margin: auto;\n  border-radius: 8px;\n  padding: clamp(12px, 2.4vw, 22px);\n}\n.yfilm-modal-top { min-width: 0; }\n.yfilm-modal-top > div { min-width: 0; }\n.yfilm-modal-top h2 { overflow-wrap: anywhere; }\n.yfilm-player {\n  width: 100%;\n  min-width: 0;\n  aspect-ratio: 16 / 9;\n  height: auto;\n  max-width: 100%;\n  overflow: hidden;\n  background: #05070b;\n}\n.yfilm-player iframe {\n  display: block;\n  width: 100%;\n  height: 100%;\n  border: 0;\n}\n.yfilm-modal-layer button:focus-visible,\n.yfilm-modal-layer a:focus-visible {\n  outline: 2px solid #a6b7ff;\n  outline-offset: 3px;\n}\n@media (max-width: 700px) {\n  .yfilm-modal-layer {\n    padding: 0;\n    align-items: stretch;\n  }\n  .yfilm-modal {\n    display: flex;\n    flex-direction: column;\n    justify-content: safe center;\n    flex: 1 1 auto;\n    width: 100%;\n    max-width: none;\n    height: 100vh;\n    height: 100dvh;\n    max-height: none;\n    margin: 0;\n    padding: max(12px, env(safe-area-inset-top, 0px)) 0 max(12px, env(safe-area-inset-bottom, 0px));\n    border: 0;\n    border-radius: 0;\n    background: #0b0d14;\n  }\n  .yfilm-modal-top {\n    padding: 0 14px 12px;\n    gap: 10px;\n  }\n  .yfilm-modal-top h2 {\n    font-size: 15px;\n    line-height: 1.4;\n    display: -webkit-box;\n    -webkit-box-orient: vertical;\n    -webkit-line-clamp: 2;\n    overflow: hidden;\n  }\n  .yfilm-kicker { margin-bottom: 5px; }\n  .yfilm-close { width: 42px; height: 42px; flex: 0 0 42px; }\n  .yfilm-player { width: 100%; aspect-ratio: 16 / 9; flex: 0 0 auto; }\n  .yfilm-modal-bottom { padding: 14px 14px 0; }\n  .yfilm-player-note { padding: 0 14px; margin-bottom: 0; }\n}\n@media (orientation: landscape) and (max-height: 550px) {\n  .yfilm-modal-layer { padding: 0; }\n  .yfilm-modal {\n    width: 100%;\n    max-width: none;\n    height: 100vh;\n    height: 100dvh;\n    max-height: none;\n    border: 0;\n    border-radius: 0;\n    display: flex;\n    flex-direction: column;\n    justify-content: safe center;\n    align-items: center;\n    margin: 0;\n    padding: 6px max(12px, env(safe-area-inset-right, 0px)) 6px max(12px, env(safe-area-inset-left, 0px));\n  }\n  .yfilm-modal-top { width: 100%; padding: 0 0 5px; }\n  .yfilm-modal-top h2 { font-size: 12px; line-height: 1.2; max-height: 1.2em; overflow: hidden; }\n  .yfilm-kicker { display: none; }\n  .yfilm-close { height: 30px; width: 36px; flex: 0 0 36px; font-size: 23px; }\n  .yfilm-player {\n    width: min(100%, 160dvh);\n    height: auto;\n    max-height: calc(100dvh - 51px);\n    max-width: 100%;\n    aspect-ratio: 16 / 9;\n  }\n  .yfilm-player iframe { width: 100%; height: 100%; }\n  .yfilm-modal-bottom, .yfilm-player-note { display: none; }\n}\n'
+          # Write only after all checks have succeeded.
+          tsx_path.write_text(code,encoding='utf-8')
+          css_path.write_text(css,encoding='utf-8')
+          print('YEONJI FILM: modal mounted to document.body and full-width responsive layout added')
+          PY
+      - name: Install and verify
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
+      - name: Commit only video modal files
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/components/YeonjiFilm.tsx src/components/yeonji-film.css
+          if git diff --cached --quiet; then
+            echo "No video viewer changes"
+          else
+            git commit -m "fix: display YEONJI FILM viewer above page and fit mobile screens"
+            git push origin HEAD:main
+          fi

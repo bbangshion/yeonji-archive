@@ -1,0 +1,82 @@
+name: YEONJI FILM · Official Feed Review
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'scan: 후보 검색 / approve: 출연 확인 후 추가 / ignore: 후보 제외'
+        required: true
+        type: choice
+        default: scan
+        options:
+          - scan
+          - approve
+          - ignore
+      video_ids:
+        description: 'approve/ignore: 11자리 YouTube 영상 ID (쉼표로 구분, 최대 20개)'
+        required: false
+        type: string
+  schedule:
+    - cron: '42 1 * * *' # 매일 10:42 KST, GitHub에서 지연될 수 있음
+
+permissions:
+  contents: write
+
+concurrency:
+  group: yeonji-film-review
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run only after Film V2 has been installed
+        shell: bash
+        run: |
+          test -f scripts/sync-yeonji-films.mjs
+          test -f scripts/review-yeonji-films.mjs
+          test -f public/data/films.json
+      - name: Validate offline review logic
+        run: node --test tests/film-v2.test.mjs
+      - name: Scan official channel feed or apply manual review decision
+        shell: bash
+        env:
+          MODE: ${{ github.event_name == 'schedule' && 'scan' || inputs.mode }}
+          VIDEO_IDS: ${{ inputs.video_ids }}
+        run: |
+          case "$MODE" in
+            scan)
+              node scripts/sync-yeonji-films.mjs
+              ;;
+            approve|ignore)
+              if [ -z "$VIDEO_IDS" ]; then
+                echo 'video_ids is required to approve or ignore'; exit 1
+              fi
+              node scripts/review-yeonji-films.mjs "$MODE" "$VIDEO_IDS"
+              ;;
+            *) echo "Invalid mode"; exit 1 ;;
+          esac
+      - name: Commit review queue or approved catalog entries
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -f reports/yeonji-film-review.json ]; then
+            git add reports/yeonji-film-review.json
+          fi
+          git add public/data/films.json
+          if git diff --cached --quiet; then
+            echo 'No changes: existing data preserved'
+          else
+            git commit -m 'data: review YeonJi official film candidates'
+            git push
+          fi

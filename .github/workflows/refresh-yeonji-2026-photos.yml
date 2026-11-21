@@ -1,0 +1,244 @@
+name: Refresh YEONJI 2026 photos (dedupe + latest)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: yeonji-photo-refresh-2026
+  cancel-in-progress: false
+
+jobs:
+  photo-refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Use Node.js (no npm cache / lockfile required)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Try current Fandom SNS photo source
+        shell: bash
+        run: |
+          if [[ -f scripts/import-yeonji-fandom.mjs ]]; then
+            echo "Fetching available exact S12 SNS gallery metadata"
+            node scripts/import-yeonji-fandom.mjs --strict || echo "Fandom SNS unavailable; existing photos kept"
+          else
+            echo "SNS importer missing; skipping"
+          fi
+      - name: Try current Fandom main gallery source
+        shell: bash
+        run: |
+          if [[ -f scripts/import-yeonji-gallery.mjs ]]; then
+            echo "Fetching available S12 main gallery metadata"
+            node scripts/import-yeonji-gallery.mjs --strict || echo "Fandom main gallery unavailable; existing photos kept"
+          else
+            echo "Main gallery importer missing; skipping"
+          fi
+      - name: Audit 2026 photos and merge verified recent-source references
+        shell: bash
+        run: |
+          node <<'YEONJI_NODE'
+          'use strict';
+          // YEONJI ARCHIVE / 2026 photo metadata audit + safe merge
+          // Usage: node scripts/refresh-yeonji-2026.cjs
+          // Does not fetch/download or claim ownership of copyrighted photos.
+          const fs = require('node:fs');
+          const path = require('node:path');
+          const assert = require('node:assert/strict');
+          const PHOTOS = 'public/data/photos.json';
+          const REFERENCES = 'public/data/recent-photo-collections.json';
+          const REPORT = 'public/data/yeonji-2026-photo-review.json';
+          const cutoff = '2026-01-01';
+          function load(file, fallback = null) {
+            if (!fs.existsSync(file)) return fallback;
+            return JSON.parse(fs.readFileSync(file, 'utf8'));
+          }
+          function dateOf(item) {
+            if (!item || typeof item.date !== 'string') return null;
+            const d = item.date;
+            if (!/^20\d{2}-\d{2}-\d{2}$/.test(d)) return null;
+            const dObj = new Date(d + 'T00:00:00Z');
+            return Number.isNaN(dObj.getTime()) || dObj.toISOString().slice(0,10) !== d ? null : d;
+          }
+          function normImage(input) {
+            if (typeof input !== 'string' || !input.trim()) return '';
+            try {
+              const u = new URL(input);
+              if (u.protocol !== 'https:') return '';
+              const host = u.hostname.toLowerCase();
+              let pathname = decodeURIComponent(u.pathname).normalize('NFC');
+              if (host.endsWith('.wikia.nocookie.net') || host === 'static.wikia.nocookie.net') {
+                pathname = pathname.replace(/\/revision\/[^?#]*/i, '');
+              }
+              u.hash = '';
+              // Never discard URL query on non-Fandom hosts where it may identify the photo.
+              if (host.endsWith('.wikia.nocookie.net') || host === 'static.wikia.nocookie.net') u.search = '';
+              return `${host}${pathname}${u.search}`.toLowerCase();
+            } catch { return input.trim().replace(/#.*$/, '').toLowerCase(); }
+          }
+          function mediaKeys(item) {
+            const keys = [];
+            const id = typeof item?.id === 'string' ? item.id.trim() : '';
+            if (id) keys.push('id:' + id);
+            const normalized = normImage(item?.image);
+            if (normalized) keys.push('img:' + normalized);
+            if (typeof item?.originalFileName === 'string' && item.originalFileName.trim() &&
+                typeof item?.sourceCollection === 'string' && /fandom\.com/i.test(item.sourceCollection)) {
+              const raw = item.originalFileName.normalize('NFC').toLowerCase().replace(/[_\s]+/g, '_').trim();
+              keys.push('fandomfile:' + raw);
+            }
+            return keys;
+          }
+          function isS12(row) { return row?.memberId === 'S12'; }
+          function qualify(row) { return isS12(row) && dateOf(row)?.startsWith('2026'); }
+          function score(row) {
+            return (dateOf(row) ? 5 : 0) + (row?.sourceUrl ? 2 : 0) +
+              (row?.originalFileName ? 1 : 0) + (row?.rightsStatus ? 1 : 0);
+          }
+          function removeExactDuplicates(items) {
+            // Conservative: de-dupe ONLY YeonJi photos explicitly dated 2026.
+            // Do not remove 2023-25 records, member records, or merely similar photos.
+            const keys = new Map();
+            const discarded = new Set();
+            const conflicts = [];
+            for (let i=0;i<items.length;i++) {
+              const row = items[i];
+              if (!qualify(row)) continue;
+              const matches = mediaKeys(row).map(key => keys.get(key)).filter(Number.isInteger);
+              if (matches.length === 0) {
+                for (const key of mediaKeys(row)) keys.set(key, i);
+                continue;
+              }
+              const otherIndex = matches[0];
+              if (discarded.has(otherIndex)) continue;
+              const original = items[otherIndex];
+              // Same declared photo key, but different dates? Flag, do not silently delete.
+              if (dateOf(original) !== dateOf(row) && !mediaKeys(row).some(k => k.startsWith('img:') && mediaKeys(original).includes(k))) {
+                conflicts.push({first:original?.id,second:row?.id,dates:[dateOf(original),dateOf(row)]});
+                continue;
+              }
+              const winner = score(row) > score(original) ? i : otherIndex;
+              const loser = winner === i ? otherIndex : i;
+              discarded.add(loser);
+              for (const key of [...mediaKeys(original),...mediaKeys(row)]) keys.set(key, winner);
+            }
+            return {photos:items.filter((_,i)=>!discarded.has(i)), duplicatesRemoved:discarded.size, dateConflicts:conflicts};
+          }
+          const verifiedSources = [
+            {
+              id:'yeonji-20261119-chicago-sns', date:'2026-11-19', type:'secondary', status:'reference-only',
+              url:'https://kpopping.com/kpics/261119-triples-sns-update-seoyeon-jiwoo-yubin-kaede-yeonji-mayu-lynn-hayeon-sullin-xinyu-andless-in-chicago',
+              title:{ko:'ANDLESS 시카고 · 공식 SNS 모음',en:'ANDLESS Chicago · SNS roundup',ja:'ANDLESS シカゴ・SNSまとめ'},
+              label:{ko:'여러 멤버 · 31장 전체',en:'Mixed members · 31 total',ja:'複数メンバー・全31枚'},
+              description:{ko:'연지가 포함된 단체 게시물 · 31장은 전체 사진 수로 연지 단독 사진 수가 아님',en:'Mixed-member post including YeonJi · 31 is the post total, not YeonJi-only photos',ja:'ヨンジを含む複数メンバーの投稿・31枚は総枚数'},
+              memberImageCountVerified:null,
+            },
+            {
+              id:'yeonji-20261110-icn-fanphotos', date:'2026-11-10', type:'fan', status:'reference-only',
+              url:'https://kpopping.com/kpics/261110-yeonji-at-icn-airport',
+              title:{ko:'인천공항 · 곽연지',en:'YeonJi · Incheon Airport',ja:'仁川空港・ヨンジ'},
+              label:{ko:'팬 촬영 · 4장',en:'Fan-taken · 4 photos',ja:'ファン撮影・4枚'},
+              description:{ko:'외부 팬 촬영 사진 · 재게시 권한 확인 전에는 링크만 제공',en:'Fan photography · link only until reuse rights are confirmed',ja:'ファン撮影・再利用許可が確認されるまで外部リンクのみ'},
+              memberImageCountVerified:4,
+            },
+            {
+              id:'yeonji-20261108-mixed-sns', date:'2026-11-08', type:'secondary', status:'reference-only',
+              url:'https://kpopping.com/kpics/261108-triples-sns-update-jiwoo-soomin-kotone-yeonji-sohyun',
+              title:{ko:'지우·수민·코토네·연지·소현 SNS',en:'JiWoo · SooMin · Kotone · YeonJi · SoHyun',ja:'ジウ・スミン・コトネ・ヨンジ・ソヒョン'},
+              label:{ko:'여러 멤버 · 16장 전체',en:'Mixed members · 16 total',ja:'複数メンバー・全16枚'},
+              description:{ko:'연지가 포함된 SNS 모음 · 16장 전체를 연지 사진으로 계산하지 않음',en:'Mixed-member post · 16 is the total collection, not YeonJi-only',ja:'複数メンバーのSNS投稿・16枚は全体枚数'},
+              memberImageCountVerified:null,
+            },
+            {
+              id:'yeonji-20261023-instagram', date:'2026-10-23', type:'secondary', status:'reference-only',
+              url:'https://kpopping.com/kpics/261023-triples-instagram-update-yeonji',
+              title:{ko:'곽연지 · 공식 인스타그램 사진',en:'YeonJi · Instagram photos',ja:'ヨンジ・Instagram写真'},
+              label:{ko:'곽연지 · 3장',en:'YeonJi · 3 photos',ja:'ヨンジ・3枚'},
+              description:{ko:'곽연지 단독 SNS 게시물로 소개된 사진 모음 · 등록 중복 여부 확인 필요',en:'YeonJi Instagram photo set · check duplicates before import',ja:'ヨンジのInstagram写真・登録重複確認が必要'},
+              memberImageCountVerified:3,
+            },
+          ];
+          function run() {
+            const existing = load(PHOTOS);
+            if (!Array.isArray(existing)) throw new Error(`${PHOTOS} is missing or is not a JSON array; stop without writing`);
+            const before = existing.filter(qualify);
+            const references = load(REFERENCES, {checkedAt:null,note:'',collections:[]});
+            if (!references || !Array.isArray(references.collections)) throw new Error('Existing source index invalid; not overwriting');
+            const {photos,duplicatesRemoved,dateConflicts} = removeExactDuplicates(existing);
+            const refKeys = new Set(references.collections.map(x=>String(x?.url||'').replace(/\/$/,'').toLowerCase()));
+            const refIds = new Set(references.collections.map(x=>x?.id));
+            let newSources = 0;
+            for (const entry of verifiedSources) {
+              const u=entry.url.replace(/\/$/,'').toLowerCase();
+              if (refKeys.has(u) || refIds.has(entry.id)) continue;
+              references.collections.push(entry); refKeys.add(u); refIds.add(entry.id); newSources++;
+            }
+            references.collections.sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
+            references.checkedAt=new Date().toISOString().slice(0,10);
+            references.note='Verified source links only; reference-only collections are not photo imports. Mixed-member totals must never be reported as YeonJi photo counts. Curator: @bbangshion; source owners retain attribution.';
+            const after = photos.filter(qualify);
+            const dateCounts = {};
+            for (const p of after) {const month=p.date.slice(0,7);dateCounts[month]=(dateCounts[month]||0)+1;}
+            const latest = (list)=>list.map(p=>p.date).sort().at(-1) ?? null;
+            const report={generatedAt:new Date().toISOString(),memberId:'S12',year:2026,
+              baseline:{totalEntries:existing.length,member2026Entries:before.length,latest2026Date:latest(before)},
+              result:{totalEntries:photos.length,member2026Entries:after.length,latest2026Date:latest(after),duplicatesRemoved,sourceReferencesAdded:newSources,monthCounts:dateCounts},
+              sourceReferences:verifiedSources.map(({id,date,url,memberImageCountVerified})=>({id,date,url,memberImageCountVerified})),
+              conflicts:dateConflicts,
+              importNotice:'This report does not prove source photos were downloaded or imported. Only explicit photos.json entries count as images. Fandom source importers are attempted separately.',
+              rightsNotice:'@bbangshion is the archive curator, not necessarily the photographer or copyright holder.'};
+            fs.mkdirSync(path.dirname(PHOTOS),{recursive:true});
+            fs.writeFileSync(PHOTOS,JSON.stringify(photos,null,2)+'\n');
+            fs.writeFileSync(REFERENCES,JSON.stringify(references,null,2)+'\n');
+            fs.writeFileSync(REPORT,JSON.stringify(report,null,2)+'\n');
+            const lines = [
+              '### YEONJI ARCHIVE — 2026 photo review',
+              `- Newest dated S12 photo before / after: ${report.baseline.latest2026Date || 'none'} → ${report.result.latest2026Date || 'none'}`,
+              `- 2026 S12 photo entries before / after: ${before.length} → ${after.length}`,
+              `- Exact duplicates removed (2026 S12): ${duplicatesRemoved}`,
+              `- Conflicting dates flagged, not removed: ${dateConflicts.length}`,
+              `- Newly linked source collections: ${newSources}`,
+              `- 2026 months: ${Object.entries(dateCounts).sort((a,b)=>b[0].localeCompare(a[0])).map(x=>x.join('=' )).join(', ') || 'none'}`,
+              '- Reference-only posts ARE NOT imported photos. Check the photo importer steps in the job logs.',
+            ];
+            console.log(lines.join('\n'));
+            if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,lines.join('\n')+'\n');
+            assert.equal(photos.filter(x=>x.memberId==='S12' && x.date?.startsWith('2026')).length,after.length);
+            return report;
+          }
+          if(require.main===module) run();
+          module.exports={run,removeExactDuplicates,normImage,dateOf,verifiedSources};
+          YEONJI_NODE
+      - name: Show source import result and photo counts
+        if: always()
+        shell: bash
+        run: |
+          for p in public/data/yeonji-fandom-sync.json public/data/yeonji-gallery-sync.json; do
+            if [[ -f "$p" ]]; then
+              node -e 'const x=require("./"+process.argv[1]);console.log(process.argv[1],"status:",x.status,"added:",x.added,"total:",x.total,"error:",x.error||"-")' "$p"
+            fi
+          done
+      - name: Commit photo data only (never workflow files)
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/data/photos.json public/data/recent-photo-collections.json public/data/yeonji-2026-photo-review.json
+          for p in public/data/yeonji-sns.json public/data/yeonji-gallery.json public/data/yeonji-fandom-sync.json public/data/yeonji-gallery-sync.json; do
+            if [[ -f "$p" ]]; then git add "$p"; fi
+          done
+          if git diff --cached --quiet; then
+            echo 'No data changes'
+          else
+            git commit -m 'data: audit and refresh S12 2026 photo references'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

@@ -214,8 +214,9 @@ jobs:
             assert.equal(photos.filter(x=>x.memberId==='S12' && x.date?.startsWith('2026')).length,after.length);
             return report;
           }
-          if(require.main===module) run();
-          module.exports={run,removeExactDuplicates,normImage,dateOf,verifiedSources};
+          // Execute explicitly: in GitHub Actions `node` reads this code from stdin,
+          // so require.main is undefined and a require.main guard skips run().
+          run();
           YEONJI_NODE
       - name: Show source import result and photo counts
         if: always()
@@ -231,10 +232,26 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add public/data/photos.json public/data/recent-photo-collections.json public/data/yeonji-2026-photo-review.json
-          for p in public/data/yeonji-sns.json public/data/yeonji-gallery.json public/data/yeonji-fandom-sync.json public/data/yeonji-gallery-sync.json; do
-            if [[ -f "$p" ]]; then git add "$p"; fi
+          # Stage only the photo-data files that actually exist. A missing report
+          # must never cause a misleading git pathspec error.
+          for p in \
+            public/data/photos.json \
+            public/data/recent-photo-collections.json \
+            public/data/yeonji-2026-photo-review.json \
+            public/data/yeonji-sns.json \
+            public/data/yeonji-gallery.json \
+            public/data/yeonji-fandom-sync.json \
+            public/data/yeonji-gallery-sync.json; do
+            if [[ -f "$p" ]]; then
+              git add -- "$p"
+            else
+              echo "Skipping missing data file: $p"
+            fi
           done
+          if [[ ! -f public/data/yeonji-2026-photo-review.json ]]; then
+            echo 'ERROR: review report not generated; check previous audit step' >&2
+            exit 1
+          fi
           if git diff --cached --quiet; then
             echo 'No data changes'
           else

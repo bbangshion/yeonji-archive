@@ -1,0 +1,40 @@
+name: Import YEONJI Instagram Photos (verified bulk)
+
+on:
+  workflow_dispatch:
+  # Manual execution prevents accidental repeated imports before review.
+
+permissions:
+  contents: write
+
+concurrency:
+  group: yeonji-instagram-photo-import
+  cancel-in-progress: false
+
+jobs:
+  import-instagram:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Node (no npm cache or lockfile required)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate importer
+        run: node --check scripts/import-yeonji-instagram-bulk.mjs
+      - name: Merge approved Instagram photos
+        run: node scripts/import-yeonji-instagram-bulk.mjs
+      - name: Commit photo data and audit only
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A public/data/photos.json public/data/yeonji-instagram-bulk-report.json
+          if git diff --cached --quiet; then
+            echo 'No photo data changes'
+            exit 0
+          fi
+          git commit -m 'photos: import verified YEONJI Instagram images'
+          git push

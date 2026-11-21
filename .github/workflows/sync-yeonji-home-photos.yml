@@ -1,0 +1,196 @@
+name: Sync YEONJI HOME recent photos
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["YEONJI Gallery - Official Instagram only"]
+    types: [completed]
+    branches: [main]
+permissions:
+  contents: write
+concurrency:
+  group: yeonji-photo-gallery-build
+  cancel-in-progress: false
+jobs:
+  sync-home:
+    if: github.repository == 'bbangshion/yeonji-archive' && ((github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' && github.event.workflow_run.head_repository.full_name == github.repository))
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Merge published official photos and sort newest first
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PYTHON'
+          import datetime as dt
+          import hashlib
+          import json
+          import re
+          from pathlib import Path
+          from urllib.parse import urlsplit, urlunsplit
+          import os
+
+          PUBLIC = Path('public')
+          BASE = PUBLIC / 'data/photos.json'
+          SOCIAL = PUBLIC / 'gallery/social_photos.json'
+
+
+          def load(path):
+              return json.loads(path.read_text(encoding='utf-8'))
+
+
+          def rows(payload):
+              result = payload if isinstance(payload, list) else payload.get('photos') if isinstance(payload, dict) else None
+              if not isinstance(result, list) or not all(isinstance(p, dict) for p in result):
+                  raise ValueError('Expected a photo array or an object with photos array')
+              return result
+
+
+          def day(p):
+              value = p.get('date')
+              if not isinstance(value, str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}', value):
+                  return ''
+              try:
+                  result = dt.date.fromisoformat(value)
+                  return value if result <= dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).date() else ''
+              except ValueError:
+                  return ''
+
+
+          def local_path(s, social=False):
+              if not isinstance(s, str) or not re.fullmatch(r'[A-Za-z0-9_./%\-]+\.(?:jpe?g|png|webp|avif)', s, re.I):
+                  return None
+              if s.startswith(('/', '.')) or '..' in s.split('/') or '%' in s:
+                  return None
+              if social and not s.startswith('gallery/'):
+                  s = 'gallery/' + s
+              p = PUBLIC / s
+              if not p.resolve().is_relative_to(PUBLIC.resolve()):
+                  return None
+              return s if p.is_file() else None
+
+
+          def urlkey(s):
+              if not isinstance(s, str) or not s:
+                  return ''
+              if s.startswith('https://'):
+                  u = urlsplit(s)
+                  if u.hostname and u.hostname.endswith('.wikia.nocookie.net'):
+                      return urlunsplit((u.scheme, u.netloc, u.path.split('/revision/')[0], '', ''))
+                  return urlunsplit((u.scheme, u.netloc, u.path, u.query, ''))
+              return s.removeprefix('./')
+
+
+          def keys(p):
+              out = set()
+              for field, pref in [('id','id:'), ('sha256','sha:'), ('mediaId','ig:')]:
+                  v = p.get(field)
+                  if v and (field != 'sha256' or re.fullmatch(r'[a-fA-F0-9]{64}', str(v))):
+                      out.add(pref + (str(v).lower() if field == 'sha256' else str(v)))
+              u = urlkey(p.get('image'))
+              if u:
+                  out.add('img:' + u)
+              local = local_path(p.get('image'))
+              if local:
+                  out.add('sha:' + hashlib.sha256((PUBLIC / local).read_bytes()).hexdigest())
+              return out
+
+
+          def official(p):
+              if p.get('memberId') != 'S12' or p.get('category') != 'photo' or p.get('status') != 'approved':
+                  return None
+              if p.get('source') != 'Official Instagram' or str(p.get('originalCreator','')).lstrip('@').lower() != 'triplescosmos':
+                  return None
+              u = urlsplit(str(p.get('sourceUrl','')))
+              if u.scheme != 'https' or u.hostname not in ('instagram.com','www.instagram.com') or not u.path.startswith(('/p/','/reel/')):
+                  return None
+              d = day(p)
+              image = local_path(p.get('image'), social=True)
+              if not d or d < '2023-01-18' or not image or not p.get('id') or not p.get('mediaId'):
+                  return None
+              if not image.startswith('gallery/assets/social/'):
+                  return None
+              digest = hashlib.sha256((PUBLIC / image).read_bytes()).hexdigest()
+              if p.get('sha256') != digest:
+                  return None
+              thumb = local_path(p.get('thumb'), social=True)
+              result = {**p, 'image':image,'date':d,'sha256':digest,'curator':'빵시온',
+                  'album':{'ko':'빵시온','en':'bbangshion','ja':'bbangshion'},
+                  'title':{'ko':f'{d.replace("-", ".")} 곽연지','en':f'{d} YeonJi','ja':f'{d} ヨンジ'},
+                  'credit':{'ko':'tripleS 공식 Instagram · 아카이브 빵시온','en':'tripleS official Instagram · curated by bbangshion','ja':'tripleS公式Instagram · アーカイブ bbangshion'}}
+              if thumb:
+                  result['thumb'] = thumb
+              else:
+                  result.pop('thumb', None)
+              return result
+
+
+          def main():
+              payload = load(BASE)
+              existing = rows(payload)
+              source = rows(load(SOCIAL)) if SOCIAL.exists() else []
+              seen = set()
+              for p in existing:
+                  seen.update(keys(p))
+              out = list(existing)
+              added = duplicate = skipped = 0
+              for p in source:
+                  entry = official(p)
+                  if entry is None:
+                      skipped += 1
+                      continue
+                  k = keys(entry)
+                  if k & seen:
+                      duplicate += 1
+                      continue
+                  seen.update(k)
+                  out.append(entry)
+                  added += 1
+              # Keep all existing rows and IDs; sort newest valid publication date first.
+              out.sort(key=day, reverse=True)
+              if out != existing:
+                  result = out if isinstance(payload, list) else {**payload, 'photos':out}
+                  temp = BASE.with_suffix('.json.tmp')
+                  temp.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+                  temp.replace(BASE)
+              newest = [day(p) for p in out if day(p)][:6]
+              summary = '\n'.join([
+                  '## HOME / PHOTO sync',
+                  f'- Existing PHOTO rows: {len(existing)}',
+                  f'- Social gallery rows: {len(source)}',
+                  f'- New official photos merged: {added}',
+                  f'- Duplicate official photos skipped: {duplicate}',
+                  f'- Other/unverified/missing-asset rows skipped: {skipped}',
+                  f'- Total PHOTO rows: {len(out)}',
+                  f'- Latest photo dates: {", ".join(newest) or "none"}',
+                  '- Run Deploy YEONJI ARCHIVE manually after sync.',
+                  *(['- No social data file found. Run the official publish workflow first.'] if not SOCIAL.exists() else []),
+                  *(['- No newly merged photos. Check the official publish summary and social file if more recent photos are expected.'] if not added else [])])
+              print(summary)
+              if os.getenv('GITHUB_STEP_SUMMARY'):
+                  with open(os.environ['GITHUB_STEP_SUMMARY'],'a', encoding='utf-8') as f:
+                      f.write(summary+'\n')
+
+
+          if __name__ == '__main__':
+              main()
+          PYTHON
+      - name: Commit PHOTO data only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check
+          git add -- public/data/photos.json
+          if git diff --cached --quiet; then
+            echo 'No photo changes to commit'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'data: sync published official photos to HOME and PHOTO'
+          git push origin HEAD:main

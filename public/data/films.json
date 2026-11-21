@@ -1,7 +1,218 @@
 {
-  "version": 1,
+  "version": 2,
   "updatedAt": "2026-11-21",
+  "method": "editor-curated",
+  "coverage": {
+    "official": {
+      "status": "curated"
+    },
+    "broadcast": {
+      "status": "curated"
+    },
+    "fan": {
+      "status": "opt-in"
+    }
+  },
+  "notes": "연지 출연이 확인된 공식 MV/연습 영상, 방송사 직캠, 팬 촬영 영상. 원본 영상을 재업로드하지 않고 YouTube 링크만 제공. 영상 게시일이 확인되지 않은 항목은 null.",
   "items": [
+    {
+      "youtubeId": "ouFe0tHgnss",
+      "title": "tripleS · I Want You To Know Official Dance Practice",
+      "category": "performance",
+      "publishedAt": "2026-11-13",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "tripleS",
+      "scope": "group",
+      "publisher": "official",
+      "source": "tripleS official",
+      "song": "I Want You To Know",
+      "note": "",
+      "kind": "dance",
+      "reference": "",
+      "verified": true
+    },
+    {
+      "youtubeId": "uqJ6GDJSyfY",
+      "title": "tripleS · Andless Official MV",
+      "category": "music",
+      "publishedAt": "2026-10-16",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "tripleS",
+      "scope": "group",
+      "publisher": "official",
+      "source": "tripleS official",
+      "song": "Andless",
+      "note": "",
+      "kind": "mv",
+      "reference": "",
+      "verified": true
+    },
+    {
+      "youtubeId": "Tx8nqRHhX1c",
+      "title": "[#최애직캠] 곽연지 · Baby Flower (음악중심)",
+      "category": "performance",
+      "publishedAt": "2026-06-15",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "tripleS",
+      "scope": "solo",
+      "publisher": "broadcast",
+      "source": "MBCkpop / Music Core",
+      "song": "Baby Flower",
+      "note": "",
+      "kind": "fancam",
+      "reference": "https://kpop-universe.kr/en/g/triples/kwak-yeonji/fancams/",
+      "verified": true
+    },
+    {
+      "youtubeId": "Jr_9d314mAQ",
+      "title": "[쇼챔직캠 4K] 곽연지 · Baby Flower",
+      "category": "performance",
+      "publishedAt": "2026-06-10",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "tripleS",
+      "scope": "solo",
+      "publisher": "broadcast",
+      "source": "ALL THE K-POP / Show Champion",
+      "song": "Baby Flower",
+      "note": "",
+      "kind": "fancam",
+      "reference": "https://kpop-universe.kr/en/g/triples/kwak-yeonji/fancams/",
+      "verified": true
+    },
+    {
+      "youtubeId": "HVmfOZ18JIo",
+      "title": "tripleS · Baby Flower Official Dance Practice",
+      "category": "performance",
+      "publishedAt": "2026-06-07",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "tripleS",
+      "scope": "group",
+      "publisher": "official",
+      "source": "tripleS official",
+      "song": "Baby Flower",
+      "note": "",
+      "kind": "dance",
+      "reference": "",
+      "verified": true
+    },
+    {
+      "youtubeId": "D1d1QmWSMBg",
+      "title": "[팬 직캠] 곽연지 · LOVE&POP pt.1 쇼케이스",
+      "category": "performance",
+      "publishedAt": "2026-06-03",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "tripleS",
+      "scope": "solo",
+      "publisher": "fan",
+      "source": "팬 촬영",
+      "song": "",
+      "note": "",
+      "kind": "fancam",
+      "reference": "https://kpop-universe.kr/en/g/triples/kwak-yeonji/fancams/",
+      "verified": true
+    },
+    {
+      "youtubeId": "6q8UMVXhXsE",
+      "title": "tripleS · Baby Flower Official MV",
+      "category": "music",
+      "publishedAt": "2026-06-01",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "tripleS",
+      "scope": "group",
+      "publisher": "official",
+      "source": "tripleS official",
+      "song": "Baby Flower",
+      "note": "",
+      "kind": "mv",
+      "reference": "",
+      "verified": true
+    },
+    {
+      "youtubeId": "X17TOuz9LrM",
+      "title": "[팬 직캠] 곽연지 · Choom (My Secret New Zone)",
+      "category": "performance",
+      "publishedAt": "2026-04-09",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "tripleS",
+      "scope": "solo",
+      "publisher": "fan",
+      "source": "THE IDOL",
+      "song": "Choom",
+      "note": "",
+      "kind": "fancam",
+      "reference": "https://kpop-universe.kr/en/g/triples/kwak-yeonji/fancams/",
+      "verified": true
+    },
+    {
+      "youtubeId": "NVIZ55Cxeng",
+      "title": "[팬 직캠] 곽연지 · Speed Love (My Secret New Zone)",
+      "category": "performance",
+      "publishedAt": "2026-04-09",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "tripleS",
+      "scope": "solo",
+      "publisher": "fan",
+      "source": "THE IDOL",
+      "song": "Speed Love",
+      "note": "",
+      "kind": "fancam",
+      "reference": "https://kpop-universe.kr/en/g/triples/kwak-yeonji/fancams/",
+      "verified": true
+    },
+    {
+      "youtubeId": "XBgJEvpCqDo",
+      "title": "[쇼챔직캠 4K] msnz zenith 연지 · Christmas Alone",
+      "category": "performance",
+      "publishedAt": "2025-12-03",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "zenith",
+      "scope": "solo",
+      "publisher": "broadcast",
+      "source": "ALL THE K-POP / Show Champion",
+      "song": "Christmas Alone",
+      "note": "",
+      "kind": "fancam",
+      "reference": "https://kpop-universe.kr/en/g/triples/kwak-yeonji/fancams/",
+      "verified": true
+    },
+    {
+      "youtubeId": "TvmLPQ7iBLQ",
+      "title": "tripleS msnz zenith · Q&A Official MV",
+      "category": "music",
+      "publishedAt": "2025-11-24",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "zenith",
+      "scope": "unit",
+      "publisher": "official",
+      "source": "tripleS official",
+      "song": "Q&A",
+      "note": "",
+      "kind": "mv",
+      "reference": "",
+      "verified": true
+    },
     {
       "youtubeId": "dzzlMvM6w6M",
       "title": "SecretBase 250926 KwakYeonJi.SSS",
@@ -12,20 +223,264 @@
       ],
       "group": "YeonJi",
       "scope": "solo",
+      "publisher": "official",
       "source": "tripleS official",
+      "song": "",
+      "note": "공식 개인 영상",
+      "kind": "signal",
+      "reference": "",
+      "verified": true
+    },
+    {
+      "youtubeId": "Kp6B1cN8GfM",
+      "title": "[안방1열 직캠 4K] 곽연지 · 깨어 (Are You Alive)",
+      "category": "performance",
+      "publishedAt": "2025-06-04",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "tripleS",
+      "scope": "solo",
+      "publisher": "broadcast",
+      "source": "SBSKPOP / Inkigayo",
+      "song": "깨어 (Are You Alive)",
+      "note": "",
+      "kind": "fancam",
+      "reference": "https://kpop-universe.kr/en/g/triples/kwak-yeonji/fancams/",
+      "verified": true
+    },
+    {
+      "youtubeId": "pTycfmVzdl8",
+      "title": "tripleS · 깨어 (Are You Alive) Official MV",
+      "category": "music",
+      "publishedAt": "2025-05-12",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "tripleS",
+      "scope": "group",
+      "publisher": "official",
+      "source": "tripleS official",
+      "song": "깨어 (Are You Alive)",
+      "note": "",
+      "kind": "mv",
+      "reference": "",
       "verified": true
     },
     {
       "youtubeId": "cfUfSuLsGVc",
-      "title": "SecretBase 250429 KwakYeonJi.SSS",
+      "title": "ASSEMBLE25 · S12 곽연지 영상일기",
       "category": "signal",
+      "publishedAt": "2025-05-11",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "YeonJi",
+      "scope": "solo",
+      "publisher": "official",
+      "source": "tripleS official",
+      "song": "",
+      "note": "24시간 멤버별 영상 공개 — S12 곽연지",
+      "kind": "signal",
+      "reference": "",
+      "verified": true
+    },
+    {
+      "youtubeId": "OrdlwUFSbwI",
+      "title": "[플리캠 4K] Visionary Vision 곽연지 · Hit the Floor",
+      "category": "performance",
+      "publishedAt": "2024-11-08",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "Visionary Vision",
+      "scope": "solo",
+      "publisher": "broadcast",
+      "source": "ARIRANG K-POP / Simply K-Pop",
+      "song": "Hit the Floor",
+      "note": "",
+      "kind": "fancam",
+      "reference": "https://kpop-universe.kr/en/g/triples/kwak-yeonji/fancams/",
+      "verified": true
+    },
+    {
+      "youtubeId": "xmGob0PrNIA",
+      "title": "[쇼챔직캠 4K] Visionary Vision 곽연지 · Hit the Floor",
+      "category": "performance",
+      "publishedAt": "2024-11-06",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "Visionary Vision",
+      "scope": "solo",
+      "publisher": "broadcast",
+      "source": "ALL THE K-POP / Show Champion",
+      "song": "Hit the Floor",
+      "note": "",
+      "kind": "fancam",
+      "reference": "https://kpop-universe.kr/en/g/triples/kwak-yeonji/fancams/",
+      "verified": true
+    },
+    {
+      "youtubeId": "U2tWUzvS52w",
+      "title": "[안방1열 직캠 4K] Visionary Vision 곽연지 · Hit the Floor",
+      "category": "performance",
+      "publishedAt": "2024-11-05",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "Visionary Vision",
+      "scope": "solo",
+      "publisher": "broadcast",
+      "source": "SBSKPOP / Inkigayo",
+      "song": "Hit the Floor",
+      "note": "",
+      "kind": "fancam",
+      "reference": "https://kpop-universe.kr/en/g/triples/kwak-yeonji/fancams/",
+      "verified": true
+    },
+    {
+      "youtubeId": "FhcMhkIItAc",
+      "title": "[UNFILTERED CAM] Visionary Vision 연지 · Hit the Floor",
+      "category": "performance",
+      "publishedAt": "2024-10-26",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "Visionary Vision",
+      "scope": "solo",
+      "publisher": "broadcast",
+      "source": "STUDIO CHOOM",
+      "song": "Hit the Floor",
+      "note": "",
+      "kind": "fancam",
+      "reference": "https://kpop-universe.kr/en/g/triples/kwak-yeonji/fancams/",
+      "verified": true
+    },
+    {
+      "youtubeId": "aKyt6Ahxwss",
+      "title": "tripleS Visionary Vision · Hit the Floor Official MV",
+      "category": "music",
+      "publishedAt": "2024-10-23",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "Visionary Vision",
+      "scope": "unit",
+      "publisher": "official",
+      "source": "tripleS official",
+      "song": "Hit the Floor",
+      "note": "",
+      "kind": "mv",
+      "reference": "",
+      "verified": true
+    },
+    {
+      "youtubeId": "go5TD9-g25k",
+      "title": "[플리캠 4K] 곽연지 · Girls Never Die",
+      "category": "performance",
+      "publishedAt": "2024-05-17",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "tripleS",
+      "scope": "solo",
+      "publisher": "broadcast",
+      "source": "ARIRANG K-POP / Simply K-Pop",
+      "song": "Girls Never Die",
+      "note": "",
+      "kind": "fancam",
+      "reference": "https://kpop-universe.kr/en/g/triples/kwak-yeonji/fancams/",
+      "verified": true
+    },
+    {
+      "youtubeId": "FAQqXoPlHYk",
+      "title": "[주간아 직캠 4K] 곽연지 · Girls Never Die",
+      "category": "performance",
+      "publishedAt": "2024-05-10",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "tripleS",
+      "scope": "solo",
+      "publisher": "broadcast",
+      "source": "ALL THE K-POP / Weekly Idol",
+      "song": "Girls Never Die",
+      "note": "",
+      "kind": "fancam",
+      "reference": "https://kpop-universe.kr/en/g/triples/kwak-yeonji/fancams/",
+      "verified": true
+    },
+    {
+      "youtubeId": "2tda_TCjz8w",
+      "title": "tripleS · Girls Never Die Official MV",
+      "category": "music",
+      "publishedAt": "2024-05-08",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "tripleS",
+      "scope": "group",
+      "publisher": "official",
+      "source": "tripleS official",
+      "song": "Girls Never Die",
+      "note": "",
+      "kind": "mv",
+      "reference": "",
+      "verified": true
+    },
+    {
+      "youtubeId": "2oro-Tq2E5M",
+      "title": "[쇼챔직캠 4K] EVOLution 곽연지 · Invincible",
+      "category": "performance",
+      "publishedAt": "2023-10-26",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "EVOLution",
+      "scope": "solo",
+      "publisher": "broadcast",
+      "source": "ALL THE K-POP / Show Champion",
+      "song": "Invincible",
+      "note": "",
+      "kind": "fancam",
+      "reference": "https://kpop-universe.kr/en/g/triples/kwak-yeonji/fancams/",
+      "verified": true
+    },
+    {
+      "youtubeId": "KMythzAnNK0",
+      "title": "tripleS EVOLution · Invincible MV",
+      "category": "music",
+      "publishedAt": "2023-10-11",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "EVOLution",
+      "scope": "unit",
+      "publisher": "official",
+      "source": "tripleS official",
+      "song": "Invincible",
+      "note": "EVOLution 공식 뮤직비디오",
+      "kind": "mv",
+      "reference": "",
+      "verified": true
+    },
+    {
+      "youtubeId": "_B9ChtoW64k",
+      "title": "수민 언니가 찍어준 연지의 졸업식 브이로그",
+      "category": "other",
       "publishedAt": null,
       "memberIds": [
         "S12"
       ],
       "group": "YeonJi",
       "scope": "solo",
+      "publisher": "official",
       "source": "tripleS official",
+      "song": "",
+      "note": "공식 채널 · 곽연지 등장",
+      "kind": "behind",
+      "reference": "",
       "verified": true
     }
   ]

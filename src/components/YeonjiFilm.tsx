@@ -1,225 +1,155 @@
+import '../i18n/yeonji-film-messages';
 import { Trans, useI18n } from '../i18n/I18nContext';
-import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowIcon } from './Icons';
-import { filmEmbedUrl, filmThumbnail, filmYoutubeUrl, normalizeFilms, readableFilmDate, filmScopeLabel } from '../lib/films';
-import type { Film, FilmCategory } from '../lib/films';
+import { filmEmbedUrl, filmThumbnail, filmYoutubeUrl, filmScopeLabel, filmPublisherLabel, normalizeFilms, readableFilmDate } from '../lib/films';
+import type { Film, FilmPublisher } from '../lib/films';
 import { clearRouteItem, getRouteItem } from '../lib/archiveRoute';
+import './yeonji-film.css';
+
 const DATA_PATH = `${import.meta.env.BASE_URL}data/films.json`;
 const STORAGE_KEY = 'yeonji-archive-film-favorites-v1';
-const PAGE_SIZE = 24;
-type FilmFilter = 'all' | FilmCategory | 'saved';
-const FILTERS: readonly {
-    id: FilmFilter;
-    text: string;
-}[] = [
-    { id: 'all', text: '전체' },
-    { id: 'signal', text: 'SIGNAL' },
-    { id: 'music', text: '뮤직비디오' },
-    { id: 'performance', text: '무대·직캠' },
-    { id: 'live', text: '라이브' },
-    { id: 'other', text: '기타' },
-    { id: 'saved', text: '저장한 영상' },
+const PAGE_SIZE = 18;
+type FilmFilter = 'all' | 'fancam' | 'music' | 'signal' | 'performance' | 'live' | 'saved';
+type PublisherFilter = 'all' | FilmPublisher;
+const TABS: { id: FilmFilter; label: string }[] = [
+  { id: 'all', label: '전체' }, { id: 'fancam', label: '연지 직캠' },
+  { id: 'music', label: '공식 MV' }, { id: 'signal', label: 'SIGNAL' },
+  { id: 'performance', label: '무대·안무' }, { id: 'live', label: '라이브' },
+  { id: 'saved', label: '저장한 영상' },
 ];
-function getSavedIds(): Set<string> {
-    try {
-        const data: unknown = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]');
-        if (!Array.isArray(data))
-            return new Set();
-        return new Set(data.filter((id): id is string => typeof id === 'string' && /^[\w-]{11}$/.test(id)));
-    }
-    catch {
-        return new Set();
-    }
-}
-function FilmImage({ video }: {
-    video: Film;
-}) {
-    const [broken, setBroken] = useState(false);
-    useEffect(() => setBroken(false), [video.id]);
-    return <div className="shion-film-poster">
-    {broken ? <span className="shion-film-noimage"><Trans value="영상 미리보기를 표시할 수 없습니다"/></span> :
-            <img src={filmThumbnail(video.youtubeId)} alt="" width="480" height="360" loading="lazy" decoding="async" referrerPolicy="no-referrer" onError={() => setBroken(true)}/>}
-    <span className="shion-film-play-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" width="25" height="25"><path d="m9 6 9 6-9 6V6Z" fill="currentColor"/></svg></span>
+const PUBLISHERS: { id: PublisherFilter; label: string }[] = [
+  {id:'all',label:'전체 출처'}, {id:'official',label:'tripleS 공식'},
+  {id:'broadcast',label:'방송사'}, {id:'fan',label:'팬 촬영'},
+];
+const getSavedIds = (): Set<string> => {
+  try {
+    const stored: unknown = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]');
+    return new Set(Array.isArray(stored) ? stored.filter((id): id is string => typeof id === 'string' && /^[\w-]{11}$/.test(id)) : []);
+  } catch { return new Set(); }
+};
+
+function FilmImage({video}: {video:Film}) {
+  const [failed, setFailed] = useState(false);
+  useEffect(() => setFailed(false),[video.id]);
+  return <div className="yfilm-image">
+    {failed ? <span className="yfilm-image-fallback">YEONJI ARCHIVE<br/><small>WATCH ON YOUTUBE</small></span>
+      : <img alt="" src={filmThumbnail(video.youtubeId)} width="480" height="270" loading="lazy" decoding="async" referrerPolicy="no-referrer" onError={() => setFailed(true)}/>}
+    <span className="yfilm-play" aria-hidden="true">▶</span>
+    <span className="yfilm-image-badge">{video.kind === 'fancam' ? 'FANCAM' : video.kind === 'mv' ? 'MV' : video.kind === 'dance' ? 'PRACTICE' : video.kind === 'signal' ? 'SIGNAL' : video.kind === 'behind' ? 'BEHIND' : 'VIDEO'}</span>
   </div>;
 }
-function FilmCard({ video, saved, onPlay, onSave }: {
-    video: Film;
-    saved: boolean;
-    onPlay: () => void;
-    onSave: () => void;
-}) {
-    const { t } = useI18n();
-    return <article className="shion-film-card">
-    <button className="shion-film-card-main" type="button" onClick={onPlay} aria-label={`${t(video.title)} ${t("영상")}`}>
+function FilmCard({video,saved,onPlay,onSave}:{video:Film;saved:boolean;onPlay:()=>void;onSave:()=>void}) {
+  const {t} = useI18n();
+  return <article className="yfilm-card">
+    <button className="yfilm-card-main" type="button" onClick={onPlay} aria-label={`${t(video.title)} · ${t('영상 재생')}`}>
       <FilmImage video={video}/>
-      <span className="shion-film-card-details">
-        <span className="shion-film-category">{t(filmScopeLabel(video.scope))} · {video.group} <span aria-hidden="true">/</span> {readableFilmDate(video.publishedAt)}</span>
-        <strong><Trans value={video.title}/></strong>
-        <span className="shion-film-caption"><Trans value={video.note || video.source}/></span>
-      </span>
+      <div className="yfilm-card-info">
+        <span className="yfilm-eyeline">{t(filmPublisherLabel(video.publisher))} <i>·</i> {readableFilmDate(video.publishedAt)}</span>
+        <strong>{t(video.title)}</strong>
+        <span className="yfilm-card-extra">{video.group} <i> / </i> {t(filmScopeLabel(video.scope))}{video.song ? ` · ${video.song}` : ''}</span>
+      </div>
     </button>
-    <button className={`shion-film-save ${saved ? 'is-active' : ''}`} type="button" onClick={onSave} aria-pressed={saved} aria-label={`${video.title} ${t(saved ? '저장 해제' : '저장')}`} title={t(saved ? '저장 해제' : '저장')}>
-      <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill={saved ? 'currentColor' : 'none'}><path d="M6.5 3.7h11a.7.7 0 0 1 .7.7v16L12 16.1l-6.2 4.3v-16a.7.7 0 0 1 .7-.7Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/></svg>
+    <button className={`yfilm-save${saved?' is-on':''}`} type="button" aria-pressed={saved} aria-label={`${t(video.title)} · ${t(saved?'저장 해제':'저장')}`} onClick={onSave} title={t(saved?'저장 해제':'저장')}>
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill={saved?'currentColor':'none'}><path d="M6.5 3.8h11v16L12 16l-5.5 3.8v-16Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>
     </button>
   </article>;
 }
-function PlayerDialog({ video, onClose }: {
-    video: Film;
-    onClose: () => void;
-}) {
-    const closeRef = useRef<HTMLButtonElement>(null);
-    const { t } = useI18n();
-    useEffect(() => {
-        const previous = document.activeElement instanceof HTMLElement ? document.activeElement : null;
-        const oldOverflow = document.body.style.overflow;
-        document.body.style.overflow = 'hidden';
-        closeRef.current?.focus();
-        const onKeyDown = (event: KeyboardEvent) => {
-            if (event.key === 'Escape')
-                onClose();
-            if (event.key === 'Tab') {
-                const root = document.getElementById('shion-film-dialog');
-                const controls = root?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])');
-                if (!controls?.length)
-                    return;
-                const first = controls[0];
-                const last = controls[controls.length - 1];
-                if (!first || !last) return;
-                if (event.shiftKey && document.activeElement === first) {
-                    event.preventDefault();
-                    last.focus();
-                }
-                else if (!event.shiftKey && document.activeElement === last) {
-                    event.preventDefault();
-                    first.focus();
-                }
-            }
-        };
-        document.addEventListener('keydown', onKeyDown);
-        return () => {
-            document.removeEventListener('keydown', onKeyDown);
-            document.body.style.overflow = oldOverflow;
-            previous?.focus();
-        };
-    }, [onClose]);
-    return <div className="shion-film-dialog-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget)
-        onClose(); }}>
-    <div id="shion-film-dialog" className="shion-film-dialog" role="dialog" aria-modal="true" aria-labelledby="shion-film-dialog-title">
-      <div className="shion-film-dialog-head">
-        <div><span>YEONJI FILM</span><h2 id="shion-film-dialog-title"><Trans value={video.title}/></h2></div>
-        <button type="button" className="shion-film-dialog-close" ref={closeRef} onClick={onClose} aria-label={t("영상 닫기")}><Trans value="닫기 "/><span aria-hidden="true">×</span></button>
-      </div>
-      <div className="shion-film-player">
-        <iframe title={`${t(video.title)} YouTube ${t("영상")}`} src={filmEmbedUrl(video.youtubeId)} referrerPolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen/>
-      </div>
-      <div className="shion-film-dialog-foot">
-        <p>{t(filmScopeLabel(video.scope))} · {video.group} · {readableFilmDate(video.publishedAt)}</p>
-        <a href={filmYoutubeUrl(video.youtubeId)} target="_blank" rel="noopener noreferrer"><Trans value="YouTube에서 보기 "/><ArrowIcon width={16} height={16}/></a>
-      </div>
+function VideoDialog({video,onClose}:{video:Film;onClose:()=>void}) {
+  const {t} = useI18n();
+  const closeButton = useRef<HTMLButtonElement>(null);
+  const panel = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const previous = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow='hidden';
+    closeButton.current?.focus();
+    const onKeyDown=(event:KeyboardEvent)=>{
+      if(event.key === 'Escape') { event.preventDefault(); onClose(); }
+      if(event.key!=='Tab') return;
+      const controls=panel.current?.querySelectorAll<HTMLElement>('a[href],button:not([disabled])');
+      if(!controls?.length)return;
+      const first=controls[0],last=controls[controls.length-1];
+      if(!first || !last) return;
+      if(event.shiftKey && document.activeElement===first) {event.preventDefault();last.focus();}
+      else if(!event.shiftKey && document.activeElement===last){event.preventDefault();first.focus();}
+    };
+    document.addEventListener('keydown',onKeyDown);
+    return ()=>{document.removeEventListener('keydown',onKeyDown);document.body.style.overflow=previousOverflow;previous?.focus();};
+  },[onClose]);
+  return <div className="yfilm-modal-layer" onMouseDown={e=>{if(e.target===e.currentTarget)onClose();}}>
+    <div className="yfilm-modal" ref={panel} role="dialog" aria-modal="true" aria-labelledby="yfilm-modal-title">
+      <div className="yfilm-modal-top"><div><span className="yfilm-kicker">YEONJI FILM / {video.group}</span><h2 id="yfilm-modal-title">{t(video.title)}</h2></div><button ref={closeButton} className="yfilm-close" type="button" onClick={onClose} aria-label={t('닫기')}>×</button></div>
+      <div className="yfilm-player"><iframe title={t(video.title)} src={filmEmbedUrl(video.youtubeId)} allow="autoplay; encrypted-media; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/></div>
+      <div className="yfilm-modal-bottom"><span>{t(filmPublisherLabel(video.publisher))} · {readableFilmDate(video.publishedAt)} · {video.source}</span><a target="_blank" rel="noopener noreferrer" href={filmYoutubeUrl(video.youtubeId)}>{t('YouTube에서 보기')} <ArrowIcon width={15} height={15}/></a></div>
+      <p className="yfilm-player-note">{t('영상 재생이 제한되면 YouTube에서 보기를 눌러 주세요.')}</p>
     </div>
   </div>;
 }
-export default function YeonjiFilm() {
-    const { t, formatNumber } = useI18n();
-    const [films, setFilms] = useState<Film[]>([]);
-    const [syncMessage, setSyncMessage] = useState('');
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
-    const [filter, setFilter] = useState<FilmFilter>('all');
-    const [query, setQuery] = useState('');
-    const [year, setYear] = useState('all');
-    const [visible, setVisible] = useState(PAGE_SIZE);
-    const [playingId, setPlayingId] = useState<string | null>(null);
-    const [saved, setSaved] = useState<Set<string>>(getSavedIds);
-    const deferredQuery = useDeferredValue(query.trim().toLocaleLowerCase());
-    useEffect(() => {
-        const controller = new AbortController();
-        const load = async () => {
-            try {
-                setLoading(true);
-                setError('');
-                const response = await fetch(DATA_PATH, { signal: controller.signal, cache: 'no-cache' });
-                if (!response.ok)
-                    throw new Error(`영상 목록을 불러오지 못했습니다 (${response.status})`);
-                const payload: unknown = await response.json();
-                if (!controller.signal.aborted) {
-                    setFilms(normalizeFilms(payload));
-                    const report = (payload && typeof payload === 'object' && !Array.isArray(payload) ? (payload as {
-                        coverage?: {
-                            wav?: {
-                                status?: string;
-                            };
-                            official?: {
-                                status?: string;
-                            };
-                        };
-                        generatedAt?: string;
-                    }) : null);
-                    const youtube = report?.coverage?.official?.status;
-                    setSyncMessage(youtube === 'no-api-key' ? '공식 채널 전체 자동 검색은 미연결' : youtube === 'ok' ? '공식 채널 목록과 동기화' : '공식 링크를 기준으로 정리');
-                }
-            }
-            catch (reason) {
-                if (!controller.signal.aborted)
-                    setError(reason instanceof Error ? reason.message : '영상 목록을 불러오지 못했습니다');
-            }
-            finally {
-                if (!controller.signal.aborted)
-                    setLoading(false);
-            }
-        };
-        void load();
-        return () => controller.abort();
-    }, []);
-    useEffect(() => {
-        const id = getRouteItem('film');
-        if (id && films.some((film) => film.id === id)) setPlayingId(id);
-    }, [films]);
-    const years = useMemo(() => Array.from(new Set(films.flatMap((film) => film.publishedAt ? [film.publishedAt.slice(0, 4)] : []))).sort((a, b) => b.localeCompare(a)), [films]);
-    const filtered = useMemo(() => films.filter((film) => (filter === 'all' || (filter === 'saved' ? saved.has(film.id) : film.category === filter)) &&
-        (year === 'all' || film.publishedAt?.startsWith(year)) &&
-        (!deferredQuery || `${film.title} ${film.group} ${film.note} ${film.publishedAt ?? ''}`.toLocaleLowerCase().includes(deferredQuery))), [films, filter, saved, year, deferredQuery]);
-    const selected = useMemo(() => films.find((film) => film.id === playingId) ?? null, [films, playingId]);
-    useEffect(() => setVisible(PAGE_SIZE), [filter, query, year]);
-    const toggleSaved = (id: string) => {
-        setSaved((previous) => {
-            const next = new Set(previous);
-            if (next.has(id))
-                next.delete(id);
-            else
-                next.add(id);
-            try {
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(next)));
-            }
-            catch { /* browsing remains available */ }
-            return next;
-        });
-    };
-    return <div className="shion-film-page animate-appear">
-    <header className="yeonji-page-heading">
-      <span className="yeonji-page-kicker">YEONJI FILM</span>
-      <h1><Trans value="영상"/></h1>
-      <p><Trans value="곽연지 개인, 유닛, 완전체 공식 영상"/></p>
-    </header>
-
-    <div className="shion-film-controls">
-      <div className="shion-film-tabs" role="group" aria-label={t("영상 종류")}>
-        {FILTERS.map((item) => <button key={item.id} type="button" className={filter === item.id ? 'is-active' : ''} aria-pressed={filter === item.id} onClick={() => setFilter(item.id)}>{t(item.text)}</button>)}
-      </div>
-      <div className="shion-film-search-row">
-        <label className="shion-film-search"><span className="sr-only"><Trans value="영상 검색"/></span><input type="search" autoComplete="off" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={t("영상 제목 검색")}/></label>
-        <label className="shion-film-year"><span className="sr-only"><Trans value="연도"/></span><select value={year} onChange={(event) => setYear(event.target.value)}><option value="all">{t('전체 연도')}</option>{years.map((value) => <option value={value} key={value}>{value}</option>)}</select></label>
+export default function YeonjiFilm(){
+  const {t,formatNumber} = useI18n();
+  const [films,setFilms]=useState<Film[]>([]);
+  const [loading,setLoading]=useState(true);
+  const [error,setError]=useState('');
+  const [filter,setFilter]=useState<FilmFilter>('all');
+  const [publisher,setPublisher]=useState<PublisherFilter>('all');
+  const [group,setGroup]=useState('all');
+  const [year,setYear]=useState('all');
+  const [sort,setSort]=useState<'newest'|'oldest'>('newest');
+  const [query,setQuery]=useState('');
+  const [visible,setVisible]=useState(PAGE_SIZE);
+  const [playingId,setPlayingId]=useState<string|null>(null);
+  const [saved,setSaved]=useState<Set<string>>(getSavedIds);
+  const deferredQuery=useDeferredValue(query.trim().toLocaleLowerCase());
+  const closePlayer=useCallback(()=>{setPlayingId(null);clearRouteItem('film');},[]);
+  useEffect(()=>{
+    const controller=new AbortController();
+    fetch(DATA_PATH,{signal:controller.signal,cache:'no-cache'}).then(async response=>{
+      if(!response.ok)throw new Error(`HTTP ${response.status}`);
+      const payload:unknown=await response.json();
+      if(!controller.signal.aborted)setFilms(normalizeFilms(payload));
+    }).catch(reason=>{if(!controller.signal.aborted)setError(reason instanceof Error?reason.message:String(reason));})
+      .finally(()=>{if(!controller.signal.aborted)setLoading(false);});
+    return ()=>controller.abort();
+  },[]);
+  useEffect(()=>{const id=getRouteItem('film');if(id && films.some(f=>f.id===id))setPlayingId(id);},[films]);
+  useEffect(()=>setVisible(PAGE_SIZE),[filter,publisher,group,year,sort,deferredQuery]);
+  const years=useMemo(()=>[...new Set(films.map(f=>f.publishedAt?.slice(0,4)).filter((v):v is string=>!!v))].sort().reverse(),[films]);
+  const groups=useMemo(()=>[...new Set(films.map(f=>f.group))].sort((a,b)=>a.localeCompare(b)),[films]);
+  const stats=useMemo(()=>({total:films.length,fancams:films.filter(f=>f.kind==='fancam').length,official:films.filter(f=>f.publisher==='official').length}),[films]);
+  const filtered=useMemo(()=>films.filter(f=>
+    (filter==='all'||filter==='saved'&&saved.has(f.id)||filter==='fancam'&&f.kind==='fancam'||filter==='music'&&f.category==='music'||filter==='signal'&&f.category==='signal'||filter==='performance'&&f.category==='performance'||filter==='live'&&f.category==='live')&&
+    (publisher==='all'||f.publisher===publisher)&&
+    (group==='all'||f.group===group)&&
+    (year==='all'||f.publishedAt?.startsWith(year))&&
+    (!deferredQuery||[f.title,f.group,f.song,f.source,f.note,f.publishedAt].join(' ').toLocaleLowerCase().includes(deferredQuery))
+  ).sort((a,b)=>sort==='newest'?(b.publishedAt??'').localeCompare(a.publishedAt??''):(a.publishedAt??'').localeCompare(b.publishedAt??'')),[films,filter,publisher,group,year,sort,saved,deferredQuery]);
+  const selected=films.find(f=>f.id===playingId)??null;
+  const toggleSaved=(id:string)=>setSaved(prev=>{
+    const next=new Set(prev); if(next.has(id))next.delete(id); else next.add(id);
+    try{localStorage.setItem(STORAGE_KEY,JSON.stringify([...next]));}catch{/* private browsing: in-memory selection remains */}
+    return next;
+  });
+  const reset=()=>{setFilter('all');setPublisher('all');setGroup('all');setYear('all');setSort('newest');setQuery('');};
+  return <section className="shion-film-page yfilm-page animate-appear">
+    <header className="yeonji-page-heading yfilm-heading"><span className="yeonji-page-kicker">YEONJI FILM / S12</span><h1>{t('영상')}</h1><p>{t('연지의 공식 영상과 무대, 개인 직캠을 모았습니다.')}</p></header>
+    <div className="yfilm-summary" aria-label={t('영상 통계')}><div><span>ALL FILMS</span><strong>{formatNumber(stats.total)}</strong></div><div><span>FANCAMS</span><strong>{formatNumber(stats.fancams)}</strong></div><div><span>TRIPLES OFFICIAL</span><strong>{formatNumber(stats.official)}</strong></div></div>
+    <div className="yfilm-controls">
+      <div className="yfilm-tabs" role="group" aria-label={t('영상 종류')}>{TABS.filter(tab=>tab.id!=='live'||films.some(f=>f.category==='live')).map(tab=><button key={tab.id} type="button" aria-pressed={filter===tab.id} className={filter===tab.id?'is-active':''} onClick={()=>setFilter(tab.id)}>{t(tab.label)}</button>)}</div>
+      <div className="yfilm-search"><label><span className="sr-only">{t('영상 검색')}</span><input value={query} type="search" onChange={e=>setQuery(e.target.value)} autoComplete="off" placeholder={t('곡명, 연도, 방송사, 영상 제목 검색')}/></label><button type="button" onClick={reset}>{t('초기화')}</button></div>
+      <div className="yfilm-selects">
+        <label><span>{t('출처')}</span><select value={publisher} onChange={e=>setPublisher(e.target.value as PublisherFilter)}>{PUBLISHERS.map(x=><option key={x.id} value={x.id}>{t(x.label)}</option>)}</select></label>
+        <label><span>{t('활동')}</span><select value={group} onChange={e=>setGroup(e.target.value)}><option value="all">{t('모든 활동')}</option>{groups.map(x=><option key={x} value={x}>{x}</option>)}</select></label>
+        <label><span>{t('연도')}</span><select value={year} onChange={e=>setYear(e.target.value)}><option value="all">{t('전체 연도')}</option>{years.map(x=><option key={x}>{x}</option>)}</select></label>
+        <label><span>{t('정렬')}</span><select value={sort} onChange={e=>setSort(e.target.value as 'newest'|'oldest')}><option value="newest">{t('최신순')}</option><option value="oldest">{t('오래된순')}</option></select></label>
       </div>
     </div>
-
-    <div className="shion-film-result"><span>{loading ? t('불러오는 중') : `${formatNumber(filtered.length)} ${t('영상')}`}</span><span>{t(syncMessage)}</span></div>
-    {loading ? <div className="shion-film-grid" role="status" aria-label={t("영상 불러오는 중")}>{Array.from({ length: 6 }, (_, index) => <div className="shion-film-skeleton" key={index}><div /><span /></div>)}</div> : error ?
-            <div className="shion-film-empty" role="alert"><h2><Trans value="영상 목록을 불러오지 못했어요"/></h2><p>{t(error)}</p><a href="https://www.youtube.com/@triplescosmos" target="_blank" rel="noopener noreferrer"><Trans value="tripleS 공식 YouTube 열기"/></a></div> : filtered.length ?
-            <><div className="shion-film-grid">{filtered.slice(0, visible).map((video) => <FilmCard key={video.id} video={video} saved={saved.has(video.id)} onPlay={() => setPlayingId(video.id)} onSave={() => toggleSaved(video.id)}/>)}</div>
-        {visible < filtered.length && <div className="shion-film-more"><button type="button" onClick={() => setVisible((size) => size + PAGE_SIZE)}><Trans value="더 보기 "/><span>{visible} / {filtered.length}</span></button></div>}
-      </> : <div className="shion-film-empty"><h2><Trans value="표시할 영상이 없습니다"/></h2><p><Trans value="다른 분류를 선택하거나 검색어를 바꿔보세요"/></p>{(filter !== 'all' || query || year !== 'all') && <button type="button" onClick={() => { setFilter('all'); setQuery(''); setYear('all'); }}><Trans value="전체 보기"/></button>}</div>}
-
-    <aside className="shion-film-note"><span><Trans value="영상 안내"/></span><p><Trans value="공식 채널과 방송사에서 공개한 영상 링크를 정리합니다. 출연 여부가 확인된 영상부터 등록하며, 전체 영상이 모두 수록된 것은 아닙니다. 재생은 YouTube에서 이루어집니다."/></p><a href="https://www.youtube.com/@triplescosmos" target="_blank" rel="noopener noreferrer"><Trans value="tripleS 공식 채널 "/><ArrowIcon width={14} height={14}/></a></aside>
-    {selected && <PlayerDialog video={selected} onClose={() => { setPlayingId(null); clearRouteItem('film'); }}/>}
-  </div>;
+    <div className="yfilm-results"><span>{loading?t('불러오는 중'):`${formatNumber(filtered.length)} ${t('영상')}`}</span><span>{t('공식·방송사·팬 촬영을 구분해 표시합니다.')}</span></div>
+    {loading?<div className="yfilm-grid" role="status" aria-label={t('불러오는 중')}>{Array.from({length:6},(_,i)=><div key={i} className="yfilm-skeleton"><div/><span/></div>)}</div>:
+      error?<div className="yfilm-empty" role="alert"><h2>{t('영상 목록을 불러오지 못했어요')}</h2><p>{error}</p><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@triplescosmos">tripleS official ↗</a></div>:
+      filtered.length?<><div className="yfilm-grid">{filtered.slice(0,visible).map(f=><FilmCard key={f.id} video={f} saved={saved.has(f.id)} onPlay={()=>setPlayingId(f.id)} onSave={()=>toggleSaved(f.id)}/>)}</div>{visible<filtered.length&&<div className="yfilm-more"><button type="button" onClick={()=>setVisible(v=>v+PAGE_SIZE)}>{t('더 보기')} <span>{Math.min(visible,filtered.length)} / {filtered.length}</span></button></div>}</>:
+      <div className="yfilm-empty"><h2>{t('표시할 영상이 없습니다')}</h2><p>{t('검색어나 필터를 변경해 보세요')}</p><button type="button" onClick={reset}>{t('전체 보기')}</button></div>}
+    <aside className="yfilm-note"><span>ARCHIVE NOTE</span><p>{t('곽연지 출연이 확인된 YouTube 영상 링크를 정리합니다. 방송사 직캠과 팬 촬영 영상을 구분하며 원본 영상을 재업로드하지 않습니다. 일부 영상은 YouTube 정책에 따라 사이트 내 재생이 제한될 수 있습니다.')}</p><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@triplescosmos">tripleS official ↗</a></aside>
+    {selected&&<VideoDialog video={selected} onClose={closePlayer}/>}
+  </section>;
 }

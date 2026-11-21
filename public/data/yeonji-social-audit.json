@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-11-21T04:51:59.021Z",
+  "memberId": "S12",
+  "coverage": "partial — public/authorized sources only; not all Instagram hashtag posts",
+  "queryTags": [
+    "#연지",
+    "#곽연지",
+    "#YeonJi",
+    "#KwakYeonJi"
+  ],
+  "metaApiMode": "not-configured",
+  "metaApiErrors": [],
+  "registeredPhotos": 421,
+  "photosByYear": {
+    "2023": 82,
+    "2024": 5
+  },
+  "newestDate": "2024-02-05",
+  "candidates": 0,
+  "candidatesWithImage": 0,
+  "candidatesWithoutImage": 0,
+  "added": 0,
+  "dupes": 0,
+  "pending": 0,
+  "invalid": 0
+}

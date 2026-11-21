@@ -1,0 +1,60 @@
+name: Sync YEONJI SNS Gallery
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: yeonji-sns-gallery
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout YEONJI ARCHIVE
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test gallery parser
+        run: node scripts/import-yeonji-fandom.mjs --self-test
+      - name: Import S12 photo metadata from Fandom
+        shell: bash
+        run: |
+          if [[ -s public/data/s12-sns-source.wiki ]]; then
+            node scripts/import-yeonji-fandom.mjs --input public/data/s12-sns-source.wiki --strict
+          else
+            node scripts/import-yeonji-fandom.mjs --strict
+          fi
+      - name: Check gallery member isolation and dates
+        run: node scripts/audit-yeonji.mjs --ci
+      - name: Commit new photo metadata
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/data/photos.json public/data/yeonji-sns.json public/data/yeonji-fandom-sync.json
+          if git diff --cached --quiet; then
+            echo 'No new dated S12 SNS images found.'
+          else
+            git commit -m 'data: import dated YeonJi SNS photo references'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Report imported photo counts
+        if: always()
+        shell: bash
+        run: |
+          if [[ -f public/data/yeonji-fandom-sync.json ]]; then
+            echo '### YEONJI SNS import result' >> "$GITHUB_STEP_SUMMARY"
+            node -e "const r=require('./public/data/yeonji-fandom-sync.json'); for (const k of ['status','sourceRows','matchedImages','added','total','error']) if (r[k] !== undefined) console.log('- '+k+': '+r[k]);" | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'No import status report was produced.' >> "$GITHUB_STEP_SUMMARY"
+          fi

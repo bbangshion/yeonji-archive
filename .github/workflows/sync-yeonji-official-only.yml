@@ -1,0 +1,246 @@
+name: YEONJI Gallery - Official Instagram only
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'discover = official candidates; publish = reviewed images only'
+        type: choice
+        options: [discover, publish]
+        default: discover
+        required: true
+      max_pages:
+        description: 'Pages of official feed (1-100, up to 50 posts per page)'
+        default: '10'
+        required: true
+      media_ids:
+        description: 'Publish only: reviewed mediaId values separated by commas'
+        required: false
+        default: ''
+      confirm:
+        description: 'Publish only: VERIFIED_AND_CLEARED (member and reuse rights checked)'
+        required: false
+        default: ''
+permissions:
+  contents: write
+concurrency:
+  group: yeonji-photo-gallery-build
+  cancel-in-progress: false
+jobs:
+  official-gallery:
+    if: github.ref == 'refs/heads/main' && github.repository == 'bbangshion/yeonji-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image support
+        run: python -m pip install 'Pillow>=10.4,<13'
+      - name: Scan official feed or publish reviewed photos
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_GRAPH_API_VERSION: ${{ vars.IG_GRAPH_API_VERSION }}
+          MODE: ${{ inputs.mode }}
+          MAX_PAGES: ${{ inputs.max_pages }}
+          MEDIA_IDS: ${{ inputs.media_ids }}
+          CONFIRM: ${{ inputs.confirm }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PYTHON'
+          from pathlib import Path
+          import os, re, json, csv, hashlib, shutil, time, urllib.request, urllib.error, urllib.parse, datetime, io
+          from PIL import Image, ImageOps
+          ROOT=Path('.')
+          G=Path('public/gallery'); REPORT=Path('reports/yeonji-official-instagram-review.json')
+          TAGS=('연지','yeonji','곽연지','kwakyeonji')
+          TAG_RE=re.compile(r'(?<!\w)#(연지|yeonji|곽연지|kwakyeonji)(?!\w)',re.I)
+          GROUP=re.compile(r'(?<!\w)#?(triple\s*s|트리플에스|S12|곽연지|kwak\s*yeon\s*ji)(?!\w)',re.I)
+
+          def read(p, default):
+              return json.loads(p.read_text(encoding='utf-8')) if p.is_file() else default
+
+          def write(p, data):
+              p.parent.mkdir(parents=True,exist_ok=True)
+              temp=p.with_suffix(p.suffix+'.tmp');temp.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');temp.replace(p)
+
+          def rows(x):
+              x=x.get('photos',[]) if isinstance(x,dict) else x
+              if not isinstance(x,list): raise ValueError('Expected photo array')
+              return x
+
+          def https(x):
+              try:
+                  u=urllib.parse.urlsplit(x or '');return bool(u.scheme=='https' and u.hostname and not u.username and not u.password)
+              except (ValueError,TypeError):return False
+
+          def date(x):
+              try: return datetime.date.fromisoformat(str(x)[:10]).isoformat()
+              except ValueError: return None
+
+          def tags(txt): return sorted({m.group(1).lower() for m in TAG_RE.finditer(txt or '')})
+
+          def request_json(host,path,params,token):
+              url='https://'+host+'/'+path.lstrip('/')+'?'+urllib.parse.urlencode(params)
+              req=urllib.request.Request(url,headers={'Authorization':'Bearer '+token,'Accept':'application/json','User-Agent':'YEONJI-Archive/1.0'})
+              try:
+                  with urllib.request.urlopen(req,timeout=25) as r: return json.loads(r.read(8_000_000))
+              except urllib.error.HTTPError as e:
+                  try:
+                      error=json.loads(e.read(65536)).get('error',{})
+                      code=error.get('code'); sub=error.get('error_subcode')
+                      detail=f' (Graph code={code if isinstance(code,int) else "?"}, subcode={sub if isinstance(sub,int) else "?"})'
+                  except Exception:detail=''
+                  raise RuntimeError(f'{host} HTTP {e.code}'+detail) from None
+              except Exception as e: raise RuntimeError(f'{host}: {type(e).__name__}') from None
+
+          # Local images supplied by the owner (with permission), or direct HTTPS images
+          # explicitly cleared for copying. Never scrape or download using account cookies.
+          ALLOWED_HOSTS=('cdninstagram.com','fbcdn.net')
+          def allowed(url):
+              if not https(url):return False
+              h=urllib.parse.urlsplit(url).hostname.lower()
+              return any(h==x or h.endswith('.'+x) for x in ALLOWED_HOSTS)
+          class SafeRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self,req,fp,code,msg,headers,newurl):
+                  if not allowed(newurl):raise ValueError('Disallowed redirect')
+                  return super().redirect_request(req,fp,code,msg,headers,newurl)
+
+          def asset(entry):
+              if entry.get('file'):
+                  base=Path('photo_sources').resolve();p=(base/entry['file']).resolve()
+                  if not p.is_relative_to(base) or not p.is_file():raise ValueError('Missing local image')
+                  if p.stat().st_size>20_000_000:raise ValueError('Image exceeds 20 MB')
+                  return p.read_bytes()
+              u=entry.get('imageUrl','')
+              if not allowed(u):raise ValueError('Remote host not allowlisted; use local image file')
+              req=urllib.request.Request(u,headers={'User-Agent':'YEONJI-Archive/1.0','Accept':'image/*'})
+              with urllib.request.build_opener(SafeRedirect()).open(req,timeout=25) as r:
+                  if not r.headers.get_content_type().startswith('image/'):raise ValueError('Not image response')
+                  data=r.read(20_000_001)
+              if len(data)>20_000_000:raise ValueError('Image exceeds 20 MB')
+              return data
+
+          def publish(entries,existing):
+              byhash={p.get('sha256') for p in existing if p.get('sha256')};byid={p.get('id') for p in existing};sourcekeys={(p.get('sourceUrl'),p.get('mediaId')) for p in existing if p.get('mediaId')};out=list(existing);errors=[];added=0;dup=0
+              for e in entries:
+                  if not isinstance(e,dict) or not all(e.get(k) is True for k in ('approved','memberVerified','rightsConfirmed')):continue
+                  src=e.get('sourceUrl'); day=date(e.get('date'))
+                  if not https(src) or not day or not e.get('author') or not isinstance(e.get('tags'),list) or not any(str(t).lstrip('#').casefold() in TAGS for t in e['tags']):errors.append('Missing source/date/author/tags');continue
+                  mid=str(e.get('mediaId') or '')
+                  if mid and (src,mid) in sourcekeys:dup+=1;continue
+                  try:
+                      b=asset(e);h=hashlib.sha256(b).hexdigest();id='yj-social-'+h[:32]
+                      if h in byhash or id in byid:dup+=1;continue
+                      with Image.open(io.BytesIO(b)) as check:check.verify()
+                      with Image.open(io.BytesIO(b)) as im:
+                          ext={'JPEG':'jpg','PNG':'png','WEBP':'webp'}.get(im.format)
+                          if not ext:raise ValueError('Unsupported image type')
+                          pic=ImageOps.exif_transpose(im);w,z=pic.size
+                          if min(w,z)<64:raise ValueError('Image too small')
+                          pic.thumbnail((750,1050));pic=pic.convert('RGB')
+                          original=G/'assets/social'/f'{h}.{ext}'; thumb=G/'assets/social'/f'{h}.thumb.webp';original.parent.mkdir(parents=True,exist_ok=True)
+                          original.write_bytes(b);pic.save(thumb,'WEBP',quality=82)
+                      p={'id':id,'memberId':'S12','status':'approved','category':'photo','image':original.relative_to(G).as_posix(),'thumb':thumb.relative_to(G).as_posix(),'sha256':h,'date':day,'title':str(e.get('caption') or '곽연지'),'sourceUrl':src,'source':str(e.get('source') or 'SNS'),'originalCreator':str(e['author']),'tags':[str(t).lstrip('#') for t in e['tags']],'mediaId':mid,'width':w,'height':z,'curator':'빵시온'}
+                      out.append(p);byhash.add(h);byid.add(id);sourcekeys.add((src,mid));added+=1
+                  except Exception as ex:errors.append(f'{mid or "entry"}: {type(ex).__name__}')
+              return out,added,dup,errors
+
+
+          ACCOUNT='triplescosmos'
+          NAME=re.compile(r'(?<![\w])(?:곽연지|연지|kwak\s*yeon\s*ji|yeon\s*ji|S12|ヨンジ)(?![\w])',re.I)
+          # The username returned by Business Discovery is the provenance check, not a hashtag match.
+          def official_rows(post):
+              cap=post.get('caption') or ''
+              if not NAME.search(cap) and not tags(cap):return []
+              src=post.get('permalink',''); day=date(post.get('timestamp')); pid=str(post.get('id') or '')
+              if not https(src) or urllib.parse.urlsplit(src).hostname not in ('www.instagram.com','instagram.com') or not day or not pid:return []
+              if day<'2023-01-18':return []
+              typ=post.get('media_type')
+              if typ=='IMAGE': children=[post]
+              elif typ=='CAROUSEL_ALBUM': children=post.get('children',{}).get('data',[])
+              else:return []
+              out=[]
+              for idx,m in enumerate(children,1):
+                  if m.get('media_type')!='IMAGE' or not m.get('id'):continue
+                  mid=str(m['id']); image=m.get('media_url','')
+                  out.append({'id':'instagram:'+mid,'mediaId':mid,'postId':pid,'sourceUrl':src,'date':day,'author':'@'+ACCOUNT,'official':True,'status':'pending','position':idx,'tags':tags(cap) or ['연지'],'imageAvailable':allowed(image),'imageUrl':image})
+              return out
+
+          def scan(token,user,version,max_pages):
+              if not re.fullmatch(r'v\d+\.\d+',version) or not user.isdigit():raise ValueError('Invalid API version or Instagram user ID')
+              cursor=None; seen=set(); found={}; count=0; pages=0; missing=[]; issue=None; more=False
+              for _ in range(max_pages):
+                  if cursor and not re.fullmatch(r'[A-Za-z0-9_\-+=/]+',cursor):raise ValueError('Unexpected paging cursor')
+                  after='.after('+cursor+')' if cursor else ''
+                  fields='business_discovery.username('+ACCOUNT+'){username,media.limit(50)'+after+'{id,caption,media_type,permalink,timestamp,media_url,children{id,media_type,media_url}}}'
+                  try:
+                      data=request_json('graph.facebook.com',version+'/'+user,{'fields':fields},token).get('business_discovery',{})
+                      if str(data.get('username','')).casefold()!=ACCOUNT or not isinstance(data.get('media',{}).get('data'),list):raise RuntimeError('Official account/media response not verified')
+                  except RuntimeError as e:
+                      issue=str(e);break
+                  media=data['media']; pages+=1
+                  for p in media['data']:
+                      count+=1
+                      for entry in official_rows(p):found[entry['mediaId']]=entry
+                      if p.get('media_type')=='CAROUSEL_ALBUM' and (NAME.search(p.get('caption') or '') or tags(p.get('caption') or '')) and (not p.get('children',{}).get('data') or p.get('children',{}).get('paging',{}).get('next')):
+                          missing.append(p.get('permalink',''))
+                  more=bool(media.get('paging',{}).get('next'))
+                  if not more:break
+                  cursor=media.get('paging',{}).get('cursors',{}).get('after')
+                  if not cursor or cursor in seen:issue='Pagination cursor missing or repeated';break
+                  seen.add(cursor);time.sleep(1)
+              return found,{'pages':pages,'postsScanned':count,'moreAvailable':more,'incompleteCarousels':missing,'apiIssue':issue}
+
+          def main():
+              token=os.environ.get('IG_ACCESS_TOKEN','');user=os.environ.get('IG_USER_ID','')
+              if not token or not user:raise SystemExit('Missing IG_ACCESS_TOKEN or IG_USER_ID')
+              mode=os.environ.get('MODE','discover');max_pages=int(os.environ.get('MAX_PAGES','10'))
+              if not 1<=max_pages<=100:raise SystemExit('max_pages must be 1–100')
+              selected={v.strip() for v in os.environ.get('MEDIA_IDS','').split(',') if v.strip()}
+              old=read(REPORT,{}); prev={p['mediaId']:p for p in old.get('candidates',[]) if p.get('official') is True and p.get('author')=='@'+ACCOUNT}
+              if mode=='publish':
+                  if not selected or not selected<=prev.keys() or os.getenv('CONFIRM')!='VERIFIED_AND_CLEARED':raise SystemExit('Review official report, enter its media IDs, and confirm member and reuse rights')
+              elif mode!='discover':raise SystemExit('Unknown mode')
+              found,stats=scan(token,user,os.getenv('IG_GRAPH_API_VERSION') or 'v24.0',max_pages)
+              if not stats['pages']:raise SystemExit('Official account scan failed: '+str(stats['apiIssue']))
+              G.mkdir(parents=True,exist_ok=True)
+              prior=rows(read(G/'social_photos.json',{'photos':[]}));base=rows(read(Path('public/data/photos.json'),[]));local=rows(read(G/'gallery_data.json',{'photos':[]}))
+              merged=dict(prev)
+              for k,p in found.items():
+                  safe={a:b for a,b in p.items() if a!='imageUrl'}; safe['status']=prev.get(k,{}).get('status','pending');merged[k]=safe
+              added=dup=0;errors=[]
+              if mode=='publish':
+                  missing=selected-found.keys(); unavailable={k for k in selected&found.keys() if not found[k]['imageAvailable']}
+                  if missing or unavailable:raise SystemExit('Selected images not available in this scan: '+','.join(sorted(missing|unavailable))+'; increase pages or check API access')
+                  entries=[dict(found[k],approved=True,memberVerified=True,rightsConfirmed=True,source='Official Instagram',caption='곽연지') for k in sorted(selected)]
+                  combined=prior+[p for p in base+local if isinstance(p,dict) and p.get('memberId','S12')=='S12']
+                  allrows,added,dup,errors=publish(entries,combined)
+                  result=prior+allrows[len(combined):]
+                  write(G/'social_photos.json',{'schemaVersion':1,'photos':result})
+                  # Mark only positively identified published/source-matched rows, never errors.
+                  published={(str(p.get('mediaId') or ''),p.get('sourceUrl')) for p in allrows if isinstance(p,dict)}
+                  for k in selected:
+                      if (k,found[k]['sourceUrl']) in published:merged[k]['status']='published_or_existing'
+              report={'account':'@'+ACCOUNT,'coverage':'partial; caption match only, review each photo and confirm rights before publishing','lastScan':stats,'added':added,'duplicates':dup,'publishErrors':errors,'candidates':sorted(merged.values(),key=lambda p:(p.get('date') or '',p['mediaId']),reverse=True)}
+              write(REPORT,report)
+              summary=f"Official posts scanned: {stats['postsScanned']} / pages: {stats['pages']}\n\nOfficial image candidates: {len(merged)} / available in this scan: {sum(p['imageAvailable'] for p in found.values())}\n\nNew published: {added}; duplicate: {dup}; failed: {len(errors)}; existing PHOTO rows: {len(base)}\n\nMore pages: {stats['moreAvailable']}; API issue: {stats['apiIssue'] or 'none'}; incomplete carousels: {len(stats['incompleteCarousels'])}\n\nSee reports/yeonji-official-instagram-review.json."
+              print(summary)
+              if os.getenv('GITHUB_STEP_SUMMARY'):
+                  with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:f.write(summary+'\n')
+          if __name__=='__main__':main()
+          PYTHON
+      - name: Commit only official review and social gallery assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- reports/yeonji-official-instagram-review.json
+          for p in public/gallery/social_photos.json public/gallery/assets/social; do
+            if [ -e "$p" ]; then git add -- "$p"; fi
+          done
+          if git diff --cached --quiet; then echo 'No changes'; else git commit -m 'data: review official YEONJI Instagram photos'; git push; fi

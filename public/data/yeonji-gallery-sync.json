@@ -1,11 +1,11 @@
 {
   "source": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery",
-  "attemptedAt": "2026-11-21T02:48:28.430Z",
+  "attemptedAt": "2026-11-21T02:54:27.690Z",
   "mode": "MediaWiki-API",
   "status": "synced",
   "sourceRows": 420,
   "matchedImages": 420,
-  "added": 333,
+  "added": 0,
   "total": 421,
   "caveat": "Only gallery-listed file metadata is linked, not downloaded. Year-only images have an unknown exact date."
 }

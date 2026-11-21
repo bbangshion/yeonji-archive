@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-11-21T04:36:23.500Z",
+  "memberId": "S12",
+  "year": 2026,
+  "baseline": {
+    "totalEntries": 421,
+    "member2026Entries": 0,
+    "latest2026Date": null
+  },
+  "result": {
+    "totalEntries": 421,
+    "member2026Entries": 0,
+    "latest2026Date": null,
+    "duplicatesRemoved": 0,
+    "sourceReferencesAdded": 4,
+    "monthCounts": {}
+  },
+  "sourceReferences": [
+    {
+      "id": "yeonji-20261119-chicago-sns",
+      "date": "2026-11-19",
+      "url": "https://kpopping.com/kpics/261119-triples-sns-update-seoyeon-jiwoo-yubin-kaede-yeonji-mayu-lynn-hayeon-sullin-xinyu-andless-in-chicago",
+      "memberImageCountVerified": null
+    },
+    {
+      "id": "yeonji-20261110-icn-fanphotos",
+      "date": "2026-11-10",
+      "url": "https://kpopping.com/kpics/261110-yeonji-at-icn-airport",
+      "memberImageCountVerified": 4
+    },
+    {
+      "id": "yeonji-20261108-mixed-sns",
+      "date": "2026-11-08",
+      "url": "https://kpopping.com/kpics/261108-triples-sns-update-jiwoo-soomin-kotone-yeonji-sohyun",
+      "memberImageCountVerified": null
+    },
+    {
+      "id": "yeonji-20261023-instagram",
+      "date": "2026-10-23",
+      "url": "https://kpopping.com/kpics/261023-triples-instagram-update-yeonji",
+      "memberImageCountVerified": 3
+    }
+  ],
+  "conflicts": [],
+  "importNotice": "This report does not prove source photos were downloaded or imported. Only explicit photos.json entries count as images. Fandom source importers are attempted separately.",
+  "rightsNotice": "@bbangshion is the archive curator, not necessarily the photographer or copyright holder."
+}

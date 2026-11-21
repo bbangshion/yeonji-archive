@@ -3,9 +3,9 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'discover = official candidates; publish = reviewed images only'
+        description: 'discover = scan; publish = selected IDs; publish_all = all pending reviewed candidates'
         type: choice
-        options: [discover, publish]
+        options: [discover, publish, publish_all]
         default: discover
         required: true
       max_pages:
@@ -13,11 +13,11 @@ on:
         default: '10'
         required: true
       media_ids:
-        description: 'Publish only: reviewed mediaId values separated by commas'
+        description: 'publish: reviewed media IDs separated by commas; publish_all: leave empty'
         required: false
         default: ''
       confirm:
-        description: 'Publish only: VERIFIED_AND_CLEARED (member and reuse rights checked)'
+        description: 'publish / publish_all: VERIFIED_AND_CLEARED (all selected photos reviewed and reuse rights checked)'
         required: false
         default: ''
 permissions:
@@ -201,8 +201,13 @@ jobs:
               if not 1<=max_pages<=100:raise SystemExit('max_pages must be 1–100')
               selected={v.strip() for v in os.environ.get('MEDIA_IDS','').split(',') if v.strip()}
               old=read(REPORT,{}); prev={p['mediaId']:p for p in old.get('candidates',[]) if p.get('official') is True and p.get('author')=='@'+ACCOUNT}
-              if mode=='publish':
-                  if not selected or not selected<=prev.keys() or os.getenv('CONFIRM')!='VERIFIED_AND_CLEARED':raise SystemExit('Review official report, enter its media IDs, and confirm member and reuse rights')
+              if mode in ('publish','publish_all'):
+                  if os.getenv('CONFIRM')!='VERIFIED_AND_CLEARED':raise SystemExit('Confirm member and reuse rights for every selected photo first')
+                  if mode=='publish_all':
+                      if selected:raise SystemExit('For publish_all, leave media_ids empty')
+                      selected={k for k,p in prev.items() if p.get('status')=='pending'}
+                      if not selected:raise SystemExit('No pending official candidates in saved report; run discover first if needed')
+                  elif not selected or not selected<=prev.keys():raise SystemExit('Enter reviewed official media IDs from the saved report')
               elif mode!='discover':raise SystemExit('Unknown mode')
               found,stats=scan(token,user,os.getenv('IG_GRAPH_API_VERSION') or 'v24.0',max_pages)
               if not stats['pages']:raise SystemExit('Official account scan failed: '+str(stats['apiIssue']))
@@ -212,7 +217,7 @@ jobs:
               for k,p in found.items():
                   safe={a:b for a,b in p.items() if a!='imageUrl'}; safe['status']=prev.get(k,{}).get('status','pending');merged[k]=safe
               added=dup=0;errors=[]
-              if mode=='publish':
+              if mode in ('publish','publish_all'):
                   missing=selected-found.keys(); unavailable={k for k in selected&found.keys() if not found[k]['imageAvailable']}
                   if missing or unavailable:raise SystemExit('Selected images not available in this scan: '+','.join(sorted(missing|unavailable))+'; increase pages or check API access')
                   entries=[dict(found[k],approved=True,memberVerified=True,rightsConfirmed=True,source='Official Instagram',caption='곽연지') for k in sorted(selected)]
@@ -224,9 +229,9 @@ jobs:
                   published={(str(p.get('mediaId') or ''),p.get('sourceUrl')) for p in allrows if isinstance(p,dict)}
                   for k in selected:
                       if (k,found[k]['sourceUrl']) in published:merged[k]['status']='published_or_existing'
-              report={'account':'@'+ACCOUNT,'coverage':'partial; caption match only, review each photo and confirm rights before publishing','lastScan':stats,'added':added,'duplicates':dup,'publishErrors':errors,'candidates':sorted(merged.values(),key=lambda p:(p.get('date') or '',p['mediaId']),reverse=True)}
+              report={'account':'@'+ACCOUNT,'coverage':'partial; caption match only, review each photo and confirm rights before publishing','lastScan':stats,'mode':mode,'selectedCount':len(selected),'added':added,'duplicates':dup,'publishErrors':errors,'candidates':sorted(merged.values(),key=lambda p:(p.get('date') or '',p['mediaId']),reverse=True)}
               write(REPORT,report)
-              summary=f"Official posts scanned: {stats['postsScanned']} / pages: {stats['pages']}\n\nOfficial image candidates: {len(merged)} / available in this scan: {sum(p['imageAvailable'] for p in found.values())}\n\nNew published: {added}; duplicate: {dup}; failed: {len(errors)}; existing PHOTO rows: {len(base)}\n\nMore pages: {stats['moreAvailable']}; API issue: {stats['apiIssue'] or 'none'}; incomplete carousels: {len(stats['incompleteCarousels'])}\n\nSee reports/yeonji-official-instagram-review.json."
+              summary=f"Official posts scanned: {stats['postsScanned']} / pages: {stats['pages']}\n\nOfficial image candidates: {len(merged)} / available in this scan: {sum(p['imageAvailable'] for p in found.values())}\n\nSelected for publication: {len(selected)}; new published: {added}; duplicate: {dup}; failed: {len(errors)}; existing PHOTO rows: {len(base)}\n\nMore pages: {stats['moreAvailable']}; API issue: {stats['apiIssue'] or 'none'}; incomplete carousels: {len(stats['incompleteCarousels'])}\n\nSee reports/yeonji-official-instagram-review.json."
               print(summary)
               if os.getenv('GITHUB_STEP_SUMMARY'):
                   with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:f.write(summary+'\n')

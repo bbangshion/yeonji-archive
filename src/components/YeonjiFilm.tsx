@@ -92,7 +92,7 @@ function VideoDialog({video,onClose}:{video:Film;onClose:()=>void}) {
       <div className="yfilm-modal-top"><div><span className="yfilm-kicker">YEONJI FILM / {video.group}</span><h2 id="yfilm-modal-title">{t(video.title)}</h2></div><button ref={closeButton} className="yfilm-close" type="button" onClick={onClose} aria-label={t('닫기')}>×</button></div>
       <div className="yfilm-player"><iframe title={t(video.title)} src={filmEmbedUrl(video.youtubeId)} allow="autoplay; encrypted-media; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/></div>
       <div className="yfilm-modal-bottom"><span>{t(filmPublisherLabel(video.publisher))} · {readableFilmDate(video.publishedAt)} · {video.source}</span><div className="yfilm-modal-actions"><button type="button" onClick={share}>{t(copied?'링크 복사됨':'공유')}</button><a target="_blank" rel="noopener noreferrer" href={filmYoutubeUrl(video.youtubeId)}>{t('YouTube에서 보기')} <ArrowIcon width={15} height={15}/></a></div></div>
-      <p className="yfilm-player-note">{t('영상 재생이 제한되면 YouTube에서 보기를 눌러 주세요.')}</p>
+      <p className="yfilm-player-note">{t('재생되지 않는 영상은 YouTube에서 확인하세요')}</p>
     </div>
   </div>;
 }
@@ -144,7 +144,7 @@ export default function YeonjiFilm(){
   });
   const reset=()=>{setFilter('all');setPublisher('all');setScope('all');setGroup('all');setYear('all');setSort('newest');setQuery('');};
   return <section className="shion-film-page yfilm-page animate-appear">
-    <header className="yeonji-page-heading yfilm-heading"><span className="yeonji-page-kicker">YEONJI FILM / S12</span><h1>{t('영상')}</h1><p>{t('연지의 공식 영상과 무대, 개인 직캠을 모았습니다.')}</p></header>
+    <header className="yeonji-page-heading yfilm-heading"><span className="yeonji-page-kicker">YEONJI FILM / S12</span><h1>{t('영상')}</h1><p>{t('곽연지의 공식 영상, 무대, 개인 직캠')}</p></header>
     <div className="yfilm-summary" aria-label={t('영상 통계')}><div><span>ALL FILMS</span><strong>{formatNumber(stats.total)}</strong></div><div><span>FANCAMS</span><strong>{formatNumber(stats.fancams)}</strong></div><div><span>TRIPLES OFFICIAL</span><strong>{formatNumber(stats.official)}</strong></div><div><span>SIGNAL</span><strong>{formatNumber(stats.signal)}</strong></div><div><span>BEHIND</span><strong>{formatNumber(stats.behind)}</strong></div></div>
     <div className="yfilm-controls">
       <div className="yfilm-tabs" role="group" aria-label={t('영상 종류')}>{TABS.map(tab=><button key={tab.id} type="button" aria-pressed={filter===tab.id} className={filter===tab.id?'is-active':''} onClick={()=>setFilter(tab.id)}>{t(tab.label)}</button>)}</div>
@@ -154,15 +154,15 @@ export default function YeonjiFilm(){
         <label><span>{t('출연 형태')}</span><select value={scope} onChange={e=>setScope(e.target.value as ScopeFilter)}><option value="all">{t('전체 형태')}</option><option value="solo">{t('개인')}</option><option value="unit">{t('유닛')}</option><option value="group">{t('완전체')}</option></select></label>
         <label><span>{t('활동')}</span><select value={group} onChange={e=>setGroup(e.target.value)}><option value="all">{t('모든 활동')}</option>{groups.map(x=><option key={x} value={x}>{x}</option>)}</select></label>
         <label><span>{t('연도')}</span><select value={year} onChange={e=>setYear(e.target.value)}><option value="all">{t('전체 연도')}</option>{years.map(x=><option key={x}>{x}</option>)}</select></label>
-        <label><span>{t('정렬')}</span><select value={sort} onChange={e=>setSort(e.target.value as 'newest'|'oldest')}><option value="newest">{t('최신순')}</option><option value="oldest">{t('오래된순')}</option></select></label>
+        <label><span>{t('정렬')}</span><select value={sort} onChange={e=>setSort(e.target.value as 'newest'|'oldest')}><option value="newest">{t('최신순')}</option><option value="oldest">{t('오래된 순')}</option></select></label>
       </div>
     </div>
-    <div className="yfilm-results"><span>{loading?t('불러오는 중'):`${formatNumber(filtered.length)} ${t('영상')}`}</span><span>{t('출처 및 연지 출연을 확인한 영상만 공개합니다.')}</span></div>
+    <div className="yfilm-results"><span>{loading?t('불러오는 중'):`${formatNumber(filtered.length)} ${t('영상')}`}</span><span>{t('출처와 연지의 출연 여부를 확인한 영상만 표시합니다')}</span></div>
     {loading?<div className="yfilm-grid" role="status" aria-label={t('불러오는 중')}>{Array.from({length:6},(_,i)=><div key={i} className="yfilm-skeleton"><div/><span/></div>)}</div>:
-      error?<div className="yfilm-empty" role="alert"><h2>{t('영상 목록을 불러오지 못했어요')}</h2><p>{error}</p><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@triplescosmos">tripleS official ↗</a></div>:
+      error?<div className="yfilm-empty" role="alert"><h2>{t('영상 데이터를 불러오지 못했습니다')}</h2><p>{error}</p><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@triplescosmos">tripleS official ↗</a></div>:
       filtered.length?<><div className="yfilm-grid">{filtered.slice(0,visible).map(f=><FilmCard key={f.id} video={f} saved={saved.has(f.id)} onPlay={()=>setPlayingId(f.id)} onSave={()=>toggleSaved(f.id)}/>)}</div>{visible<filtered.length&&<div className="yfilm-more"><button type="button" onClick={()=>setVisible(v=>v+PAGE_SIZE)}>{t('더 보기')} <span>{Math.min(visible,filtered.length)} / {filtered.length}</span></button></div>}</>:
       <div className="yfilm-empty"><h2>{t('표시할 영상이 없습니다')}</h2><p>{t('검색어나 필터를 변경해 보세요')}</p><button type="button" onClick={reset}>{t('전체 보기')}</button></div>}
-    <aside className="yfilm-note"><span>ARCHIVE NOTE</span><p>{t('공식 SIGNAL·라이브·비하인드는 연지 출연을 확인한 뒤 공개합니다. 신규 영상 후보는 별도 검토 목록에 보관하며 자동으로 게시하지 않습니다. 원본 영상을 재업로드하지 않습니다.')}</p><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@triplescosmos">tripleS official ↗</a></aside>
+    <aside className="yfilm-note"><span>ARCHIVE NOTE</span><p>{t('공식 영상과 직캠은 출처와 출연 여부를 확인한 뒤 등록합니다. 새 영상은 검토 후 추가합니다')}</p><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@triplescosmos">tripleS official ↗</a></aside>
     {selected&&<VideoDialog video={selected} onClose={closePlayer}/>}
   </section>;
 }

@@ -138,7 +138,7 @@ export function PhotoArchive(_legacyProps?: { objekts?: unknown[]; loading?: boo
   const closeButton = useRef<HTMLButtonElement>(null);
   const swipeStart = useRef<number | null>(null);
   const deferred = useDeferredValue(query.trim().toLocaleLowerCase());
-  const text = (label: LocalizedText): string => (label[language] || t(label.ko)).replace(/빵연지/g, '빵시온');
+  const text = (label: LocalizedText): string => (label[language] || t(label.ko)).replace(/빵시온/g, '빵시온');
   const albumText = (label: LocalizedText): string => text(label);
 
   useEffect(() => {
@@ -230,12 +230,12 @@ export function PhotoArchive(_legacyProps?: { objekts?: unknown[]; loading?: boo
     <header className="shion-page-heading">
       <span className="shion-page-kicker">PHOTO ARCHIVE</span>
       <h1 id="photos-heading">{t('사진')}</h1>
-      <p>{t('곽연지 사진을 날짜와 앨범으로 모아봤어요')}</p>
+      <p>{t('곽연지의 사진을 날짜와 앨범별로 정리했습니다')}</p>
       <p className="shion-source-note">{language === 'en' ? 'Curated by @bbangshion' : language === 'ja' ? 'アーカイブ編集 · @bbangshion' : '아카이브 정리 · @bbangshion'}</p>
     </header>
     <RecentPhotoSources />
     <div className="shion-photo-controls">
-      <div className="shion-photo-view-tabs" role="group" aria-label={t('사진 보기 방식')}>
+      <div className="shion-photo-view-tabs" role="group" aria-label={t('사진 보기방식')}>
         <button type="button" className={mode === 'date' ? 'is-active' : ''} aria-pressed={mode === 'date'} onClick={() => setMode('date')}>{t('날짜별')}</button>
         <button type="button" className={mode === 'album' ? 'is-active' : ''} aria-pressed={mode === 'album'} onClick={() => setMode('album')}>{t('앨범별')}</button>
       </div>
@@ -253,7 +253,7 @@ export function PhotoArchive(_legacyProps?: { objekts?: unknown[]; loading?: boo
           <option value="all">{t('모든 앨범')}</option>{albums.map((name) => <option value={name} key={name}>{albumNames.get(name) ?? name}</option>)}
         </select></label>
         <label><span className="sr-only">{t('정렬')}</span><select value={sort} onChange={(e) => setSort(e.target.value as SortOrder)}>
-          <option value="newest">{t('최신순')}</option><option value="oldest">{t('오래된순')}</option>
+          <option value="newest">{t('최신순')}</option><option value="oldest">{t('오래된 순')}</option>
         </select></label>
       </div>
     </div>
@@ -277,7 +277,7 @@ export function PhotoArchive(_legacyProps?: { objekts?: unknown[]; loading?: boo
       </>}
     </>
     {loadError && <p className="shion-source-note" role="status">{t('사진 목록을 불러오지 못해 기본 사진을 표시합니다')}</p>}
-    <p className="shion-source-note">{t('사진은 출처가 확인된 자료를 기준으로 등록합니다')}</p>
+    <p className="shion-source-note">{t('출처가 확인된 사진만 등록합니다')}</p>
     {selected && createPortal(<div role="dialog" aria-modal="true" aria-label={`${text(selected.title)} — ${t('사진 확대')}`}
       className="shion-lightbox" onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }}>
       <div className="shion-lightbox-top"><span>{formatNumber(currentIndex + 1)} / {formatNumber(filtered.length)}</span>

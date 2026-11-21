@@ -80,7 +80,7 @@ export default function SearchPage() {
     <header className="shion-search-heading">
       <p className="shion-search-kicker">YEONJI ARCHIVE / SEARCH</p>
       <h1 id="shion-search-title">{t('통합 검색')}</h1>
-      <p>{t('사진 · 영상 · 오브젝트 · 프로필을 한곳에서 찾아보세요')}</p>
+      <p>{t('사진·영상·오브젝트·프로필 검색')}</p>
     </header>
     <div className="shion-search-box">
       <div className="shion-search-input-row">

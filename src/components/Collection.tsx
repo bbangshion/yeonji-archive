@@ -73,7 +73,7 @@ export function Collection({ items, favorites, onToggleFavorite }: Props) {
             <span className="sr-only"><Trans value="정렬"/></span>
             <select className="field w-full" value={sort} onChange={(event) => setSort(event.target.value as SortMode)}>
               <option value="newest">{t('최신순')}</option>
-              <option value="oldest">{t('오래된순')}</option>
+              <option value="oldest">{t('오래된 순')}</option>
               <option value="title">{t('이름순')}</option>
             </select>
           </label>

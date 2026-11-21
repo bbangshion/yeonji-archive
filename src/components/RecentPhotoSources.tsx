@@ -15,12 +15,12 @@ type Collection = {
   status: 'in-gallery' | 'reference-only';
 };
 const UI = {
-  ko: { title: '최근 사진 소식', caption: '확인된 게시물을 최신순으로 모았습니다.',
+  ko: { title: '최근 사진', caption: '출처가 확인된 게시물을 최신순으로 표시합니다',
     original: '출처 보기', included: '사진 등록', reference: '외부 자료', more: '더 보기', less: '접기',
-    disclaimer: '외부 자료는 사진 장수에 포함하지 않습니다. 단체 게시물의 전체 사진 수는 연지 단독 사진 수와 다를 수 있습니다.' },
-  en: { title: 'Recent photo sources', caption: 'Recent, source-linked posts in chronological order.',
+    disclaimer: '외부 자료는 사진 장수에 포함하지 않습니다. 단체 게시물의 전체 사진 수는 연지 단독 사진 수와 다를 수 있습니다' },
+  en: { title: 'Latest photos', caption: 'Latest posts with source links',
     original: 'Open source', included: 'In gallery', reference: 'External', more: 'More sources', less: 'Show less',
-    disclaimer: 'External sources do not count as gallery images. Mixed-member gallery totals are not YeonJi-only counts.' },
+    disclaimer: 'External sources do not count as gallery images. Mixed-member gallery totals are not YeonJi-only counts' },
   ja: { title: '最近の写真資料', caption: '確認できた投稿を新しい順に掲載しています。',
     original: '出典を見る', included: '登録済み', reference: '外部資料', more: 'もっと見る', less: '閉じる',
     disclaimer: '外部資料はギャラリーの写真枚数に含みません。複数メンバーの総枚数はヨンジ単独写真の枚数ではありません。' },
@@ -66,7 +66,7 @@ export function RecentPhotoSources() {
   const shown = expanded ? items : items.slice(0, 3);
   return <section className="shion-photo-sources" aria-labelledby="recent-photo-heading">
     <div className="shion-photo-sources-heading">
-      <div><span>PHOTO NOTES</span><h2 id="recent-photo-heading">{t.title}</h2><p>{t.caption}</p></div>
+      <div><span>PHOTO SOURCES</span><h2 id="recent-photo-heading">{t.title}</h2><p>{t.caption}</p></div>
     </div>
     <div className="shion-photo-sources-list">
       {shown.map((item) => <a key={item.id} className="shion-photo-source-row"

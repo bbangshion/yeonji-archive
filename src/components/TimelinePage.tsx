@@ -36,23 +36,23 @@ const KIND_TAG: Record<string, string> = { milestone: 'MILESTONE', release: 'REL
 const LABELS = {
   ko: {
     title: '연지의 시간', subtitle: 'YEONJI / A LIVING INDEX',
-    intro: 'S12 첫 공개부터 유닛, 음반, 무대, SIGNAL까지. 확인된 활동과 아카이브 자료를 시간순으로 잇습니다.',
+    intro: 'S12 첫 공개부터 유닛, 음반, 무대, SIGNAL까지. 확인된 활동과 아카이브 자료를 시간순으로 잇습니다',
     story: '핵심 장면', chapter: '주요 챕터', explore: '연도에서 보기',
     all: '전체', release: '음반 · 음원', unit: '유닛', concert: '공연', appearance: '방송 · 콘텐츠', milestone: '주요 기록',
     photos: '사진', film: '영상', signal: 'SIGNAL', planned: '발표된 일정',
-    search: '곡명, 활동, 멤버, 날짜 검색', years: '전체 연도', scopes: '전체 활동', recent: '최신순', old: '오래된순',
+    search: '곡명, 활동, 멤버, 날짜 검색', years: '전체 연도', scopes: '전체 활동', recent: '최신순', old: '오래된 순',
     activity: '확인된 활동', media: '사진 · 영상 기록', period: '기록 기간', results: '개의 기록',
     loading: '기록을 불러오는 중', error: '일부 자료를 불러오지 못했습니다.', retry: '다시 시도',
     clear: '조건 초기화', empty: '일치하는 기록이 없습니다.', more: '기록 더 보기',
     expand: '기록 자세히', collapse: '접기', source: '근거 자료', view: '아카이브로 이동',
     dayPhotos: '같은 날짜 사진', dayFilms: '같은 날짜 영상', dateHelp: '같은 날짜 자료가 반드시 같은 활동을 기록한 것은 아닙니다.',
     upcoming: '예정', plannedBadge: '미확인 일정', record: '활동 이정표', indexed: '날짜별 자료',
-    note: '이 연대기는 출처가 확인된 주요 기록을 중심으로 정리합니다. 아직 모든 출연·공연을 망라하지 않습니다.',
+    note: '이 연대기는 출처가 확인된 주요 기록을 중심으로 정리합니다. 아직 모든 출연·공연을 망라하지 않습니다',
     proof: '자료의 날짜는 업로드일일 수 있으며, 활동일과 다를 수 있습니다.',
   },
   en: {
     title: 'A YeonJi Timeline', subtitle: 'YEONJI / A LIVING INDEX',
-    intro: 'From the S12 reveal to units, releases, stages and SIGNAL: sourced milestones alongside dated archive media.',
+    intro: 'From the S12 reveal to units, releases, stages and SIGNAL: sourced milestones alongside dated archive media',
     story: 'Highlights', chapter: 'Key chapters', explore: 'Browse year',
     all: 'All', release: 'Releases', unit: 'Units', concert: 'Live', appearance: 'Media · events', milestone: 'Milestones',
     photos: 'Photos', film: 'Videos', signal: 'SIGNAL', planned: 'Announced',
@@ -63,7 +63,7 @@ const LABELS = {
     expand: 'Details', collapse: 'Less', source: 'View evidence', view: 'Open archive',
     dayPhotos: 'Photos on this date', dayFilms: 'Videos on this date', dateHelp: 'Media sharing a date may not depict this activity.',
     upcoming: 'Upcoming', plannedBadge: 'Unverified schedule', record: 'Activity milestone', indexed: 'Indexed media',
-    note: 'A curated, sourced selection of milestones; not an exhaustive list of appearances.',
+    note: 'A curated, sourced selection of milestones; not an exhaustive list of appearances',
     proof: 'A media date may be its upload date, not the date of the activity.',
   },
   ja: {
@@ -200,9 +200,9 @@ export function TimelinePage() {
       <span className="shion-page-kicker">KWAK YEONJI / S12</span>
       <div className="yeonji-timeline-hero-row"><div>
         <span className="yeonji-timeline-eyebrow">{ui.subtitle}</span>
-        <h1 id="yeonji-timeline-heading">{ui.title}<span className="yeonji-timeline-period-mark">.</span></h1>
+        <h1 id="yeonji-timeline-heading">{ui.title}</h1>
         <p>{ui.intro}</p>
-      </div><span className="yeonji-timeline-monogram" aria-hidden="true">Y.</span></div>
+      </div><span className="yeonji-timeline-monogram" aria-hidden="true">Y</span></div>
     </header>
 
     <section className="yeonji-timeline-overview" aria-label={ui.record}>

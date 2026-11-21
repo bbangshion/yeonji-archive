@@ -107,10 +107,10 @@ function Home() {
             <h1 id="shion-hero-title">KWAK<br />YEONJI</h1>
             <p className="shion-hero-ko"><Trans value="곽연지"/></p>
             <div className="shion-hero-rule"/>
-            <p className="shion-hero-description"><Trans value="곽연지의 사진과 기록을 모아둔 팬 아카이브"/></p>
+            <p className="shion-hero-description"><Trans value="곽연지의 사진과 활동 기록"/></p>
             <div className="shion-hero-actions">
-              <button type="button" className="shion-hero-primary" onClick={() => setScreen('profile')}><Trans value="프로필 보기 "/><ArrowIcon width={17} height={17}/></button>
-              <button type="button" className="shion-hero-secondary" onClick={() => setScreen('photos')}><Trans value="사진 보기 "/><ArrowIcon width={17} height={17}/></button>
+              <button type="button" className="shion-hero-primary" onClick={() => setScreen('profile')}><Trans value="프로필 보기"/><ArrowIcon width={17} height={17}/></button>
+              <button type="button" className="shion-hero-secondary" onClick={() => setScreen('photos')}><Trans value="사진 보기"/><ArrowIcon width={17} height={17}/></button>
             </div>
           </div>
           <span className="shion-hero-side" aria-hidden="true">YEONJI ARCHIVE — S12</span>
@@ -127,7 +127,7 @@ function Home() {
               <p className="shion-section-eyebrow">ARCHIVE / S12</p>
               <h2 id="shion-explore-title"><Trans value="둘러보기"/></h2>
             </div>
-            <p><Trans value="프로필과 사진, 영상, 오브젝트를 둘러보세요"/></p>
+            <p><Trans value="프로필, 사진, 영상과 오브젝트를 확인하세요"/></p>
           </div>
           <div className="shion-feature-grid">
             <button type="button" className="shion-feature-card" onClick={() => setScreen('profile')}>
@@ -136,7 +136,7 @@ function Home() {
             </button>
             <button type="button" className="shion-feature-card" onClick={() => setScreen('photos')}>
               <span className="shion-feature-top"><span>02 / PHOTO</span><ArrowIcon width={21} height={21}/></span>
-              <span className="shion-feature-bottom"><strong><Trans value="사진"/></strong><span><Trans value="곽연지 사진과 날짜별 앨범"/></span></span>
+              <span className="shion-feature-bottom"><strong><Trans value="사진"/></strong><span><Trans value="연도·날짜별 사진"/></span></span>
             </button>
             <button type="button" className="shion-feature-card" onClick={() => setScreen('film')}>
               <span className="shion-feature-top"><span>03 / FILM</span><ArrowIcon width={21} height={21}/></span>
@@ -144,7 +144,7 @@ function Home() {
             </button>
             <button type="button" className="shion-feature-card" onClick={() => setScreen('timeline')}>
               <span className="shion-feature-top"><span>04 / TIMELINE</span><ArrowIcon width={21} height={21}/></span>
-              <span className="shion-feature-bottom"><strong><Trans value="활동 타임라인"/></strong><span><Trans value="곽연지의 주요 활동과 날짜별 기록"/></span></span>
+              <span className="shion-feature-bottom"><strong><Trans value="활동 타임라인"/></strong><span><Trans value="연도별 활동 기록"/></span></span>
             </button>
             <button type="button" className="shion-feature-card" onClick={() => setScreen('collection')}>
               <span className="shion-feature-top"><span>05 / COLLECTION</span><ArrowIcon width={21} height={21}/></span>
@@ -155,8 +155,8 @@ function Home() {
               <span className="shion-feature-bottom"><strong><Trans value="오브젝트 월드컵"/></strong><span><Trans value="두 장씩 비교하며 최애 카드 고르기"/></span><small><Trans value="즐겨찾기 "/>{formatNumber(favorites.size)}<Trans value="개"/></small></span>
             </button>
             <button type="button" className="shion-feature-card" onClick={() => setScreen('search')}>
-              <span className="shion-feature-top"><span>07 / SEARCH OS</span><ArrowIcon width={21} height={21}/></span>
-              <span className="shion-feature-bottom"><strong><Trans value="통합 검색"/></strong><span><Trans value="모든 아카이브를 한 번에 검색"/></span></span>
+              <span className="shion-feature-top"><span>07 / SEARCH</span><ArrowIcon width={21} height={21}/></span>
+              <span className="shion-feature-bottom"><strong><Trans value="통합 검색"/></strong><span><Trans value="사진·영상·오브젝트 통합 검색"/></span></span>
             </button>
           </div>
           <div className="shion-home-footnote"><span>S12 · KWAK YEONJI</span><span>CREATED BY @bbangshion</span></div>
@@ -180,7 +180,7 @@ function ArchivePage() {
           <span aria-hidden="true">/</span>
           <span>{t(screen === 'collection' ? '오브젝트' : screen === 'worldcup' ? '월드컵' : screen === 'profile' ? '프로필' : screen === 'film' ? '영상' : screen === 'search' ? '통합 검색' : screen === 'timeline' ? '타임라인' : '사진')}</span>
         </div>
-        {screen === 'timeline' ? <TimelinePage /> : screen === 'search' ? <SearchPage /> : screen === 'profile' ? <ProfilePage /> : screen === 'film' ? <Suspense fallback={<LoadingView />}><YeonjiFilm /></Suspense> : screen === 'photos' ? <PhotoArchive/> : state.status === 'loading' ? <LoadingView /> : state.status === 'error' ? (<div role="alert" className="empty-box"><p className="text-lg font-medium text-paper"><Trans value="오브젝트를 불러오지 못했어요"/></p><p className="mt-3 max-w-xl break-words text-sm leading-7 text-ash">{t(state.error)}</p><button type="button" className="btn-primary mt-6 gap-2" onClick={state.retry}><Trans value="다시 시도 "/><ArrowIcon width={16} height={16}/></button></div>) : items.length === 0 ? (<div className="empty-box"><p className="text-lg font-medium text-paper"><Trans value="표시할 카드가 없어요"/></p><p className="mt-3 max-w-xl text-sm leading-7 text-ash"><Trans value="연결된 데이터에서 곽연지 카드를 찾지 못했습니다"/></p><button type="button" className="btn-ghost mt-6" onClick={state.retry}><Trans value="다시 확인"/></button></div>) : (<>
+        {screen === 'timeline' ? <TimelinePage /> : screen === 'search' ? <SearchPage /> : screen === 'profile' ? <ProfilePage /> : screen === 'film' ? <Suspense fallback={<LoadingView />}><YeonjiFilm /></Suspense> : screen === 'photos' ? <PhotoArchive/> : state.status === 'loading' ? <LoadingView /> : state.status === 'error' ? (<div role="alert" className="empty-box"><p className="text-lg font-medium text-paper"><Trans value="오브젝트를 불러오지 못했어요"/></p><p className="mt-3 max-w-xl break-words text-sm leading-7 text-ash">{t(state.error)}</p><button type="button" className="btn-primary mt-6 gap-2" onClick={state.retry}><Trans value="다시 시도"/><ArrowIcon width={16} height={16}/></button></div>) : items.length === 0 ? (<div className="empty-box"><p className="text-lg font-medium text-paper"><Trans value="표시할 카드가 없어요"/></p><p className="mt-3 max-w-xl text-sm leading-7 text-ash"><Trans value="연결된 데이터에서 곽연지 카드를 찾지 못했습니다"/></p><button type="button" className="btn-ghost mt-6" onClick={state.retry}><Trans value="다시 확인"/></button></div>) : (<>
             {catalog?.isDemo && <div role="note" className="mb-6 rounded-lg border border-white/10 bg-surface px-4 py-3 text-xs text-ash"><Trans value="미리보기 데이터입니다 · 실제 카드 데이터가 연결되면 자동으로 바뀝니다"/></div>}
             {screen === 'collection' ? <Collection items={items} favorites={favorites} onToggleFavorite={toggleFavorite}/> : <TournamentArena items={items} isDemo={!!catalog?.isDemo} favorites={favorites} onToggleFavorite={toggleFavorite}/>}
           </>)}

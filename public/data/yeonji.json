@@ -47,20 +47,20 @@
     "copies": [
       {
         "id": "quiet_blue",
-        "english": "A quieter shade of blue.",
-        "korean": "연지의 순간을, 조금 더 오래.",
+        "english": "A quieter shade of blue",
+        "korean": "연지의 순간을, 조금 더 오래",
         "note": "청량한 사진과 차분한 매거진 톤에 적합"
       },
       {
         "id": "never_still",
-        "english": "Still frames. A vivid spirit.",
-        "korean": "차분한 한 장면, 그 안의 선명한 연지.",
+        "english": "Still frames. A vivid spirit",
+        "korean": "차분한 한 장면, 그 안의 선명한 연지",
         "note": "정적인 화보와 활발한 무대 에너지의 대비"
       },
       {
         "id": "frame_by_frame",
-        "english": "Every frame, a new side.",
-        "korean": "한 장면씩, 더 선명해지는 곽연지.",
+        "english": "Every frame, a new side",
+        "korean": "한 장면씩, 더 선명해지는 곽연지",
         "note": "사진·영상·타임라인까지 연결하는 아카이브형 카피"
       }
     ]
@@ -148,7 +148,7 @@
     "mbti": {
       "value": "ENFP",
       "reference": "official_profile",
-      "note": "일본 공식 프로필 확인 시점 기준. 팬 위키에는 ENTP↔ESTP 등 변동 정보가 있어 출처별로 구분."
+      "note": "일본 공식 프로필 확인 시점 기준. 팬 위키에는 ENTP↔ESTP 등 변동 정보가 있어 출처별로 구분"
     },
     "hometown": "경기도 광주시",
     "hometownSourceIds": [
@@ -160,8 +160,8 @@
     "role": "보컬 · 퍼포먼스",
     "roleNote": "비공식 분류용. 메인/리드 등 고정 공식 포지션은 임의로 지정하지 않음.",
     "intro": {
-      "ko": "2023년 1월 18일 S12로 공개됐다. EVOLution에서 첫 음악 활동을 시작해 Visionary Vision과 zenith를 거쳤다. 무대 위에서는 강한 에너지, 사진 속에서는 부드러운 분위기로 서로 다른 표정을 기록해 왔다.",
-      "en": "Revealed as S12 in January 2023, YeonJi began performing with EVOLution and later joined Visionary Vision and zenith.",
+      "ko": "2023년 1월 18일 S12로 공개됐다. EVOLution에서 첫 음악 활동을 시작해 Visionary Vision과 zenith를 거쳤다. 무대 위에서는 강한 에너지, 사진 속에서는 부드러운 분위기로 서로 다른 표정을 기록해 왔다",
+      "en": "Revealed as S12 in January 2023, YeonJi began performing with EVOLution and later joined Visionary Vision and zenith",
       "ja": "2023年1月にS12として公開。EVOLutionで活動を始め、Visionary Visionとzenithでもパフォーマンスを披露した。"
     },
     "units": [
@@ -184,7 +184,7 @@
           "S16"
         ],
         "description": {
-          "ko": "곽연지가 처음 음악 활동을 시작한 8인조 디멘션. 〈Invincible〉의 퍼포먼스와 보컬로 무대에 올랐다.",
+          "ko": "곽연지가 처음 음악 활동을 시작한 8인조 디멘션. 〈Invincible〉의 퍼포먼스와 보컬로 무대에 올랐다",
           "en": "Her first performing unit, an eight-member DIMENSION that released “Invincible.”",
           "ja": "ヨンジが最初に参加した8人組DIMENSION。「Invincible」で活動を開始。"
         },
@@ -216,7 +216,7 @@
           "S24"
         ],
         "description": {
-          "ko": "퍼포먼스 중심 12인조 디멘션. 〈Hit The Floor〉를 통해 강한 움직임과 무대 집중력을 보여준 활동.",
+          "ko": "퍼포먼스 중심 12인조 디멘션. 〈Hit The Floor〉를 통해 강한 움직임과 무대 집중력을 보여준 활동",
           "en": "A 12-member performance DIMENSION led by “Hit The Floor.”",
           "ja": "「Hit The Floor」を中心とする12人組のパフォーマンスDIMENSION。"
         },
@@ -242,8 +242,8 @@
           "S19"
         ],
         "description": {
-          "ko": "msnz 프로젝트의 여섯 멤버로 구성된 디멘션. 〈Q&A〉와 〈Beyond Beauty〉의 무대·콘셉트 기록을 모은다.",
-          "en": "The six-member msnz DIMENSION behind “Q&A” on Beyond Beauty.",
+          "ko": "msnz 프로젝트의 여섯 멤버로 구성된 디멘션. 〈Q&A〉와 〈Beyond Beauty〉의 무대·콘셉트 기록을 모은다",
+          "en": "The six-member msnz DIMENSION behind “Q&A” on Beyond Beauty",
           "ja": "msnzの6人組DIMENSION。『Beyond Beauty』収録の「Q&A」で活動。"
         },
         "sourceIds": [
@@ -257,8 +257,8 @@
         "id": "kwakkwak",
         "name": "곽곽곽연지",
         "description": {
-          "ko": "오리 울음소리에서 시작된 반복적인 이름. 코토네의 말에서 비롯됐으며 곽연지를 대표하는 애칭으로 정착했다.",
-          "en": "A playful, duck-call-like nickname that began with Kotone and became YeonJi’s signature nickname.",
+          "ko": "오리 울음소리에서 시작된 반복적인 이름. 코토네의 말에서 비롯됐으며 곽연지를 대표하는 애칭으로 정착했다",
+          "en": "A playful, duck-call-like nickname that began with Kotone and became YeonJi’s signature nickname",
           "ja": "コトネの言葉をきっかけに広まった、アヒルの鳴き声のような愛称。"
         },
         "origin": "코토네의 오리 소리 연상",
@@ -270,8 +270,8 @@
         "id": "chowol",
         "name": "초월읍 미소녀",
         "description": {
-          "ko": "공개 초기에 등장했던 ‘초월읍 최고 미소녀’라는 SIGNAL 제목에서 유래한 별명.",
-          "en": "A nickname drawn from an early SIGNAL title referring to Chowol-eup.",
+          "ko": "공개 초기에 등장했던 ‘초월읍 최고 미소녀’라는 SIGNAL 제목에서 유래한 별명",
+          "en": "A nickname drawn from an early SIGNAL title referring to Chowol-eup",
           "ja": "初期のSIGNALに登場した「超月邑最高の美少女」という表現から生まれた愛称。"
         },
         "origin": "2023-06-30 SIGNAL 제목",
@@ -283,7 +283,7 @@
         "id": "shine_better",
         "name": "샤인 베러",
         "description": {
-          "ko": "EVOLution 〈Invincible〉의 개인 파트에서 비롯된 표현으로, 〈Girls Never Die〉에서도 연결되는 키워드.",
+          "ko": "EVOLution 〈Invincible〉의 개인 파트에서 비롯된 표현으로, 〈Girls Never Die〉에서도 연결되는 키워드",
           "en": "A memorable phrase linked to her part in “Invincible” and later “Girls Never Die.”",
           "ja": "「Invincible」の担当パートから広まり、「Girls Never Die」にもつながるフレーズ。"
         },
@@ -296,8 +296,8 @@
         "id": "kwakbuho",
         "name": "곽부호",
         "description": {
-          "ko": "‘구호’를 ‘부호’로 잘못 말한 순간이 기억되며 생긴 애칭.",
-          "en": "A nickname born from mixing up similar-sounding Korean words.",
+          "ko": "‘구호’를 ‘부호’로 잘못 말한 순간이 기억되며 생긴 애칭",
+          "en": "A nickname born from mixing up similar-sounding Korean words",
           "ja": "「구호」を「부호」と言い間違えたことに由来する愛称。"
         },
         "origin": "공개 콘텐츠의 말실수",
@@ -309,8 +309,8 @@
         "id": "chococookie",
         "name": "초코쿠키",
         "description": {
-          "ko": "과자집 HAUS 시절 연지에게 연결됐던 쿠키 이미지에서 나온 별명.",
-          "en": "A cookie-themed nickname associated with her time in Cookie HAUS.",
+          "ko": "과자집 HAUS 시절 연지에게 연결됐던 쿠키 이미지에서 나온 별명",
+          "en": "A cookie-themed nickname associated with her time in Cookie HAUS",
           "ja": "お菓子の家HAUS時代のクッキーのイメージに由来する愛称。"
         },
         "origin": "과자집 HAUS 관련",
@@ -338,7 +338,7 @@
           "영상 편집",
           "잠자기"
         ],
-        "note": "게임·사진 촬영·잠자기는 팬 위키에 정리된 본인 언급. 영상 편집 경험 역시 팬 위키에 기록.",
+        "note": "게임·사진 촬영·잠자기는 팬 위키에 정리된 본인 언급. 영상 편집 경험 역시 팬 위키에 기록",
         "sourceIds": [
           "fanwiki"
         ]
@@ -360,7 +360,7 @@
           "발로란트",
           "배틀그라운드"
         ],
-        "note": "2025년 11월 기준 Fromm 언급을 나무위키가 정리한 내용; 현재 플레이 상태로 단정하지 않음.",
+        "note": "2025년 11월 기준 Fromm 언급을 나무위키가 정리한 내용; 현재 플레이 상태로 단정하지 않음",
         "sourceIds": [
           "fanwiki"
         ]
@@ -385,7 +385,7 @@
           "아이스크림",
           "밥"
         ],
-        "note": "민트초코는 자료마다 표현이 다르므로 이 항목에서는 제외.",
+        "note": "민트초코는 자료마다 표현이 다르므로 이 항목에서는 제외",
         "sourceIds": [
           "fanwiki"
         ]
@@ -409,7 +409,7 @@
           "한요한",
           "서동현"
         ],
-        "note": "선호 아티스트는 팬 위키 정리 기준이며 현재 고정 순위가 아님.",
+        "note": "선호 아티스트는 팬 위키 정리 기준이며 현재 고정 순위가 아님",
         "sourceIds": [
           "fanwiki"
         ]
@@ -452,7 +452,7 @@
           "학교 밴드부 키보드",
           "영상 촬영·편집 경험"
         ],
-        "note": "‘피아노를 연주할 수 있다’는 팬 위키 기록. 전문 연주자/메인보컬 등 공식 포지션으로 확대 해석하지 않음.",
+        "note": "‘피아노를 연주할 수 있다’는 팬 위키 기록. 전문 연주자/메인보컬 등 공식 포지션으로 확대 해석하지 않음",
         "sourceIds": [
           "fanwiki"
         ]
@@ -473,7 +473,7 @@
           "코토네가 선물한 짱구 필통",
           "반려견 해돌이"
         ],
-        "note": "짱구 필통은 2024년 당시 기록. 현재도 쓰는지는 미확인. 반려견은 물건이 아닌 별도 개인 일상 정보.",
+        "note": "짱구 필통은 2024년 당시 기록. 현재도 쓰는지는 미확인. 반려견은 물건이 아닌 별도 개인 일상 정보",
         "sourceIds": [
           "fanwiki"
         ]
@@ -487,7 +487,7 @@
       "kind": "milestone",
       "scope": "공개",
       "title": "S12 Kwak YeonJi 공개",
-      "description": "tripleS의 12번째 멤버로 공개됐다.",
+      "description": "tripleS의 12번째 멤버로 공개됐다",
       "sourceIds": [
         "official_reveal",
         "fanwiki"
@@ -500,7 +500,7 @@
       "kind": "release",
       "scope": "EVOLution",
       "title": "EVOLution 〈⟡〉",
-      "description": "〈Invincible〉로 첫 유닛 음반 활동을 시작했다.",
+      "description": "〈Invincible〉로 첫 유닛 음반 활동을 시작했다",
       "sourceIds": [
         "official_member",
         "fanwiki"
@@ -513,7 +513,7 @@
       "kind": "release",
       "scope": "tripleS",
       "title": "ASSEMBLE24 · Girls Never Die",
-      "description": "24인 완전체 음반 활동에 참여했다.",
+      "description": "24인 완전체 음반 활동에 참여했다",
       "sourceIds": [
         "fanwiki",
         "evolution"
@@ -526,7 +526,7 @@
       "kind": "release",
       "scope": "Visionary Vision",
       "title": "Performante · Hit The Floor",
-      "description": "Visionary Vision의 정규 음반과 퍼포먼스 활동.",
+      "description": "Visionary Vision의 정규 음반과 퍼포먼스 활동",
       "sourceIds": [
         "vv"
       ],
@@ -538,7 +538,7 @@
       "kind": "release",
       "scope": "tripleS",
       "title": "ASSEMBLE25 · Are You Alive",
-      "description": "tripleS 완전체 정규 음반 활동.",
+      "description": "tripleS 완전체 정규 음반 활동",
       "sourceIds": [
         "assemble25",
         "fanwiki"
@@ -551,7 +551,7 @@
       "kind": "release",
       "scope": "zenith",
       "title": "msnz 〈Beyond Beauty〉 · Q&A",
-      "description": "zenith 유닛의 〈Q&A〉 활동과 24인 완전체 수록곡.",
+      "description": "zenith 유닛의 〈Q&A〉 활동과 24인 완전체 수록곡",
       "sourceIds": [
         "zenith",
         "beyond_beauty"
@@ -564,7 +564,7 @@
       "kind": "release",
       "scope": "tripleS",
       "title": "ASSEMBLE26 〈LOVE&POP pt.1〉",
-      "description": "완전체 타이틀곡 〈Baby Flower〉 활동.",
+      "description": "완전체 타이틀곡 〈Baby Flower〉 활동",
       "sourceIds": [
         "assemble26"
       ],
@@ -576,7 +576,7 @@
       "kind": "release",
       "scope": "tripleS",
       "title": "ASSEMBLE26 〈LOVE&POP pt.2〉 · Andless",
-      "description": "완전체 음반의 〈Andless〉 공개.",
+      "description": "완전체 음반의 〈Andless〉 공개",
       "sourceIds": [
         "official_profile",
         "fanwiki"
@@ -589,7 +589,7 @@
       "kind": "release",
       "scope": "tripleS",
       "title": "I Want You To Know",
-      "description": "〈LOVE&POP pt.2〉 추가 공개곡.",
+      "description": "〈LOVE&POP pt.2〉 추가 공개곡",
       "sourceIds": [
         "assemble26pt2"
       ],
@@ -607,14 +607,14 @@
     {
       "id": "frame_selector",
       "name": "YEONJI FRAMES",
-      "description": "검증된 사진 중 3장 선택해 개인 필름스트립 이미지 만들기. 날짜·출처와 함께 저장.",
+      "description": "검증된 사진 중 3장 선택해 개인 필름스트립 이미지 만들기. 날짜·출처와 함께 저장",
       "input": "verifiedPhotoArchive",
       "output": "filmstripImage"
     },
     {
       "id": "kwak_quiz",
       "name": "KWAK NOTES",
-      "description": "S12 공개일·유닛·별명 등 출처가 있는 문제로 구성된 5문항 미니 퀴즈.",
+      "description": "S12 공개일·유닛·별명 등 출처가 있는 문제로 구성된 5문항 미니 퀴즈",
       "input": "verifiedProfileFacts",
       "output": "localScoreCard"
     }
@@ -623,12 +623,12 @@
     "photos": {
       "file": "data/photos.json",
       "status": "not_populated",
-      "note": "SHION 사진 448장을 연지 사진으로 간주하거나 복사하지 말 것. 날짜·원본 URL·출처·S12 식별 검수 후 별도 구축."
+      "note": "SHION 사진 448장을 연지 사진으로 간주하거나 복사하지 말 것. 날짜·원본 URL·출처·S12 식별 검수 후 별도 구축"
     },
     "film": {
       "file": "data/films.json",
       "status": "not_populated",
-      "note": "S12 출연 확정 영상만 추가하고 전 멤버 영상과 구분."
+      "note": "S12 출연 확정 영상만 추가하고 전 멤버 영상과 구분"
     },
     "objekts": {
       "strategy": "reuse_WAV_archive_S12_only",
@@ -638,7 +638,7 @@
       "preserveSourceFields": true,
       "keepRawIdentifiers": true,
       "status": "integration_required",
-      "note": "WAV 소스의 전체 데이터와 S12 필터는 아직 실행·검증하지 않았음. 실 데이터 수/URL을 지어내지 말 것. SHION 기존 정규화·필터 로직은 S20 고정이므로 교체 필요."
+      "note": "WAV 소스의 전체 데이터와 S12 필터는 아직 실행·검증하지 않았음. 실 데이터 수/URL을 지어내지 말 것. SHION 기존 정규화·필터 로직은 S20 고정이므로 교체 필요"
     }
   },
   "sources": {

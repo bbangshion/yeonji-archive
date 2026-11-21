@@ -45,7 +45,7 @@ const COPIES: Record<'ko' | 'en' | 'ja', Copy> = {
     preview: '미리보기 카드로 진행 중입니다', editThird: '3·4위 다시 선택', progress: '진행도',
     match: (n) => `${n}번째 대결`, round: (n) => `${n}강`, resultHeader: '곽연지 오브젝트 월드컵', imageBlocked: '카드 원본 이미지가 일부 준비되지 않아 사진 4장이 포함된 PNG를 만들 수 없어요. GitHub Actions의 World Cup photo cache 로그를 확인해 주세요.', imageSaving: '카드 이미지로 PNG를 만드는 중…', imageOpen: '사진 크게 열기', imageClose: '닫기', imagePreview: '결과 사진 미리보기',
     shareFileFallback: '이 브라우저는 사진 파일 직접 공유를 지원하지 않아요. PNG를 저장한 다음 갤러리에서 공유해 주세요.',
-    imageDownloadHint: 'PNG 다운로드를 요청했어요. 저장이 안 되면 아래 사진을 길게 눌러 저장하거나 사진 크게 열기를 선택해 주세요.', shared: '결과 사진을 공유했어요',
+    imageDownloadHint: 'PNG 다운로드를 요청했어요. 저장이 안 되면 아래 사진을 길게 눌러 저장하거나 사진 크게 열기를 선택해 주세요', shared: '결과 사진을 공유했어요',
   },
   en: {
     heading: 'Objekt World Cup', tagline: 'Pick your favorite Objekt in each match', setup: 'Tournament setup',
@@ -60,7 +60,7 @@ const COPIES: Record<'ko' | 'en' | 'ja', Copy> = {
     preview: 'Using preview cards', editThird: 'Change third place', progress: 'Progress',
     match: (n) => `Match ${n}`, round: (n) => `Round of ${n}`, resultHeader: 'YeonJi Objekt World Cup', imageBlocked: 'Some card images could not be prepared for PNG export. Please check the World Cup photo cache step in GitHub Actions.', imageSaving: 'Preparing your photo PNG…', imageOpen: 'Open full image', imageClose: 'Close', imagePreview: 'Result photo preview',
     shareFileFallback: 'This browser cannot share image files directly. Save the PNG and share it from your photo gallery.',
-    imageDownloadHint: 'PNG download requested. If it does not save, long-press the preview image or open it full-size.', shared: 'Image shared',
+    imageDownloadHint: 'PNG download requested. If it does not save, long-press the preview image or open it full-size', shared: 'Image shared',
   },
   ja: {
     heading: 'Objektワールドカップ', tagline: '好きなObjektを選んでください', setup: '大会設定',

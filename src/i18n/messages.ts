@@ -49,7 +49,7 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Newest first",
     "ja": "新しい順"
   },
-  "오래된순": {
+  "오래된 순": {
     "en": "Oldest first",
     "ja": "古い順"
   },
@@ -177,7 +177,7 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Search photos",
     "ja": "写真を検索"
   },
-  "제목, 시즌 검색": {
+  "제목·시즌 검색": {
     "en": "Search title or season",
     "ja": "タイトル・シーズンで検索"
   },
@@ -337,13 +337,13 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "OishiOn",
     "ja": "おいヨンジ"
   },
-  "일본어의 ‘맛있다(おいしい)’와 연지을 합친 애칭": {
+  "일본어의 ‘맛있다(おいしい)’와 연지를 합친 애칭": {
     "en": "A nickname combining the Japanese oishii (delicious) with YeonJi",
     "ja": "日本語の「おいしい」とヨンジを組み合わせた愛称"
   },
-  "빵연지": {
-    "en": "BbangYeonJi",
-    "ja": "パンヨンジ"
+  "빵시온": {
+    "en": "BbangShion",
+    "ja": "BbangShion"
   },
   "빵과 디저트를 좋아하는 취향에서 알려진 애칭": {
     "en": "A nickname connected to her fondness for bread and desserts",
@@ -765,7 +765,7 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Starting point",
     "ja": "スタート"
   },
-  "2023년 12월 연이어 공개된 네 멤버로 구성된 디멘션. 곽연지이 처음 참여한 유닛으로, Just Do It을 발표하며 활동을 시작했습니다.": {
+  "2023년 12월 연이어 공개된 네 멤버로 구성된 디멘션. 곽연지가 처음 참여한 유닛으로, Just Do It을 발표하며 활동을 시작했습니다.": {
     "en": "A four-member dimension revealed consecutively in December 2023. This was YeonJi's first unit; it released Just Do It to launch its activities.",
     "ja": "2023年12月に続けて公開された4人で構成されたディメンション。ヨンジが初めて参加したユニットで、「Just Do It」で活動を始めました。"
   },
@@ -901,7 +901,7 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Goals as an artist",
     "ja": "活動の目標"
   },
-  "연습과 고민을 거쳐 좋은 모습을 보여 주고, 계속 성장하고 싶다고 전했습니다.": {
+  "연습을 통해 무대에서 더 나은 모습을 보여주고 싶다고 밝혔습니다": {
     "en": "She hopes to keep growing and showing better performances through practice and reflection.",
     "ja": "練習と工夫を重ね、より良い姿を見せて成長し続けたいと語りました。"
   },
@@ -1157,7 +1157,7 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Loading videos",
     "ja": "動画を読み込み中"
   },
-  "영상 목록을 불러오지 못했어요": {
+  "영상 데이터를 불러오지 못했습니다": {
     "en": "Could not load the videos",
     "ja": "動画一覧を読み込めませんでした"
   },
@@ -1345,7 +1345,7 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "YeonJi at the airport",
     "ja": "空港で撮影されたヨンジ"
   },
-  "곽연지의 사진과 기록을 모아둔 팬 아카이브": {
+  "곽연지의 사진과 활동 기록": {
     "en": "A fan archive of YeonJi's photos and activities",
     "ja": "ヨンジの写真と活動をまとめたファンアーカイブ"
   },
@@ -1361,7 +1361,7 @@ export const DICTIONARY: Record<string, { en: string; ja: string }> = {
     "en": "Explore",
     "ja": "見てみる"
   },
-  "프로필과 사진, 영상, 오브젝트를 둘러보세요": {
+  "프로필, 사진, 영상과 오브젝트를 확인하세요": {
     "en": "Explore the profile, photos, videos and Objekt collection",
     "ja": "プロフィール、写真、動画、Objektを見てみましょう"
   },
@@ -1727,9 +1727,9 @@ Object.assign(DICTIONARY, {
     "en": "Invalid Objekt data format. Expected an array or an objekts list.",
     "ja": "Objektデータ形式が不正です。配列またはobjektsリストを使用してください。"
   },
-  "곽연지 사진과 날짜별 앨범": { "en": "Photos of YeonJi, organized by date and album", "ja": "日付とアルバムで探せるヨンジの写真" },
-  "곽연지 사진을 날짜와 앨범으로 모아봤어요": { "en": "YeonJi photos, organized by date and album", "ja": "ヨンジの写真を日付・アルバム別に整理しました" },
-  "사진 보기 방식": { "en": "Photo view", "ja": "写真の表示方法" },
+  "연도·날짜별 사진": { "en": "Photos of YeonJi, organized by date and album", "ja": "日付とアルバムで探せるヨンジの写真" },
+  "곽연지의 사진을 날짜와 앨범별로 정리했습니다": { "en": "YeonJi photos, organized by date and album", "ja": "ヨンジの写真を日付・アルバム別に整理しました" },
+  "사진 보기방식": { "en": "Photo view", "ja": "写真の表示方法" },
   "날짜별": { "en": "By date", "ja": "日付別" },
   "앨범별": { "en": "By album", "ja": "アルバム別" },
   "연도 선택": { "en": "Select year", "ja": "年を選択" },
@@ -1742,15 +1742,15 @@ Object.assign(DICTIONARY, {
   "사진을 불러오는 중": { "en": "Loading photos", "ja": "写真を読み込み中" },
   "조건에 맞는 사진이 없습니다": { "en": "No photos match your filters", "ja": "条件に合う写真はありません" },
   "사진 목록을 불러오지 못해 기본 사진을 표시합니다": { "en": "Photo list unavailable. Showing the initial photo.", "ja": "写真一覧を読み込めないため、初期の写真を表示しています" },
-  "사진은 출처가 확인된 자료를 기준으로 등록합니다": { "en": "Photos are added only with a verified source", "ja": "写真は出典を確認できたものを登録しています" },
+  "출처가 확인된 사진만 등록합니다": { "en": "Photos are added only with a verified source", "ja": "写真は出典を確認できたものを登録しています" },
   "원본 게시물": { "en": "Original post", "ja": "元の投稿" },
 
 });
 
 Object.assign(DICTIONARY, {
   "통합 검색": { en: "Search", ja: "統合検索" },
-  "모든 아카이브를 한 번에 검색": { en: "Find anything in the archive", ja: "アーカイブ全体から探す" },
-  "사진 · 영상 · 오브젝트 · 프로필을 한곳에서 찾아보세요": { en: "Find photos, videos, Objekts and profile details in one place", ja: "写真・動画・Objekt・プロフィールをまとめて検索" },
+  "사진·영상·오브젝트 통합 검색": { en: "Find anything in the archive", ja: "アーカイブ全体から探す" },
+  "사진·영상·오브젝트·프로필 검색": { en: "Find photos, videos, Objekts and profile details in one place", ja: "写真・動画・Objekt・プロフィールをまとめて検索" },
   "날짜, 이름, SIGNAL, 오브젝트 번호 검색": { en: "Search dates, names, SIGNAL or Objekt numbers", ja: "日付・名前・SIGNAL・Objekt番号で検索" },
   "아카이브 통합 검색": { en: "Search the archive", ja: "アーカイブ内を検索" },
   "검색어 지우기": { en: "Clear search", ja: "検索語を削除" },
@@ -1780,7 +1780,7 @@ Object.assign(DICTIONARY, {
   "최신 자료를 불러오는 중": { en: "Loading recent archive entries", ja: "最新の記録を読み込み中" },
   "일부 목록을 불러오지 못했습니다": { en: "Some archive data could not be loaded", ja: "一部のデータを読み込めませんでした" },
   "등록된 데이터에서 자동으로 표시하며 원본 자료의 날짜를 사용합니다": { en: "Automatically updated from indexed data and source dates", ja: "登録データと出典の日付に基づいて自動表示します" },
-  "곽연지의 주요 활동과 날짜별 기록": { en: "Key YeonJi activities and dated archive records", ja: "ヨンジの主な活動と日付別の記録" },
+  "연도별 활동 기록": { en: "Key YeonJi activities and dated archive records", ja: "ヨンジの主な活動と日付別の記録" },
   "주요 활동과 날짜별 사진·영상을 한곳에서 살펴보세요": { en: "Explore key activities, photos and videos in chronological order", ja: "主な活動と写真・動画を時系列で見られます" },
   "자료 분류": { en: "Archive type", ja: "資料の種類" },
   "주요 활동": { en: "Milestones", ja: "主な活動" },

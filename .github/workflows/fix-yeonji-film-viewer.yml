@@ -23,7 +23,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
       - name: Patch viewer (no workflow files modified)
         shell: bash
         run: |
@@ -68,7 +67,12 @@ jobs:
           PY
       - name: Install and verify
         run: |
-          npm ci --no-audit --no-fund
+          if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+            npm ci --no-audit --no-fund
+          else
+            echo "No npm lockfile found: installing without lockfile."
+            npm install --no-audit --no-fund --no-package-lock
+          fi
           npm run build
       - name: Commit only video modal files
         shell: bash

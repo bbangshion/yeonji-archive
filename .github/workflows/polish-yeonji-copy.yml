@@ -1,0 +1,306 @@
+name: Polish YEONJI ARCHIVE Copy
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: yeonji-copy-polish
+  cancel-in-progress: false
+
+jobs:
+  polish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out current YEONJI ARCHIVE
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          ref: main
+
+      - name: Confirm target repository
+        shell: bash
+        run: |
+          if [ "${GITHUB_REPOSITORY}" != 'bbangshion/yeonji-archive' ]; then
+            echo 'This workflow only edits bbangshion/yeonji-archive' >&2
+            exit 1
+          fi
+          test -f src/App.tsx
+          test -f package.json
+
+      - name: Polish text and translation keys safely
+        shell: bash
+        run: |
+          python3 - <<'PY_YEONJI_COPY'
+          #!/usr/bin/env python3
+          """Conservative, idempotent copy edit for YEONJI ARCHIVE. No layout/data IDs changed."""
+          from pathlib import Path
+          import json, re, sys, difflib
+
+          ROOT = Path.cwd()
+          if not (ROOT / 'src/App.tsx').is_file() or not (ROOT / 'package.json').is_file():
+              raise SystemExit('YEONJI ARCHIVE 저장소 루트에서 실행해야 합니다')
+
+          # Explicit human-reviewed phrasing; includes older and newer versions of modules.
+          PHRASES = {
+            '곽연지이 함께한 활동과 남겨진 기록': '곽연지가 참여한 활동과 기록',
+            '연지라는 이름의 기록.': '곽연지의 기록',
+            '공개 사실과 팬 자료를 구분해, 그 사람을 조금 더 가까이 들여다봅니다.': '공식 자료와 팬 자료를 구분해 정리했습니다',
+            'A portrait in details.': 'YeonJi Profile',
+            'A closer look through public records, with official and fan sources clearly distinguished.': 'Official information and fan-sourced notes, clearly separated',
+            '그 사람을 조금 더 가까이 들여다봅니다': '곽연지의 정보를 정리합니다',
+            'ヨンジを知る、記録。': 'ヨンジのプロフィール',
+            '무대의 기록에서 일상의 취향까지. 공개 자료를 바탕으로 곽연지의 여러 면을 정리했습니다.': '음악 활동과 공개된 취향을 한곳에 정리했습니다',
+            'From stage milestones to everyday interests. A source-aware guide to YeonJi.': 'A record of YeonJi’s activities and interests',
+            'ステージでの活動から日常の好きなことまで。公開資料をもとにヨンジの魅力をまとめました。': '音楽活動と公開された趣味をまとめました',
+            '세 개의 챕터': '주요 활동',
+            'Three chapters': 'Key moments',
+            '3つのチャプター': '主な活動',
+            '연지 파일': '프로필 노트',
+            'YeonJi files': 'Profile notes',
+            'ヨンジ・ファイル': 'プロフィールノート',
+            'YEONJI / THE DOSSIER': 'YEONJI / PROFILE',
+            'THE INDEX /': 'PROFILE NOTES /',
+            'FIELD NOTES': 'NOTES',
+            '카메라 뒤의 연지': '사진 촬영',
+            'Behind the camera': 'Photography',
+            'カメラの向こう側': '写真撮影',
+            '익숙한 음식 취향': '좋아하는 음식',
+            'Favorite comfort foods': 'Favorite foods',
+            '기록 속 짱구 필통': '짱구 필통',
+            'The Shin-chan pencil case': 'Shin-chan pencil case',
+            '세 가지 활동의 결': '참여 유닛',
+            'Three unit chapters': 'Participating units',
+            '3つのユニット活動': '参加ユニット',
+            '다른 색의 무대': '유닛 활동',
+            'New shades of performance': 'Unit activities',
+            '新たなステージ': 'ユニット活動',
+            '2023년 1월, tripleS의 S12로 공개되며 첫 아카이브가 시작됐다.': '2023년 1월 18일, tripleS의 열두 번째 멤버로 공개됐습니다',
+            '2023年1月、tripleSのS12として公開された。': '2023年1月18日、tripleSのS12として公開されました',
+            'Introduced as S12 in January 2023.': 'Revealed as tripleS S12 on January 18, 2023',
+            'Visionary Vision과 zenith에서 각기 다른 유닛 콘셉트를 이어갔다.': 'Visionary Vision과 zenith 활동에도 참여했습니다',
+            'Continued through Visionary Vision and zenith.': 'Also performed with Visionary Vision and zenith',
+            'Visionary Visionとzenithでも活動した。': 'Visionary Visionとzenithの活動にも参加しました',
+            'EVOLution, Visionary Vision, zenith의 무대와 음악을 하나의 흐름으로 따라갈 수 있다.': 'EVOLution, Visionary Vision, zenith의 활동을 정리했습니다',
+            'EVOLution, Visionary Vision and zenith form a changing performance timeline.': 'Activities with EVOLution, Visionary Vision and zenith',
+            'EVOLution・Visionary Vision・zenithの活動をたどる。': 'EVOLution・Visionary Vision・zenithの活動をまとめました',
+            '첫 유닛, EVOLution': 'EVOLution 데뷔',
+            'First unit, EVOLution': 'EVOLution debut',
+            '初ユニット EVOLution': 'EVOLutionでデビュー',
+            '2023년 10월 11일 〈Invincible〉로 첫 유닛 음반 활동을 시작했다.': '2023년 10월 11일, EVOLution의 〈Invincible〉로 첫 유닛 활동을 시작했습니다',
+            '연습과 고민을 거쳐 좋은 모습을 보여 주고, 계속 성장하고 싶다고 전했습니다.': '연습을 통해 무대에서 더 나은 모습을 보여주고 싶다고 밝혔습니다',
+            '모든 아카이브를 한 번에 검색': '사진·영상·오브젝트 통합 검색',
+            '곽연지의 사진과 기록을 모아둔 팬 아카이브': '곽연지의 사진과 활동 기록',
+            '프로필과 사진, 영상, 오브젝트를 둘러보세요': '프로필, 사진, 영상과 오브젝트를 확인하세요',
+            '곽연지 사진과 날짜별 앨범': '연도·날짜별 사진',
+            '곽연지의 주요 활동과 날짜별 기록': '연도별 활동 기록',
+            '곽연지 사진을 날짜와 앨범으로 모아봤어요': '곽연지의 사진을 날짜와 앨범별로 정리했습니다',
+            '사진은 출처가 확인된 자료를 기준으로 등록합니다': '출처가 확인된 사진만 등록합니다',
+            '최근 사진 소식': '최근 사진',
+            'Recent photo sources': 'Latest photos',
+            '확인된 게시물을 최신순으로 모았습니다.': '출처가 확인된 게시물을 최신순으로 표시합니다',
+            'Recent, source-linked posts in chronological order.': 'Latest posts with source links',
+            '연지의 공식 영상과 무대, 개인 직캠을 모았습니다.': '곽연지의 공식 영상, 무대, 개인 직캠',
+            '출처 및 연지 출연을 확인한 영상만 공개합니다.': '출처와 연지의 출연 여부를 확인한 영상만 표시합니다',
+            '공식 SIGNAL·라이브·비하인드는 연지 출연을 확인한 뒤 공개합니다. 신규 영상 후보는 별도 검토 목록에 보관하며 자동으로 게시하지 않습니다. 원본 영상을 재업로드하지 않습니다.': '공식 영상과 직캠은 출처와 출연 여부를 확인한 뒤 등록합니다. 새 영상은 검토 후 추가합니다',
+            '영상 재생이 제한되면 YouTube에서 보기를 눌러 주세요.': '재생되지 않는 영상은 YouTube에서 확인하세요',
+            '영상 목록을 불러오지 못했어요': '영상 데이터를 불러오지 못했습니다',
+            '사진 · 영상 · 오브젝트 · 프로필을 한곳에서 찾아보세요': '사진·영상·오브젝트·프로필 검색',
+            '첫 공개부터 음반, 유닛, 무대까지. 출처로 확인할 수 있는 기록을 날짜 순서로 정리했습니다.': '공개 이후의 음반·유닛·무대 활동을 날짜순으로 정리했습니다',
+            '공연 일정과 실제 출연은 서로 구분합니다. 이 목록은 계속 보완하는 공개 기록이며 전체 출연 목록을 의미하지 않습니다.': '공연 일정과 실제 출연 기록을 구분하며, 확인된 자료만 표시합니다',
+            '활동 자료는 출처 링크와 함께 기록합니다. 같은 날짜 사진은 해당 활동과 직접 관련되지 않을 수 있습니다.': '활동별 출처를 표시합니다. 같은 날짜의 사진이 반드시 해당 활동을 담은 것은 아닙니다',
+            '개별 방송·행사 등은 확인된 자료부터 계속 추가합니다.': '방송·행사는 출처를 확인한 뒤 추가합니다',
+            '제목, 시즌 검색': '제목·시즌 검색',
+            '무대와 일상 속 다양한 순간을 기록합니다.': '곽연지의 활동과 공개된 프로필을 정리했습니다',
+            '실제로 참여한 디멘션을 출처와 함께 정리했습니다.': '참여 유닛과 출처',
+            '공식 자료를 우선하며, 팬 위키 기반 내용에는 출처를 표시합니다.': '공식 자료와 팬 자료의 출처를 구분해 표시합니다',
+            '취향은 시간에 따라 달라질 수 있습니다.': '취향 정보는 공개 당시 기록을 기준으로 합니다',
+            '취향·별명은 공개 당시의 기록입니다. 현재 상태를 단정하지 않습니다.': '취향과 별명은 공개된 자료의 기록 시점을 기준으로 표시합니다',
+            '취향·별명은 공개 당시의 기록입니다. 현재 상태를 단정하지 않습니다': '취향과 별명은 공개된 자료의 기록 시점을 기준으로 표시합니다',
+            'Tastes and nicknames are time-specific public records, not claims about the present.': 'Interests and nicknames reflect the dates of their sources',
+            '趣味や愛称は記録当時の情報であり、現在の状態を示すものではありません。': '趣味や愛称は、公開された資料の時点に基づいています',
+            'CREATED BY 빵연지': 'CREATED BY @bbangshion',
+            '빵연지': '빵시온',
+            '프로필 보기 ': '프로필 보기',
+            '사진 보기 ': '사진 보기',
+            '다시 시도 ': '다시 시도',
+            '오래된순': '오래된 순',
+            '곽연지이': '곽연지가',
+            '연지을': '연지를',
+            'BbangYeonJi': 'BbangShion',
+            '07 / SEARCH OS': '07 / SEARCH',
+            '<span className="yeonji-timeline-period-mark">.</span>': '',
+            'aria-hidden="true">Y.</span>': 'aria-hidden="true">Y</span>',
+            'PHOTO NOTES': 'PHOTO SOURCES',
+            'パンヨンジ': 'BbangShion',
+            # Keep official artist / track titles, IDs, src URLs, and script names as-is.
+          }
+
+          # Only display copy in selected JSON, not the externally sourced photo/video titles.
+          JSON_FILES = [
+            'public/data/yeonji.json',
+            'public/data/yeonji-profile-details.json',
+            'public/data/yeonji-timeline-seed.json',
+            'public/data/yeonji-activities.json',
+          ]
+          JSON_TEXT_FIELDS = {'ko','en','ja','description','intro','subtitle','korean','english','japanese','tagline','caption','note'}
+          # If a user-facing JSON string ends in an ornamental full stop, remove that final ASCII period.
+          # Keep internal sentence punctuation, dates, external URLs, official titles, source names, etc.
+          def tidy_json(value, key=''):
+              if isinstance(value, list):
+                  return [tidy_json(v,key) for v in value]
+              if isinstance(value, dict):
+                  return {k:tidy_json(v,k) for k,v in value.items()}
+              if not isinstance(value, str) or key not in JSON_TEXT_FIELDS:
+                  return value
+              if value.startswith(('http://', 'https://')):
+                  return value
+              if re.search(r'[가-힣A-Za-z]\.\s*$', value) and not re.search(r'(?:pt|Mr|Ms|Dr|No|St|vs)\.\s*$', value, flags=re.I):
+                  return re.sub(r'\.\s*$', '', value)
+              return value
+
+          # Limit TypeScript edits to text literals used in UI, never code syntax.
+          TSX_TARGETS = [
+            'src/App.tsx', 'src/i18n/messages.ts', 'src/i18n/yeonji-film-messages.ts',
+            'src/components/ProfilePage.tsx', 'src/components/YeonjiProfileDepth.tsx',
+            'src/components/TimelinePage.tsx','src/components/ProfileHistory.tsx',
+            'src/components/YeonjiFilm.tsx','src/components/PhotoArchive.tsx',
+            'src/components/SearchPage.tsx','src/components/RecentPhotoSources.tsx',
+            'src/components/HomeUpdates.tsx','src/components/Collection.tsx',
+            'src/components/TournamentArena.tsx',
+          ]
+
+          # UI copy literal endings; avoid e.g. error stack, URL, file extension and decimals.
+          UI_FIELD = re.compile(r'(?P<field>\b(?:intro|lead|note|caption|tagline|disclaimer|about|notes|unitsNote|sourceNote|interestsNote|random|preview|thirdNote|imageDownloadHint|sourceNote|description|introText)\s*:\s*)(?P<q>[\'\"])(?P<v>[^\'\"\r\n]{4,})\.(?P=q)')
+          TRANS_LITERAL = re.compile(r'(?P<prefix><Trans\s+value=")(?P<v>[^"\r\n]+)\.(?P<suffix>"\s*/>)')
+          T_LITERAL = re.compile(r'(?P<prefix>\bt\([\'\"])(?P<v>[^\'\"\r\n]+)\.(?P<suffix>[\'\"]\))')
+
+          def no_decorative_dot(v):
+              if (v.startswith(('http://','https://')) or re.search(r'\b(?:pt|Mr|Ms|Dr|No|St|vs)$', v, re.I) or re.search(r'[\w]\.\w',v)):
+                  return False
+              return len(v) > 4 and bool(re.search('[가-힣A-Za-z]$',v))
+
+          def tidy_tsx(content):
+              # Exact map covers important editorial/UI issues, including localized keys.
+              for old, new in PHRASES.items():
+                  content = content.replace(old, new)
+              def ui_repl(match):
+                  v = match.group('v')
+                  if not no_decorative_dot(v): return match.group(0)
+                  return match.group('field') + match.group('q') + v + match.group('q')
+              content = UI_FIELD.sub(ui_repl, content)
+              def literal_repl(match):
+                  v=match.group('v')
+                  if not no_decorative_dot(v):return match.group(0)
+                  return match.group('prefix') + v + match.group('suffix')
+              content = TRANS_LITERAL.sub(literal_repl, content)
+              content = T_LITERAL.sub(literal_repl, content)
+              return content
+
+          def dedupe_dictionary(content):
+              # Duplicate keys inside the original dictionary are invalid TypeScript.
+              # Later Object.assign calls are intentional overrides and are not touched.
+              cut = content.find('\nObject.assign(DICTIONARY')
+              initial, rest = (content[:cut], content[cut:]) if cut >= 0 else (content, '')
+              header = re.compile(r'(?m)^  "([^"\n]+)":\s*\{')
+              matches = list(header.finditer(initial))
+              latest = {m.group(1): i for i,m in enumerate(matches)}
+              remove=[]
+              for i,m in enumerate(matches):
+                  if latest[m.group(1)]!=i:
+                      end = matches[i+1].start() if i+1<len(matches) else len(initial)
+                      remove.append((m.start(), end))
+              for begin,end in reversed(remove):
+                  initial=initial[:begin]+initial[end:]
+              return initial+rest, len(remove)
+
+          stats=[]
+          for rel in TSX_TARGETS:
+              p = ROOT/rel
+              if not p.exists(): continue
+              before=p.read_text(encoding='utf-8')
+              after=tidy_tsx(before)
+              if rel=='src/i18n/messages.ts':
+                  after,removed=dedupe_dictionary(after)
+                  if removed: print('Removed duplicate translation keys:',removed)
+              if before != after:
+                  p.write_text(after,encoding='utf-8')
+                  stats.append((rel,sum(1 for line in difflib.unified_diff(before.splitlines(),after.splitlines()) if line.startswith('+') and not line.startswith('+++'))))
+
+          for rel in JSON_FILES:
+              p=ROOT/rel
+              if not p.exists(): continue
+              before=p.read_text(encoding='utf-8')
+              data=json.loads(before)
+              # Only replace copy nodes, preserving data facts and IDs.
+              def replace_phrases(obj, key=''):
+                  if isinstance(obj,list): return [replace_phrases(v,key) for v in obj]
+                  if isinstance(obj,dict): return {k:replace_phrases(v,k) for k,v in obj.items()}
+                  if not isinstance(obj,str) or key not in JSON_TEXT_FIELDS or obj.startswith(('https://','http://')): return obj
+                  for old,new in PHRASES.items(): obj=obj.replace(old,new)
+                  return obj
+              data=tidy_json(replace_phrases(data))
+              after=json.dumps(data,ensure_ascii=False,indent=2)+'\n'
+              if before!=after:
+                  p.write_text(after,encoding='utf-8')
+                  stats.append((rel,'JSON'))
+
+          # Prevent stale author attribution from being brought back by on-demand gallery import scripts.
+          for rel in ('scripts/import-yeonji-gallery.mjs','scripts/import-yeonji-fandom.mjs'):
+              p=ROOT/rel
+              if not p.exists():continue
+              before=p.read_text(encoding='utf-8')
+              after=before.replace('빵연지','빵시온')
+              if before!=after:
+                  p.write_text(after,encoding='utf-8')
+                  stats.append((rel,1))
+
+          print('YEONJI ARCHIVE / Copy polishing')
+          for path,number in stats:print(f'  updated  {path}: {number}')
+          print(f'Updated {len(stats)} files (no structure, routes, URLs or member IDs changed)')
+          PY_YEONJI_COPY
+
+      - name: Check JSON and whitespace
+        shell: bash
+        run: |
+          python3 - <<'PY_VALIDATE'
+          import json
+          from pathlib import Path
+          for name in ('yeonji.json','yeonji-profile-details.json','yeonji-timeline-seed.json','yeonji-activities.json'):
+              p = Path('public/data') / name
+              if p.exists():
+                  data=json.loads(p.read_text(encoding='utf-8'))
+                  print('JSON valid:',p)
+          PY_VALIDATE
+          git diff --check
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Verify production build before committing
+        shell: bash
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci --no-audit --no-fund
+          else
+            npm install --no-audit --no-fund --package-lock=false
+          fi
+          npm run build
+
+      - name: Commit only verified content changes
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -u -- src public/data scripts
+          if git diff --cached --quiet; then
+            echo 'Already polished; nothing to commit.'
+          else
+            git commit -m 'style: polish YEONJI copy and captions'
+            git push origin HEAD:main
+          fi

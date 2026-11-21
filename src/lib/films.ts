@@ -24,7 +24,7 @@ const CATEGORY_MAP: Record<string, FilmCategory> = {
   signal: 'signal', sssignal: 'signal', secretbase: 'signal', '시그널': 'signal',
   mv: 'music', music: 'music', '뮤직비디오': 'music', visual: 'music',
   performance: 'performance', fancam: 'performance', dance: 'performance', '직캠': 'performance',
-  live: 'live', '라이브': 'live', other: 'other', reveal: 'other', teaser: 'other',
+  live: 'live', '라이브': 'live', behind: 'other', '비하인드': 'other', other: 'other', reveal: 'other', teaser: 'other',
 };
 const KIND_SET = new Set<FilmKind>(['mv','fancam','dance','signal','live','behind','stage','other']);
 const isObject = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && !Array.isArray(v);
@@ -63,7 +63,7 @@ export function normalizeFilms(input: unknown): Film[] {
   const rows: unknown[] = Array.isArray(input) ? input : isObject(input) && Array.isArray(input.items) ? input.items : isObject(input) && Array.isArray(input.videos) ? input.videos : [];
   const seen = new Map<string,Film>();
   for (const v of rows) {
-    if (!isObject(v) || !hasS12(v)) continue;
+    if (!isObject(v) || !hasS12(v) || v.verified !== true) continue;
     const id = findVideoId(v.youtubeId ?? v.youtubeUrl ?? v.videoId ?? v.videoUrl ?? v.url);
     const title = asText(v.title);
     if (!id || title.length < 1 || title.length > 190) continue;

@@ -10,13 +10,14 @@ import './yeonji-film.css';
 const DATA_PATH = `${import.meta.env.BASE_URL}data/films.json`;
 const STORAGE_KEY = 'yeonji-archive-film-favorites-v1';
 const PAGE_SIZE = 18;
-type FilmFilter = 'all' | 'fancam' | 'music' | 'signal' | 'performance' | 'live' | 'saved';
+type FilmFilter = 'all' | 'fancam' | 'music' | 'signal' | 'performance' | 'live' | 'behind' | 'saved';
 type PublisherFilter = 'all' | FilmPublisher;
+type ScopeFilter = 'all' | Film['scope'];
 const TABS: { id: FilmFilter; label: string }[] = [
   { id: 'all', label: '전체' }, { id: 'fancam', label: '연지 직캠' },
   { id: 'music', label: '공식 MV' }, { id: 'signal', label: 'SIGNAL' },
   { id: 'performance', label: '무대·안무' }, { id: 'live', label: '라이브' },
-  { id: 'saved', label: '저장한 영상' },
+  { id: 'behind', label: '비하인드' }, { id: 'saved', label: '저장한 영상' },
 ];
 const PUBLISHERS: { id: PublisherFilter; label: string }[] = [
   {id:'all',label:'전체 출처'}, {id:'official',label:'tripleS 공식'},
@@ -58,6 +59,15 @@ function FilmCard({video,saved,onPlay,onSave}:{video:Film;saved:boolean;onPlay:(
 function VideoDialog({video,onClose}:{video:Film;onClose:()=>void}) {
   const {t} = useI18n();
   const closeButton = useRef<HTMLButtonElement>(null);
+  const [copied,setCopied]=useState(false);
+  const share=async()=>{
+    const url=filmYoutubeUrl(video.youtubeId);
+    try {
+      if(navigator.share) await navigator.share({title:video.title,url});
+      else if(navigator.clipboard?.writeText) {await navigator.clipboard.writeText(url);setCopied(true);}
+      else window.prompt(t('영상 링크 복사'),url);
+    } catch(error) {if(!(error instanceof DOMException && error.name==='AbortError')) window.prompt(t('영상 링크 복사'),url);}
+  };
   const panel = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const previous = document.activeElement instanceof HTMLElement ? document.activeElement : null;
@@ -81,7 +91,7 @@ function VideoDialog({video,onClose}:{video:Film;onClose:()=>void}) {
     <div className="yfilm-modal" ref={panel} role="dialog" aria-modal="true" aria-labelledby="yfilm-modal-title">
       <div className="yfilm-modal-top"><div><span className="yfilm-kicker">YEONJI FILM / {video.group}</span><h2 id="yfilm-modal-title">{t(video.title)}</h2></div><button ref={closeButton} className="yfilm-close" type="button" onClick={onClose} aria-label={t('닫기')}>×</button></div>
       <div className="yfilm-player"><iframe title={t(video.title)} src={filmEmbedUrl(video.youtubeId)} allow="autoplay; encrypted-media; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/></div>
-      <div className="yfilm-modal-bottom"><span>{t(filmPublisherLabel(video.publisher))} · {readableFilmDate(video.publishedAt)} · {video.source}</span><a target="_blank" rel="noopener noreferrer" href={filmYoutubeUrl(video.youtubeId)}>{t('YouTube에서 보기')} <ArrowIcon width={15} height={15}/></a></div>
+      <div className="yfilm-modal-bottom"><span>{t(filmPublisherLabel(video.publisher))} · {readableFilmDate(video.publishedAt)} · {video.source}</span><div className="yfilm-modal-actions"><button type="button" onClick={share}>{t(copied?'링크 복사됨':'공유')}</button><a target="_blank" rel="noopener noreferrer" href={filmYoutubeUrl(video.youtubeId)}>{t('YouTube에서 보기')} <ArrowIcon width={15} height={15}/></a></div></div>
       <p className="yfilm-player-note">{t('영상 재생이 제한되면 YouTube에서 보기를 눌러 주세요.')}</p>
     </div>
   </div>;
@@ -93,6 +103,7 @@ export default function YeonjiFilm(){
   const [error,setError]=useState('');
   const [filter,setFilter]=useState<FilmFilter>('all');
   const [publisher,setPublisher]=useState<PublisherFilter>('all');
+  const [scope,setScope]=useState<ScopeFilter>('all');
   const [group,setGroup]=useState('all');
   const [year,setYear]=useState('all');
   const [sort,setSort]=useState<'newest'|'oldest'>('newest');
@@ -113,43 +124,45 @@ export default function YeonjiFilm(){
     return ()=>controller.abort();
   },[]);
   useEffect(()=>{const id=getRouteItem('film');if(id && films.some(f=>f.id===id))setPlayingId(id);},[films]);
-  useEffect(()=>setVisible(PAGE_SIZE),[filter,publisher,group,year,sort,deferredQuery]);
+  useEffect(()=>setVisible(PAGE_SIZE),[filter,publisher,scope,group,year,sort,deferredQuery]);
   const years=useMemo(()=>[...new Set(films.map(f=>f.publishedAt?.slice(0,4)).filter((v):v is string=>!!v))].sort().reverse(),[films]);
   const groups=useMemo(()=>[...new Set(films.map(f=>f.group))].sort((a,b)=>a.localeCompare(b)),[films]);
-  const stats=useMemo(()=>({total:films.length,fancams:films.filter(f=>f.kind==='fancam').length,official:films.filter(f=>f.publisher==='official').length}),[films]);
+  const stats=useMemo(()=>({total:films.length,fancams:films.filter(f=>f.kind==='fancam').length,official:films.filter(f=>f.publisher==='official').length, signal:films.filter(f=>f.category==='signal').length, behind:films.filter(f=>f.kind==='behind').length}),[films]);
   const filtered=useMemo(()=>films.filter(f=>
-    (filter==='all'||filter==='saved'&&saved.has(f.id)||filter==='fancam'&&f.kind==='fancam'||filter==='music'&&f.category==='music'||filter==='signal'&&f.category==='signal'||filter==='performance'&&f.category==='performance'||filter==='live'&&f.category==='live')&&
+    (filter==='all'||filter==='saved'&&saved.has(f.id)||filter==='fancam'&&f.kind==='fancam'||filter==='music'&&f.category==='music'||filter==='signal'&&f.category==='signal'||filter==='performance'&&f.category==='performance'||filter==='live'&&f.category==='live'||filter==='behind'&&f.kind==='behind')&&
     (publisher==='all'||f.publisher===publisher)&&
+    (scope==='all'||f.scope===scope)&&
     (group==='all'||f.group===group)&&
     (year==='all'||f.publishedAt?.startsWith(year))&&
     (!deferredQuery||[f.title,f.group,f.song,f.source,f.note,f.publishedAt].join(' ').toLocaleLowerCase().includes(deferredQuery))
-  ).sort((a,b)=>sort==='newest'?(b.publishedAt??'').localeCompare(a.publishedAt??''):(a.publishedAt??'').localeCompare(b.publishedAt??'')),[films,filter,publisher,group,year,sort,saved,deferredQuery]);
+  ).sort((a,b)=>sort==='newest'?(b.publishedAt??'').localeCompare(a.publishedAt??''):(a.publishedAt??'').localeCompare(b.publishedAt??'')),[films,filter,publisher,scope,group,year,sort,saved,deferredQuery]);
   const selected=films.find(f=>f.id===playingId)??null;
   const toggleSaved=(id:string)=>setSaved(prev=>{
     const next=new Set(prev); if(next.has(id))next.delete(id); else next.add(id);
     try{localStorage.setItem(STORAGE_KEY,JSON.stringify([...next]));}catch{/* private browsing: in-memory selection remains */}
     return next;
   });
-  const reset=()=>{setFilter('all');setPublisher('all');setGroup('all');setYear('all');setSort('newest');setQuery('');};
+  const reset=()=>{setFilter('all');setPublisher('all');setScope('all');setGroup('all');setYear('all');setSort('newest');setQuery('');};
   return <section className="shion-film-page yfilm-page animate-appear">
     <header className="yeonji-page-heading yfilm-heading"><span className="yeonji-page-kicker">YEONJI FILM / S12</span><h1>{t('영상')}</h1><p>{t('연지의 공식 영상과 무대, 개인 직캠을 모았습니다.')}</p></header>
-    <div className="yfilm-summary" aria-label={t('영상 통계')}><div><span>ALL FILMS</span><strong>{formatNumber(stats.total)}</strong></div><div><span>FANCAMS</span><strong>{formatNumber(stats.fancams)}</strong></div><div><span>TRIPLES OFFICIAL</span><strong>{formatNumber(stats.official)}</strong></div></div>
+    <div className="yfilm-summary" aria-label={t('영상 통계')}><div><span>ALL FILMS</span><strong>{formatNumber(stats.total)}</strong></div><div><span>FANCAMS</span><strong>{formatNumber(stats.fancams)}</strong></div><div><span>TRIPLES OFFICIAL</span><strong>{formatNumber(stats.official)}</strong></div><div><span>SIGNAL</span><strong>{formatNumber(stats.signal)}</strong></div><div><span>BEHIND</span><strong>{formatNumber(stats.behind)}</strong></div></div>
     <div className="yfilm-controls">
-      <div className="yfilm-tabs" role="group" aria-label={t('영상 종류')}>{TABS.filter(tab=>tab.id!=='live'||films.some(f=>f.category==='live')).map(tab=><button key={tab.id} type="button" aria-pressed={filter===tab.id} className={filter===tab.id?'is-active':''} onClick={()=>setFilter(tab.id)}>{t(tab.label)}</button>)}</div>
+      <div className="yfilm-tabs" role="group" aria-label={t('영상 종류')}>{TABS.map(tab=><button key={tab.id} type="button" aria-pressed={filter===tab.id} className={filter===tab.id?'is-active':''} onClick={()=>setFilter(tab.id)}>{t(tab.label)}</button>)}</div>
       <div className="yfilm-search"><label><span className="sr-only">{t('영상 검색')}</span><input value={query} type="search" onChange={e=>setQuery(e.target.value)} autoComplete="off" placeholder={t('곡명, 연도, 방송사, 영상 제목 검색')}/></label><button type="button" onClick={reset}>{t('초기화')}</button></div>
       <div className="yfilm-selects">
         <label><span>{t('출처')}</span><select value={publisher} onChange={e=>setPublisher(e.target.value as PublisherFilter)}>{PUBLISHERS.map(x=><option key={x.id} value={x.id}>{t(x.label)}</option>)}</select></label>
+        <label><span>{t('출연 형태')}</span><select value={scope} onChange={e=>setScope(e.target.value as ScopeFilter)}><option value="all">{t('전체 형태')}</option><option value="solo">{t('개인')}</option><option value="unit">{t('유닛')}</option><option value="group">{t('완전체')}</option></select></label>
         <label><span>{t('활동')}</span><select value={group} onChange={e=>setGroup(e.target.value)}><option value="all">{t('모든 활동')}</option>{groups.map(x=><option key={x} value={x}>{x}</option>)}</select></label>
         <label><span>{t('연도')}</span><select value={year} onChange={e=>setYear(e.target.value)}><option value="all">{t('전체 연도')}</option>{years.map(x=><option key={x}>{x}</option>)}</select></label>
         <label><span>{t('정렬')}</span><select value={sort} onChange={e=>setSort(e.target.value as 'newest'|'oldest')}><option value="newest">{t('최신순')}</option><option value="oldest">{t('오래된순')}</option></select></label>
       </div>
     </div>
-    <div className="yfilm-results"><span>{loading?t('불러오는 중'):`${formatNumber(filtered.length)} ${t('영상')}`}</span><span>{t('공식·방송사·팬 촬영을 구분해 표시합니다.')}</span></div>
+    <div className="yfilm-results"><span>{loading?t('불러오는 중'):`${formatNumber(filtered.length)} ${t('영상')}`}</span><span>{t('출처 및 연지 출연을 확인한 영상만 공개합니다.')}</span></div>
     {loading?<div className="yfilm-grid" role="status" aria-label={t('불러오는 중')}>{Array.from({length:6},(_,i)=><div key={i} className="yfilm-skeleton"><div/><span/></div>)}</div>:
       error?<div className="yfilm-empty" role="alert"><h2>{t('영상 목록을 불러오지 못했어요')}</h2><p>{error}</p><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@triplescosmos">tripleS official ↗</a></div>:
       filtered.length?<><div className="yfilm-grid">{filtered.slice(0,visible).map(f=><FilmCard key={f.id} video={f} saved={saved.has(f.id)} onPlay={()=>setPlayingId(f.id)} onSave={()=>toggleSaved(f.id)}/>)}</div>{visible<filtered.length&&<div className="yfilm-more"><button type="button" onClick={()=>setVisible(v=>v+PAGE_SIZE)}>{t('더 보기')} <span>{Math.min(visible,filtered.length)} / {filtered.length}</span></button></div>}</>:
       <div className="yfilm-empty"><h2>{t('표시할 영상이 없습니다')}</h2><p>{t('검색어나 필터를 변경해 보세요')}</p><button type="button" onClick={reset}>{t('전체 보기')}</button></div>}
-    <aside className="yfilm-note"><span>ARCHIVE NOTE</span><p>{t('곽연지 출연이 확인된 YouTube 영상 링크를 정리합니다. 방송사 직캠과 팬 촬영 영상을 구분하며 원본 영상을 재업로드하지 않습니다. 일부 영상은 YouTube 정책에 따라 사이트 내 재생이 제한될 수 있습니다.')}</p><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@triplescosmos">tripleS official ↗</a></aside>
+    <aside className="yfilm-note"><span>ARCHIVE NOTE</span><p>{t('공식 SIGNAL·라이브·비하인드는 연지 출연을 확인한 뒤 공개합니다. 신규 영상 후보는 별도 검토 목록에 보관하며 자동으로 게시하지 않습니다. 원본 영상을 재업로드하지 않습니다.')}</p><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@triplescosmos">tripleS official ↗</a></aside>
     {selected&&<VideoDialog video={selected} onClose={closePlayer}/>}
   </section>;
 }

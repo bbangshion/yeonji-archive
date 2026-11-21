@@ -40,3 +40,11 @@
 @media(max-width:850px){.yfilm-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.yfilm-summary>div{padding:15px}.yfilm-summary>div:first-child{padding-left:0}.yfilm-summary span{font-size:9px}.yfilm-summary strong{font-size:21px}}
 @media(max-width:560px){.yfilm-controls{padding:15px}.yfilm-grid{gap:24px 11px}.yfilm-selects{grid-template-columns:repeat(2,minmax(0,1fr))}.yfilm-summary{margin:22px 0 28px}.yfilm-summary>div{display:grid;gap:7px;padding:13px 10px}.yfilm-summary>div:first-child{padding-left:0}.yfilm-summary strong{font-size:24px}.yfilm-card-info{padding-right:0;gap:6px}.yfilm-card-info strong{font-size:12px;line-height:1.5;min-height:36px}.yfilm-eyeline{font-size:9px;line-height:1.5}.yfilm-card-extra{font-size:10px}.yfilm-play{width:35px;height:35px;font-size:12px}.yfilm-save{width:29px;height:29px;top:6px;right:6px}.yfilm-image-badge{font-size:8px;bottom:6px;left:6px}.yfilm-results span:last-child{max-width:48%;font-size:10px}.yfilm-modal-layer{padding:12px}.yfilm-modal{padding:13px}.yfilm-modal-bottom{font-size:10px}.yfilm-note{margin-top:40px}}
 @media(prefers-reduced-motion:reduce){.yfilm-image img{transition:none}.yfilm-skeleton>div,.yfilm-skeleton>span{animation:none}}
+
+/* FILM / SIGNAL • LIVE • BEHIND: expanded filters and lightweight sharing */
+.yfilm-summary{grid-template-columns:repeat(5,minmax(0,1fr))}
+.yfilm-selects{grid-template-columns:repeat(5,minmax(0,1fr))}
+.yfilm-modal-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.yfilm-modal-actions button{min-height:32px;padding:0 12px;border:1px solid rgba(166,183,255,.44);background:transparent;color:#d4deff;font-size:11px}
+@media(max-width:900px){.yfilm-selects{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:640px){.yfilm-summary{grid-template-columns:repeat(3,minmax(0,1fr))}.yfilm-summary>div{border-bottom:1px solid var(--yfilm-border)}.yfilm-summary>div:nth-child(3){border-right:0}.yfilm-summary>div:nth-last-child(-n+2){border-bottom:0}.yfilm-selects{grid-template-columns:repeat(2,minmax(0,1fr))}}

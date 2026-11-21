@@ -178,6 +178,24 @@
       "verified": true
     },
     {
+      "youtubeId": "2hg-ezffEbI",
+      "title": "tripleS의 평범한 나날들 (feat.연지) | SIGNAL 260312",
+      "publishedAt": "2026-03-12",
+      "scope": "group",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "tripleS",
+      "publisher": "official",
+      "source": "tripleS official",
+      "song": "",
+      "note": "공식 YouTube 제목에서 곽연지 출연을 확인한 SIGNAL.",
+      "category": "signal",
+      "kind": "signal",
+      "verified": true,
+      "reference": "https://www.youtube.com/watch?v=2hg-ezffEbI"
+    },
+    {
       "youtubeId": "XBgJEvpCqDo",
       "title": "[쇼챔직캠 4K] msnz zenith 연지 · Christmas Alone",
       "category": "performance",
@@ -464,6 +482,42 @@
       "kind": "mv",
       "reference": "",
       "verified": true
+    },
+    {
+      "youtubeId": "ZFO2w3TDpb4",
+      "title": "펌프 여신 곽곽 곽연지 | SIGNAL 230518",
+      "publishedAt": "2023-05-18",
+      "scope": "solo",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "tripleS",
+      "publisher": "official",
+      "source": "tripleS official",
+      "song": "",
+      "note": "공식 YouTube 제목에서 곽연지 출연을 확인한 SIGNAL.",
+      "category": "signal",
+      "kind": "signal",
+      "verified": true,
+      "reference": "https://www.youtube.com/watch?v=ZFO2w3TDpb4"
+    },
+    {
+      "youtubeId": "O583LWP68Ic",
+      "title": "코토네와 연지 서울 등장 | SIGNAL 230301",
+      "publishedAt": "2023-03-01",
+      "scope": "group",
+      "memberIds": [
+        "S12"
+      ],
+      "group": "tripleS",
+      "publisher": "official",
+      "source": "tripleS official",
+      "song": "",
+      "note": "공식 YouTube 제목에서 곽연지 출연을 확인한 SIGNAL.",
+      "category": "signal",
+      "kind": "signal",
+      "verified": true,
+      "reference": "https://www.youtube.com/watch?v=O583LWP68Ic"
     },
     {
       "youtubeId": "_B9ChtoW64k",

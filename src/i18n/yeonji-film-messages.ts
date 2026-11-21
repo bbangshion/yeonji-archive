@@ -21,4 +21,15 @@ Object.assign(DICTIONARY, {
     en:'A curated directory of YouTube videos featuring YeonJi. Broadcast fancams are distinguished from fan-filmed clips; videos are not reuploaded. Some clips may not allow embedded playback.',
     ja:'ヨンジが出演するYouTube映像を整理しています。放送局のチッケムとファン撮影を区別し、動画自体は再アップロードしません。埋め込み再生に制限がある場合があります。'
   },
+  '비하인드': {en:'Behind the scenes',ja:'ビハインド'},
+  '출연 형태': {en:'Appearance',ja:'出演形式'},
+  '전체 형태': {en:'All appearances',ja:'すべての出演形式'},
+  '공유': {en:'Share',ja:'共有'},
+  '링크 복사됨': {en:'Link copied',ja:'リンクをコピーしました'},
+  '영상 링크 복사': {en:'Copy video link',ja:'動画リンクをコピー'},
+  '출처 및 연지 출연을 확인한 영상만 공개합니다.': {en:'Only reviewed videos with confirmed YeonJi appearances are shown.',ja:'ヨンジの出演と出典を確認した映像のみ公開します。'},
+  '공식 SIGNAL·라이브·비하인드는 연지 출연을 확인한 뒤 공개합니다. 신규 영상 후보는 별도 검토 목록에 보관하며 자동으로 게시하지 않습니다. 원본 영상을 재업로드하지 않습니다.': {
+    en:'Official SIGNAL, live, and behind-the-scenes videos are published after checking YeonJi’s appearance. New finds remain private review candidates and are not posted automatically. Videos are not reuploaded.',
+    ja:'公式SIGNAL・ライブ・ビハインドはヨンジの出演を確認後に公開します。新規候補は確認用リストに保存し、自動掲載はしません。動画の再アップロードも行いません。'
+  },
 });

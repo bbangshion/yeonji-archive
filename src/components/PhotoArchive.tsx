@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { useI18n } from '../i18n/I18nContext';
 import { clearRouteItem, getRouteItem } from '../lib/archiveRoute';
 import { RecentPhotoSources } from './RecentPhotoSources';
+import './yeonji-photo-v4.css';
 
 type LocalizedText = { ko: string; en?: string; ja?: string };
 type Photo = {
@@ -161,6 +162,18 @@ export function PhotoArchive(_legacyProps?: { objekts?: unknown[]; loading?: boo
   }, [isLoading, photos]);
 
   const years = useMemo(() => [...new Set(photos.flatMap((photo) => photo.year ? [photo.year] : []))].sort().reverse(), [photos]);
+
+  // YEONJI_PHOTO_V4 — actual indexed photos only; external reference links are not counted.
+  const yearCounts = useMemo(() => {
+    const result: Record<string, number> = {};
+    for (const photo of photos) if (photo.date) {
+      const y = photo.date.slice(0, 4);
+      result[y] = (result[y] ?? 0) + 1;
+    }
+    return result;
+  }, [photos]);
+  const latestRegisteredDate = useMemo(() => photos.reduce<string | null>((latest, photo) =>
+    photo.date && (!latest || photo.date > latest) ? photo.date : latest, null), [photos]);
   const months = useMemo(() => [...new Set(photos.flatMap((photo) => photo.date && (year === 'all' || photo.year === year) ? [photo.date.slice(5, 7)] : []))].sort(), [photos, year]);
   const albums = useMemo(() => [...new Set(photos.map((photo) => photo.album.ko))].sort((a, b) => a.localeCompare(b, 'ko')), [photos]);
   const albumNames = useMemo(() => new Map(photos.map((photo) => [photo.album.ko, albumText(photo.album)])), [photos, language]);
@@ -234,6 +247,32 @@ export function PhotoArchive(_legacyProps?: { objekts?: unknown[]; loading?: boo
       <p className="shion-source-note">{language === 'en' ? 'Curated by @bbangshion' : language === 'ja' ? 'アーカイブ編集 · @bbangshion' : '아카이브 정리 · @bbangshion'}</p>
     </header>
     <RecentPhotoSources />
+    {/* YEONJI_PHOTO_V4 — date chips reflect only real gallery entries */}
+    <div className="yeonji-photo-index" aria-label={language === 'en' ? 'Photo year index' : language === 'ja' ? '写真の年別索引' : '사진 연도별 바로가기'}>
+      <div className="yeonji-photo-index-heading">
+        <span>YEONJI PHOTO INDEX</span>
+        <p>{latestRegisteredDate
+          ? (language === 'en' ? `Latest archived date ${latestRegisteredDate.replace(/-/g, '.')}`
+            : language === 'ja' ? `最新登録日 ${latestRegisteredDate.replace(/-/g, '.')}`
+            : `최근 등록 사진 날짜 ${latestRegisteredDate.replace(/-/g, '.')}`)
+          : (language === 'en' ? 'No dated photos registered yet'
+            : language === 'ja' ? '日付付き写真は未登録'
+            : '날짜가 확인된 사진이 아직 없습니다')}</p>
+      </div>
+      <div className="yeonji-photo-years" role="group" aria-label={language === 'en' ? 'Year' : '연도'}>
+        <button type="button" className={year === 'all' && !recentOnly ? 'is-active' : ''}
+          aria-pressed={year === 'all' && !recentOnly} onClick={() => { setYear('all'); setMonth('all'); setRecentOnly(false); }}>
+          ALL <small>{formatNumber(photos.length)}</small></button>
+        {['2026', '2025', '2024', '2023'].map((y) =>
+          <button type="button" key={y} disabled={!yearCounts[y]} className={year === y && !recentOnly ? 'is-active' : ''}
+            aria-pressed={year === y && !recentOnly} onClick={() => { setYear(y); setMonth('all'); setRecentOnly(false); }}>
+            {y} <small>{formatNumber(yearCounts[y] ?? 0)}</small></button>)}
+      </div>
+      <p className="yeonji-photo-index-hint">{language === 'en'
+        ? 'Counts are registered images, not the number of photos listed in external posts'
+        : language === 'ja' ? '件数は登録済み画像のみを集計し、外部投稿の総数は含みません'
+        : '등록된 사진만 집계하며 외부 게시물의 전체 사진 수는 포함하지 않습니다'}</p>
+    </div>
     <div className="shion-photo-controls">
       <div className="shion-photo-view-tabs" role="group" aria-label={t('사진 보기방식')}>
         <button type="button" className={mode === 'date' ? 'is-active' : ''} aria-pressed={mode === 'date'} onClick={() => setMode('date')}>{t('날짜별')}</button>
@@ -267,7 +306,7 @@ export function PhotoArchive(_legacyProps?: { objekts?: unknown[]; loading?: boo
     </div>
     <>
     {isLoading ? <div role="status" className="shion-photo-empty">{t('사진을 불러오는 중')}</div> : filtered.length === 0 ?
-      <div className="shion-photo-empty">{t('조건에 맞는 사진이 없습니다')}</div> : <>
+      <div className="shion-photo-empty">{year === '2026' && !yearCounts['2026'] ? (language === 'en' ? 'No verified 2026 photos are registered yet' : language === 'ja' ? '2026年の確認済み写真はまだ登録されていません' : '2026년 등록 사진이 아직 없습니다') : t('조건에 맞는 사진이 없습니다')}</div> : <>
         {groups.map(([key, list]) => <section className="shion-photo-group" key={`${mode}-${key}`} aria-label={groupLabel(key)}>
           <div className="shion-photo-group-head"><h2>{groupLabel(key)}</h2><span>{formatNumber(list.length)} {t('장')}</span></div>
           <div className="shion-photo-grid">{list.map((photo) =>

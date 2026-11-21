@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "4.0",
+  "memberId": "S12",
+  "before": {
+    "registeredS12": 421,
+    "registeredDated": 87,
+    "year": "2026",
+    "yearCount": 0,
+    "latestDate": null,
+    "monthlyCounts": {}
+  },
+  "after": {
+    "registeredS12": 421,
+    "registeredDated": 87,
+    "year": "2026",
+    "yearCount": 0,
+    "latestDate": null,
+    "monthlyCounts": {}
+  },
+  "changes": {
+    "submitted": 0,
+    "approved": 0,
+    "rejected": 0,
+    "duplicates": 0,
+    "added": 0
+  },
+  "referenceCollections": 4,
+  "warnings": [
+    "External collection references are not individual photo entries",
+    "Fandom or Instagram links alone do not prove image ownership or permission",
+    "No photos are downloaded or created; only manually approved candidate image URLs are merged",
+    "No verified 2026 photos have been registered; update requires approved image entries"
+  ],
+  "issues": []
+}

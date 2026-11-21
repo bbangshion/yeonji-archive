@@ -1,0 +1,14 @@
+/* YEONJI PHOTO V4 — minimal editorial date navigation */
+.yeonji-photo-index{border-block:1px solid rgba(181,197,255,.17);padding:19px 0 14px;margin:10px 0 24px;color:#f3f5fc}
+.yeonji-photo-index-heading{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px 14px;margin-bottom:15px}
+.yeonji-photo-index-heading>span{font-size:10px;font-weight:650;letter-spacing:.17em;color:#aab9f5}
+.yeonji-photo-index-heading p{margin:0;font-size:11px;color:#a1a8b9;font-variant-numeric:tabular-nums}
+.yeonji-photo-years{display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin;padding:1px 1px 6px;-webkit-overflow-scrolling:touch}
+.yeonji-photo-years button{white-space:nowrap;display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid rgba(170,188,244,.25);border-radius:3px;background:#151824;color:#dde2f2;font-size:12px;line-height:1.2;padding:10px 12px;min-width:86px;cursor:pointer;font-variant-numeric:tabular-nums;transition:background .16s ease,border-color .16s ease}
+.yeonji-photo-years button small{font-size:10px;color:#a4b0d0}
+.yeonji-photo-years button.is-active{border-color:#7995fb;background:#243153;color:#fff}
+.yeonji-photo-years button:disabled{opacity:.35;cursor:not-allowed}
+.yeonji-photo-years button:focus-visible{outline:2px solid #a9bbff;outline-offset:2px}
+.yeonji-photo-index-hint{color:#7c859b;font-size:10px;line-height:1.6;margin:6px 0 0}
+@media(max-width:540px){.yeonji-photo-index{margin:5px 0 18px}.yeonji-photo-index-heading{display:block}.yeonji-photo-index-heading p{margin-top:6px}.yeonji-photo-years button{min-width:79px;gap:8px;padding:9px 10px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){.yeonji-photo-years button{transition:none}}

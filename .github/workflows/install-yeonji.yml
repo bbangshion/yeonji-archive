@@ -24,9 +24,13 @@ jobs:
           node scripts/sync-wav-s12.mjs --self-test
           node scripts/import-yeonji-fandom.mjs --self-test
           node scripts/audit-yeonji.mjs --ci
-      - name: Commit migration and remove this one-time installer
+      - name: Commit migration without changing GitHub workflow files
         run: |
-          rm -f YEONJI_INSTALL.mjs .github/workflows/install-yeonji.yml
+          # GitHub Actions GITHUB_TOKEN cannot create, update, or delete workflow files.
+          # Preserve workflows already committed by the repository owner.
+          git restore --source=HEAD --staged --worktree -- .github/workflows/
+          git clean -fd -- .github/workflows/
+          rm -f YEONJI_INSTALL.mjs
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A

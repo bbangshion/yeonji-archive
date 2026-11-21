@@ -69,12 +69,13 @@
   #source-link[hidden]{display:none;}
   @media(max-width:750px){.shell{width:calc(100% - 30px)}.top{height:70px}.hero{padding:52px 0 29px}.intro{display:block}.intro #total{display:block;margin-top:20px}.filters{padding-top:14px}.controls{width:100%}.controls select{flex:0 0 95px}.controls input{flex:1;width:120px;min-width:0}.gallery{columns:2;column-gap:11px}.card{margin-bottom:16px}.meta{display:block}.credit{display:block;margin-top:4px}.dialog{height:min(95dvh,950px)}.dialog-head{padding:11px 12px}.detail{padding:11px 12px}.caption{font-size:11px}}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.open-photo img{transition:none}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
 </style>
 </head>
 <body>
 <header><div class="shell top">
   <a href="../" class="brand" aria-label="YEONJI ARCHIVE 홈"><span class="brand-mark" aria-hidden="true">Y</span>YEONJI ARCHIVE</a>
-  <a class="back" href="../">← BACK TO ARCHIVE</a>
+  <a class="back" href="../#photos">← PHOTO</a>
 </div></header>
 <main class="shell">
 <section class="hero" aria-labelledby="page-title">
@@ -118,9 +119,9 @@
   const imageURL = x => typeof x === 'string' && !/^\s*(data:|javascript:|\/\/)/i.test(x) ? safeURL(x) : '';
   const sourceKind = p => {
     const s = String(p.source || '').toLowerCase();
-    if (/official|modhaus|concept/.test(s)) return 'official';
-    if (/instagram|sns|twitter|x\.com/.test(s)) return 'sns';
-    if (/stage|fancam|concert|music|broadcast/.test(s)) return 'stage';
+    if (/official|modhaus|concept|공식|콘셉트|화보/.test(s)) return 'official';
+    if (/instagram|sns|twitter|x\.com|인스타|트위터/.test(s)) return 'sns';
+    if (/stage|fancam|concert|music|broadcast|무대|직캠|공연/.test(s)) return 'stage';
     return 'other';
   };
   function renderRows() {
@@ -141,7 +142,7 @@
       const kind = document.createElement('span');kind.className='tag';kind.textContent=sourceKind(p).toUpperCase();opener.append(kind);
       opener.addEventListener('click', () => showModal(index));card.append(opener);
       const meta=document.createElement('div');meta.className='meta';
-      const date=document.createElement('span');date.className='date';date.textContent=dateDisplay(p.date);
+      const date=document.createElement('span');date.className='date';date.textContent=(p.date ? dateDisplay(p.date) : p.year ? `${p.year} · 날짜 미확인` : '날짜 미확인');
       const credit=document.createElement('span');credit.className='credit';credit.textContent='빵시온';
       meta.append(date,credit);card.append(meta);
       const title=document.createElement('p');title.className='caption';title.textContent=p.title || '곽연지';card.append(title);
@@ -157,7 +158,7 @@
   function applyFilters() {
     const year = $('#year').value, q = $('#search').value.trim().toLowerCase();
     filtered = photos.filter(p => (chosen === 'all' || sourceKind(p) === chosen)
-      && (year === 'all' || String(p.date || '').startsWith(year))
+      && (year === 'all' || p.year === year)
       && (!q || [p.title, p.date, p.source, ...(p.tags||[])].join(' ').toLowerCase().includes(q)));
     gallery.replaceChildren();shown=0;renderRows();
   }
@@ -167,8 +168,8 @@
     const p = filtered[index];openIndex=index;
     $('#full-img').src = imageURL(p.image);$('#full-img').alt = p.title || '곽연지 사진';
     $('#detail-title').textContent = p.title || '곽연지';
-    $('#detail-info').textContent = `${dateDisplay(p.date)} · ${p.originalCreator ? `원본: ${p.originalCreator} · ` : ''}아카이브: 빵시온`;
-    const a=$('#source-link');const href = safeURL(p.sourceUrl);
+    $('#detail-info').textContent = `${(p.date ? dateDisplay(p.date) : p.year ? `${p.year} · 날짜 미확인` : '날짜 미확인')} · ${p.originalCreator ? `원본: ${p.originalCreator} · ` : ''}아카이브: 빵시온`;
+    const a=$('#source-link');const href = p.sourceUrl ? safeURL(p.sourceUrl) : '';
     a.hidden=!href; if (href) a.href=href; else a.removeAttribute('href');
     $('#modal').hidden=false;document.body.style.overflow='hidden';$('#close').focus();
   }
@@ -192,19 +193,71 @@
     if (e.key === 'ArrowRight' && filtered.length) showModal((openIndex + 1) % filtered.length);
     if (e.key === 'Tab') { const focusables=[...$('#modal').querySelectorAll('button,a[href]')].filter(x => !x.hidden);let i=focusables.indexOf(document.activeElement);e.preventDefault();focusables[(i+(e.shiftKey?-1:1)+focusables.length)%focusables.length].focus(); }
   });
+  // YEONJI_UNIFIED_GALLERY_V1
+  const label = x => typeof x === 'string' ? x.trim() : x && typeof x === 'object' ? (x.ko || x.en || x.ja || '') : '';
+  function absoluteImage(value, base) {
+    if (typeof value !== 'string' || !value.trim()) return '';
+    try { const u = new URL(value, base); return ['http:', 'https:'].includes(u.protocol) && !u.username && !u.password ? u.href : ''; } catch { return ''; }
+  }
+  function dateValue(x) {
+    if (typeof x !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(x)) return '';
+    const d = new Date(x+'T00:00:00Z');
+    return Number.isFinite(d.valueOf()) && d.toISOString().slice(0,10) === x ? x : '';
+  }
+  function normalizedRows(payload, gallerySource, pageURL = window.location.href) {
+    const rows = Array.isArray(payload) ? payload : payload?.photos;
+    if (!Array.isArray(rows)) throw new Error('Invalid photo list');
+    const base = new URL(gallerySource ? './' : '../', pageURL);
+    return rows.flatMap(p => {
+      if (!p || typeof p !== 'object' || (p.memberId && p.memberId !== 'S12') || (p.category && String(p.category).toLowerCase() !== 'photo') || (p.type && String(p.type).toLowerCase() !== 'photo')) return [];
+      const status = String(p.status || '').toLowerCase();
+      if (gallerySource ? status !== 'approved' : (status && !['approved','published','verified'].includes(status))) return [];
+      if (p.approved === false) return [];
+      const image = absoluteImage(p.image,base);
+      if (!image || /(?:^|\/)objekt(?:-collection)?\//i.test(new URL(image).pathname)) return [];
+      const sourceUrl = [p.sourceUrl,p.source].find(x => typeof x === 'string' && /^https?:\/\//i.test(x)) || '';
+      const date = dateValue(p.date);
+      const year = date ? date.slice(0,4) : /^20\d{2}$/.test(String(p.sourceYear || p.year || '')) ? String(p.sourceYear || p.year) : '';
+      const thumb = absoluteImage(p.thumb || p.thumbnail,base) || image;
+      return [{id:String(p.id || image), image, thumb, date, year, sourceUrl,
+        source:[label(p.source),label(p.album),sourceUrl,Array.isArray(p.tags)?p.tags.join(' '):''].filter(Boolean).join(' '),
+        originalCreator:label(p.originalCreator || p.author), title:label(p.title) || '곽연지',
+        tags:Array.isArray(p.tags)?p.tags.filter(t=>typeof t==='string'):[],
+        sha256:typeof p.sha256==='string' && /^[a-f0-9]{64}$/i.test(p.sha256)?p.sha256.toLowerCase():'',
+        width:Number(p.width)||0,height:Number(p.height)||0}];
+    });
+  }
+  function mergeRows(rows) {
+    const byKey = new Map(), result=[];
+    const keyFor = p => { const u=new URL(p.image);u.hash='';return ['id:'+p.id,'url:'+u.href,...(p.sha256?['hash:'+p.sha256]:[])]; };
+    for (const p of rows) {
+      const keys=keyFor(p), old=keys.map(k=>byKey.get(k)).find(Boolean);
+      if (old) {
+        for (const field of ['date','year','sourceUrl','originalCreator','sha256','width','height']) if (!old[field] && p[field]) old[field]=p[field];
+        if (old.thumb === old.image && p.thumb !== p.image) old.thumb=p.thumb;
+        old.tags=[...new Set([...old.tags,...p.tags])];
+        keys.forEach(k=>byKey.set(k,old));
+      } else { result.push(p); keys.forEach(k=>byKey.set(k,p)); }
+    }
+    return result.sort((a,b)=>(b.date || b.year || '').localeCompare(a.date || a.year || '') || a.id.localeCompare(b.id));
+  }
   async function start() {
+    const sources=[['./gallery_data.json',true],['../data/photos.json',false]];
+    const results=await Promise.allSettled(sources.map(async ([url,kind])=>{
+      const response=await fetch(url,{cache:'no-cache'});
+      if(!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
+      return normalizedRows(await response.json(),kind);
+    }));
     try {
-      const response = await fetch('./gallery_data.json', {cache:'no-store'});
-      if(!response.ok) throw new Error(`HTTP ${response.status}`);
-      const data = await response.json();
-      const all = Array.isArray(data) ? data : data.photos;
-      if (!Array.isArray(all)) throw new Error('JSON 형식을 확인해 주세요');
-      photos=all.filter(p => p && p.status === 'approved' && imageURL(p.image))
-        .sort((a,b) => String(b.date||'').localeCompare(String(a.date||'')) || String(a.id).localeCompare(String(b.id)));
-      const years=[...new Set(photos.map(p => String(p.date||'').slice(0,4)).filter(x=>/^\d{4}$/.test(x)))].sort().reverse();
+      if(results.every(r=>r.status==='rejected')) throw new Error('Both photo sources failed');
+      photos=mergeRows(results.flatMap(r=>r.status==='fulfilled'?r.value:[]));
+      const years=[...new Set(photos.map(p=>p.year).filter(Boolean))].sort().reverse();
       years.forEach(y=>{const o=document.createElement('option');o.value=y;o.textContent=y;$('#year').append(o);});
       applyFilters();
-    } catch(error){console.error(error);$('#total').textContent='LOAD ERROR';empty.hidden=false;empty.textContent='사진 데이터를 불러오지 못했습니다. gallery_data.json 경로를 확인해 주세요';}
+      if(results.some(r=>r.status==='rejected')) {
+        const note=document.createElement('p');note.setAttribute('role','status');note.textContent='일부 사진 목록을 불러오지 못했습니다';note.style.color='var(--sub)';note.style.fontSize='12px';gallery.before(note);
+      }
+    } catch(error){console.error(error);$('#total').textContent='LOAD ERROR';empty.hidden=false;empty.textContent='사진 데이터를 불러오지 못했습니다';}
   }
   start();
 })();

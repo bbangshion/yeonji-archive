@@ -246,6 +246,11 @@ export function PhotoArchive(_legacyProps?: { objekts?: unknown[]; loading?: boo
       <p>{t('곽연지의 사진을 날짜와 앨범별로 정리했습니다')}</p>
       <p className="shion-source-note">{language === 'en' ? 'Curated by @bbangshion' : language === 'ja' ? 'アーカイブ編集 · @bbangshion' : '아카이브 정리 · @bbangshion'}</p>
     </header>
+    {/* YEONJI_GALLERY_LINK_V2 */}
+    <a href={`${import.meta.env.BASE_URL}gallery/index.html`} style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:12,boxSizing:'border-box',width:'100%',padding:'14px 16px',margin:'0 0 20px',minHeight:62,border:'1px solid #6578b5',background:'rgba(89,116,255,0.09)',borderRadius:6,color:'inherit',textDecoration:'none'}}>
+      <span style={{display:'grid',gap:5}}><span style={{fontSize:10,letterSpacing:'0.16em',color:'inherit'}}>YEONJI GALLERY</span><strong style={{fontSize:16,fontWeight:600}}>{language === 'en' ? 'Photo gallery' : language === 'ja' ? '写真ギャラリー' : '종합 사진 전시관'}</strong></span>
+      <span aria-hidden="true" style={{fontSize:22}}>↗</span>
+    </a>
     <RecentPhotoSources />
     {/* YEONJI_PHOTO_V4 — date chips reflect only real gallery entries */}
     <div className="yeonji-photo-index" aria-label={language === 'en' ? 'Photo year index' : language === 'ja' ? '写真の年別索引' : '사진 연도별 바로가기'}>

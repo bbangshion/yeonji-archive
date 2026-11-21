@@ -1,0 +1,166 @@
+name: Approve YEONJI FILM pending videos (bulk)
+
+on:
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: 'all_pending = all pending candidates; direct_name = only exact Kwak YeonJi matches'
+        type: choice
+        required: true
+        default: all_pending
+        options:
+          - all_pending
+          - direct_name
+      confirm:
+        description: 'Type APPROVE_ALL after reviewing candidate list (may include unrelated videos)'
+        type: string
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: yeonji-youtube-hashtag-review
+  cancel-in-progress: false
+
+jobs:
+  approve-candidates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+
+      - name: Bulk approve pending candidates only
+        shell: bash
+        env:
+          APPROVAL_SCOPE: ${{ inputs.scope }}
+          CONFIRM: ${{ inputs.confirm }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import re
+          import sys
+          from pathlib import Path
+
+          QUEUE = Path('reports/yeonji-youtube-hashtag-review.json')
+          FILMS = Path('public/data/films.json')
+          VIDEO_ID = re.compile(r'^[A-Za-z0-9_-]{11}$')
+          scope = os.getenv('APPROVAL_SCOPE', '')
+          confirm = os.getenv('CONFIRM', '')
+          if confirm != 'APPROVE_ALL':
+              sys.exit('Approval not applied. Type APPROVE_ALL exactly in confirm field.')
+          if scope not in {'all_pending', 'direct_name'}:
+              sys.exit('Invalid scope. No changes made.')
+          if not QUEUE.is_file():
+              sys.exit('Review file missing: reports/yeonji-youtube-hashtag-review.json. Run scan_history first and confirm it was saved.')
+          if not FILMS.is_file():
+              sys.exit('Published film catalog missing: public/data/films.json. No changes made.')
+
+          queue = json.loads(QUEUE.read_text(encoding='utf-8'))
+          catalog = json.loads(FILMS.read_text(encoding='utf-8'))
+          if not isinstance(queue, dict) or not isinstance(queue.get('candidates'), list):
+              sys.exit('Invalid review JSON. No changes made.')
+          if isinstance(catalog, list):
+              films = catalog
+          elif isinstance(catalog, dict) and isinstance(catalog.get('items'), list):
+              films = catalog['items']
+          elif isinstance(catalog, dict) and isinstance(catalog.get('videos'), list):
+              films = catalog['videos']
+          else:
+              sys.exit('Invalid films.json structure. No changes made.')
+
+          def get_id(x):
+              if not isinstance(x, dict):
+                  return None
+              for k in ('youtubeId','videoId','id'):
+                  v = x.get(k)
+                  if isinstance(v, str) and VIDEO_ID.fullmatch(v):
+                      return v
+              return None
+
+          existing = {v for row in films if (v := get_id(row))}
+          candidates = queue['candidates']
+          selected = []
+          seen = set()
+          skipped_invalid = 0
+          for row in candidates:
+              if not isinstance(row, dict) or row.get('status') != 'pending':
+                  continue
+              if scope == 'direct_name' and row.get('match') != 'direct-name':
+                  continue
+              vid = get_id(row)
+              if not vid or vid in seen or not isinstance(row.get('title'), str) or not row['title'].strip():
+                  skipped_invalid += 1
+                  continue
+              seen.add(vid)
+              selected.append(row)
+          if len(selected) > 3000:
+              sys.exit(f'Safety limit exceeded: {len(selected)} candidates. Review the queue first.')
+          if not selected:
+              print('No pending candidates to approve for this scope. Catalog unchanged.')
+              with open(os.getenv('GITHUB_STEP_SUMMARY', '/dev/null'), 'a', encoding='utf-8') as out:
+                  out.write('### YEONJI FILM bulk approval\nNo matching pending videos. No changes made.\n')
+              sys.exit(0)
+
+          actor = os.getenv('GITHUB_ACTOR', 'bulk-user')
+          added = 0
+          already_existing = 0
+          for row in selected:
+              vid = get_id(row)
+              if vid not in existing:
+                  films.append({
+                      'youtubeId': vid,
+                      'title': row['title'].strip()[:190],
+                      'publishedAt': row.get('publishedAt'),
+                      'memberIds': ['S12'],
+                      # Current viewer requires verified=true for a visible/published item.
+                      # Bulk approval is not proof of actual on-screen appearance.
+                      'verified': True,
+                      'individualAppearanceVerified': False,
+                      'approvalMethod': 'bulk-user-approval',
+                      'category': row.get('category') or 'other',
+                      'kind': row.get('kind') or 'other',
+                      'group': row.get('group') or 'tripleS',
+                      'scope': row.get('scope') or 'group',
+                      'publisher': row.get('publisher') or 'fan',
+                      'source': row.get('channelTitle') or 'YouTube',
+                      'song': '',
+                      'note': '일괄 게시 승인 · 실제 출연 여부 개별 검증 전',
+                  })
+                  existing.add(vid)
+                  added += 1
+              else:
+                  already_existing += 1
+              row['status'] = 'approved'
+              row['reviewedBy'] = actor
+              row['reviewMethod'] = 'bulk-user-approval'
+              row['appearanceVerified'] = False
+
+          films.sort(key=lambda x: (str(x.get('publishedAt') or ''), str(get_id(x) or '')), reverse=True)
+          # Write only after the entire queue has been validated.
+          QUEUE.write_text(json.dumps(queue, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          FILMS.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          print(f'Approved: {len(selected)} | Newly published: {added} | Already existed: {already_existing} | Skipped invalid: {skipped_invalid}')
+          with open(os.getenv('GITHUB_STEP_SUMMARY', '/dev/null'), 'a', encoding='utf-8') as out:
+              out.write('### YEONJI FILM bulk approval\n')
+              out.write(f'- Scope: `{scope}`\n- Pending selected: **{len(selected)}**\n- Newly added to films.json: **{added}**\n- Already in films.json: **{already_existing}**\n- Skipped invalid candidates: **{skipped_invalid}**\n')
+              out.write('- ⚠️ Bulk-approved videos were **not individually verified** for actual on-screen appearance. Review unwanted videos after publishing.\n')
+          PY
+
+      - name: Commit only video catalog and review queue
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- public/data/films.json reports/yeonji-youtube-hashtag-review.json
+          if git diff --cached --quiet; then
+            echo 'No changes to publish'
+          else
+            git commit -m 'data: bulk approve pending YeonJi video candidates'
+            git push origin HEAD:main
+          fi

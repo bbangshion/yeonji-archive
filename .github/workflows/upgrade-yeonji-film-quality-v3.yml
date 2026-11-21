@@ -1,0 +1,169 @@
+name: YEONJI FILM V3 - Quality and review UI
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: yeonji-film-quality-v3
+  cancel-in-progress: false
+jobs:
+  improve-films:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Update FILM UI and audit without modifying video data
+        shell: bash
+        run: |
+          mkdir -p /tmp/yeonji-film-quality-v3
+          cat > /tmp/yeonji-film-quality-v3/apply.py <<'PY'
+          #!/usr/bin/env python3
+          """Quality-only YEONJI FILM patch. Does not edit films.json, collections, or workflows."""
+          from pathlib import Path
+          import re, json, hashlib, datetime
+
+          jsx_path=Path('src/components/YeonjiFilm.tsx')
+          css_path=Path('src/components/yeonji-film.css')
+          films_path=Path('public/data/films.json')
+          for p in (jsx_path, css_path, films_path):
+              if not p.is_file():
+                  raise SystemExit(f'Missing required file: {p}; no file modified')
+
+          jsx=jsx_path.read_text(encoding='utf-8')
+          css=css_path.read_text(encoding='utf-8')
+
+          helper=r"""
+          /* Film quality v3 — title-only hints; never substitute for manual attendance checks */
+          const YEONJI_TITLE_MARKER = /곽\s*연지|#?연지|kwak[\s._-]*yeon[\s._-]*ji|yeon[\s._-]*ji/i;
+          const OTHER_MEMBER_IN_TITLE = /공유빈|김유연|김나경|정혜린|이지우|윤서연|김수민|김채연|김채원|정하연|박시온|김수민|김주빈|코토네|서다현|신위|니엔|마유|설린/i;
+          function filmNeedsReview(video: Film): boolean {
+            const direct = YEONJI_TITLE_MARKER.test(video.title);
+            // A group title may still contain YeonJi; only mark ambiguous solo metadata for review.
+            return !direct || (video.scope === 'solo' && OTHER_MEMBER_IN_TITLE.test(video.title));
+          }
+          function filmBadgeText(video: Film): string {
+            const title = video.title;
+            if (/(?:#shorts|\bshorts\b|쇼츠)/i.test(title)) return 'SHORTS';
+            if (video.kind === 'fancam' || /(?:직캠|fancam|focus\s*cam|최애직캠|입덕직캠|페이스캠)/i.test(title)) return 'FANCAM';
+            if (video.kind === 'signal' || /(?:\bsignal\b|시그널)/i.test(title)) return 'SIGNAL';
+            if (video.kind === 'dance' || /(?:dance\s*practice|안무\s*영상|안무\s*연습)/i.test(title)) return 'PRACTICE';
+            if (video.kind === 'mv' || /(?:official\s*(?:mv|music\s*video)|\bm\/v\b|뮤직비디오)/i.test(title)) return 'MV';
+            if (video.kind === 'behind' || /(?:behind|비하인드|making\s*film)/i.test(title)) return 'BEHIND';
+            if (video.kind === 'live' || /(?:\blivestream\b|\blive\b|라이브)/i.test(title)) return 'LIVE';
+            return 'VIDEO';
+          }
+          """
+
+          if '/* Film quality v3' not in jsx:
+              targets=[
+                ("type FilmFilter = 'all' |", "type FilmFilter = 'all' | 'review' |"),
+                ("{ id: 'all', label: '전체' },", "{ id: 'all', label: '전체' }, { id: 'review', label: '검토 필요' },"),
+                ('function FilmImage({video}: {video:Film}) {', helper+'\nfunction FilmImage({video}: {video:Film}) {'),
+                ("{video.kind === 'fancam' ? 'FANCAM' : video.kind === 'mv' ? 'MV' : video.kind === 'dance' ? 'PRACTICE' : video.kind === 'signal' ? 'SIGNAL' : video.kind === 'behind' ? 'BEHIND' : 'VIDEO'}", "{filmBadgeText(video)}"),
+                ('className="yfilm-card-main" type="button" onClick={onPlay}', 'className="yfilm-card-main" type="button" title={video.title} onClick={onPlay}'),
+                ('<strong>{t(video.title)}</strong>', '<strong>{t(video.title)}</strong>{filmNeedsReview(video) && <span className="yfilm-review-flag">제목 기준 확인 필요</span>}'),
+                ("(filter==='all'||filter==='saved'&&", "(filter==='all'||filter==='review'&&filmNeedsReview(f)||filter==='saved'&&"),
+                ("{t('출처 및 연지 출연을 확인한 영상만 공개합니다.')}", "{t('일괄 등록 영상 포함 · 출연 여부는 순차 검수 중') + ` · 제목 검토 ${formatNumber(films.filter(f=>filmNeedsReview(f)).length)}건`}"),
+                ("{t('공식 SIGNAL·라이브·비하인드는 연지 출연을 확인한 뒤 공개합니다. 신규 영상 후보는 별도 검토 목록에 보관하며 자동으로 게시하지 않습니다. 원본 영상을 재업로드하지 않습니다.')}", "{t('일부 영상은 검색 결과를 바탕으로 일괄 등록되었습니다. 제목에 연지가 등장해도 실제 출연을 보증하지 않습니다. 검토 필요 필터는 제목 기준 자동 분류이며, 모든 영상의 출연 여부는 개별 검수가 필요합니다. 원본 영상은 YouTube에서 재생합니다.')}")
+              ]
+              for old,new in targets:
+                  count=jsx.count(old)
+                  if count!=1:
+                      raise SystemExit(f'Patch stopped: JSX anchor not unique or missing ({count}): {old[:100]}')
+              for old,new in targets:
+                  jsx=jsx.replace(old,new,1)
+
+          css_tag='/* YEONJI FILM QUALITY V3: readable card titles / review label */'
+          if css_tag not in css:
+              css+='\n'+css_tag+"""\n.yfilm-card-info strong { -webkit-line-clamp: 3; min-height: 63px; overflow-wrap: anywhere; }
+          .yfilm-review-flag { justify-self:start; width:fit-content; border:1px solid rgba(166,183,255,.32); padding:2px 6px; color:#b8c7ff; background:rgba(42,55,94,.16); font-size:10px; line-height:1.5; }
+          .yfilm-review-flag::before { content:"◦ "; }
+          @media(max-width:560px) { .yfilm-card-info strong { -webkit-line-clamp: 3; min-height:54px; overflow-wrap:anywhere; } .yfilm-review-flag { font-size:9px; } .yfilm-results { align-items:start; } }
+          """
+
+          # Only after all text edits pass, write modified UI files.
+          jsx_path.write_text(jsx,encoding='utf-8')
+          css_path.write_text(css,encoding='utf-8')
+
+          # Generate a review report from the *actual current catalogue*, without deleting or modifying items.
+          obj=json.loads(films_path.read_text(encoding='utf-8'))
+          if isinstance(obj,list): rows=obj
+          elif isinstance(obj,dict) and isinstance(obj.get('items'),list): rows=obj['items']
+          elif isinstance(obj,dict) and isinstance(obj.get('videos'),list): rows=obj['videos']
+          else: raise SystemExit('Unrecognized films.json payload; UI changed locally but no git commit will run')
+          name_re=re.compile(r'곽\s*연지|#?연지|kwak[\s._-]*yeon[\s._-]*ji|yeon[\s._-]*ji',re.I)
+          other_re=re.compile(r'공유빈|김유연|김나경|정혜린|이지우|윤서연|김수민|김채연|김채원|정하연|박시온|김주빈|코토네|서다현|신위|니엔|마유|설린',re.I)
+          id_re=re.compile(r'^[a-zA-Z0-9_-]{11}$')
+          seen=set(); duplicate=[]; missing_title=[]; no_direct=[]; solo_mixed=[]; dates_missing=[]; kind_other=[]; unique=[]
+          for row in rows:
+              if not isinstance(row,dict):continue
+              vid=next((row.get(k) for k in ('youtubeId','videoId','id') if isinstance(row.get(k),str) and id_re.fullmatch(row.get(k))),None)
+              if not vid:continue
+              if vid in seen:
+                  duplicate.append(vid);continue
+              seen.add(vid)
+              unique.append(row)
+              title=row.get('title','') if isinstance(row.get('title'),str) else ''
+              r={'id':vid,'title':title[:160],'source':row.get('source',row.get('channel','')),'publishedAt':row.get('publishedAt')}
+              if not title.strip():missing_title.append(r)
+              if not name_re.search(title):no_direct.append(r)
+              if row.get('scope')=='solo' and other_re.search(title):solo_mixed.append(r)
+              if not row.get('publishedAt'):dates_missing.append(r)
+              if row.get('kind') in (None,'','other'):kind_other.append(r)
+
+          report={
+              'updatedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              'explanation':'제목·메타데이터 기반 자동 분류이며 실제 영상 출연 여부 검증 결과가 아닙니다',
+              'summary':{
+                'catalogRows':len(rows),'uniqueYoutubeIds':len(unique),'duplicateYoutubeIds':len(duplicate),
+                'withoutYeonjiNameInTitle':len(no_direct),'soloScopeWithOtherMemberNames':len(solo_mixed),
+                'missingPublishedAt':len(dates_missing),'missingTitle':len(missing_title),'kindOtherOrMissing':len(kind_other),
+              },
+              'queues':{
+                'withoutYeonjiNameInTitle':no_direct,
+                'soloScopeWithOtherMemberNames':solo_mixed,
+                'missingPublishedAt':dates_missing,
+                'kindOtherOrMissing':kind_other,
+                'duplicateYoutubeIds':duplicate,
+              },
+          }
+          report_dir=Path('reports');report_dir.mkdir(exist_ok=True)
+          (report_dir/'yeonji-film-quality-audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          summary=report['summary']
+          md='# YEONJI FILM · 영상 품질 점검\n\n'+'\n'.join(f'- {k}: **{v}**' for k,v in summary.items())+'\n\n> 제목·메타데이터만 검사했습니다. 실제 출연 여부는 각 원본 영상을 열어 확인해야 합니다. 기존 438개 영상 데이터는 변경하지 않았습니다.\n'
+          (report_dir/'yeonji-film-quality-audit.md').write_text(md,encoding='utf-8')
+          print('YEONJI FILM V3 patch + non-destructive audit complete')
+          print(json.dumps(summary,ensure_ascii=False,indent=2))
+          PY
+          python3 /tmp/yeonji-film-quality-v3/apply.py
+      - name: Prepare Node.js (no npm cache needed)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build test
+        shell: bash
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci --no-audit --no-fund
+          else
+            npm install --no-audit --no-fund
+          fi
+          npm run build
+      - name: Commit only film UI and audit reports
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/components/YeonjiFilm.tsx src/components/yeonji-film.css \
+            reports/yeonji-film-quality-audit.json reports/yeonji-film-quality-audit.md
+          if git diff --cached --quiet; then
+            echo 'No changes required'
+          else
+            git commit -m 'ui(film): improve cards and flag review candidates; audit titles'
+            git push origin HEAD:main
+          fi
+          echo 'Film data untouched; source and workflow files untouched.'

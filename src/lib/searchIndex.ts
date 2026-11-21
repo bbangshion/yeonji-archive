@@ -44,7 +44,8 @@ export function indexPhotos(payload: unknown): SearchEntry[] {
     if (typeof row.category === 'string' && row.category.toLowerCase() !== 'photo') continue;
     if (typeof row.type === 'string' && row.type.toLowerCase() !== 'photo') continue;
     const id = rawText(row.id);
-    const rawImage = rawText(row.image);
+    // Use a small thumbnail for search cards; full-resolution original stays in PhotoArchive.
+    const rawImage = rawText(row.thumbnail) || rawText(row.image);
     if (!id || !rawImage || seen.has(id)) continue;
     if (/(^|\/)objekt(?:-collection)?\//i.test(rawImage)) continue;
     let image: string | null = null;
@@ -57,17 +58,16 @@ export function indexPhotos(payload: unknown): SearchEntry[] {
     seen.add(id);
     const title = langText(row.title, '곽연지');
     const album = langText(row.album, '사진');
-    // SNS Archive is the legacy album label; the gallery displays 빵연지.
-    if (/^SNS\s*(아카이브|Archive|アーカイブ)$/i.test(album.ko)) {
-      album.ko = '빵연지'; album.en = 'bbangshion'; album.ja = '빵연지';
-    }
+    // Normalize only legacy curator text, without altering real photo categories.
+    for (const locale of ['ko','en','ja'] as const) album[locale] = album[locale].replace(/빵연지/g, '빵시온');
     const date = /^\d{4}-\d\d-\d\d$/.test(rawText(row.date)) ? rawText(row.date) : null;
+    const year = date?.slice(0, 4) ?? (/^20\d{2}$/.test(rawText(row.sourceYear)) ? rawText(row.sourceYear) : null);
     const credit = langText(row.credit, '');
     const tags = Array.isArray(row.tags) ? row.tags.filter((x): x is string => typeof x === 'string').slice(0, 20) : [];
     results.push({
       key: `photos:${id}`, id, category: 'photos', title,
-      description: album, image, date, year: date?.slice(0, 4) || null,
-      searchText: normalizeSearchText([id, ...Object.values(title), ...Object.values(album), ...Object.values(credit), ...tags, date, '곽연지', 'S12', 'YeonJi', 'ヨンジ', 'クァク・ヨンジ'].join(' ')),
+      description: album, image, date, year,
+      searchText: normalizeSearchText([id, ...Object.values(title), ...Object.values(album), ...Object.values(credit), ...tags, date, year, '빵시온', '@bbangshion', '곽연지', 'S12', 'YeonJi', 'ヨンジ', 'クァク・ヨンジ'].join(' ')),
     });
   }
   return results;

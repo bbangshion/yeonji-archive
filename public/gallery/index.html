@@ -137,7 +137,7 @@
       if (Number.isFinite(p.width) && Number.isFinite(p.height) && p.width > 0 && p.height > 0) {
         img.width = p.width;img.height = p.height;
       }
-      img.addEventListener('error', () => {img.remove(); const note=document.createElement('div');note.className='image-failed';note.textContent='이미지를 불러오지 못했습니다';opener.append(note);},{once:true});
+      img.addEventListener('error', () => { if (!img.dataset.retry && p.thumb && p.thumb !== p.image) {img.dataset.retry='1';img.src=imageURL(p.image);return;} img.remove();const note=document.createElement('div');note.className='image-failed';note.textContent='이미지를 불러오지 못했습니다';opener.append(note); });
       opener.append(img);
       const kind = document.createElement('span');kind.className='tag';kind.textContent=sourceKind(p).toUpperCase();opener.append(kind);
       opener.addEventListener('click', () => showModal(index));card.append(opener);
@@ -156,7 +156,7 @@
     $('#total').textContent = `${filtered.length.toLocaleString('ko-KR')} PHOTOS`;
   }
   function applyFilters() {
-    const year = $('#year').value, q = $('#search').value.trim().toLowerCase();
+    const year = $('#year').value, q = $('#search').value.trim().toLowerCase().replace(/^#/, '');
     filtered = photos.filter(p => (chosen === 'all' || sourceKind(p) === chosen)
       && (year === 'all' || p.year === year)
       && (!q || [p.title, p.date, p.source, ...(p.tags||[])].join(' ').toLowerCase().includes(q)));
@@ -193,71 +193,38 @@
     if (e.key === 'ArrowRight' && filtered.length) showModal((openIndex + 1) % filtered.length);
     if (e.key === 'Tab') { const focusables=[...$('#modal').querySelectorAll('button,a[href]')].filter(x => !x.hidden);let i=focusables.indexOf(document.activeElement);e.preventDefault();focusables[(i+(e.shiftKey?-1:1)+focusables.length)%focusables.length].focus(); }
   });
-  // YEONJI_UNIFIED_GALLERY_V1
+  // YEONJI_UNIFIED_GALLERY_V2
   const label = x => typeof x === 'string' ? x.trim() : x && typeof x === 'object' ? (x.ko || x.en || x.ja || '') : '';
   function absoluteImage(value, base) {
     if (typeof value !== 'string' || !value.trim()) return '';
-    try { const u = new URL(value, base); return ['http:', 'https:'].includes(u.protocol) && !u.username && !u.password ? u.href : ''; } catch { return ''; }
+    try { const u=new URL(value,base);return ['http:','https:'].includes(u.protocol)&&!u.username&&!u.password?u.href:''; } catch {return '';}
   }
-  function dateValue(x) {
-    if (typeof x !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(x)) return '';
-    const d = new Date(x+'T00:00:00Z');
-    return Number.isFinite(d.valueOf()) && d.toISOString().slice(0,10) === x ? x : '';
-  }
-  function normalizedRows(payload, gallerySource, pageURL = window.location.href) {
-    const rows = Array.isArray(payload) ? payload : payload?.photos;
-    if (!Array.isArray(rows)) throw new Error('Invalid photo list');
-    const base = new URL(gallerySource ? './' : '../', pageURL);
-    return rows.flatMap(p => {
-      if (!p || typeof p !== 'object' || (p.memberId && p.memberId !== 'S12') || (p.category && String(p.category).toLowerCase() !== 'photo') || (p.type && String(p.type).toLowerCase() !== 'photo')) return [];
-      const status = String(p.status || '').toLowerCase();
-      if (gallerySource ? status !== 'approved' : (status && !['approved','published','verified'].includes(status))) return [];
-      if (p.approved === false) return [];
-      const image = absoluteImage(p.image,base);
-      if (!image || /(?:^|\/)objekt(?:-collection)?\//i.test(new URL(image).pathname)) return [];
-      const sourceUrl = [p.sourceUrl,p.source].find(x => typeof x === 'string' && /^https?:\/\//i.test(x)) || '';
-      const date = dateValue(p.date);
-      const year = date ? date.slice(0,4) : /^20\d{2}$/.test(String(p.sourceYear || p.year || '')) ? String(p.sourceYear || p.year) : '';
-      const thumb = absoluteImage(p.thumb || p.thumbnail,base) || image;
-      return [{id:String(p.id || image), image, thumb, date, year, sourceUrl,
-        source:[label(p.source),label(p.album),sourceUrl,Array.isArray(p.tags)?p.tags.join(' '):''].filter(Boolean).join(' '),
-        originalCreator:label(p.originalCreator || p.author), title:label(p.title) || '곽연지',
-        tags:Array.isArray(p.tags)?p.tags.filter(t=>typeof t==='string'):[],
-        sha256:typeof p.sha256==='string' && /^[a-f0-9]{64}$/i.test(p.sha256)?p.sha256.toLowerCase():'',
-        width:Number(p.width)||0,height:Number(p.height)||0}];
+  function normalizedRows(payload,kind,pageURL=location.href) {
+    const rows=Array.isArray(payload)?payload:payload?.photos;
+    if(!Array.isArray(rows))throw new Error('Invalid photo list');
+    const local=kind==='gallery'||kind==='social';const base=new URL(local?'./':'../',pageURL);
+    return rows.flatMap(p=>{
+      if(!p||typeof p!=='object'||(p.memberId&&p.memberId!=='S12')||(p.category&&String(p.category).toLowerCase()!=='photo')||(p.type&&String(p.type).toLowerCase()!=='photo'))return [];
+      const status=String(p.status||p.reviewStatus||'').toLowerCase();
+      if(p.approved===false|| (local&&status!=='approved') || (!local&&status&&!['approved','published','verified'].includes(status)))return [];
+      const image=absoluteImage(p.image||p.imageUrl||p.src,base);if(!image||/\/(?:objekt|objekt-collection)\//i.test(new URL(image).pathname))return [];
+      const day=typeof p.date==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(p.date)?p.date:'';
+      const year=day?day.slice(0,4):/^20\d{2}$/.test(String(p.sourceYear||p.year||''))?String(p.sourceYear||p.year):'';
+      const sourceUrl=[p.sourceUrl,p.permalink,p.source].find(x=>typeof x==='string'&&/^https?:\/\//i.test(x))||'';
+      return [{id:String(p.id||image),image,thumb:absoluteImage(p.thumb||p.thumbnail||p.thumbnailUrl,base)||image,date:day,year,sourceUrl,source:[label(p.source),label(p.album),p.sourceSection,sourceUrl,Array.isArray(p.tags)?p.tags.join(' '):''].filter(Boolean).join(' '),originalCreator:label(p.originalCreator||p.originalAuthor||p.author),title:label(p.title)||'곽연지',tags:Array.isArray(p.tags)?p.tags.filter(t=>typeof t==='string'):[],sha256:typeof p.sha256==='string'&&/^[a-f0-9]{64}$/i.test(p.sha256)?p.sha256.toLowerCase():'',width:Number(p.width)||0,height:Number(p.height)||0}];
     });
   }
   function mergeRows(rows) {
-    const byKey = new Map(), result=[];
-    const keyFor = p => { const u=new URL(p.image);u.hash='';return ['id:'+p.id,'url:'+u.href,...(p.sha256?['hash:'+p.sha256]:[])]; };
-    for (const p of rows) {
-      const keys=keyFor(p), old=keys.map(k=>byKey.get(k)).find(Boolean);
-      if (old) {
-        for (const field of ['date','year','sourceUrl','originalCreator','sha256','width','height']) if (!old[field] && p[field]) old[field]=p[field];
-        if (old.thumb === old.image && p.thumb !== p.image) old.thumb=p.thumb;
-        old.tags=[...new Set([...old.tags,...p.tags])];
-        keys.forEach(k=>byKey.set(k,old));
-      } else { result.push(p); keys.forEach(k=>byKey.set(k,p)); }
-    }
-    return result.sort((a,b)=>(b.date || b.year || '').localeCompare(a.date || a.year || '') || a.id.localeCompare(b.id));
+    const result=[], keys=new Map();
+    const photoURL = s => {const u=new URL(s);u.hash='';if(/(?:^|\.)wikia\.nocookie\.net$/.test(u.hostname)){u.pathname=u.pathname.replace(/\/revision\/.*$/,'');u.search='';}return u.href;};
+    for(const p of rows){const ids=['id:'+p.id,'url:'+photoURL(p.image),...(p.sha256?['sha:'+p.sha256]:[])];const old=ids.map(k=>keys.get(k)).find(Boolean);if(old){for(const field of ['date','year','sourceUrl','originalCreator','sha256','width','height'])if(!old[field]&&p[field])old[field]=p[field];if(old.thumb===old.image&&p.thumb!==p.image)old.thumb=p.thumb;old.tags=[...new Set([...old.tags,...p.tags])];ids.forEach(k=>keys.set(k,old));}else{result.push(p);ids.forEach(k=>keys.set(k,p));}}
+    return result.sort((a,b)=>(b.date||b.year||'').localeCompare(a.date||a.year||'')||a.id.localeCompare(b.id));
   }
   async function start() {
-    const sources=[['./gallery_data.json',true],['../data/photos.json',false]];
-    const results=await Promise.allSettled(sources.map(async ([url,kind])=>{
-      const response=await fetch(url,{cache:'no-cache'});
-      if(!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
-      return normalizedRows(await response.json(),kind);
-    }));
-    try {
-      if(results.every(r=>r.status==='rejected')) throw new Error('Both photo sources failed');
-      photos=mergeRows(results.flatMap(r=>r.status==='fulfilled'?r.value:[]));
-      const years=[...new Set(photos.map(p=>p.year).filter(Boolean))].sort().reverse();
-      years.forEach(y=>{const o=document.createElement('option');o.value=y;o.textContent=y;$('#year').append(o);});
-      applyFilters();
-      if(results.some(r=>r.status==='rejected')) {
-        const note=document.createElement('p');note.setAttribute('role','status');note.textContent='일부 사진 목록을 불러오지 못했습니다';note.style.color='var(--sub)';note.style.fontSize='12px';gallery.before(note);
-      }
-    } catch(error){console.error(error);$('#total').textContent='LOAD ERROR';empty.hidden=false;empty.textContent='사진 데이터를 불러오지 못했습니다';}
+    const sources=[['./social_photos.json','social'],['./gallery_data.json','gallery'],['../data/photos.json','archive'],['../data/yeonji-sns.json','sns']];
+    const results=await Promise.allSettled(sources.map(async ([url,kind])=>{const r=await fetch(url,{cache:'no-cache'});if(!r.ok)throw new Error(url+' HTTP '+r.status);return normalizedRows(await r.json(),kind);}));
+    try{if(results.every(r=>r.status==='rejected'))throw new Error('Photo lists unavailable');photos=mergeRows(results.flatMap(r=>r.status==='fulfilled'?r.value:[]));const years=[...new Set(photos.map(p=>p.year).filter(Boolean))].sort().reverse();years.forEach(y=>{const o=document.createElement('option');o.value=y;o.textContent=y;$('#year').append(o);});applyFilters();if(results.slice(0,3).some(r=>r.status==='rejected')){const note=document.createElement('p');note.setAttribute('role','status');note.textContent='일부 사진 목록을 불러오지 못했습니다';note.style.color='var(--sub)';note.style.fontSize='12px';gallery.before(note);}}
+    catch(error){console.error(error);$('#total').textContent='LOAD ERROR';empty.hidden=false;empty.textContent='사진 데이터를 불러오지 못했습니다';}
   }
   start();
 })();

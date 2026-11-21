@@ -1,0 +1,15 @@
+{
+  "checkedPosts": 5,
+  "foundMedia": 0,
+  "added": 0,
+  "duplicate": 0,
+  "pendingReview": 5,
+  "invalid": 0,
+  "missingFiles": 0,
+  "earliestNew": null,
+  "newestNew": null,
+  "knownPhotoCountBefore": 421,
+  "knownPhotoCountAfter": 421,
+  "issues": [],
+  "note": "Only authorized, verified, explicitly approved images are imported. No Instagram scraping or bypass."
+}

@@ -1,0 +1,48 @@
+{
+  "account": "@triplescosmos",
+  "coverage": "partial; caption match only, review each photo and confirm rights before publishing",
+  "lastScan": {
+    "pages": 1,
+    "postsScanned": 50,
+    "moreAvailable": false,
+    "incompleteCarousels": [],
+    "apiIssue": null
+  },
+  "added": 0,
+  "duplicates": 0,
+  "publishErrors": [],
+  "candidates": [
+    {
+      "id": "instagram:17961987810014812",
+      "mediaId": "17961987810014812",
+      "postId": "18145175164720407",
+      "sourceUrl": "https://www.instagram.com/p/Df68EqpIwjq/",
+      "date": "2026-11-19",
+      "author": "@triplescosmos",
+      "official": true,
+      "status": "pending",
+      "position": 2,
+      "tags": [
+        "yeonji",
+        "연지"
+      ],
+      "imageAvailable": true
+    },
+    {
+      "id": "instagram:17911640700333432",
+      "mediaId": "17911640700333432",
+      "postId": "18145175164720407",
+      "sourceUrl": "https://www.instagram.com/p/Df68EqpIwjq/",
+      "date": "2026-11-19",
+      "author": "@triplescosmos",
+      "official": true,
+      "status": "pending",
+      "position": 1,
+      "tags": [
+        "yeonji",
+        "연지"
+      ],
+      "imageAvailable": true
+    }
+  ]
+}

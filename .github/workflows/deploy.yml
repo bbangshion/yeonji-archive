@@ -1,12 +1,12 @@
-name: Deploy SHION ARCHIVE
+name: Deploy YEONJI ARCHIVE
 
 on:
   push:
     branches: [main]
-  schedule:
-    # WAV ARCHIVE S20 snapshot refresh every 6 hours (UTC); GitHub may delay scheduled runs.
-    - cron: '17 */6 * * *'
   workflow_dispatch:
+  workflow_run:
+    workflows: [Sync YEONJI SNS Gallery]
+    types: [completed]
 
 permissions:
   contents: read
@@ -14,65 +14,46 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: yeonji-pages
   cancel-in-progress: true
 
 jobs:
   build:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 22
     steps:
-      - name: Checkout SHION ARCHIVE
+      - name: Checkout YEONJI ARCHIVE
         uses: actions/checkout@v4
-
       - name: Use Node.js 22
         uses: actions/setup-node@v4
         with:
           node-version: 22
-
-      - name: Verify WAV-to-S20 converter
-        run: node scripts/sync-wav-s20.mjs --self-test
-
-      - name: Sync ALL confirmed S20 Objekts from WAV ARCHIVE
-        run: node scripts/sync-wav-s20.mjs
-
-      - name: Validate SHION FILM indexer
-        run: node scripts/sync-shion-films.mjs --self-test
-
-      - name: Sync official SHION videos and WAV SIGNAL references
-        env:
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-        run: node scripts/sync-shion-films.mjs
-
+      - name: Test S12 converter
+        run: node scripts/sync-wav-s12.mjs --self-test
+      - name: Import verified S12 Objekts from WAV ARCHIVE
+        run: node scripts/sync-wav-s12.mjs
       - name: Install dependencies
         run: npm install --no-audit --no-fund
-
-      - name: Restore optimized World Cup card photos
+      - name: Cache optimized World Cup artwork
         uses: actions/cache@v4
         with:
           path: public/objekt-poster
-          key: ${{ runner.os }}-objekt-poster-v1-${{ hashFiles('scripts/cache-objekt-poster.mjs') }}
-
-      - name: Verify World Cup photo exporter
+          key: ${{ runner.os }}-yeonji-poster-v1-${{ hashFiles('scripts/cache-objekt-poster.mjs') }}
+      - name: Validate World Cup poster job
         run: node scripts/cache-objekt-poster.mjs --self-test
-
-      - name: Prepare same-origin card photos for PNG and image sharing
+      - name: Prepare images for downloadable results
         run: node scripts/cache-objekt-poster.mjs
-
-      - name: Verify archive data integrity
-        run: node scripts/audit-archive.mjs --self-test && node scripts/audit-archive.mjs --ci --protect-baseline --write
-
-      - name: Build static site
+      - name: Audit S12 data isolation
+        run: node scripts/audit-yeonji.mjs --ci
+      - name: Build React/Vite site
         run: npm run build
-
-      - name: Configure GitHub Pages
+      - name: Configure Pages
         uses: actions/configure-pages@v5
-
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
-
   deploy:
     needs: build
     runs-on: ubuntu-latest

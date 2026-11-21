@@ -8,9 +8,9 @@
     "incompleteCarousels": [],
     "apiIssue": null
   },
-  "mode": "discover",
-  "selectedCount": 0,
-  "added": 0,
+  "mode": "publish_all",
+  "selectedCount": 2,
+  "added": 2,
   "duplicates": 0,
   "publishErrors": [],
   "candidates": [
@@ -22,7 +22,7 @@
       "date": "2026-11-19",
       "author": "@triplescosmos",
       "official": true,
-      "status": "pending",
+      "status": "published_or_existing",
       "position": 2,
       "tags": [
         "yeonji",
@@ -38,7 +38,7 @@
       "date": "2026-11-19",
       "author": "@triplescosmos",
       "official": true,
-      "status": "pending",
+      "status": "published_or_existing",
       "position": 1,
       "tags": [
         "yeonji",

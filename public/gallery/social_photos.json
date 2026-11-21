@@ -1,4 +1,49 @@
 {
   "schemaVersion": 1,
-  "photos": []
+  "photos": [
+    {
+      "id": "yj-social-c524737b76aacffeef223346b6e94c04",
+      "memberId": "S12",
+      "status": "approved",
+      "category": "photo",
+      "image": "assets/social/c524737b76aacffeef223346b6e94c043822cd9dd1ee321da59e90b4d889f1f7.jpg",
+      "thumb": "assets/social/c524737b76aacffeef223346b6e94c043822cd9dd1ee321da59e90b4d889f1f7.thumb.webp",
+      "sha256": "c524737b76aacffeef223346b6e94c043822cd9dd1ee321da59e90b4d889f1f7",
+      "date": "2026-11-19",
+      "title": "곽연지",
+      "sourceUrl": "https://www.instagram.com/p/Df68EqpIwjq/",
+      "source": "Official Instagram",
+      "originalCreator": "@triplescosmos",
+      "tags": [
+        "yeonji",
+        "연지"
+      ],
+      "mediaId": "17911640700333432",
+      "width": 2703,
+      "height": 3604,
+      "curator": "빵시온"
+    },
+    {
+      "id": "yj-social-c4913800e8d9fd68dbd18539d46b008d",
+      "memberId": "S12",
+      "status": "approved",
+      "category": "photo",
+      "image": "assets/social/c4913800e8d9fd68dbd18539d46b008dc1de1f6cc4c3f48213954f2350974bca.jpg",
+      "thumb": "assets/social/c4913800e8d9fd68dbd18539d46b008dc1de1f6cc4c3f48213954f2350974bca.thumb.webp",
+      "sha256": "c4913800e8d9fd68dbd18539d46b008dc1de1f6cc4c3f48213954f2350974bca",
+      "date": "2026-11-19",
+      "title": "곽연지",
+      "sourceUrl": "https://www.instagram.com/p/Df68EqpIwjq/",
+      "source": "Official Instagram",
+      "originalCreator": "@triplescosmos",
+      "tags": [
+        "yeonji",
+        "연지"
+      ],
+      "mediaId": "17961987810014812",
+      "width": 2749,
+      "height": 3665,
+      "curator": "빵시온"
+    }
+  ]
 }

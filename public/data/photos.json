@@ -30,5 +30,3485 @@
     "assetType": "user-provided",
     "rightsStatus": "not-a-licence-claim",
     "captureDateVerified": false
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMDI0MDEwOC5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/3/34/KYJ_sns_20240108.jpg/revision/latest/scale-to-width-down/820?cb=20240117100024",
+    "title": {
+      "ko": "2024.01.08 곽연지",
+      "en": "YeonJi · 2024.01.08",
+      "ja": "ヨンジ · 2024.01.08"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2024-01-08",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%2020240108.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 20240108.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyNDAxMzEgMS5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/c/c3/KYJ_sns_240131_1.jpg/revision/latest/scale-to-width-down/820?cb=20240131102624",
+    "title": {
+      "ko": "2024.01.31 곽연지",
+      "en": "YeonJi · 2024.01.31",
+      "ja": "ヨンジ · 2024.01.31"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2024-01-31",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20240131%201.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 240131 1.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyNDAxMzEgMi5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/f/fd/KYJ_sns_240131_2.jpg/revision/latest/scale-to-width-down/820?cb=20240131102638",
+    "title": {
+      "ko": "2024.01.31 곽연지",
+      "en": "YeonJi · 2024.01.31",
+      "ja": "ヨンジ · 2024.01.31"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2024-01-31",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20240131%202.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 240131 2.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyNDAxMzEgMy5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/e/e7/KYJ_sns_240131_3.jpg/revision/latest?cb=20240131102653",
+    "title": {
+      "ko": "2024.01.31 곽연지",
+      "en": "YeonJi · 2024.01.31",
+      "ja": "ヨンジ · 2024.01.31"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2024-01-31",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20240131%203.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 240131 3.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyNDAyMDUuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/e/e2/KYJ_sns_240205.jpg/revision/latest/scale-to-width-down/820?cb=20240206081747",
+    "title": {
+      "ko": "2024.02.05 곽연지",
+      "en": "YeonJi · 2024.02.05",
+      "ja": "ヨンジ · 2024.02.05"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2024-02-05",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20240205.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 240205.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-UzExIFMxMiBzbnMgMjMwMTIwLmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/5/5d/S11_S12_sns_230120.jpg/revision/latest/scale-to-width-down/820?cb=20230120191312",
+    "title": {
+      "ko": "2023.01.20 곽연지",
+      "en": "YeonJi · 2023.01.20",
+      "ja": "ヨンジ · 2023.01.20"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-01-20",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AS11%20S12%20sns%20230120.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "S11 S12 sns 230120.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzAxMjQuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/4/4a/KYJ_sns_230124.jpg/revision/latest/scale-to-width-down/820?cb=20230124101400",
+    "title": {
+      "ko": "2023.01.24 곽연지",
+      "en": "YeonJi · 2023.01.24",
+      "ja": "ヨンジ · 2023.01.24"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-01-24",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230124.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230124.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzAzMDUuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/b/bc/KYJ_sns_230305.jpg/revision/latest/scale-to-width-down/820?cb=20230305124220",
+    "title": {
+      "ko": "2023.03.05 곽연지",
+      "en": "YeonJi · 2023.03.05",
+      "ja": "ヨンジ · 2023.03.05"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-03-05",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230305.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230305.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-UzExIFMxMiBzbnMgMjMwMzA1LmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/7/78/S11_S12_sns_230305.jpg/revision/latest/scale-to-width-down/820?cb=20230305124013",
+    "title": {
+      "ko": "2023.03.05 곽연지",
+      "en": "YeonJi · 2023.03.05",
+      "ja": "ヨンジ · 2023.03.05"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-03-05",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AS11%20S12%20sns%20230305.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "S11 S12 sns 230305.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA0MjcuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/c/c8/KYJ_sns_230427.jpg/revision/latest/scale-to-width-down/820?cb=20230427163527",
+    "title": {
+      "ko": "2023.04.27 곽연지",
+      "en": "YeonJi · 2023.04.27",
+      "ja": "ヨンジ · 2023.04.27"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-04-27",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230427.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230427.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/2/20/KYJ_sns_230617.jpg/revision/latest/scale-to-width-down/820?cb=20230621230514",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMi5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/e/e8/KYJ_sns_230617_2.jpg/revision/latest/scale-to-width-down/820?cb=20230621230520",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%202.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 2.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMy5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/c/c6/KYJ_sns_230617_3.jpg/revision/latest/scale-to-width-down/820?cb=20230621230523",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%203.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 3.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgNC5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/c/c2/KYJ_sns_230617_4.jpg/revision/latest/scale-to-width-down/820?cb=20230621230536",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%204.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 4.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgNS5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/3/3f/KYJ_sns_230617_5.jpg/revision/latest/scale-to-width-down/820?cb=20230621230543",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%205.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 5.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgNi5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/5/5e/KYJ_sns_230617_6.jpg/revision/latest/scale-to-width-down/820?cb=20230621230549",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%206.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 6.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgNy5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/4/4d/KYJ_sns_230617_7.jpg/revision/latest/scale-to-width-down/820?cb=20230621230607",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%207.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 7.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgOC5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/2/20/KYJ_sns_230617_8.jpg/revision/latest/scale-to-width-down/820?cb=20230621230611",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%208.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 8.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgOS5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/1/1e/KYJ_sns_230617_9.jpg/revision/latest/scale-to-width-down/820?cb=20230621230615",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%209.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 9.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMTAuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/d/d5/KYJ_sns_230617_10.jpg/revision/latest/scale-to-width-down/820?cb=20230621230619",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2010.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 10.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMTEuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/0/0a/KYJ_sns_230617_11.jpg/revision/latest/scale-to-width-down/820?cb=20230621230624",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2011.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 11.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMTIuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/5/50/KYJ_sns_230617_12.jpg/revision/latest/scale-to-width-down/820?cb=20230621230642",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2012.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 12.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMTMuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/9/9c/KYJ_sns_230617_13.jpg/revision/latest/scale-to-width-down/820?cb=20230621230647",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2013.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 13.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMTQuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/6/68/KYJ_sns_230617_14.jpg/revision/latest/scale-to-width-down/820?cb=20230621230652",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2014.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 14.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMTUuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/0/07/KYJ_sns_230617_15.jpg/revision/latest/scale-to-width-down/820?cb=20230621230659",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2015.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 15.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMTYuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/5/54/KYJ_sns_230617_16.jpg/revision/latest/scale-to-width-down/820?cb=20230621230706",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2016.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 16.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMTcuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/b/b1/KYJ_sns_230617_17.jpg/revision/latest/scale-to-width-down/820?cb=20230621230726",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2017.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 17.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMTguanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/b/bf/KYJ_sns_230617_18.jpg/revision/latest/scale-to-width-down/820?cb=20230621230731",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2018.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 18.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMTkuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/b/bc/KYJ_sns_230617_19.jpg/revision/latest/scale-to-width-down/820?cb=20230621230735",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2019.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 19.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMjAuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/0/00/KYJ_sns_230617_20.jpg/revision/latest/scale-to-width-down/820?cb=20230621230740",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2020.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 20.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMjEuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/d/d4/KYJ_sns_230617_21.jpg/revision/latest/scale-to-width-down/820?cb=20230621230746",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2021.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 21.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMjIuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/5/5b/KYJ_sns_230617_22.jpg/revision/latest/scale-to-width-down/820?cb=20230621230808",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2022.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 22.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMjMuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/a/a4/KYJ_sns_230617_23.jpg/revision/latest/scale-to-width-down/820?cb=20230621230812",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2023.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 23.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMjQuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/3/39/KYJ_sns_230617_24.jpg/revision/latest/scale-to-width-down/820?cb=20230621230817",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2024.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 24.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMjUuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/2/26/KYJ_sns_230617_25.jpg/revision/latest/scale-to-width-down/820?cb=20230621230821",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2025.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 25.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMjYuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/e/e8/KYJ_sns_230617_26.jpg/revision/latest/scale-to-width-down/820?cb=20230621230827",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2026.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 26.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMjcuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/3/32/KYJ_sns_230617_27.jpg/revision/latest/scale-to-width-down/820?cb=20230621230845",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2027.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 27.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMjguanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/1/1d/KYJ_sns_230617_28.jpg/revision/latest/scale-to-width-down/820?cb=20230621230850",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2028.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 28.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMjkuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/e/ec/KYJ_sns_230617_29.jpg/revision/latest/scale-to-width-down/820?cb=20230621230856",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2029.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 29.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMzAuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/2/29/KYJ_sns_230617_30.jpg/revision/latest/scale-to-width-down/820?cb=20230621230901",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2030.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 30.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMzEuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/f/f3/KYJ_sns_230617_31.jpg/revision/latest/scale-to-width-down/820?cb=20230621230906",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2031.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 31.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMzIuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/5/55/KYJ_sns_230617_32.jpg/revision/latest/scale-to-width-down/820?cb=20230621230923",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2032.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 32.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMzMuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/5/59/KYJ_sns_230617_33.jpg/revision/latest/scale-to-width-down/820?cb=20230621230929",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2033.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 33.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMzQuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/2/21/KYJ_sns_230617_34.jpg/revision/latest/scale-to-width-down/820?cb=20230621230936",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2034.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 34.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMzUuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/8/84/KYJ_sns_230617_35.jpg/revision/latest/scale-to-width-down/820?cb=20230621230940",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2035.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 35.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMzYuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/b/b4/KYJ_sns_230617_36.jpg/revision/latest/scale-to-width-down/820?cb=20230621231041",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2036.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 36.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMzcuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/f/fa/KYJ_sns_230617_37.jpg/revision/latest/scale-to-width-down/820?cb=20230621231046",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2037.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 37.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzA2MTcgMzguanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/3/31/KYJ_sns_230617_38.jpg/revision/latest/scale-to-width-down/820?cb=20230621231051",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20230617%2038.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 230617 38.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3LmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/e/e7/KKT_KYJ_sns_230617.jpg/revision/latest/scale-to-width-down/820?cb=20230621222351",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDIuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/9/98/KKT_KYJ_sns_230617_2.jpg/revision/latest/scale-to-width-down/820?cb=20230621222356",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%202.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 2.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDMuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/f/f0/KKT_KYJ_sns_230617_3.jpg/revision/latest/scale-to-width-down/820?cb=20230621222401",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%203.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 3.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDQuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/b/bb/KKT_KYJ_sns_230617_4.jpg/revision/latest/scale-to-width-down/820?cb=20230621222407",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%204.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 4.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDUuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/3/3a/KKT_KYJ_sns_230617_5.jpg/revision/latest/scale-to-width-down/820?cb=20230621222417",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%205.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 5.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDYuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/0/0a/KKT_KYJ_sns_230617_6.jpg/revision/latest/scale-to-width-down/820?cb=20230621222438",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%206.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 6.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDcuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/b/b1/KKT_KYJ_sns_230617_7.jpg/revision/latest/scale-to-width-down/820?cb=20230621222444",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%207.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 7.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDguanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/8/82/KKT_KYJ_sns_230617_8.jpg/revision/latest/scale-to-width-down/820?cb=20230621222450",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%208.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 8.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDkuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/c/c0/KKT_KYJ_sns_230617_9.jpg/revision/latest/scale-to-width-down/820?cb=20230621222457",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%209.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 9.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDEwLmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/5/56/KKT_KYJ_sns_230617_10.jpg/revision/latest/scale-to-width-down/820?cb=20230621222503",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%2010.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 10.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDExLmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/e/ed/KKT_KYJ_sns_230617_11.jpg/revision/latest/scale-to-width-down/820?cb=20230621222527",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%2011.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 11.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDEyLmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/1/16/KKT_KYJ_sns_230617_12.jpg/revision/latest/scale-to-width-down/820?cb=20230621222533",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%2012.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 12.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDEzLmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/9/96/KKT_KYJ_sns_230617_13.jpg/revision/latest/scale-to-width-down/820?cb=20230621222540",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%2013.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 13.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDE0LmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/4/4d/KKT_KYJ_sns_230617_14.jpg/revision/latest/scale-to-width-down/820?cb=20230621222545",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%2014.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 14.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDE1LmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/3/3e/KKT_KYJ_sns_230617_15.jpg/revision/latest/scale-to-width-down/820?cb=20230621222551",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%2015.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 15.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDE2LmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/b/be/KKT_KYJ_sns_230617_16.jpg/revision/latest/scale-to-width-down/820?cb=20230621222612",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%2016.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 16.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDE3LmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/8/8d/KKT_KYJ_sns_230617_17.jpg/revision/latest/scale-to-width-down/820?cb=20230621222629",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%2017.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 17.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDE4LmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/d/d0/KKT_KYJ_sns_230617_18.jpg/revision/latest/scale-to-width-down/820?cb=20230621222634",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%2018.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 18.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDE5LmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/d/da/KKT_KYJ_sns_230617_19.jpg/revision/latest/scale-to-width-down/820?cb=20230621222639",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%2019.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 19.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDIwLmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/1/12/KKT_KYJ_sns_230617_20.jpg/revision/latest/scale-to-width-down/820?cb=20230621222644",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%2020.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 20.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDIxLmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/f/f0/KKT_KYJ_sns_230617_21.jpg/revision/latest/scale-to-width-down/820?cb=20230621222723",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%2021.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 21.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDIyLmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/a/ad/KKT_KYJ_sns_230617_22.jpg/revision/latest/scale-to-width-down/820?cb=20230621222733",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%2022.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 22.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDIzLmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/c/c2/KKT_KYJ_sns_230617_23.jpg/revision/latest/scale-to-width-down/820?cb=20230621222740",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%2023.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 23.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDI0LmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/1/10/KKT_KYJ_sns_230617_24.jpg/revision/latest/scale-to-width-down/820?cb=20230621222759",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%2024.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 24.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDI1LmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/f/f4/KKT_KYJ_sns_230617_25.jpg/revision/latest/scale-to-width-down/820?cb=20230621222806",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%2025.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 25.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S0tUIEtZSiBzbnMgMjMwNjE3IDI2LmpwZw",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/3/3a/KKT_KYJ_sns_230617_26.jpg/revision/latest/scale-to-width-down/820?cb=20230621222826",
+    "title": {
+      "ko": "2023.06.17 곽연지",
+      "en": "YeonJi · 2023.06.17",
+      "ja": "ヨンジ · 2023.06.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-06-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKKT%20KYJ%20sns%20230617%2026.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KKT KYJ sns 230617 26.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-UzUgUzEyIHNucyAyMzEwMTIuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/f/f4/S5_S12_sns_231012.jpg/revision/latest/scale-to-width-down/820?cb=20231103181426",
+    "title": {
+      "ko": "2023.10.12 곽연지",
+      "en": "YeonJi · 2023.10.12",
+      "ja": "ヨンジ · 2023.10.12"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-10-12",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AS5%20S12%20sns%20231012.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "S5 S12 sns 231012.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzEwMTcuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/0/0d/KYJ_sns_231017.jpg/revision/latest/scale-to-width-down/820?cb=20231103183828",
+    "title": {
+      "ko": "2023.10.17 곽연지",
+      "en": "YeonJi · 2023.10.17",
+      "ja": "ヨンジ · 2023.10.17"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-10-17",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20231017.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 231017.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzEwMTggMS5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/5/5f/KYJ_sns_231018_1.jpg/revision/latest/scale-to-width-down/820?cb=20231103184553",
+    "title": {
+      "ko": "2023.10.18 곽연지",
+      "en": "YeonJi · 2023.10.18",
+      "ja": "ヨンジ · 2023.10.18"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-10-18",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20231018%201.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 231018 1.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzEwMTggMi5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/4/44/KYJ_sns_231018_2.jpg/revision/latest/scale-to-width-down/820?cb=20231103184640",
+    "title": {
+      "ko": "2023.10.18 곽연지",
+      "en": "YeonJi · 2023.10.18",
+      "ja": "ヨンジ · 2023.10.18"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-10-18",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20231018%202.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 231018 2.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzEwMTggMy5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/0/0f/KYJ_sns_231018_3.jpg/revision/latest/scale-to-width-down/820?cb=20231103184659",
+    "title": {
+      "ko": "2023.10.18 곽연지",
+      "en": "YeonJi · 2023.10.18",
+      "ja": "ヨンジ · 2023.10.18"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-10-18",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20231018%203.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 231018 3.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzEwMTggNC5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/3/31/KYJ_sns_231018_4.jpg/revision/latest/scale-to-width-down/820?cb=20231103184718",
+    "title": {
+      "ko": "2023.10.18 곽연지",
+      "en": "YeonJi · 2023.10.18",
+      "ja": "ヨンジ · 2023.10.18"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-10-18",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20231018%204.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 231018 4.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzEwMTkuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/d/d1/KYJ_sns_231019.jpg/revision/latest/scale-to-width-down/820?cb=20231103191903",
+    "title": {
+      "ko": "2023.10.19 곽연지",
+      "en": "YeonJi · 2023.10.19",
+      "ja": "ヨンジ · 2023.10.19"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-10-19",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20231019.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 231019.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzEwMjYuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/c/c0/KYJ_sns_231026.jpg/revision/latest/scale-to-width-down/820?cb=20231103195943",
+    "title": {
+      "ko": "2023.10.26 곽연지",
+      "en": "YeonJi · 2023.10.26",
+      "ja": "ヨンジ · 2023.10.26"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-10-26",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20231026.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 231026.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzEyMDEgMS5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/6/66/KYJ_sns_231201_1.jpg/revision/latest/scale-to-width-down/820?cb=20240129120806",
+    "title": {
+      "ko": "2023.12.01 곽연지",
+      "en": "YeonJi · 2023.12.01",
+      "ja": "ヨンジ · 2023.12.01"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-12-01",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20231201%201.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 231201 1.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzEyMDEgMi5qcGc",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/e/e9/KYJ_sns_231201_2.jpg/revision/latest/scale-to-width-down/820?cb=20240129120820",
+    "title": {
+      "ko": "2023.12.01 곽연지",
+      "en": "YeonJi · 2023.12.01",
+      "ja": "ヨンジ · 2023.12.01"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-12-01",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20231201%202.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 231201 2.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzEyMDguanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/a/a8/KYJ_sns_231208.jpg/revision/latest/scale-to-width-down/820?cb=20240129115525",
+    "title": {
+      "ko": "2023.12.08 곽연지",
+      "en": "YeonJi · 2023.12.08",
+      "ja": "ヨンジ · 2023.12.08"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-12-08",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20231208.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 231208.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-UzYgUzEyIHNucyAyMzEyMTYuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/d/d4/S6_S12_sns_231216.jpg/revision/latest/scale-to-width-down/820?cb=20240128112359",
+    "title": {
+      "ko": "2023.12.16 곽연지",
+      "en": "YeonJi · 2023.12.16",
+      "ja": "ヨンジ · 2023.12.16"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-12-16",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AS6%20S12%20sns%20231216.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "S6 S12 sns 231216.jpg",
+    "curator": "@bbangshion"
+  },
+  {
+    "id": "fandom-s12-S1lKIHNucyAyMzEyMTkuanBn",
+    "category": "photo",
+    "memberId": "S12",
+    "identityVerified": false,
+    "image": "https://static.wikia.nocookie.net/triples/images/0/09/KYJ_sns_231219.jpg/revision/latest/scale-to-width-down/820?cb=20240128111101",
+    "title": {
+      "ko": "2023.12.19 곽연지",
+      "en": "YeonJi · 2023.12.19",
+      "ja": "ヨンジ · 2023.12.19"
+    },
+    "album": {
+      "ko": "SNS 아카이브",
+      "en": "SNS Archive",
+      "ja": "SNSアーカイブ"
+    },
+    "date": "2023-12-19",
+    "credit": {
+      "ko": "아카이브 정리 · @bbangshion",
+      "en": "Curated by @bbangshion",
+      "ja": "アーカイブ整理 · @bbangshion"
+    },
+    "sourceUrl": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive?image=File%3AKYJ%20sns%20231219.jpg",
+    "tags": [
+      "S12",
+      "YeonJi",
+      "곽연지",
+      "연지",
+      "SNS",
+      "SNS 아카이브"
+    ],
+    "assetType": "external-link",
+    "rightsStatus": "media-license-not-confirmed",
+    "identityStatus": "listed-on-S12-gallery-not-visually-verified",
+    "sourceCollection": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery/SNS_Archive",
+    "mediaLicense": null,
+    "originalArtistMetadata": null,
+    "originalFileName": "KYJ sns 231219.jpg",
+    "curator": "@bbangshion"
   }
 ]

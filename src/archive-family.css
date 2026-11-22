@@ -1,0 +1,97 @@
+:root { --af-accent: #E3BED3; }
+/* YEONJI / ARCHIVE FAMILY 01 — shared editorial UI for SHION / YEONJI / CHAEWON.
+   Same components, same spacing and motion. Only --af-accent and portraits differ.
+   Import this file LAST. This is a CSS overlay, NOT a reimplementation of features.
+*/
+:root {
+  --af-bg: #101014;
+  --af-hero-bg: #0b0b0e;
+  --af-surface: #18171d;
+  --af-raised: #211f27;
+  --af-line: rgba(255, 255, 255, .125);
+  --af-ink: #f6f3f5;
+  --af-muted: #aea9b2;
+  --af-header-h: 76px;
+  --af-width: 1180px;
+  --af-radius: 4px;
+  --af-ease: cubic-bezier(.25, 1, .5, 1);
+  --af-motion: 240ms;
+}
+html { scroll-padding-top: var(--af-header-h); }
+body { background: var(--af-bg); color: var(--af-ink); font-family: Inter, Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+.shion-site-header { height: var(--af-header-h); background: rgba(11, 11, 14, .94); border-bottom: 1px solid var(--af-line); }
+.shion-site-header.on-home { background: rgba(11, 11, 14, .78); }
+.shion-header-inner, .shion-content-width { width: min(calc(100% - 48px), var(--af-width)); margin-inline: auto; }
+.shion-header-inner { gap: 20px; }
+.shion-brand { gap: 12px; min-width: 0; min-height: 44px; }
+.shion-brand-mark { width: 36px; height: 36px; flex: 0 0 36px; border: 1px solid var(--af-accent); color: var(--af-accent); border-radius: 50%; font: 400 25px/1 Georgia, 'Times New Roman', serif; }
+.shion-brand-name { font-size: 12px; font-weight: 650; letter-spacing: .13em; }
+.shion-desktop-nav { gap: clamp(15px, 2.4vw, 29px); }
+.shion-desktop-nav button { font-size: 12px; font-weight: 550; letter-spacing: .03em; }
+.shion-desktop-nav button.is-active { border-bottom-color: var(--af-accent); }
+.shion-header-right { gap: 10px; }
+.shion-header-tag { color: var(--af-muted); font-size: 10px; }
+.shion-menu-toggle { width: 44px; height: 44px; flex: 0 0 44px; touch-action: manipulation; }
+.shion-mobile-menu { top: var(--af-header-h); background: #15141a; border-bottom: 1px solid var(--af-line); }
+.shion-mobile-link { min-height: 61px; font-size: 22px; }
+.shion-mobile-link.is-active { color: var(--af-accent); }
+.shion-subpage { padding-top: calc(var(--af-header-h) + 38px); background: var(--af-bg); }
+.shion-hero { background: var(--af-hero-bg); }
+.shion-hero-inner { width: min(calc(100% - 64px), var(--af-width)); }
+.shion-hero-copy h1 { font-weight: 540; letter-spacing: -.085em; }
+.shion-hero-overline, .shion-section-eyebrow, .shion-page-kicker { letter-spacing: .18em; font-weight: 600; }
+.shion-hero-primary, .shion-hero-secondary { min-height: 46px; border-radius: var(--af-radius); }
+.shion-home-explore, .shion-overview { background: var(--af-bg); }
+.shion-section-lead h2, .shion-page-heading h1 { letter-spacing: -.045em; }
+.shion-feature-card, .shion-source-card { border-radius: var(--af-radius); }
+.shion-profile-portrait img { border-radius: var(--af-radius); }
+.shion-photo-controls, .shion-film-controls, .shion-search-box, .shion-timeline-controls { background: var(--af-surface); border: 1px solid var(--af-line); border-radius: var(--af-radius); }
+.shion-photo-tabs button, .shion-film-tabs button { min-height: 42px; border-radius: var(--af-radius); transition: color var(--af-motion) var(--af-ease), background-color var(--af-motion) var(--af-ease), border-color var(--af-motion) var(--af-ease); }
+.shion-photo-tabs button.is-active, .shion-film-tabs button.is-active { background: var(--af-accent); border-color: var(--af-accent); color: #17131a; }
+.shion-photo-filters input, .shion-photo-filters select, .shion-film-search input, .shion-film-year select { border-radius: var(--af-radius); background: var(--af-raised); min-height: 44px; }
+.shion-photo-grid { gap: 23px 13px; }
+.shion-film-grid { gap: 30px 16px; }
+.shion-gallery-image { border-radius: var(--af-radius); background: var(--af-raised); }
+.shion-gallery-image img { display: block; width: 100%; height: 100%; }
+.shion-film-poster { border-radius: var(--af-radius); background: var(--af-raised); }
+.shion-film-poster img { display: block; width: 100%; height: 100%; }
+.shion-gallery-meta strong, .shion-film-card-details strong { font-weight: 570; }
+.shion-photo-more, .shion-film-more button, .shion-timeline-more, .shion-search-more { min-height: 44px; border-radius: var(--af-radius); }
+.shion-film-save, .shion-film-dialog-close, .shion-lightbox-top button { min-width: 44px; min-height: 44px; touch-action: manipulation; }
+.shion-film-dialog, .shion-film-dialog-backdrop { overscroll-behavior: contain; }
+.shion-timeline-entry { border-color: var(--af-line); }
+.shion-podium-stage, .shion-top-four { border-radius: 8px; }
+.shion-footer { background: var(--af-hero-bg); border-top: 1px solid var(--af-line); }
+.shion-footer-inner { gap: 14px; font-size: 11px; }
+.shion-site-header :is(a,button):focus-visible,
+.shion-home :is(a,button):focus-visible,
+.shion-subpage :is(a,button,input,select):focus-visible,
+.shion-mobile-menu button:focus-visible { outline: 2px solid var(--af-accent); outline-offset: 3px; }
+@media (hover: none) {
+  .shion-gallery-tile:hover .shion-gallery-image img,
+  .shion-film-card-main:hover .shion-film-poster img { transform: none; }
+}
+@media (max-width: 1180px) { .shion-desktop-nav { gap: 14px; } .shion-header-tag { display: none; } }
+@media (max-width: 900px) { .shion-desktop-nav { display: none; } .shion-menu-toggle { display: grid; } }
+@media (max-width: 760px) {
+  :root { --af-header-h: 68px; }
+  .shion-header-inner, .shion-content-width { width: min(calc(100% - 36px), var(--af-width)); }
+  .shion-header-inner { gap: 10px; }
+  .shion-header-right { gap: 7px; }
+  .shion-brand { gap: 9px; flex: 1 1 auto; overflow: hidden; }
+  .shion-brand-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: clamp(10px, 2.8vw, 12px); letter-spacing: .085em; }
+  .shion-brand-mark { width: 34px; height: 34px; flex-basis: 34px; font-size: 23px; }
+  .shion-hero-inner { width: min(calc(100% - 40px), var(--af-width)); }
+  .shion-photo-controls, .shion-film-controls { padding: 14px; }
+  .shion-photo-grid, .shion-film-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 10px; }
+  .shion-film-dialog { max-height: calc(100dvh - 24px); }
+  .shion-mobile-menu { padding-bottom: max(28px, env(safe-area-inset-bottom)); }
+}
+@media (max-width: 365px) {
+  .shion-header-inner { width: calc(100% - 24px); }
+  .shion-brand-name { font-size: 10px; letter-spacing: .045em; }
+  .shion-film-search-row { grid-template-columns: minmax(0,1fr) 108px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shion-gallery-image img, .shion-film-poster img { transition: none !important; transform: none !important; }
+}

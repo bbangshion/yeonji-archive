@@ -1,0 +1,444 @@
+name: YEONJI - Restore S12 Objekt Data and World Cup FIX V2
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        description: 'preview = diagnose only; apply = repair + build + deploy'
+        required: true
+        default: preview
+        options: [preview, apply]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: yeonji-s12-objekt-recovery-v2
+  cancel-in-progress: false
+
+jobs:
+  repair:
+    if: github.ref == 'refs/heads/main' && github.repository == 'bbangshion/yeonji-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    outputs:
+      apply: ${{ steps.mode.outputs.apply }}
+    steps:
+      - name: Checkout YEONJI with full Git history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Restore real S12 catalog and repair cloned S20 filters
+        shell: bash
+        env:
+          REPAIR_MODE: ${{ inputs.mode }}
+        run: |
+          set -euo pipefail
+          cat > /tmp/yeonji_objekt_v2.py <<'PYCODE'
+          #!/usr/bin/env python3
+          """YEONJI ARCHIVE S12 data+viewer repair. Designed for in-repository GitHub Actions.
+          Prefer real S12 catalog from current source, then Git history, then WAV ARCHIVE S12 feed.
+          Never treat S20 sample data as S12 or silently publish an empty catalog.
+          """
+          from __future__ import annotations
+          import json
+          import os
+          import re
+          import subprocess
+          from pathlib import Path
+          import urllib.request
+
+          ROOT = Path.cwd()
+          DATA = ROOT / 'public/data/objekt.json'
+          MODE = os.environ.get('REPAIR_MODE', 'preview')
+          if MODE not in ('preview', 'apply'):
+              raise SystemExit('Invalid mode')
+          WAV = 'https://raw.githubusercontent.com/bbangshion/wav-archive/main/objekt-collection/data/'
+          WAV_IMG = 'https://bbangshion.github.io/wav-archive/objekt-collection/'
+          S12 = {'S12', 'S12YEONJI', '12', 'YEONJI', 'KWAKYEONJI', '곽연지'}
+          MEMBER_KEYS = (
+              'memberId','member','memberCode','member_code','member_id','memberName','member_name',
+              'memberSlug','members','artistMember','ownerMember','artist','artistName','artist_name'
+          )
+          SUBKEYS = ('id','code','member','memberId','member_name','name','nameKo','nameEn','slug','number','sNumber')
+          ROW_KEYS = ('objekts','objekt','items','results','cards','catalog','data','collections','rows')
+
+
+          def log(message):
+              print('[YEONJI-OBJEKT-V2]', message, flush=True)
+
+
+          def nested(obj, dotted):
+              for k in dotted.split('.'):
+                  if not isinstance(obj, dict): return None
+                  obj = obj.get(k)
+              return obj
+
+
+          def first(obj, *keys):
+              for key in keys:
+                  v = nested(obj, key)
+                  if v is not None and v != '':
+                      return v
+              return None
+
+
+          def text(obj, *keys):
+              value = first(obj, *keys)
+              if isinstance(value, dict): value = first(value, 'name', 'code', 'slug', 'value')
+              return str(value).strip() if isinstance(value, (str,int,float)) else ''
+
+
+          def rows(raw, depth=0):
+              if depth > 6: return None
+              if isinstance(raw, list): return raw
+              if not isinstance(raw, dict): return None
+              for key in ROW_KEYS:
+                  val=raw.get(key)
+                  if isinstance(val, list): return val
+                  if isinstance(val, dict):
+                      found=rows(val,depth+1)
+                      if found is not None: return found
+              return None
+
+
+          def tags(val):
+              if isinstance(val, list):
+                  return [x for v in val for x in tags(v)]
+              if isinstance(val, dict):
+                  return [x for k in SUBKEYS for x in tags(val.get(k))]
+              if not isinstance(val, (str,int,float)) or isinstance(val, bool): return []
+              return [re.sub(r'[\s._\-]+','',str(val).upper())]
+
+
+          def is_s12(row):
+              if not isinstance(row,dict):return False
+              values=[nested(row,k) for k in MEMBER_KEYS]
+              values.extend([nested(row,k) for k in ('member.id','member.code','member.name','member.slug','artistMember.name')])
+              return any(tag in S12 for v in values for tag in tags(v))
+
+
+          def real_s12(raw):
+              data=rows(raw) or []
+              return [r for r in data if is_s12(r) and r.get('demo') is not True and r.get('isDemo') is not True]
+
+
+          def safe_image(raw):
+              if isinstance(raw,dict): return safe_image(first(raw,'front','frontUrl','url','original','src','path','thumbnail','imageUrl'))
+              if not isinstance(raw,str):return None
+              s=raw.strip()
+              if not s or s.startswith('//') or s.lower().startswith(('data:','javascript:')): return None
+              if s.startswith('https://') or s.startswith('http://'):
+                  return s if s.startswith('https://') else None
+              if '..' in s.split('/') or ':' in s or not re.search(r'\.(?:webp|jpe?g|png|avif)(?:\?.*)?$',s,re.I):return None
+              return WAV_IMG + s.lstrip('./')
+
+
+          def norm(row, index, wav=False):
+              season=text(row,'season','season.name','seasonName','era','year') or 'Unknown'
+              code=text(row,'collectionNo','collectionNumber','collection_no','collection.code','collection.collectionNo','collection.number',
+                        'cardNumber','objektNumber','number','code','serial','serialNumber','serial_number')
+              idval=text(row,'id','objektId','objekt_id','uuid','tokenId','token_id','slug')
+              ident=(f'{season}:S12:{code}' if (wav and code and season != 'Unknown') else (idval if idval and not idval.upper().startswith(('SHION-DEMO','S20-')) else (f'{season}:S12:{code}' if code else '')))
+              if not ident:return None
+              image=first(row,'localImageUrl','localWebp','localImage','frontImageUrl','frontImage','image.front','images.front',
+                          'media.frontUrl','imageUrl','frontUrl','image.url','image','thumbnailUrl','images.thumbnail','thumbnail','metadata.imageUrl','photo')
+              date=text(row,'issuedAt','issued_at','releaseDate','release_date','date','mintedAt')
+              klass=text(row,'className','class','class.name','klass','objektClass','rarity','grade') or 'Unknown'
+              return {'id':ident,'member':'S12_YEONJI',
+                      'title':text(row,'title','objektName','objekt_name','label','name') or f'YEONJI · {season} {code}',
+                      'imageUrl':safe_image(image),
+                      'series':text(row,'series','edition','unitTag','unit','dimension') or klass,
+                      'season':season,'class':klass,
+                      'issuedAt':date or None,'serial':text(row,'serial','collectionNo','collectionNumber','collection_no','number','code') or None,
+                      'description':text(row,'description','desc','note') or None}
+
+
+          def normalize_records(source, wav=False):
+              found={}
+              for index,row in enumerate(real_s12(source)):
+                  item=norm(row,index,wav=wav)
+                  if not item:continue
+                  key=item['id']
+                  old=found.get(key)
+                  if old:
+                      if not old['imageUrl'] and item['imageUrl']:old['imageUrl']=item['imageUrl']
+                      if not old['description'] and item['description']:old['description']=item['description']
+                      continue
+                  found[key]=item
+              return list(found.values())
+
+
+          def load_present():
+              if not DATA.is_file(): return None
+              try: return json.loads(DATA.read_text(encoding='utf-8'))
+              except (ValueError, OSError) as exc:
+                  log('Current JSON invalid/unavailable: '+type(exc).__name__);return None
+
+
+          def history_best():
+              cmd=['git','log','--format=%H','-n','120','--','public/data/objekt.json']
+              result=subprocess.run(cmd,text=True,capture_output=True)
+              if result.returncode:return [], ''
+              best=[];bestref=''
+              for sha in result.stdout.splitlines():
+                  try:
+                      content=subprocess.check_output(['git','show',f'{sha}:public/data/objekt.json'],stderr=subprocess.DEVNULL)
+                      if len(content)>40_000_000:continue
+                      candidate=normalize_records(json.loads(content))
+                      if len(candidate)>len(best):best,bestref=candidate,sha[:12]
+                  except (ValueError,subprocess.CalledProcessError,UnicodeDecodeError):continue
+                  # A substantial historical catalog is preferred to a network sync.
+                  if len(best)>=100:break
+              return best,bestref
+
+
+          def get_wav(name, optional=False):
+              request=urllib.request.Request(WAV+name,headers={'User-Agent':'YEONJI-ARCHIVE-Repair/2.0','Accept':'application/json'})
+              try:
+                  with urllib.request.urlopen(request,timeout=45) as response:
+                      payload=response.read(60_000_001)
+              except Exception as exc:
+                  if optional:
+                      log(f'Optional source {name} unavailable: {type(exc).__name__}')
+                      return []
+                  raise RuntimeError(f'WAV ARCHIVE {name} cannot be read ({type(exc).__name__}); no data changed') from None
+              if not payload or len(payload)>60_000_000:raise RuntimeError('WAV catalog empty or oversized')
+              try:return rows(json.loads(payload)) or []
+              except ValueError:raise RuntimeError('WAV catalog JSON invalid') from None
+
+
+          def wav_import():
+              top=get_wav('objekt-top.json')
+              if not top:raise RuntimeError('WAV main catalog has zero entries')
+              other=get_wav('apollo.json',optional=True)
+              count_before=len(top)+len(other)
+              imported=normalize_records({'objekts':top+other},wav=True)
+              log(f'WAV catalog raw entries={count_before}, S12 normalized={len(imported)}')
+              return imported
+
+
+          def patch(path, func, write=True):
+              p=ROOT/path
+              if not p.exists():
+                  log(f'Not present: {path}')
+                  return False
+              old=p.read_text(encoding='utf-8')
+              new=func(old)
+              if new==old:return False
+              if write:
+                  p.write_text(new,encoding='utf-8')
+              log(('Patched ' if write else 'Would patch ')+str(path))
+              return True
+
+
+          def frontend_repair(write):
+              types=Path('src/types/objekt.ts')
+              cat=Path('src/lib/catalog.ts')
+              if not (ROOT/types).is_file() or not (ROOT/cat).is_file():
+                  raise RuntimeError('Expected Objekt React TypeScript files not found; stop rather than overwrite unknown UI')
+              def fix_catalog(s):
+                  s=s.replace("'S20_SHION'","'S12_YEONJI'").replace('"S20_SHION"','"S12_YEONJI"')
+                  s=re.sub(r'(if\s*\(typeof\s+value\s*===\s*[\'"]number[\'"]\)\s*return\s+value\s*===\s*)20(\s*;)',r'\g<1>12\2',s)
+                  s=re.sub(r'return\s+/\^\(S20[^\n]+?\$\/.test\(clean\);',
+                           'return /^(S12|S12YEONJI|12|YEONJI|KWAKYEONJI|곽연지)$/.test(clean);',s)
+                  s=s.replace(".replace(/[\\s.\\-]/g, '')",".replace(/[\\s._\\-]/g, '')")
+                  s=s.replace(".replace(/^SHION\\s*", ".replace(/^YEONJI\\s*")
+                  return s
+              patch(types,lambda s: s.replace("'S20_SHION'","'S12_YEONJI'").replace('"S20_SHION"','"S12_YEONJI"'),write)
+              patch(cat,fix_catalog,write)
+              patch(Path('src/hooks/useCatalog.ts'),lambda s:s.replace("cache: 'no-cache'","cache: 'no-store'").replace('cache: "no-cache"','cache: "no-store"'),write)
+              patch(Path('src/components/ObjektArtwork.tsx'),lambda s:s.replace('>SHION</span>','>YEONJI</span>').replace('SHION|PARK\\s+SHION|박시온|S20','YEONJI|KWAK\\s+YEONJI|곽연지|S12'),write)
+              patch(Path('src/App.tsx'),lambda s:s.replace('연결된 데이터에서 박시온 카드를 찾지 못했습니다','연결된 데이터에서 곽연지 카드를 찾지 못했습니다'),write)
+              # Fallback only for Objekt grid cards affected by a stale reveal transition.
+              css_mark='/* YEONJI S12 OBJEKT REPAIR V2 */'
+              rescue="""
+          /* YEONJI S12 OBJEKT REPAIR V2 */
+          .shion-subpage .grid > article.group.shion-reveal-pending,
+          .shion-subpage .grid > article.group.shion-reveal-enter {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+          }
+          """
+              patch(Path('src/index.css'),lambda s:s if css_mark in s else s+'\n'+rescue,write)
+
+
+          def converter_fix(write):
+              # Some older Yeonji repositories were cloned from S20. Their scheduled
+              # deploy.yml still calls sync-wav-s20.mjs, re-overwriting the S12 snapshot
+              # in each Pages artifact. Fix the script it calls instead of editing
+              # workflow YAML (GitHub Actions bot may lack workflow permission).
+              legacy=Path('scripts/sync-wav-s20.mjs')
+              p=ROOT/legacy
+              if not p.exists():
+                  log('Legacy S20 importer absent: no rewrite needed')
+                  return
+              js=p.read_text(encoding='utf-8')
+              if 'S20_SHION' not in js:
+                  log('Legacy importer already member-aware or converted')
+                  return
+              fixes=[
+                  ('S20_SHION','S12_YEONJI'),('S20SHION','S12YEONJI'),('S20:', 'S12:'),
+                  ('S20','S12'),('PARKSHION','KWAKYEONJI'),('SHION','YEONJI'),
+                  ('Shion','Yeonji'),('shion','yeonji'),('SION','YEONJI'),
+                  ('박시온','곽연지'),
+                  ('YEONJI|YEONJI|20|YEONJI|YEONJI|KWAKYEONJI|곽연지','YEONJI|S12YEONJI|12|YEONJI|KWAKYEONJI|곽연지'),
+              ]
+              for a,b in fixes:js=js.replace(a,b)
+              # The original template matched member number 20 by itself. 20 must
+              # become 12 but only inside the member matcher regular expression.
+              js=js.replace('|20|','|12|')
+              # Remove duplicate alternatives introduced by old source spellings.
+              js=js.replace('S12|S12YEONJI|20|YEONJI|YEONJI|KWAKYEONJI|곽연지','S12|S12YEONJI|12|YEONJI|KWAKYEONJI|곽연지')
+              if write:
+                  p.write_text(js,encoding='utf-8')
+                  (ROOT/'scripts/sync-wav-s12.mjs').write_text(js,encoding='utf-8')
+              log(('Patched' if write else 'Would patch')+' legacy scheduled S20 importer to S12 only')
+
+
+          def main():
+              if 'yeonji' not in os.getenv('GITHUB_REPOSITORY','bbangshion/yeonji-archive').lower():
+                  raise SystemExit('Refusing to run outside YEONJI repository')
+              existing=normalize_records(load_present())
+              log(f'Current real S12 cards: {len(existing)}')
+              best=existing;source='current'
+              # If current catalog is empty / only samples, check history for a real S12 snapshot.
+              if len(existing)<4:
+                  older,ref=history_best()
+                  log(f'Best S12 history: {len(older)} cards ({ref or "none"})')
+                  if len(older)>=4:
+                      best=older;source=f'git-history:{ref}'
+                  else:
+                      best=wav_import();source='WAV ARCHIVE snapshot'
+              if len(best)<4:raise SystemExit(f'STOP: only {len(best)} real YEONJI S12 cards found; no files changed')
+              if len(best)<20:log('WARNING: recovered fewer than 20 S12 cards, check source coverage.')
+              if not any(x['imageUrl'] for x in best):
+                  raise SystemExit('STOP: recovered cards have no real image URL; refusing broken catalog')
+              log(f'Selected source: {source}; real S12 cards={len(best)}, with images={sum(bool(x["imageUrl"]) for x in best)}')
+              will_write=(MODE=='apply')
+              frontend_repair(will_write)
+              converter_fix(will_write)
+              if will_write:
+                  # Preserve metadata and original image URLs. Reuse current raw JSON if
+                  # already valid and compatible; otherwise migrate to catalog shape.
+                  raw=load_present()
+                  compatibility=isinstance(raw,dict) and isinstance(raw.get('objekts'),list)
+                  if source!='current' or not compatibility:
+                      DATA.parent.mkdir(parents=True,exist_ok=True)
+                      if DATA.exists():
+                          b=ROOT/'reports/yeonji-objekt-before-v2.json'
+                          b.parent.mkdir(parents=True,exist_ok=True)
+                          if not b.exists():b.write_bytes(DATA.read_bytes())
+                      payload={'meta':{'member':'S12_YEONJI','source':source,'recoveredBy':'YEONJI S12 repair V2'}, 'objekts':best}
+                      DATA.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+                      log('Wrote public/data/objekt.json with real S12 catalog')
+              summary=f'YEONJI S12 cards: {len(best)}; with real images: {sum(bool(x["imageUrl"]) for x in best)}; source: {source}; mode: {MODE}'
+              log(summary)
+              if os.getenv('GITHUB_STEP_SUMMARY'):
+                  with open(os.environ['GITHUB_STEP_SUMMARY'],'a',encoding='utf-8') as f:f.write('## YEONJI OBJEKT RESTORE V2\n\n'+summary+'\n')
+
+
+          if __name__=='__main__':
+              main()
+          PYCODE
+          python /tmp/yeonji_objekt_v2.py
+      - name: Record apply choice
+        id: mode
+        shell: bash
+        run: |
+          if [ '${{ inputs.mode }}' = 'apply' ]; then
+            echo 'apply=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'apply=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Set up Node 22
+        if: inputs.mode == 'apply'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check recovered S12 converter and real Objekt catalog
+        if: inputs.mode == 'apply'
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -f scripts/sync-wav-s20.mjs ]; then
+            node --check scripts/sync-wav-s20.mjs
+            node scripts/sync-wav-s20.mjs --self-test
+          fi
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const raw=JSON.parse(fs.readFileSync('public/data/objekt.json','utf8'));
+          const rows=Array.isArray(raw)?raw:raw.objekts;
+          const ok=Array.isArray(rows)?rows.filter(x=>x.member==='S12_YEONJI'&&!x.demo):[];
+          if(ok.length<4 || !ok.some(x=>x.imageUrl)) throw Error('S12 catalogue missing or images unavailable');
+          console.log('Verified YEONJI S12 real Objekt cards:',ok.length);
+          NODE
+      - name: Install dependencies and build
+        if: inputs.mode == 'apply'
+        shell: bash
+        run: |
+          set -euo pipefail
+          if test -f package-lock.json; then
+            npm ci --no-audit --no-fund
+          else
+            npm install --no-audit --no-fund
+          fi
+          npm run build
+      - name: Commit real S12 data and targeted compatibility fixes only
+        if: inputs.mode == 'apply'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for f in \
+            public/data/objekt.json \
+            src/types/objekt.ts \
+            src/lib/catalog.ts \
+            src/hooks/useCatalog.ts \
+            src/components/ObjektArtwork.tsx \
+            src/index.css \
+            src/App.tsx \
+            scripts/sync-wav-s20.mjs \
+            scripts/sync-wav-s12.mjs \
+            reports/yeonji-objekt-before-v2.json; do
+            if [ -f "$f" ]; then git add -- "$f"; fi
+          done
+          if git diff --cached --quiet; then
+            echo 'No source change required. Built S12 site successfully.'
+          else
+            git commit -m 'fix(yeonji): restore S12 Objekt data and prevent S20 overwrite'
+            git push origin HEAD:main
+          fi
+      - name: Configure Pages
+        if: inputs.mode == 'apply'
+        uses: actions/configure-pages@v5
+      - name: Upload checked S12 site
+        if: inputs.mode == 'apply'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    if: needs.repair.outputs.apply == 'true'
+    needs: repair
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Deploy YEONJI S12 Pages
+        id: deploy
+        uses: actions/deploy-pages@v4

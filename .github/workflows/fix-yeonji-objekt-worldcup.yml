@@ -1,0 +1,286 @@
+name: YEONJI - Restore Objekt and World Cup V1
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'preview = inspect only / apply = patch, build and deploy'
+        type: choice
+        required: true
+        default: preview
+        options:
+          - preview
+          - apply
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: yeonji-objekt-repair
+  cancel-in-progress: false
+jobs:
+  repair:
+    if: github.ref == 'refs/heads/main' && github.repository_owner == 'bbangshion' && contains(github.event.repository.name, 'yeonji')
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout current source
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Diagnose and repair Objekt source safely
+        shell: bash
+        env:
+          REPAIR_MODE: ${{ inputs.mode }}
+        run: |
+          set -euo pipefail
+          cat > /tmp/repair_objekt.py <<'PYCODE'
+          #!/usr/bin/env python3
+          """Member-scoped UI/catalog recovery; never replaces raw objekt data.
+          Works on checked-out live repo in GitHub Actions. Deliberately conservative.
+          """
+          from __future__ import annotations
+          import argparse, json, re, os, pathlib, sys
+          from collections import Counter
+
+          CONF = {
+           'shion': {'member':'S20_SHION', 'n':20, 'name':'SHION', 'korean':'박시온', 'rx':r'S20|S20SHION|20|SHION|SION|PARKSHION|박시온'},
+           'yeonji': {'member':'S12_YEONJI', 'n':12, 'name':'YEONJI', 'korean':'곽연지', 'rx':r'S12|S12YEONJI|12|YEONJI|KWAKYEONJI|곽연지'},
+           'chaewon': {'member':'S21_CHAEWON', 'n':21, 'name':'CHAEWON', 'korean':'김채원', 'rx':r'S21|S21CHAEWON|21|CHAEWON|KIMCHAEWON|김채원'},
+          }
+          BASE = pathlib.Path('.')
+
+          def load(p): return p.read_text(encoding='utf8')
+          def report(msg): print(f'[OBJEKT] {msg}',flush=True)
+          def getrows(raw):
+              if isinstance(raw,list): return raw
+              if isinstance(raw,dict):
+                  for k in ('objekts','objekt','items','results','cards','catalog','data','collections','rows'):
+                      v=raw.get(k)
+                      if isinstance(v,list): return v
+                      if isinstance(v,dict):
+                          found=getrows(v)
+                          if found is not None: return found
+              return None
+
+          def member_tokens(value):
+              if isinstance(value,dict):
+                  return [s for k in ('code','id','member','memberCode','memberId','member_name','name','slug','number','sNumber') for s in member_tokens(value.get(k))]
+              if isinstance(value,list):
+                  return [s for v in value for s in member_tokens(v)]
+              if not isinstance(value,(str,int)): return []
+              s=str(value).upper().strip()
+              return [re.sub(r'[\s._\-]+','',s)] if s else []
+
+          def check_data(conf):
+              f=BASE/'public/data/objekt.json'
+              if not f.exists():
+                  raise SystemExit('STOP: public/data/objekt.json 파일 없음 — 먼저 해당 아카이브의 오브젝트 동기화가 필요함')
+              raw=json.loads(load(f))
+              rows=getrows(raw)
+              if rows is None or not rows:
+                  raise SystemExit('STOP: public/data/objekt.json에 오브젝트 데이터가 없습니다. 데이터를 만들지 않고 중단합니다.')
+              rx=re.compile(r'^(?:'+conf['rx']+r')$',re.I)
+              matched=0; unlabeled=0; others=0; pics=0; examples=[]
+              keys=['member','memberCode','member_code','memberId','member_id','memberName','member_name','members','artist','artistName','artist_name','ownerMember', 'artistMember','memberSlug','memberNumber']
+              for row in rows:
+                  if not isinstance(row,dict): continue
+                  tokens=[t for k in keys for t in member_tokens(row.get(k))]
+                  if not tokens: unlabeled+=1
+                  elif any(rx.match(t) for t in tokens): matched+=1
+                  else: others+=1; examples.extend(tokens[:1] if len(examples)<5 else [])
+                  if any(row.get(k) for k in ('imageUrl','image','thumbnail','image_url','frontImageUrl')): pics+=1
+              report(f'Data: total={len(rows)}, member-matched={matched}, unlabeled={unlabeled}, other-member={others}, with-image-field={pics}')
+              if examples: report(f'Examples of other member tags: {examples[:5]}')
+              if not matched:
+                  raise SystemExit('STOP: 대상 멤버를 가리키는 항목이 0개입니다. 다른 멤버 데이터를 억지로 표시하지 않고 중단합니다. 데이터 동기화를 확인하세요.')
+              if matched < 4:
+                  report('WARNING: fewer than 4 cards, World Cup may not start.')
+              return {'rows':len(rows),'matching_member':matched,'unlabeled':unlabeled,'different_member':others,'image_field':pics}
+
+
+          def patch_file(path,fn,preview):
+              if not path.is_file():
+                  report(f'Not found; skipped: {path}');return False
+              before=load(path)
+              after=fn(before)
+              if after==before:
+                  report(f'Unchanged: {path}');return False
+              report(f'{"Would modify" if preview else "Modified"}: {path}')
+              if not preview: path.write_text(after,encoding='utf8')
+              return True
+
+
+          def apply(conf,preview):
+              expected=conf['member']; name=conf['name']
+              # Only a known clone-specific TS defect: remove stale *member* type literals,
+              # and fix matching expressions. Other application logic remains unchanged.
+              type_path=BASE/'src/types/objekt.ts'
+              catalog_path=BASE/'src/lib/catalog.ts'
+              if catalog_path.exists():
+                  cat=load(catalog_path)
+                  if 'createCatalog' not in cat:
+                      raise SystemExit('STOP: 알 수 없는 catalog.ts 구조 — 임의로 덮어쓰지 않습니다.')
+                  # If catalog references the old prototype for the wrong member, repair
+                  # literal values in catalog and type definition simultaneously.
+                  if expected!='S20_SHION' and "'S20_SHION'" in cat:
+                      if not type_path.exists() or "'S20_SHION'" not in load(type_path):
+                          raise SystemExit('STOP: 카탈로그/타입 불일치. 새 소스를 확인해야 합니다.')
+                      patch_file(type_path, lambda s: s.replace("'S20_SHION'",f"'{expected}'"),preview)
+                  def fix_catalog(s):
+                      # Replace hardcoded demo member identifier in old copied source only.
+                      if expected!='S20_SHION' and "'S20_SHION'" in s:
+                          s=s.replace("'S20_SHION'",f"'{expected}'")
+                      # Fix a common subtle bug: an older copied matcher still filters S20.
+                      anchor=r'(function\s+memberValueMatches\s*\([^)]*\)(?:\s*:\s*[^{}]+)?\s*\{[\s\S]*?)(return\s+/\^[^\r\n]+?\.test\(clean\);)'
+                      matches=list(re.finditer(anchor,s))
+                      if len(matches)==1:
+                          m=matches[0]
+                          replacement=f'return /^(?:{conf["rx"]})$/.test(clean);'
+                          s=s[:m.start(2)]+replacement+s[m.end(2):]
+                          # Old cloned code hardcodes S20 numeric IDs, too.
+                          s=s.replace("if (typeof value === 'number') return value === 20;", f"if (typeof value === 'number') return value === {conf['n']};")
+                          # Match S_XX / snake case by removing underscore, as in regex.
+                          s=s.replace(".replace(/[\\s.\\-]/g, '')", ".replace(/[\\s._\\-]/g, '')")
+                      # Do not rewrite image selection, bracket engine, or existing data.
+                      return s
+                  patch_file(catalog_path,fix_catalog,preview)
+              else: report('WARNING: src/lib/catalog.ts missing; check architecture separately')
+
+              # ScrollReveal should not gate object-grid visibility while virtual/lazy pages load.
+              reveal=BASE/'src/components/ScrollReveal.tsx'
+              def fix_reveal(s):
+                  return re.sub(r"(?m)^\s*['\"]\.shion-subpage \.grid > article\.group['\"],?\s*\n",'\n',s)
+              patch_file(reveal,fix_reveal,preview)
+
+              # Add focused CSS rescue that NEVER globally forces all pages or modals visible.
+              css=BASE/'src/index.css'
+              marker='/* OBJEKT FAMILY REPAIR 2026-11 */'
+              rescue='''\n/* OBJEKT FAMILY REPAIR 2026-11 */
+          /* Objekt cards must never remain hidden by stale scroll-reveal classes. */
+          .shion-subpage .grid > article.group.shion-reveal-pending,
+          .shion-subpage .grid > article.group.shion-reveal-enter {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+          }
+          /* Shared visual system must not cover Objekt interactions. */
+          .shion-subpage .shion-podium-stage,
+          .shion-subpage .shion-top-four { visibility: visible; }
+          '''
+              patch_file(css,lambda s:s if marker in s else s+'\n'+rescue,preview)
+
+              # Prevent stale browser caches from serving outdated JSON after a deploy.
+              hook=BASE/'src/hooks/useCatalog.ts'
+              patch_file(hook,lambda s:s.replace("cache: 'no-cache'", "cache: 'no-store'").replace('cache: "no-cache"','cache: "no-store"'),preview)
+
+              # Old clones had artist-specific placeholder even on other artists' cards.
+              art=BASE/'src/components/ObjektArtwork.tsx'
+              if expected != 'S20_SHION':
+                  patch_file(art,lambda s:s.replace('>SHION</span>',f'>{name}</span>')
+                             .replace('>SHION</div>',f'>{name}</div>'),preview)
+
+
+          def main():
+              a=argparse.ArgumentParser(); a.add_argument('site',choices=CONF); a.add_argument('mode',choices=['preview','apply']); args=a.parse_args()
+              conf=CONF[args.site]
+              name=pathlib.Path.cwd().name.lower()
+              if args.site not in name:
+                  # Some historical repos are cloned with a different name: data markers
+                  # still provide a strict identity safeguard.
+                  markers={'shion':'shion.json','yeonji':'yeonji.json','chaewon':'chaewon.json'}
+                  if not (BASE/'public/data'/markers[args.site]).exists():
+                      raise SystemExit('STOP: 저장소와 멤버 마커가 일치하지 않아 변경하지 않습니다.')
+              report(f'Project={name}; member={conf["member"]}; mode={args.mode}')
+              stats=check_data(conf)
+              apply(conf,args.mode=='preview')
+              for k,v in stats.items(): report(f'{k}: {v}')
+              report('Raw data is NEVER changed. Inspect GitHub Actions summary for real counts.')
+
+          if __name__=='__main__': main()
+          PYCODE
+          python /tmp/repair_objekt.py yeonji "$REPAIR_MODE" | tee /tmp/objekt-report.log
+          {
+            echo '## YEONJI Objekt Repair — '$REPAIR_MODE
+            echo '```text'
+            cat /tmp/objekt-report.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Set up Node 22 (apply only)
+        if: inputs.mode == 'apply'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies and build checked-out source
+        if: inputs.mode == 'apply'
+        shell: bash
+        run: |
+          set -euo pipefail
+          if test -f package-lock.json; then
+            npm ci --no-audit --no-fund
+          else
+            npm install --no-audit --no-fund
+          fi
+          npm run build
+          # Compile the exact runtime parser in isolation and confirm it does not
+          # filter away all the cards after a cloned-member migration.
+          node --input-type=module <<'JSCHECK'
+          import fs from 'node:fs';
+          import ts from 'typescript';
+          const path = 'src/lib/catalog.ts';
+          if (fs.existsSync(path)) {
+            const src = fs.readFileSync(path, 'utf8').replaceAll('import.meta.env.BASE_URL', JSON.stringify('/archive/'));
+            const output = ts.transpileModule(src, {compilerOptions: {module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2020}}).outputText;
+            if (/^\s*import\s/m.test(output)) {
+              console.warn('Parser depends on other modules: runtime smoke test skipped; full build passed.');
+            } else {
+              const mod = await import('data:text/javascript;base64,' + Buffer.from(output).toString('base64'));
+              const raw = JSON.parse(fs.readFileSync('public/data/objekt.json', 'utf8'));
+              const result = mod.createCatalog(raw);
+              console.log('Runtime parser returned', result.items?.length, 'Objekts');
+              if (!result.items?.length) throw new Error('STOP: catalog parser hides all cards despite nonempty source JSON');
+            }
+          }
+          JSCHECK
+          test -f dist/index.html
+          test -s dist/data/objekt.json
+          node -e 'const fs=require("fs"); const d=JSON.parse(fs.readFileSync("dist/data/objekt.json")); const a=Array.isArray(d)?d:(d.objekts||d.items||d.data||d.cards||[]); if (!a.length) process.exit(1); console.log("Build output Objekt rows:",a.length)'
+      - name: Commit targeted source changes
+        if: inputs.mode == 'apply'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A -- src
+          if git diff --cached --quiet; then
+            echo 'No source changes to commit.'
+          else
+            git commit -m 'fix: restore YEONJI Objekt and World Cup visibility'
+            git push origin HEAD:main
+          fi
+      - name: Configure GitHub Pages
+        if: inputs.mode == 'apply'
+        uses: actions/configure-pages@v5
+      - name: Upload verified Pages build
+        if: inputs.mode == 'apply'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    if: inputs.mode == 'apply' && github.ref == 'refs/heads/main' && github.repository_owner == 'bbangshion' && contains(github.event.repository.name, 'yeonji')
+    needs: repair
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy Objekt repair to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

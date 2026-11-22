@@ -34,7 +34,7 @@ function memberValueMatches(value: unknown): boolean {
   if (typeof value === 'number') return value === 12;
   const text = asText(value);
   if (!text) return false;
-  const clean = text.normalize('NFKC').toUpperCase().replace(/[\s.\-]/g, '');
+  const clean = text.normalize('NFKC').toUpperCase().replace(/[\s._\-]/g, '');
   return /^(S12|S12_YEONJI|S12YEONJI|YEONJI|KWAKYEONJI|곽연지|12)$/.test(clean);
 }
 

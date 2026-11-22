@@ -845,3 +845,12 @@ body, .shion-home, .shion-hero, .shion-subpage, .shion-footer, .archive-tab-bar 
 .shion-hero-image img { object-position: 64% 31%; }
 @media (max-width: 768px) { .shion-hero-image img { object-position: 64% 29%; } }
 .shion-profile :is(a,button,summary):focus-visible { outline-color:#A6B7FF; }
+
+
+/* YEONJI S12 OBJEKT REPAIR V2 */
+.shion-subpage .grid > article.group.shion-reveal-pending,
+.shion-subpage .grid > article.group.shion-reveal-enter {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}

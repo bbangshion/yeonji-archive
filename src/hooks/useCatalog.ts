@@ -18,7 +18,7 @@ export function useCatalog(): CatalogState & { retry: () => void } {
       try {
         const response = await fetch(`${import.meta.env.BASE_URL}data/objekt.json`, {
           signal: controller.signal,
-          cache: 'no-cache',
+          cache: 'no-store',
         });
         if (!response.ok) throw new Error(`데이터 요청 실패 (${response.status})`);
         const raw: unknown = await response.json();

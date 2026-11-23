@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-21T04:51:59.021Z",
+  "checkedAt": "2026-11-23T22:07:33.573Z",
   "memberId": "S12",
   "coverage": "partial — public/authorized sources only; not all Instagram hashtag posts",
   "queryTags": [
@@ -8,14 +8,21 @@
     "#YeonJi",
     "#KwakYeonJi"
   ],
-  "metaApiMode": "not-configured",
-  "metaApiErrors": [],
-  "registeredPhotos": 421,
+  "metaApiMode": "meta-official-and-hashtag-recent-partial",
+  "metaApiErrors": [
+    "Official Instagram: Graph API HTTP 400: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"AgMUH3i88nJABKDbAcpJJrC\"}}",
+    "연지: Graph API HTTP 400: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"AQc0d-D1NO9tZaDw8038M3h\"}}",
+    "곽연지: Graph API HTTP 400: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"Al_fHiCMcKJiVz31YYVH_wh\"}}",
+    "YeonJi: Graph API HTTP 400: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"Aq1JNSUDIrcpefkygetDqSr\"}}",
+    "KwakYeonJi: Graph API HTTP 400: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"AByONSEW4GwnlqbkANjBJWz\"}}"
+  ],
+  "registeredPhotos": 423,
   "photosByYear": {
     "2023": 82,
-    "2024": 5
+    "2024": 5,
+    "2026": 2
   },
-  "newestDate": "2024-02-05",
+  "newestDate": "2026-11-19",
   "candidates": 0,
   "candidatesWithImage": 0,
   "candidatesWithoutImage": 0,

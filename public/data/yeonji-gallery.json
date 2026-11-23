@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "source": "https://triples.fandom.com/wiki/Kwak_YeonJi/Gallery",
-  "generatedAt": "2026-11-21T04:51:56.905Z",
+  "generatedAt": "2026-11-23T22:07:23.911Z",
   "memberId": "S12",
   "totalPhotos": 333,
   "years": [
@@ -24,660 +24,12 @@
   ],
   "photos": [
     {
-      "id": "fandom-s12-S1lKIHRlYXNlciBkcm9wIHR3aXR0ZXIuanBn",
+      "id": "fandom-s12-QmFkZ2UgV2FyIFMzIEtZSiBQcm9maWxlLmpwZw",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_teaser_drop_twitter.jpg",
-      "originalFileName": "KYJ teaser drop twitter.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHRlYXNlciBkcm9wIGluc3RhZ3JhbS5wbmc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_teaser_drop_instagram.png",
-      "originalFileName": "KYJ teaser drop instagram.png"
-    },
-    {
-      "id": "fandom-s12-S1lKIHd0dGggdHdpdHRlci5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_wtth_twitter.jpg",
-      "originalFileName": "KYJ wtth twitter.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHd0dGggaW5zdGFncmFtLnBuZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_wtth_instagram.png",
-      "originalFileName": "KYJ wtth instagram.png"
-    },
-    {
-      "id": "fandom-s12-S1lKIEVWT0x1dGlvbiDin6EgY29uY2VwdCBzaG9vdCB0d2l0dGVyLmpwZWc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_EVOLution_%E2%9F%A1_concept_shoot_twitter.jpeg",
-      "originalFileName": "KYJ EVOLution ⟡ concept shoot twitter.jpeg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEVWT0x1dGlvbiBJbnZpbmNpYmxlIHNuZWFrIHBlZWsgKHR3aXR0ZXIpLmpwZWc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_EVOLution_Invincible_sneak_peek_(twitter).jpeg",
-      "originalFileName": "KYJ EVOLution Invincible sneak peek (twitter).jpeg"
-    },
-    {
-      "id": "fandom-s12-S1lKIE1VSlVLIHN0cmVhbWluZyBzZXJ2aWNlIHByb2ZpbGUuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_MUJUK_streaming_service_profile.jpg",
-      "originalFileName": "KYJ MUJUK streaming service profile.jpg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIEEyNCBjb25jZXB0IHBob3RvIDEuanBlZw",
-      "date": null,
-      "sourceYear": "2024",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_A24_concept_photo_1.jpeg",
-      "originalFileName": "YeonJi A24 concept photo 1.jpeg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIEEyNCBjb25jZXB0IHBob3RvIDIuanBlZw",
-      "date": null,
-      "sourceYear": "2024",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_A24_concept_photo_2.jpeg",
-      "originalFileName": "YeonJi A24 concept photo 2.jpeg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIEEyNCBjb25jZXB0IHBob3RvIDMuanBlZw",
-      "date": null,
-      "sourceYear": "2024",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_A24_concept_photo_3.jpeg",
-      "originalFileName": "YeonJi A24 concept photo 3.jpeg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNCBzdHJlYW1pbmcgc2VydmljZSBwcm9maWxlLmpwZw",
-      "date": null,
-      "sourceYear": "2024",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A24_streaming_service_profile.jpg",
-      "originalFileName": "KYJ A24 streaming service profile.jpg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIFZWIHRlYXNlciAxLmpwZWc",
-      "date": null,
-      "sourceYear": "2024",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_VV_teaser_1.jpeg",
-      "originalFileName": "YeonJi VV teaser 1.jpeg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIFZWIHRlYXNlciAyLmpwZWc",
-      "date": null,
-      "sourceYear": "2024",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_VV_teaser_2.jpeg",
-      "originalFileName": "YeonJi VV teaser 2.jpeg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIFZWIHRlYXNlciAzLmpwZWc",
-      "date": null,
-      "sourceYear": "2024",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_VV_teaser_3.jpeg",
-      "originalFileName": "YeonJi VV teaser 3.jpeg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIFZWIHRlYXNlciA0LmpwZWc",
-      "date": null,
-      "sourceYear": "2024",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_VV_teaser_4.jpeg",
-      "originalFileName": "YeonJi VV teaser 4.jpeg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIFZWIHRlYXNlciA1LmpwZWc",
-      "date": null,
-      "sourceYear": "2024",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_VV_teaser_5.jpeg",
-      "originalFileName": "YeonJi VV teaser 5.jpeg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHBlcmZvcm1hbnRlIHN0cmVhbWluZyBzZXJ2aWNlIHByb2ZpbGUuanBn",
-      "date": null,
-      "sourceYear": "2024",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_performante_streaming_service_profile.jpg",
-      "originalFileName": "KYJ performante streaming service profile.jpg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIEEyNSBjb25jZXB0IHBob3RvIDEuanBlZw",
-      "date": null,
-      "sourceYear": "2025",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_A25_concept_photo_1.jpeg",
-      "originalFileName": "YeonJi A25 concept photo 1.jpeg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIEEyNSBjb25jZXB0IHBob3RvIDIuanBn",
-      "date": null,
-      "sourceYear": "2025",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_A25_concept_photo_2.jpg",
-      "originalFileName": "YeonJi A25 concept photo 2.jpg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIEEyNSBjb25jZXB0IHBob3RvIDMuanBn",
-      "date": null,
-      "sourceYear": "2025",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_A25_concept_photo_3.jpg",
-      "originalFileName": "YeonJi A25 concept photo 3.jpg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIEEyNSBjb25jZXB0IHBob3RvIDQuanBlZw",
-      "date": null,
-      "sourceYear": "2025",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_A25_concept_photo_4.jpeg",
-      "originalFileName": "YeonJi A25 concept photo 4.jpeg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIEEyNSBjb25jZXB0IHBob3RvIDUuanBlZw",
-      "date": null,
-      "sourceYear": "2025",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_A25_concept_photo_5.jpeg",
-      "originalFileName": "YeonJi A25 concept photo 5.jpeg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSBzdHJlYW1pbmcgc2VydmljZSBwcm9maWxlLmpwZw",
-      "date": null,
-      "sourceYear": "2025",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_streaming_service_profile.jpg",
-      "originalFileName": "KYJ A25 streaming service profile.jpg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIEJCIGNvbmNlcHQgcGhvdG8gMS5qcGVn",
-      "date": null,
-      "sourceYear": "2025",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_BB_concept_photo_1.jpeg",
-      "originalFileName": "YeonJi BB concept photo 1.jpeg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIEJCIGNvbmNlcHQgcGhvdG8gMi5qcGVn",
-      "date": null,
-      "sourceYear": "2025",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_BB_concept_photo_2.jpeg",
-      "originalFileName": "YeonJi BB concept photo 2.jpeg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIE15IFNlY3JldCBOZXcgWm9uZSBUZWFzZXIgUG9zdGVyLmpwZWc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_My_Secret_New_Zone_Teaser_Poster.jpeg",
-      "originalFileName": "YeonJi My Secret New Zone Teaser Poster.jpeg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIEwmUCBwdC4xIGNvbmNlcHQgcGhvdG8gMS5qcGVn",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_L%26P_pt.1_concept_photo_1.jpeg",
-      "originalFileName": "YeonJi L&P pt.1 concept photo 1.jpeg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIEwmUCBwdC4xIGNvbmNlcHQgcGhvdG8gMi5qcGVn",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_L%26P_pt.1_concept_photo_2.jpeg",
-      "originalFileName": "YeonJi L&P pt.1 concept photo 2.jpeg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIEwmUCBwdC4xIGNvbmNlcHQgcGhvdG8gMy5qcGVn",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_L%26P_pt.1_concept_photo_3.jpeg",
-      "originalFileName": "YeonJi L&P pt.1 concept photo 3.jpeg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIEwmUCBwdC4xIGNvbmNlcHQgcGhvdG8gNC5qcGVn",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_L%26P_pt.1_concept_photo_4.jpeg",
-      "originalFileName": "YeonJi L&P pt.1 concept photo 4.jpeg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIEwmUCBwdC4yIGNvbmNlcHQgcGhvdG8gMS5qcGVn",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_L%26P_pt.2_concept_photo_1.jpeg",
-      "originalFileName": "YeonJi L&P pt.2 concept photo 1.jpeg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIEwmUCBwdC4yIGNvbmNlcHQgcGhvdG8gMi5qcGVn",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_L%26P_pt.2_concept_photo_2.jpeg",
-      "originalFileName": "YeonJi L&P pt.2 concept photo 2.jpeg"
-    },
-    {
-      "id": "fandom-s12-WWVvbkppIEwmUCBwdC4yIGNvbmNlcHQgcGhvdG8gMy5qcGVn",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_L%26P_pt.2_concept_photo_3.jpeg",
-      "originalFileName": "YeonJi L&P pt.2 concept photo 3.jpeg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHVsdGlzdCB4IHRyaXBsZVMgMS5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_ultist_x_tripleS_1.jpg",
-      "originalFileName": "KYJ ultist x tripleS 1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHVsdGlzdCB4IHRyaXBsZVMgMi5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_ultist_x_tripleS_2.jpg",
-      "originalFileName": "KYJ ultist x tripleS 2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxLmpwZw",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_1.jpg",
-      "originalFileName": "KYJ blossom snap 1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyLmpwZw",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_2.jpg",
-      "originalFileName": "KYJ blossom snap 2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAzLmpwZw",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_3.jpg",
-      "originalFileName": "KYJ blossom snap 3.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCA0LmpwZw",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_4.jpg",
-      "originalFileName": "KYJ blossom snap 4.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCA1LmpwZw",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_5.jpg",
-      "originalFileName": "KYJ blossom snap 5.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCA2LmpwZw",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_6.jpg",
-      "originalFileName": "KYJ blossom snap 6.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCA3LmpwZw",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_7.jpg",
-      "originalFileName": "KYJ blossom snap 7.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCA4LmpwZw",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_8.jpg",
-      "originalFileName": "KYJ blossom snap 8.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCA5LmpwZw",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_9.jpg",
-      "originalFileName": "KYJ blossom snap 9.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxMC5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_10.jpg",
-      "originalFileName": "KYJ blossom snap 10.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxMS5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_11.jpg",
-      "originalFileName": "KYJ blossom snap 11.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxMi5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_12.jpg",
-      "originalFileName": "KYJ blossom snap 12.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxMy5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_13.jpg",
-      "originalFileName": "KYJ blossom snap 13.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxNC5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_14.jpg",
-      "originalFileName": "KYJ blossom snap 14.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxNS5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_15.jpg",
-      "originalFileName": "KYJ blossom snap 15.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxNi5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_16.jpg",
-      "originalFileName": "KYJ blossom snap 16.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxNy5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_17.jpg",
-      "originalFileName": "KYJ blossom snap 17.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxOC5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_18.jpg",
-      "originalFileName": "KYJ blossom snap 18.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxOS5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_19.jpg",
-      "originalFileName": "KYJ blossom snap 19.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyMC5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_20.jpg",
-      "originalFileName": "KYJ blossom snap 20.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyMS5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_21.jpg",
-      "originalFileName": "KYJ blossom snap 21.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyMi5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_22.jpg",
-      "originalFileName": "KYJ blossom snap 22.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyMy5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_23.jpg",
-      "originalFileName": "KYJ blossom snap 23.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyNC5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_24.jpg",
-      "originalFileName": "KYJ blossom snap 24.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyNS5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_25.jpg",
-      "originalFileName": "KYJ blossom snap 25.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyNi5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_26.jpg",
-      "originalFileName": "KYJ blossom snap 26.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyNy5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_27.jpg",
-      "originalFileName": "KYJ blossom snap 27.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyOC5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_28.jpg",
-      "originalFileName": "KYJ blossom snap 28.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyOS5qcGc",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_29.jpg",
-      "originalFileName": "KYJ blossom snap 29.jpg"
-    },
-    {
-      "id": "fandom-s12-UzExIFMxMiBTMjEgYmxvc3NvbSBzbmFwIDEuanBn",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_S21_blossom_snap_1.jpg",
-      "originalFileName": "S11 S12 S21 blossom snap 1.jpg"
-    },
-    {
-      "id": "fandom-s12-UzExIFMxMiBTMjEgYmxvc3NvbSBzbmFwIDIuanBn",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_S21_blossom_snap_2.jpg",
-      "originalFileName": "S11 S12 S21 blossom snap 2.jpg"
-    },
-    {
-      "id": "fandom-s12-UzExIFMxMiBTMjEgYmxvc3NvbSBzbmFwIDMuanBn",
-      "date": null,
-      "sourceYear": "2026",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_S21_blossom_snap_3.jpg",
-      "originalFileName": "S11 S12 S21 blossom snap 3.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIE92ZXJUaGVQaXRjaC5qcGc",
-      "date": null,
-      "sourceYear": "2025",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_OverThePitch.jpg",
-      "originalFileName": "KYJ OverThePitch.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIE92ZXJUaGVQaXRjaCAyLmpwZw",
-      "date": null,
-      "sourceYear": "2025",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_OverThePitch_2.jpg",
-      "originalFileName": "KYJ OverThePitch 2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIE5pY29wdWNoaS5qcGc",
-      "date": null,
-      "sourceYear": "2025",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Nicopuchi.jpg",
-      "originalFileName": "KYJ Nicopuchi.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHNpaHl1bmhhZGEgMjQxMTA2IDEuanBn",
-      "date": null,
-      "sourceYear": "2024",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_sihyunhada_241106_1.jpg",
-      "originalFileName": "KYJ sihyunhada 241106 1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHNpaHl1bmhhZGEgMjQxMTA2IDIuanBn",
-      "date": null,
-      "sourceYear": "2024",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_sihyunhada_241106_2.jpg",
-      "originalFileName": "KYJ sihyunhada 241106 2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHZhbml0eXRlZW4gMjAyMyAxLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_vanityteen_2023_1.jpg",
-      "originalFileName": "KYJ vanityteen 2023 1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHZhbml0eXRlZW4gMjAyMyAyLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_vanityteen_2023_2.jpg",
-      "originalFileName": "KYJ vanityteen 2023 2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHZhbml0eXRlZW4gMjAyMyAzLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_vanityteen_2023_3.jpg",
-      "originalFileName": "KYJ vanityteen 2023 3.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHZhbml0eXRlZW4gMjAyMyA0LmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_vanityteen_2023_4.jpg",
-      "originalFileName": "KYJ vanityteen 2023 4.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG5ldyBwcm9maWxlIDEuanBn",
-      "date": null,
-      "sourceYear": "2025",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_new_profile_1.jpg",
-      "originalFileName": "KYJ new profile 1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG5ldyBwcm9maWxlIDIuanBn",
-      "date": null,
-      "sourceYear": "2025",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_new_profile_2.jpg",
-      "originalFileName": "KYJ new profile 2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG5ldyBwcm9maWxlIDMuanBn",
-      "date": null,
-      "sourceYear": "2025",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_new_profile_3.jpg",
-      "originalFileName": "KYJ new profile 3.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG5ldyBwcm9maWxlIDQuanBn",
-      "date": null,
-      "sourceYear": "2025",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_new_profile_4.jpg",
-      "originalFileName": "KYJ new profile 4.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSBNZXNzYWdlLmpwZw",
-      "date": null,
-      "sourceYear": "2025",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_Message.jpg",
-      "originalFileName": "KYJ A25 Message.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEJCIE1lc3NhZ2UuanBn",
-      "date": null,
-      "sourceYear": "2025",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_BB_Message.jpg",
-      "originalFileName": "KYJ BB Message.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:Badge_War_S3_KYJ_Profile.jpg",
+      "originalFileName": "Badge War S3 KYJ Profile.jpg"
     },
     {
       "id": "fandom-s12-S1lKIDFzdCBhbm5pdmVyc2FyeS5qcGc",
@@ -686,142 +38,6 @@
       "section": "promotional",
       "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_1st_anniversary.jpg",
       "originalFileName": "KYJ 1st anniversary.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIFBlcmZvcm1hbnRlIE1lc3NhZ2UuanBn",
-      "date": null,
-      "sourceYear": "2024",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Performante_Message.jpg",
-      "originalFileName": "KYJ Performante Message.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIDIwMjQgQ2hyaXN0bWFzIE1lc3NhZ2UuanBn",
-      "date": null,
-      "sourceYear": "2024",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2024_Christmas_Message.jpg",
-      "originalFileName": "KYJ 2024 Christmas Message.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHByb2ZpbGUgMS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_profile_1.jpg",
-      "originalFileName": "KYJ profile 1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHByb2ZpbGUgMi5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_profile_2.jpg",
-      "originalFileName": "KYJ profile 2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHByb2ZpbGUgMy5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_profile_3.jpg",
-      "originalFileName": "KYJ profile 3.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHNjaGVkdWxlLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_schedule.jpg",
-      "originalFileName": "KYJ schedule.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHRoZSBmaXJzdCBkYXkgd2UgbWV0IHR3aXR0ZXIuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_the_first_day_we_met_twitter.jpg",
-      "originalFileName": "KYJ the first day we met twitter.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG11anVrIEQtMSBNZXNzYWdlLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_D-1_Message.jpg",
-      "originalFileName": "KYJ mujuk D-1 Message.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG11anVrIGphY2tldCBiZWhpbmQgMS5qcGVn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_jacket_behind_1.jpeg",
-      "originalFileName": "KYJ mujuk jacket behind 1.jpeg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG11anVrIGphY2tldCBiZWhpbmQgMi5qcGVn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_jacket_behind_2.jpeg",
-      "originalFileName": "KYJ mujuk jacket behind 2.jpeg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG11anVrIGphY2tldCBiZWhpbmQgMy5qcGVn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_jacket_behind_3.jpeg",
-      "originalFileName": "KYJ mujuk jacket behind 3.jpeg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG11anVrIGphY2tldCBiZWhpbmQgNC5qcGVn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_jacket_behind_4.jpeg",
-      "originalFileName": "KYJ mujuk jacket behind 4.jpeg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG11anVrIGphY2tldCBiZWhpbmQgNS5qcGVn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_jacket_behind_5.jpeg",
-      "originalFileName": "KYJ mujuk jacket behind 5.jpeg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG11anVrIGphY2tldCBiZWhpbmQgNi5qcGVn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_jacket_behind_6.jpeg",
-      "originalFileName": "KYJ mujuk jacket behind 6.jpeg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG11anVrIGphY2tldCBiZWhpbmQgNy5qcGVn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_jacket_behind_7.jpeg",
-      "originalFileName": "KYJ mujuk jacket behind 7.jpeg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG11anVrIGphY2tldCBiZWhpbmQgOC5qcGVn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_jacket_behind_8.jpeg",
-      "originalFileName": "KYJ mujuk jacket behind 8.jpeg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGF1dGhlbnRpYyBldmUtY29uIGJlaGluZC5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_authentic_eve-con_behind.jpg",
-      "originalFileName": "KYJ authentic eve-con behind.jpg"
     },
     {
       "id": "fandom-s12-S1lKIDIwMjQgd2ludGVyIG9seW1waWNzIGJ0cyAxLmpwZWc",
@@ -840,6 +56,158 @@
       "originalFileName": "KYJ 2024 winter olympics bts 2.jpeg"
     },
     {
+      "id": "fandom-s12-S1lKIDIwMjQgQ2hyaXN0bWFzIE1lc3NhZ2UuanBn",
+      "date": null,
+      "sourceYear": "2024",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2024_Christmas_Message.jpg",
+      "originalFileName": "KYJ 2024 Christmas Message.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIDIwMjUgaGFudGVvIGF3YXJkcyBidHMgMi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_hanteo_awards_bts_2.jpg",
+      "originalFileName": "KYJ 2025 hanteo awards bts 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIDIwMjUgaGFudGVvIGF3YXJkcyBidHMgMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_hanteo_awards_bts_1.jpg",
+      "originalFileName": "KYJ 2025 hanteo awards bts 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIDIwMjUgaGFudGVvIGJlaGluZCAxLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_hanteo_behind_1.jpg",
+      "originalFileName": "KYJ 2025 hanteo behind 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIDIwMjUgaGFudGVvIGJlaGluZCAyLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_hanteo_behind_2.jpg",
+      "originalFileName": "KYJ 2025 hanteo behind 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIDIwMjUgaGFudGVvIGJlaGluZCAzLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_hanteo_behind_3.jpg",
+      "originalFileName": "KYJ 2025 hanteo behind 3.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIDIwMjUgS0JTU29uZ0Zlc3QgMi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_KBSSongFest_2.jpg",
+      "originalFileName": "KYJ 2025 KBSSongFest 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIDIwMjUgS0JTU29uZ0Zlc3QgMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_KBSSongFest_1.jpg",
+      "originalFileName": "KYJ 2025 KBSSongFest 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIDIwMjUgS0JTU29uZ0Zlc3QgMy5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_KBSSongFest_3.jpg",
+      "originalFileName": "KYJ 2025 KBSSongFest 3.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIDIwMjUgS0JTU29uZ0Zlc3QgNC5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_KBSSongFest_4.jpg",
+      "originalFileName": "KYJ 2025 KBSSongFest 4.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIE1VSlVLIHN0cmVhbWluZyBzZXJ2aWNlIHByb2ZpbGUuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_MUJUK_streaming_service_profile.jpg",
+      "originalFileName": "KYJ MUJUK streaming service profile.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIE5pY29wdWNoaS5qcGc",
+      "date": null,
+      "sourceYear": "2025",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Nicopuchi.jpg",
+      "originalFileName": "KYJ Nicopuchi.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIE92ZXJUaGVQaXRjaC5qcGc",
+      "date": null,
+      "sourceYear": "2025",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_OverThePitch.jpg",
+      "originalFileName": "KYJ OverThePitch.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIE92ZXJUaGVQaXRjaCAyLmpwZw",
+      "date": null,
+      "sourceYear": "2025",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_OverThePitch_2.jpg",
+      "originalFileName": "KYJ OverThePitch 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEdpcmxzIE5ldmVyIERpZSBNY291bnRkb3duIDI0MDUyMyA0LmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Girls_Never_Die_Mcountdown_240523_4.jpg",
+      "originalFileName": "KYJ Girls Never Die Mcountdown 240523 4.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEdpcmxzIE5ldmVyIERpZSBNY291bnRkb3duIDI0MDUyMyA1LmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Girls_Never_Die_Mcountdown_240523_5.jpg",
+      "originalFileName": "KYJ Girls Never Die Mcountdown 240523 5.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEdpcmxzIE5ldmVyIERpZSBNY291bnRkb3duIDI0MDUyMyAxLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Girls_Never_Die_Mcountdown_240523_1.jpg",
+      "originalFileName": "KYJ Girls Never Die Mcountdown 240523 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEdpcmxzIE5ldmVyIERpZSBNY291bnRkb3duIDI0MDUyMyAyLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Girls_Never_Die_Mcountdown_240523_2.jpg",
+      "originalFileName": "KYJ Girls Never Die Mcountdown 240523 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEdpcmxzIE5ldmVyIERpZSBNY291bnRkb3duIDI0MDUyMyAzLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Girls_Never_Die_Mcountdown_240523_3.jpg",
+      "originalFileName": "KYJ Girls Never Die Mcountdown 240523 3.jpg"
+    },
+    {
       "id": "fandom-s12-S1lKIEEyNCBtdiBzaG9vdCAxLmpwZw",
       "date": null,
       "sourceYear": "2023",
@@ -856,228 +224,676 @@
       "originalFileName": "KYJ A24 mv shoot 2.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG5hdmVyIGducyAyNDA3MDcgMS5qcGc",
+      "id": "fandom-s12-S1lKIEEyNCBzdHJlYW1pbmcgc2VydmljZSBwcm9maWxlLmpwZw",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2024",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_gns_240707_1.jpg",
-      "originalFileName": "KYJ naver gns 240707 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A24_streaming_service_profile.jpg",
+      "originalFileName": "KYJ A24 streaming service profile.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG5hdmVyIGducyAyNDA3MDcgMi5qcGc",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDEtMi5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_gns_240707_2.jpg",
-      "originalFileName": "KYJ naver gns 240707 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_1-2.jpg",
+      "originalFileName": "KYJ A25 week 1-2.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG5hdmVyIGducyAyNDA3MDggMS5qcGc",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDEtMS5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_gns_240708_1.jpg",
-      "originalFileName": "KYJ naver gns 240708 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_1-1.jpg",
+      "originalFileName": "KYJ A25 week 1-1.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG5hdmVyIGducyAyNDA3MDggMi5qcGc",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDEtMy5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_gns_240708_2.jpg",
-      "originalFileName": "KYJ naver gns 240708 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_1-3.jpg",
+      "originalFileName": "KYJ A25 week 1-3.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGEyNCAxc3QgYW5uaXZlcnNhcnkgYmVoaW5kIDEuanBn",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDEtNC5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_a24_1st_anniversary_behind_1.jpg",
-      "originalFileName": "KYJ a24 1st anniversary behind 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_1-4.jpg",
+      "originalFileName": "KYJ A25 week 1-4.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGEyNCAxc3QgYW5uaXZlcnNhcnkgYmVoaW5kIDIuanBn",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDItMi5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_a24_1st_anniversary_behind_2.jpg",
-      "originalFileName": "KYJ a24 1st anniversary behind 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_2-2.jpg",
+      "originalFileName": "KYJ A25 week 2-2.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGEyNCAxc3QgYW5uaXZlcnNhcnkgYmVoaW5kIDMuanBn",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDItMS5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_a24_1st_anniversary_behind_3.jpg",
-      "originalFileName": "KYJ a24 1st anniversary behind 3.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_2-1.jpg",
+      "originalFileName": "KYJ A25 week 2-1.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIHBlcmZvcm1hbnRlIGphY2tldCBzaG9vdCBuYXZlciAxLmpwZWc",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDItMy5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_performante_jacket_shoot_naver_1.jpeg",
-      "originalFileName": "KYJ performante jacket shoot naver 1.jpeg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_2-3.jpg",
+      "originalFileName": "KYJ A25 week 2-3.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIHBlcmZvcm1hbnRlIGphY2tldCBzaG9vdCBuYXZlciAyLmpwZWc",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDItNC5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_performante_jacket_shoot_naver_2.jpeg",
-      "originalFileName": "KYJ performante jacket shoot naver 2.jpeg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_2-4.jpg",
+      "originalFileName": "KYJ A25 week 2-4.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDEuanBn",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDItNi5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_1.jpg",
-      "originalFileName": "KYJ hit the floor mv behind shoot naver 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_2-6.jpg",
+      "originalFileName": "KYJ A25 week 2-6.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDIuanBn",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDItNS5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_2.jpg",
-      "originalFileName": "KYJ hit the floor mv behind shoot naver 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_2-5.jpg",
+      "originalFileName": "KYJ A25 week 2-5.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDMuanBn",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDItNy5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_3.jpg",
-      "originalFileName": "KYJ hit the floor mv behind shoot naver 3.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_2-7.jpg",
+      "originalFileName": "KYJ A25 week 2-7.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDQuanBn",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDItOC5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_4.jpg",
-      "originalFileName": "KYJ hit the floor mv behind shoot naver 4.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_2-8.jpg",
+      "originalFileName": "KYJ A25 week 2-8.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDUuanBn",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtMi5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_5.jpg",
-      "originalFileName": "KYJ hit the floor mv behind shoot naver 5.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-2.jpg",
+      "originalFileName": "KYJ A25 week 3-2.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDYuanBn",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtMS5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_6.jpg",
-      "originalFileName": "KYJ hit the floor mv behind shoot naver 6.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-1.jpg",
+      "originalFileName": "KYJ A25 week 3-1.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDcuanBn",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtMTAuanBn",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_7.jpg",
-      "originalFileName": "KYJ hit the floor mv behind shoot naver 7.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-10.jpg",
+      "originalFileName": "KYJ A25 week 3-10.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDguanBn",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtMTEuanBn",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_8.jpg",
-      "originalFileName": "KYJ hit the floor mv behind shoot naver 8.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-11.jpg",
+      "originalFileName": "KYJ A25 week 3-11.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDkuanBn",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtMy5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_9.jpg",
-      "originalFileName": "KYJ hit the floor mv behind shoot naver 9.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-3.jpg",
+      "originalFileName": "KYJ A25 week 3-3.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDEwLmpwZw",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtNC5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_10.jpg",
-      "originalFileName": "KYJ hit the floor mv behind shoot naver 10.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-4.jpg",
+      "originalFileName": "KYJ A25 week 3-4.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDExLmpwZw",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtNi5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_11.jpg",
-      "originalFileName": "KYJ hit the floor mv behind shoot naver 11.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-6.jpg",
+      "originalFileName": "KYJ A25 week 3-6.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDEyLmpwZw",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtNS5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_12.jpg",
-      "originalFileName": "KYJ hit the floor mv behind shoot naver 12.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-5.jpg",
+      "originalFileName": "KYJ A25 week 3-5.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDEzLmpwZw",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtNy5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_13.jpg",
-      "originalFileName": "KYJ hit the floor mv behind shoot naver 13.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-7.jpg",
+      "originalFileName": "KYJ A25 week 3-7.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDE0LmpwZw",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtOC5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_14.jpg",
-      "originalFileName": "KYJ hit the floor mv behind shoot naver 14.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-8.jpg",
+      "originalFileName": "KYJ A25 week 3-8.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDE1LmpwZw",
+      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtOS5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_15.jpg",
-      "originalFileName": "KYJ hit the floor mv behind shoot naver 15.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-9.jpg",
+      "originalFileName": "KYJ A25 week 3-9.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDE2LmpwZw",
+      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMiBiZWhpbmQgMi5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_16.jpg",
-      "originalFileName": "KYJ hit the floor mv behind shoot naver 16.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-2_behind_2.jpg",
+      "originalFileName": "KYJ A25 MV day-2 behind 2.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDE3LmpwZw",
+      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMiBiZWhpbmQgMS5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_17.jpg",
-      "originalFileName": "KYJ hit the floor mv behind shoot naver 17.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-2_behind_1.jpg",
+      "originalFileName": "KYJ A25 MV day-2 behind 1.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIHBlcmZvcm1hbnRlIG12IHNob290IGdlbmllIDEuanBlZw",
+      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMiBiZWhpbmQgMy5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_performante_mv_shoot_genie_1.jpeg",
-      "originalFileName": "KYJ performante mv shoot genie 1.jpeg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-2_behind_3.jpg",
+      "originalFileName": "KYJ A25 MV day-2 behind 3.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIHBlcmZvcm1hbnRlIG12IHNob290IGdlbmllIDIuanBlZw",
+      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMiBiZWhpbmQgNC5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_performante_mv_shoot_genie_2.jpeg",
-      "originalFileName": "KYJ performante mv shoot genie 2.jpeg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-2_behind_4.jpg",
+      "originalFileName": "KYJ A25 MV day-2 behind 4.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMiBiZWhpbmQgNi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-2_behind_6.jpg",
+      "originalFileName": "KYJ A25 MV day-2 behind 6.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMiBiZWhpbmQgNS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-2_behind_5.jpg",
+      "originalFileName": "KYJ A25 MV day-2 behind 5.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMSBiZWhpbmQgMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-1_behind_1.jpg",
+      "originalFileName": "KYJ A25 MV day-1 behind 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMyBiZWhpbmQgMi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-3_behind_2.jpg",
+      "originalFileName": "KYJ A25 MV day-3 behind 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMyBiZWhpbmQgMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-3_behind_1.jpg",
+      "originalFileName": "KYJ A25 MV day-3 behind 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMyBiZWhpbmQgMy5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-3_behind_3.jpg",
+      "originalFileName": "KYJ A25 MV day-3 behind 3.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMyBiZWhpbmQgNC5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-3_behind_4.jpg",
+      "originalFileName": "KYJ A25 MV day-3 behind 4.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEEyNSBNZXNzYWdlLmpwZw",
+      "date": null,
+      "sourceYear": "2025",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_Message.jpg",
+      "originalFileName": "KYJ A25 Message.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEEyNSBzaG93Y2FzZSAxLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_showcase_1.jpg",
+      "originalFileName": "KYJ A25 showcase 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEEyNSBzaG93Y2FzZSAyLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_showcase_2.jpg",
+      "originalFileName": "KYJ A25 showcase 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEEyNSBzaG93Y2FzZSAzLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_showcase_3.jpg",
+      "originalFileName": "KYJ A25 showcase 3.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEEyNSBzdHJlYW1pbmcgc2VydmljZSBwcm9maWxlLmpwZw",
+      "date": null,
+      "sourceYear": "2025",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_streaming_service_profile.jpg",
+      "originalFileName": "KYJ A25 streaming service profile.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEJCIE1lc3NhZ2UuanBn",
+      "date": null,
+      "sourceYear": "2025",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_BB_Message.jpg",
+      "originalFileName": "KYJ BB Message.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIENocmlzdG1hcyBtdXNpYyBzaG93IHB0MiA0LmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Christmas_music_show_pt2_4.jpg",
+      "originalFileName": "KYJ Christmas music show pt2 4.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIENocmlzdG1hcyBtdXNpYyBzaG93IHB0MiAxLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Christmas_music_show_pt2_1.jpg",
+      "originalFileName": "KYJ Christmas music show pt2 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIENocmlzdG1hcyBtdXNpYyBzaG93IHB0MiAyLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Christmas_music_show_pt2_2.jpg",
+      "originalFileName": "KYJ Christmas music show pt2 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIENocmlzdG1hcyBtdXNpYyBzaG93IHB0MiAzLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Christmas_music_show_pt2_3.jpg",
+      "originalFileName": "KYJ Christmas music show pt2 3.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIENocmlzdG1hcyBtdXNpYyBzaG93IHB0MSA0LmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Christmas_music_show_pt1_4.jpg",
+      "originalFileName": "KYJ Christmas music show pt1 4.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIENocmlzdG1hcyBtdXNpYyBzaG93IHB0MSAxLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Christmas_music_show_pt1_1.jpg",
+      "originalFileName": "KYJ Christmas music show pt1 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIENocmlzdG1hcyBtdXNpYyBzaG93IHB0MSAyLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Christmas_music_show_pt1_2.jpg",
+      "originalFileName": "KYJ Christmas music show pt1 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIENocmlzdG1hcyBtdXNpYyBzaG93IHB0MSAzLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Christmas_music_show_pt1_3.jpg",
+      "originalFileName": "KYJ Christmas music show pt1 3.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEVWT0x1dGlvbiBJbnZpbmNpYmxlIHNuZWFrIHBlZWsgKHR3aXR0ZXIpLmpwZWc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_EVOLution_Invincible_sneak_peek_(twitter).jpeg",
+      "originalFileName": "KYJ EVOLution Invincible sneak peek (twitter).jpeg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEVWT0x1dGlvbiDin6EgY29uY2VwdCBzaG9vdCB0d2l0dGVyLmpwZWc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_EVOLution_%E2%9F%A1_concept_shoot_twitter.jpeg",
+      "originalFileName": "KYJ EVOLution ⟡ concept shoot twitter.jpeg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEwmUCBwdC4xIGphY2tldCBkYXktMSBwYXJ0LTEgMi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_L%26P_pt.1_jacket_day-1_part-1_2.jpg",
+      "originalFileName": "KYJ L&P pt.1 jacket day-1 part-1 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEwmUCBwdC4xIGphY2tldCBkYXktMSBwYXJ0LTEgMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_L%26P_pt.1_jacket_day-1_part-1_1.jpg",
+      "originalFileName": "KYJ L&P pt.1 jacket day-1 part-1 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEwmUCBwdC4xIGphY2tldCBkYXktMSBwYXJ0LTEgMy5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_L%26P_pt.1_jacket_day-1_part-1_3.jpg",
+      "originalFileName": "KYJ L&P pt.1 jacket day-1 part-1 3.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEwmUCBwdC4xIGphY2tldCBkYXktMSBwYXJ0LTEgNC5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_L%26P_pt.1_jacket_day-1_part-1_4.jpg",
+      "originalFileName": "KYJ L&P pt.1 jacket day-1 part-1 4.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEwmUCBwdC4xIGphY2tldCBkYXktMSBwYXJ0LTEgNi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_L%26P_pt.1_jacket_day-1_part-1_6.jpg",
+      "originalFileName": "KYJ L&P pt.1 jacket day-1 part-1 6.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEwmUCBwdC4xIGphY2tldCBkYXktMSBwYXJ0LTEgNS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_L%26P_pt.1_jacket_day-1_part-1_5.jpg",
+      "originalFileName": "KYJ L&P pt.1 jacket day-1 part-1 5.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIEwmUCBwdC4xIGphY2tldCBkYXktMSBwYXJ0LTEgNy5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_L%26P_pt.1_jacket_day-1_part-1_7.jpg",
+      "originalFileName": "KYJ L&P pt.1 jacket day-1 part-1 7.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIFBlcmZvcm1hbnRlIE1lc3NhZ2UuanBn",
+      "date": null,
+      "sourceYear": "2024",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Performante_Message.jpg",
+      "originalFileName": "KYJ Performante Message.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG11anVrIEQtMSBNZXNzYWdlLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_D-1_Message.jpg",
+      "originalFileName": "KYJ mujuk D-1 Message.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG11anVrIGphY2tldCBiZWhpbmQgMi5qcGVn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_jacket_behind_2.jpeg",
+      "originalFileName": "KYJ mujuk jacket behind 2.jpeg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG11anVrIGphY2tldCBiZWhpbmQgMS5qcGVn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_jacket_behind_1.jpeg",
+      "originalFileName": "KYJ mujuk jacket behind 1.jpeg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG11anVrIGphY2tldCBiZWhpbmQgMy5qcGVn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_jacket_behind_3.jpeg",
+      "originalFileName": "KYJ mujuk jacket behind 3.jpeg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG11anVrIGphY2tldCBiZWhpbmQgNC5qcGVn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_jacket_behind_4.jpeg",
+      "originalFileName": "KYJ mujuk jacket behind 4.jpeg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG11anVrIGphY2tldCBiZWhpbmQgNi5qcGVn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_jacket_behind_6.jpeg",
+      "originalFileName": "KYJ mujuk jacket behind 6.jpeg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG11anVrIGphY2tldCBiZWhpbmQgNS5qcGVn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_jacket_behind_5.jpeg",
+      "originalFileName": "KYJ mujuk jacket behind 5.jpeg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG11anVrIGphY2tldCBiZWhpbmQgNy5qcGVn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_jacket_behind_7.jpeg",
+      "originalFileName": "KYJ mujuk jacket behind 7.jpeg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG11anVrIGphY2tldCBiZWhpbmQgOC5qcGVn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_mujuk_jacket_behind_8.jpeg",
+      "originalFileName": "KYJ mujuk jacket behind 8.jpeg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG1zbnogbXVzaWMgc2hvdyBiZWhpbmQgMi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_music_show_behind_2.jpg",
+      "originalFileName": "KYJ msnz music show behind 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG1zbnogbXVzaWMgc2hvdyBiZWhpbmQgMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_music_show_behind_1.jpg",
+      "originalFileName": "KYJ msnz music show behind 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDEgMi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D1_2.jpg",
+      "originalFileName": "KYJ msnz Seoul D1 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDEgMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D1_1.jpg",
+      "originalFileName": "KYJ msnz Seoul D1 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDEgMy5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D1_3.jpg",
+      "originalFileName": "KYJ msnz Seoul D1 3.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDIgMi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D2_2.jpg",
+      "originalFileName": "KYJ msnz Seoul D2 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDIgMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D2_1.jpg",
+      "originalFileName": "KYJ msnz Seoul D2 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDIgMy5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D2_3.jpg",
+      "originalFileName": "KYJ msnz Seoul D2 3.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDIgUGVyZm9ybWFuY2UgMi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D2_Performance_2.jpg",
+      "originalFileName": "KYJ msnz Seoul D2 Performance 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDIgUGVyZm9ybWFuY2UgMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D2_Performance_1.jpg",
+      "originalFileName": "KYJ msnz Seoul D2 Performance 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDIgUGVyZm9ybWFuY2UgMy5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D2_Performance_3.jpg",
+      "originalFileName": "KYJ msnz Seoul D2 Performance 3.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDIgUGVyZm9ybWFuY2UgNC5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D2_Performance_4.jpg",
+      "originalFileName": "KYJ msnz Seoul D2 Performance 4.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG1zbnogVGFpcGVpIGJ0cyAxLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Taipei_bts_1.jpg",
+      "originalFileName": "KYJ msnz Taipei bts 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG1zbnogVGFpcGVpIGJ0cyAyLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Taipei_bts_2.jpg",
+      "originalFileName": "KYJ msnz Taipei bts 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG1zbnogVGFpcGVpIGJ0cyAzLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Taipei_bts_3.jpg",
+      "originalFileName": "KYJ msnz Taipei bts 3.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDcuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_music_bank_241101_7.jpg",
+      "originalFileName": "KYJ naver music bank 241101 7.jpg"
     },
     {
       "id": "fandom-s12-S1lKIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDEuanBn",
@@ -1088,12 +904,36 @@
       "originalFileName": "KYJ naver music bank 241101 1.jpg"
     },
     {
+      "id": "fandom-s12-S1lKIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDEwLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_music_bank_241101_10.jpg",
+      "originalFileName": "KYJ naver music bank 241101 10.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDguanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_music_bank_241101_8.jpg",
+      "originalFileName": "KYJ naver music bank 241101 8.jpg"
+    },
+    {
       "id": "fandom-s12-S1lKIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDIuanBn",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
       "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_music_bank_241101_2.jpg",
       "originalFileName": "KYJ naver music bank 241101 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDkuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_music_bank_241101_9.jpg",
+      "originalFileName": "KYJ naver music bank 241101 9.jpg"
     },
     {
       "id": "fandom-s12-S1lKIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDMuanBn",
@@ -1128,84 +968,12 @@
       "originalFileName": "KYJ naver music bank 241101 6.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDcuanBn",
+      "id": "fandom-s12-S1lKIG5hdmVyIG1tYSAyNDEyMTAgMi5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_music_bank_241101_7.jpg",
-      "originalFileName": "KYJ naver music bank 241101 7.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDguanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_music_bank_241101_8.jpg",
-      "originalFileName": "KYJ naver music bank 241101 8.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDkuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_music_bank_241101_9.jpg",
-      "originalFileName": "KYJ naver music bank 241101 9.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDEwLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_music_bank_241101_10.jpg",
-      "originalFileName": "KYJ naver music bank 241101 10.jpg"
-    },
-    {
-      "id": "fandom-s12-UzIgUzEyIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDEuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_naver_music_bank_241101_1.jpg",
-      "originalFileName": "S2 S12 naver music bank 241101 1.jpg"
-    },
-    {
-      "id": "fandom-s12-UzIgUzEyIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDIuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_naver_music_bank_241101_2.jpg",
-      "originalFileName": "S2 S12 naver music bank 241101 2.jpg"
-    },
-    {
-      "id": "fandom-s12-UzIgUzEyIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDMuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_naver_music_bank_241101_3.jpg",
-      "originalFileName": "S2 S12 naver music bank 241101 3.jpg"
-    },
-    {
-      "id": "fandom-s12-UzIgUzEyIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDQuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_naver_music_bank_241101_4.jpg",
-      "originalFileName": "S2 S12 naver music bank 241101 4.jpg"
-    },
-    {
-      "id": "fandom-s12-UzIgUzEyIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDUuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_naver_music_bank_241101_5.jpg",
-      "originalFileName": "S2 S12 naver music bank 241101 5.jpg"
-    },
-    {
-      "id": "fandom-s12-UzIgUzEyIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDYuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_naver_music_bank_241101_6.jpg",
-      "originalFileName": "S2 S12 naver music bank 241101 6.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_mma_241210_2.jpg",
+      "originalFileName": "KYJ naver mma 241210 2.jpg"
     },
     {
       "id": "fandom-s12-S1lKIG5hdmVyIG1tYSAyNDEyMTAgMS5qcGc",
@@ -1216,14 +984,6 @@
       "originalFileName": "KYJ naver mma 241210 1.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG5hdmVyIG1tYSAyNDEyMTAgMi5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_mma_241210_2.jpg",
-      "originalFileName": "KYJ naver mma 241210 2.jpg"
-    },
-    {
       "id": "fandom-s12-S1lKIG5hdmVyIG1tYSAyNDEyMTAgMy5qcGc",
       "date": null,
       "sourceYear": "2023",
@@ -1232,36 +992,36 @@
       "originalFileName": "KYJ naver mma 241210 3.jpg"
     },
     {
-      "id": "fandom-s12-UzggUzEyIFMxMyBuYXZlciBtbWEgMjQxMjEwLmpwZw",
+      "id": "fandom-s12-S1lKIG5hdmVyIGducyAyNDA3MDcgMi5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S8_S12_S13_naver_mma_241210.jpg",
-      "originalFileName": "S8 S12 S13 naver mma 241210.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_gns_240707_2.jpg",
+      "originalFileName": "KYJ naver gns 240707 2.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG5hdmVyIGticzI0IDI1MDExMSAxLmpwZw",
+      "id": "fandom-s12-S1lKIG5hdmVyIGducyAyNDA3MDcgMS5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_kbs24_250111_1.jpg",
-      "originalFileName": "KYJ naver kbs24 250111 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_gns_240707_1.jpg",
+      "originalFileName": "KYJ naver gns 240707 1.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG5hdmVyIGticzI0IDI1MDExMSAyLmpwZw",
+      "id": "fandom-s12-S1lKIG5hdmVyIGducyAyNDA3MDggMi5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_kbs24_250111_2.jpg",
-      "originalFileName": "KYJ naver kbs24 250111 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_gns_240708_2.jpg",
+      "originalFileName": "KYJ naver gns 240708 2.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG5hdmVyIGticzI0IDI1MDExMSAzLmpwZw",
+      "id": "fandom-s12-S1lKIG5hdmVyIGducyAyNDA3MDggMS5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_kbs24_250111_3.jpg",
-      "originalFileName": "KYJ naver kbs24 250111 3.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_gns_240708_1.jpg",
+      "originalFileName": "KYJ naver gns 240708 1.jpg"
     },
     {
       "id": "fandom-s12-S1lKIG5hdmVyIGticzI0IDI1MDExMSA0LmpwZw",
@@ -1288,44 +1048,28 @@
       "originalFileName": "KYJ naver kbs24 250111 6.jpg"
     },
     {
-      "id": "fandom-s12-UzEyIFMxNiBuYXZlciBrYnMyNCAyNTAxMTEuanBn",
+      "id": "fandom-s12-S1lKIG5hdmVyIGticzI0IDI1MDExMSAxLmpwZw",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S16_naver_kbs24_250111.jpg",
-      "originalFileName": "S12 S16 naver kbs24 250111.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_kbs24_250111_1.jpg",
+      "originalFileName": "KYJ naver kbs24 250111 1.jpg"
     },
     {
-      "id": "fandom-s12-UzEyIFMxNiBuYXZlciBrYnMyNCAyNTAxMTEgMi5qcGc",
+      "id": "fandom-s12-S1lKIG5hdmVyIGticzI0IDI1MDExMSAyLmpwZw",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S16_naver_kbs24_250111_2.jpg",
-      "originalFileName": "S12 S16 naver kbs24 250111 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_kbs24_250111_2.jpg",
+      "originalFileName": "KYJ naver kbs24 250111 2.jpg"
     },
     {
-      "id": "fandom-s12-UzMgUzggUzEyIG5hdmVyIGticzI0IDI1MDExMSAxLmpwZw",
+      "id": "fandom-s12-S1lKIG5hdmVyIGticzI0IDI1MDExMSAzLmpwZw",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S3_S8_S12_naver_kbs24_250111_1.jpg",
-      "originalFileName": "S3 S8 S12 naver kbs24 250111 1.jpg"
-    },
-    {
-      "id": "fandom-s12-UzMgUzggUzEyIG5hdmVyIGticzI0IDI1MDExMSAyLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S3_S8_S12_naver_kbs24_250111_2.jpg",
-      "originalFileName": "S3 S8 S12 naver kbs24 250111 2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG5hdmVyIHRyaXBsZVNjaG9vbCAyNTAxMjUgMS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_tripleSchool_250125_1.jpg",
-      "originalFileName": "KYJ naver tripleSchool 250125 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_kbs24_250111_3.jpg",
+      "originalFileName": "KYJ naver kbs24 250111 3.jpg"
     },
     {
       "id": "fandom-s12-S1lKIG5hdmVyIHRyaXBsZVNjaG9vbCAyNTAxMjUgMi5qcGc",
@@ -1334,6 +1078,14 @@
       "section": "promotional",
       "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_tripleSchool_250125_2.jpg",
       "originalFileName": "KYJ naver tripleSchool 250125 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIG5hdmVyIHRyaXBsZVNjaG9vbCAyNTAxMjUgMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_naver_tripleSchool_250125_1.jpg",
+      "originalFileName": "KYJ naver tripleSchool 250125 1.jpg"
     },
     {
       "id": "fandom-s12-S1lKIG5hdmVyIHRyaXBsZVNjaG9vbCAyNTAxMjUgMy5qcGc",
@@ -1352,844 +1104,68 @@
       "originalFileName": "KYJ naver tripleSchool 250125 4.jpg"
     },
     {
-      "id": "fandom-s12-UzMgUzcgUzEyIFMxNSBTMTcgUzE5IFMyMSBTMjQgbmF2ZXIgdHJpcGxlU2Nob29sIDI1MDEyNS5qcGc",
+      "id": "fandom-s12-S1lKIG5ldyBwcm9maWxlIDEuanBn",
       "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S3_S7_S12_S15_S17_S19_S21_S24_naver_tripleSchool_250125.jpg",
-      "originalFileName": "S3 S7 S12 S15 S17 S19 S21 S24 naver tripleSchool 250125.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMSBiZWhpbmQgMS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-1_behind_1.jpg",
-      "originalFileName": "KYJ A25 MV day-1 behind 1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMiBiZWhpbmQgMS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-2_behind_1.jpg",
-      "originalFileName": "KYJ A25 MV day-2 behind 1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMiBiZWhpbmQgMi5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-2_behind_2.jpg",
-      "originalFileName": "KYJ A25 MV day-2 behind 2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMiBiZWhpbmQgMy5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-2_behind_3.jpg",
-      "originalFileName": "KYJ A25 MV day-2 behind 3.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMiBiZWhpbmQgNC5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-2_behind_4.jpg",
-      "originalFileName": "KYJ A25 MV day-2 behind 4.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMiBiZWhpbmQgNS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-2_behind_5.jpg",
-      "originalFileName": "KYJ A25 MV day-2 behind 5.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMiBiZWhpbmQgNi5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-2_behind_6.jpg",
-      "originalFileName": "KYJ A25 MV day-2 behind 6.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMyBiZWhpbmQgMS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-3_behind_1.jpg",
-      "originalFileName": "KYJ A25 MV day-3 behind 1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMyBiZWhpbmQgMi5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-3_behind_2.jpg",
-      "originalFileName": "KYJ A25 MV day-3 behind 2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMyBiZWhpbmQgMy5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-3_behind_3.jpg",
-      "originalFileName": "KYJ A25 MV day-3 behind 3.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSBNViBkYXktMyBiZWhpbmQgNC5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_MV_day-3_behind_4.jpg",
-      "originalFileName": "KYJ A25 MV day-3 behind 4.jpg"
-    },
-    {
-      "id": "fandom-s12-UzEgUzQgUzggUzEyIEEyNSBNViBkYXktMyBiZWhpbmQuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S1_S4_S8_S12_A25_MV_day-3_behind.jpg",
-      "originalFileName": "S1 S4 S8 S12 A25 MV day-3 behind.jpg"
-    },
-    {
-      "id": "fandom-s12-UzEgUzIgUzEyIEEyNSBNViBkYXktMyBiZWhpbmQgMS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S1_S2_S12_A25_MV_day-3_behind_1.jpg",
-      "originalFileName": "S1 S2 S12 A25 MV day-3 behind 1.jpg"
-    },
-    {
-      "id": "fandom-s12-UzEgUzIgUzEyIEEyNSBNViBkYXktMyBiZWhpbmQgMi5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S1_S2_S12_A25_MV_day-3_behind_2.jpg",
-      "originalFileName": "S1 S2 S12 A25 MV day-3 behind 2.jpg"
-    },
-    {
-      "id": "fandom-s12-UzEgUzIgUzEyIEEyNSBNViBkYXktMyBiZWhpbmQgMy5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S1_S2_S12_A25_MV_day-3_behind_3.jpg",
-      "originalFileName": "S1 S2 S12 A25 MV day-3 behind 3.jpg"
-    },
-    {
-      "id": "fandom-s12-UzExIFMxMiBBMjUgTVYgZGF5LTMgYmVoaW5kIDEuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_A25_MV_day-3_behind_1.jpg",
-      "originalFileName": "S11 S12 A25 MV day-3 behind 1.jpg"
-    },
-    {
-      "id": "fandom-s12-UzExIFMxMiBBMjUgTVYgZGF5LTMgYmVoaW5kIDIuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_A25_MV_day-3_behind_2.jpg",
-      "originalFileName": "S11 S12 A25 MV day-3 behind 2.jpg"
-    },
-    {
-      "id": "fandom-s12-UzExIFMxMiBBMjUgTVYgZGF5LTMgYmVoaW5kIDMuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_A25_MV_day-3_behind_3.jpg",
-      "originalFileName": "S11 S12 A25 MV day-3 behind 3.jpg"
-    },
-    {
-      "id": "fandom-s12-UzExIFMxMiBBMjUgTVYgZGF5LTMgYmVoaW5kIDQuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_A25_MV_day-3_behind_4.jpg",
-      "originalFileName": "S11 S12 A25 MV day-3 behind 4.jpg"
-    },
-    {
-      "id": "fandom-s12-UzExIFMxMiBBMjUgTVYgZGF5LTMgYmVoaW5kIDUuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_A25_MV_day-3_behind_5.jpg",
-      "originalFileName": "S11 S12 A25 MV day-3 behind 5.jpg"
-    },
-    {
-      "id": "fandom-s12-UzUgUzEyIFMxOSBBMjUgTVYgZGF5LTQgYmVoaW5kLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S5_S12_S19_A25_MV_day-4_behind.jpg",
-      "originalFileName": "S5 S12 S19 A25 MV day-4 behind.jpg"
-    },
-    {
-      "id": "fandom-s12-UzEyIFMxNiBTMTkgUzIwIFMyMSBTMjQgQTI1IE1WIGRheS00IGJlaGluZCAxLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S16_S19_S20_S21_S24_A25_MV_day-4_behind_1.jpg",
-      "originalFileName": "S12 S16 S19 S20 S21 S24 A25 MV day-4 behind 1.jpg"
-    },
-    {
-      "id": "fandom-s12-UzEyIFMxNiBTMTkgUzIwIFMyMSBTMjQgQTI1IE1WIGRheS00IGJlaGluZCAyLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S16_S19_S20_S21_S24_A25_MV_day-4_behind_2.jpg",
-      "originalFileName": "S12 S16 S19 S20 S21 S24 A25 MV day-4 behind 2.jpg"
-    },
-    {
-      "id": "fandom-s12-UzEyIFMxNiBTMTkgUzIwIFMyMSBTMjQgQTI1IE1WIGRheS00IGJlaGluZCAzLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S16_S19_S20_S21_S24_A25_MV_day-4_behind_3.jpg",
-      "originalFileName": "S12 S16 S19 S20 S21 S24 A25 MV day-4 behind 3.jpg"
-    },
-    {
-      "id": "fandom-s12-UzEyIFMyMSBBMjUgTVYgZGF5LTQgYmVoaW5kLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S21_A25_MV_day-4_behind.jpg",
-      "originalFileName": "S12 S21 A25 MV day-4 behind.jpg"
-    },
-    {
-      "id": "fandom-s12-UzEyIFMyMSBTMjQgQTI1IE1WIGRheS00IGJlaGluZC5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S21_S24_A25_MV_day-4_behind.jpg",
-      "originalFileName": "S12 S21 S24 A25 MV day-4 behind.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSBzaG93Y2FzZSAxLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_showcase_1.jpg",
-      "originalFileName": "KYJ A25 showcase 1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSBzaG93Y2FzZSAyLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_showcase_2.jpg",
-      "originalFileName": "KYJ A25 showcase 2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSBzaG93Y2FzZSAzLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_showcase_3.jpg",
-      "originalFileName": "KYJ A25 showcase 3.jpg"
-    },
-    {
-      "id": "fandom-s12-UzEyIFMyMiBBMjUgc2hvd2Nhc2UuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S22_A25_showcase.jpg",
-      "originalFileName": "S12 S22 A25 showcase.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDEtMS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_1-1.jpg",
-      "originalFileName": "KYJ A25 week 1-1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDEtMi5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_1-2.jpg",
-      "originalFileName": "KYJ A25 week 1-2.jpg"
-    },
-    {
-      "id": "fandom-s12-UzkgUzEyIEEyNSB3ZWVrIDEuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S9_S12_A25_week_1.jpg",
-      "originalFileName": "S9 S12 A25 week 1.jpg"
-    },
-    {
-      "id": "fandom-s12-UzEyIFMxNyBBMjUgd2VlayAxLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S17_A25_week_1.jpg",
-      "originalFileName": "S12 S17 A25 week 1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDEtMy5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_1-3.jpg",
-      "originalFileName": "KYJ A25 week 1-3.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDEtNC5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_1-4.jpg",
-      "originalFileName": "KYJ A25 week 1-4.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDItMS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_2-1.jpg",
-      "originalFileName": "KYJ A25 week 2-1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDItMi5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_2-2.jpg",
-      "originalFileName": "KYJ A25 week 2-2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDItMy5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_2-3.jpg",
-      "originalFileName": "KYJ A25 week 2-3.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDItNC5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_2-4.jpg",
-      "originalFileName": "KYJ A25 week 2-4.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDItNS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_2-5.jpg",
-      "originalFileName": "KYJ A25 week 2-5.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDItNi5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_2-6.jpg",
-      "originalFileName": "KYJ A25 week 2-6.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDItNy5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_2-7.jpg",
-      "originalFileName": "KYJ A25 week 2-7.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDItOC5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_2-8.jpg",
-      "originalFileName": "KYJ A25 week 2-8.jpg"
-    },
-    {
-      "id": "fandom-s12-UzIgUzEyIFMyMSBBMjUgd2VlayAyLTEuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_S21_A25_week_2-1.jpg",
-      "originalFileName": "S2 S12 S21 A25 week 2-1.jpg"
-    },
-    {
-      "id": "fandom-s12-UzIgUzEyIFMyMSBBMjUgd2VlayAyLTIuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_S21_A25_week_2-2.jpg",
-      "originalFileName": "S2 S12 S21 A25 week 2-2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtMS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-1.jpg",
-      "originalFileName": "KYJ A25 week 3-1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtMi5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-2.jpg",
-      "originalFileName": "KYJ A25 week 3-2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtMy5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-3.jpg",
-      "originalFileName": "KYJ A25 week 3-3.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtNC5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-4.jpg",
-      "originalFileName": "KYJ A25 week 3-4.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtNS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-5.jpg",
-      "originalFileName": "KYJ A25 week 3-5.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtNi5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-6.jpg",
-      "originalFileName": "KYJ A25 week 3-6.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtNy5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-7.jpg",
-      "originalFileName": "KYJ A25 week 3-7.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtOC5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-8.jpg",
-      "originalFileName": "KYJ A25 week 3-8.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtOS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-9.jpg",
-      "originalFileName": "KYJ A25 week 3-9.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtMTAuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-10.jpg",
-      "originalFileName": "KYJ A25 week 3-10.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIEEyNSB3ZWVrIDMtMTEuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_A25_week_3-11.jpg",
-      "originalFileName": "KYJ A25 week 3-11.jpg"
-    },
-    {
-      "id": "fandom-s12-UzUgUzEyIFMxOCBTMjMgQTI1IHdlZWsgMy0xLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S5_S12_S18_S23_A25_week_3-1.jpg",
-      "originalFileName": "S5 S12 S18 S23 A25 week 3-1.jpg"
-    },
-    {
-      "id": "fandom-s12-UzUgUzEyIFMxOCBTMjMgQTI1IHdlZWsgMy0yLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S5_S12_S18_S23_A25_week_3-2.jpg",
-      "originalFileName": "S5 S12 S18 S23 A25 week 3-2.jpg"
-    },
-    {
-      "id": "fandom-s12-QmFkZ2UgV2FyIFMzIEtZSiBQcm9maWxlLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:Badge_War_S3_KYJ_Profile.jpg",
-      "originalFileName": "Badge War S3 KYJ Profile.jpg"
-    },
-    {
-      "id": "fandom-s12-U0dCVy1TMyBCVFMtMSBLWUouanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-1_KYJ.jpg",
-      "originalFileName": "SGBW-S3 BTS-1 KYJ.jpg"
-    },
-    {
-      "id": "fandom-s12-U0dCVy1TMyBCVFMtMSBTNiBTMTIgMS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-1_S6_S12_1.jpg",
-      "originalFileName": "SGBW-S3 BTS-1 S6 S12 1.jpg"
-    },
-    {
-      "id": "fandom-s12-U0dCVy1TMyBCVFMtMSBTNiBTMTIgMi5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-1_S6_S12_2.jpg",
-      "originalFileName": "SGBW-S3 BTS-1 S6 S12 2.jpg"
-    },
-    {
-      "id": "fandom-s12-U0dCVy1TMyBCVFMtMiBLWUouanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-2_KYJ.jpg",
-      "originalFileName": "SGBW-S3 BTS-2 KYJ.jpg"
-    },
-    {
-      "id": "fandom-s12-U0dCVy1TMyBCVFMtMiBTNSBTMTIgUzE2IFMxOC5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-2_S5_S12_S16_S18.jpg",
-      "originalFileName": "SGBW-S3 BTS-2 S5 S12 S16 S18.jpg"
-    },
-    {
-      "id": "fandom-s12-U0dCVy1TMyBCVFMtMiBTOSBTMTIuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-2_S9_S12.jpg",
-      "originalFileName": "SGBW-S3 BTS-2 S9 S12.jpg"
-    },
-    {
-      "id": "fandom-s12-U0dCVy1TMyBCVFMtMiBTMTEgUzEyIFMxNCBTMTYgUzE4IDEuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-2_S11_S12_S14_S16_S18_1.jpg",
-      "originalFileName": "SGBW-S3 BTS-2 S11 S12 S14 S16 S18 1.jpg"
-    },
-    {
-      "id": "fandom-s12-U0dCVy1TMyBCVFMtMiBTMTEgUzEyIFMxNCBTMTYgUzE4IDIuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-2_S11_S12_S14_S16_S18_2.jpg",
-      "originalFileName": "SGBW-S3 BTS-2 S11 S12 S14 S16 S18 2.jpg"
-    },
-    {
-      "id": "fandom-s12-U0dCVy1TMyBCVFMtMyBLWUogMS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-3_KYJ_1.jpg",
-      "originalFileName": "SGBW-S3 BTS-3 KYJ 1.jpg"
-    },
-    {
-      "id": "fandom-s12-U0dCVzMtSmVqdSBLWUogMS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW3-Jeju_KYJ_1.jpg",
-      "originalFileName": "SGBW3-Jeju KYJ 1.jpg"
-    },
-    {
-      "id": "fandom-s12-U0dCVzMtSmVqdSBLWUogMi5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW3-Jeju_KYJ_2.jpg",
-      "originalFileName": "SGBW3-Jeju KYJ 2.jpg"
-    },
-    {
-      "id": "fandom-s12-U0dCVzMtSmVqdSBLWUogMy5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW3-Jeju_KYJ_3.jpg",
-      "originalFileName": "SGBW3-Jeju KYJ 3.jpg"
-    },
-    {
-      "id": "fandom-s12-U0dCVzMtSmVqdSBLWUogNC5qcGc",
-      "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2025",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW3-Jeju_KYJ_4.jpg",
-      "originalFileName": "SGBW3-Jeju KYJ 4.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_new_profile_1.jpg",
+      "originalFileName": "KYJ new profile 1.jpg"
     },
     {
-      "id": "fandom-s12-U0dCVzMtSmVqdSBLWUogNS5qcGc",
+      "id": "fandom-s12-S1lKIG5ldyBwcm9maWxlIDIuanBn",
       "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW3-Jeju_KYJ_5.jpg",
-      "originalFileName": "SGBW3-Jeju KYJ 5.jpg"
-    },
-    {
-      "id": "fandom-s12-U0dCVzMtSmVqdSBLWUogNi5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW3-Jeju_KYJ_6.jpg",
-      "originalFileName": "SGBW3-Jeju KYJ 6.jpg"
-    },
-    {
-      "id": "fandom-s12-U0dCVzMtSmVqdSBLWUogNy5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW3-Jeju_KYJ_7.jpg",
-      "originalFileName": "SGBW3-Jeju KYJ 7.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHplbml0aCBqYWNrZXQgYmVoaW5kIDEuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_zenith_jacket_behind_1.jpg",
-      "originalFileName": "KYJ zenith jacket behind 1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHplbml0aCBqYWNrZXQgYmVoaW5kIDIuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_zenith_jacket_behind_2.jpg",
-      "originalFileName": "KYJ zenith jacket behind 2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHplbml0aCBqYWNrZXQgYmVoaW5kIDMuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_zenith_jacket_behind_3.jpg",
-      "originalFileName": "KYJ zenith jacket behind 3.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHplbml0aCBqYWNrZXQgYmVoaW5kIDQuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_zenith_jacket_behind_4.jpg",
-      "originalFileName": "KYJ zenith jacket behind 4.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHplbml0aCBqYWNrZXQgYmVoaW5kIDUuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_zenith_jacket_behind_5.jpg",
-      "originalFileName": "KYJ zenith jacket behind 5.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHplbml0aCBqYWNrZXQgYmVoaW5kIDYuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_zenith_jacket_behind_6.jpg",
-      "originalFileName": "KYJ zenith jacket behind 6.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHplbml0aCBqYWNrZXQgYmVoaW5kIDcuanBn",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_zenith_jacket_behind_7.jpg",
-      "originalFileName": "KYJ zenith jacket behind 7.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHRyaXBsZVMgYnVza2luZyBldmVudCAxLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_tripleS_busking_event_1.jpg",
-      "originalFileName": "KYJ tripleS busking event 1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIHRyaXBsZVMgYnVza2luZyBldmVudCAyLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_tripleS_busking_event_2.jpg",
-      "originalFileName": "KYJ tripleS busking event 2.jpg"
-    },
-    {
-      "id": "fandom-s12-UzEyIFMxNCB0cmlwbGVTIGJ1c2tpbmcgZXZlbnQuanBn",
-      "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2025",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S14_tripleS_busking_event.jpg",
-      "originalFileName": "S12 S14 tripleS busking event.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_new_profile_2.jpg",
+      "originalFileName": "KYJ new profile 2.jpg"
     },
     {
-      "id": "fandom-s12-UzIgUzcgUzEyIFMyNCB0cmlwbGVTIGJ1c2tpbmcgZXZlbnQuanBn",
+      "id": "fandom-s12-S1lKIG5ldyBwcm9maWxlIDMuanBn",
       "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S7_S12_S24_tripleS_busking_event.jpg",
-      "originalFileName": "S2 S7 S12 S24 tripleS busking event.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIDIwMjUgaGFudGVvIGJlaGluZCAxLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_hanteo_behind_1.jpg",
-      "originalFileName": "KYJ 2025 hanteo behind 1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIDIwMjUgaGFudGVvIGJlaGluZCAyLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_hanteo_behind_2.jpg",
-      "originalFileName": "KYJ 2025 hanteo behind 2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIDIwMjUgaGFudGVvIGJlaGluZCAzLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_hanteo_behind_3.jpg",
-      "originalFileName": "KYJ 2025 hanteo behind 3.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIENocmlzdG1hcyBtdXNpYyBzaG93IHB0MSAxLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Christmas_music_show_pt1_1.jpg",
-      "originalFileName": "KYJ Christmas music show pt1 1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIENocmlzdG1hcyBtdXNpYyBzaG93IHB0MSAyLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Christmas_music_show_pt1_2.jpg",
-      "originalFileName": "KYJ Christmas music show pt1 2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIENocmlzdG1hcyBtdXNpYyBzaG93IHB0MSAzLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2025",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Christmas_music_show_pt1_3.jpg",
-      "originalFileName": "KYJ Christmas music show pt1 3.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_new_profile_3.jpg",
+      "originalFileName": "KYJ new profile 3.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIENocmlzdG1hcyBtdXNpYyBzaG93IHB0MSA0LmpwZw",
+      "id": "fandom-s12-S1lKIG5ldyBwcm9maWxlIDQuanBn",
       "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Christmas_music_show_pt1_4.jpg",
-      "originalFileName": "KYJ Christmas music show pt1 4.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIENocmlzdG1hcyBtdXNpYyBzaG93IHB0MiAxLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Christmas_music_show_pt2_1.jpg",
-      "originalFileName": "KYJ Christmas music show pt2 1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIENocmlzdG1hcyBtdXNpYyBzaG93IHB0MiAyLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Christmas_music_show_pt2_2.jpg",
-      "originalFileName": "KYJ Christmas music show pt2 2.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIENocmlzdG1hcyBtdXNpYyBzaG93IHB0MiAzLmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Christmas_music_show_pt2_3.jpg",
-      "originalFileName": "KYJ Christmas music show pt2 3.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIENocmlzdG1hcyBtdXNpYyBzaG93IHB0MiA0LmpwZw",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Christmas_music_show_pt2_4.jpg",
-      "originalFileName": "KYJ Christmas music show pt2 4.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG1zbnogbXVzaWMgc2hvdyBiZWhpbmQgMS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_music_show_behind_1.jpg",
-      "originalFileName": "KYJ msnz music show behind 1.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIG1zbnogbXVzaWMgc2hvdyBiZWhpbmQgMi5qcGc",
-      "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2025",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_music_show_behind_2.jpg",
-      "originalFileName": "KYJ msnz music show behind 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_new_profile_4.jpg",
+      "originalFileName": "KYJ new profile 4.jpg"
     },
     {
-      "id": "fandom-s12-UzEyIFMxOCBtc256IG11c2ljIHNob3cgYmVoaW5kLmpwZw",
+      "id": "fandom-s12-S1lKIGEyNCAxc3QgYW5uaXZlcnNhcnkgYmVoaW5kIDEuanBn",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S18_msnz_music_show_behind.jpg",
-      "originalFileName": "S12 S18 msnz music show behind.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_a24_1st_anniversary_behind_1.jpg",
+      "originalFileName": "KYJ a24 1st anniversary behind 1.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhhbmxpbXogc2tpIGJlaGluZCAxLmpwZw",
+      "id": "fandom-s12-S1lKIGEyNCAxc3QgYW5uaXZlcnNhcnkgYmVoaW5kIDIuanBn",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hanlimz_ski_behind_1.jpg",
-      "originalFileName": "KYJ hanlimz ski behind 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_a24_1st_anniversary_behind_2.jpg",
+      "originalFileName": "KYJ a24 1st anniversary behind 2.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhhbmxpbXogc2tpIGJlaGluZCAyLmpwZw",
+      "id": "fandom-s12-S1lKIGEyNCAxc3QgYW5uaXZlcnNhcnkgYmVoaW5kIDMuanBn",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hanlimz_ski_behind_2.jpg",
-      "originalFileName": "KYJ hanlimz ski behind 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_a24_1st_anniversary_behind_3.jpg",
+      "originalFileName": "KYJ a24 1st anniversary behind 3.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGhhbmxpbXogc2tpIGJlaGluZCAzLmpwZw",
+      "id": "fandom-s12-S1lKIGF1dGhlbnRpYyBldmUtY29uIGJlaGluZC5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hanlimz_ski_behind_3.jpg",
-      "originalFileName": "KYJ hanlimz ski behind 3.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_authentic_eve-con_behind.jpg",
+      "originalFileName": "KYJ authentic eve-con behind.jpg"
     },
     {
       "id": "fandom-s12-S1lKIGhhbmxpbXogc2tpIGJlaGluZCA0LmpwZw",
@@ -2240,20 +1216,20 @@
       "originalFileName": "KYJ hanlimz ski behind 9.jpg"
     },
     {
+      "id": "fandom-s12-S1lKIGhhbmxpbXogc2tpIGJlaGluZCAxLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hanlimz_ski_behind_1.jpg",
+      "originalFileName": "KYJ hanlimz ski behind 1.jpg"
+    },
+    {
       "id": "fandom-s12-S1lKIGhhbmxpbXogc2tpIGJlaGluZCAxMC5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
       "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hanlimz_ski_behind_10.jpg",
       "originalFileName": "KYJ hanlimz ski behind 10.jpg"
-    },
-    {
-      "id": "fandom-s12-S1lKIGhhbmxpbXogc2tpIGJlaGluZCAxMS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hanlimz_ski_behind_11.jpg",
-      "originalFileName": "KYJ hanlimz ski behind 11.jpg"
     },
     {
       "id": "fandom-s12-S1lKIGhhbmxpbXogc2tpIGJlaGluZCAxMi5qcGc",
@@ -2264,6 +1240,14 @@
       "originalFileName": "KYJ hanlimz ski behind 12.jpg"
     },
     {
+      "id": "fandom-s12-S1lKIGhhbmxpbXogc2tpIGJlaGluZCAxMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hanlimz_ski_behind_11.jpg",
+      "originalFileName": "KYJ hanlimz ski behind 11.jpg"
+    },
+    {
       "id": "fandom-s12-S1lKIGhhbmxpbXogc2tpIGJlaGluZCAxMy5qcGc",
       "date": null,
       "sourceYear": "2023",
@@ -2272,332 +1256,396 @@
       "originalFileName": "KYJ hanlimz ski behind 13.jpg"
     },
     {
-      "id": "fandom-s12-UzYgUzEyIFMxNyBTMjEgaGFubGlteiBza2kgYmVoaW5kLmpwZw",
+      "id": "fandom-s12-S1lKIGhhbmxpbXogc2tpIGJlaGluZCAyLmpwZw",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S6_S12_S17_S21_hanlimz_ski_behind.jpg",
-      "originalFileName": "S6 S12 S17 S21 hanlimz ski behind.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hanlimz_ski_behind_2.jpg",
+      "originalFileName": "KYJ hanlimz ski behind 2.jpg"
     },
     {
-      "id": "fandom-s12-UzYgUzEyIGhhbmxpbXogc2tpIGJlaGluZCAxLmpwZw",
+      "id": "fandom-s12-S1lKIGhhbmxpbXogc2tpIGJlaGluZCAzLmpwZw",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S6_S12_hanlimz_ski_behind_1.jpg",
-      "originalFileName": "S6 S12 hanlimz ski behind 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hanlimz_ski_behind_3.jpg",
+      "originalFileName": "KYJ hanlimz ski behind 3.jpg"
     },
     {
-      "id": "fandom-s12-UzYgUzEyIGhhbmxpbXogc2tpIGJlaGluZCAyLmpwZw",
+      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDcuanBn",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S6_S12_hanlimz_ski_behind_2.jpg",
-      "originalFileName": "S6 S12 hanlimz ski behind 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_7.jpg",
+      "originalFileName": "KYJ hit the floor mv behind shoot naver 7.jpg"
     },
     {
-      "id": "fandom-s12-UzIgUzEyIFMxNyBoYW5saW16IHNraSBiZWhpbmQgMS5qcGc",
+      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDE0LmpwZw",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_S17_hanlimz_ski_behind_1.jpg",
-      "originalFileName": "S2 S12 S17 hanlimz ski behind 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_14.jpg",
+      "originalFileName": "KYJ hit the floor mv behind shoot naver 14.jpg"
     },
     {
-      "id": "fandom-s12-UzIgUzEyIFMxNyBoYW5saW16IHNraSBiZWhpbmQgMi5qcGc",
+      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDE1LmpwZw",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_S17_hanlimz_ski_behind_2.jpg",
-      "originalFileName": "S2 S12 S17 hanlimz ski behind 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_15.jpg",
+      "originalFileName": "KYJ hit the floor mv behind shoot naver 15.jpg"
     },
     {
-      "id": "fandom-s12-UzEyIFMxNyBoYW5saW16IHNraSBiZWhpbmQgMS5qcGc",
+      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDE2LmpwZw",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S17_hanlimz_ski_behind_1.jpg",
-      "originalFileName": "S12 S17 hanlimz ski behind 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_16.jpg",
+      "originalFileName": "KYJ hit the floor mv behind shoot naver 16.jpg"
     },
     {
-      "id": "fandom-s12-UzEyIFMxNyBoYW5saW16IHNraSBiZWhpbmQgMi5qcGc",
+      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDE3LmpwZw",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S17_hanlimz_ski_behind_2.jpg",
-      "originalFileName": "S12 S17 hanlimz ski behind 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_17.jpg",
+      "originalFileName": "KYJ hit the floor mv behind shoot naver 17.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIDIwMjUgS0JTU29uZ0Zlc3QgMS5qcGc",
+      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDEuanBn",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_KBSSongFest_1.jpg",
-      "originalFileName": "KYJ 2025 KBSSongFest 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_1.jpg",
+      "originalFileName": "KYJ hit the floor mv behind shoot naver 1.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIDIwMjUgS0JTU29uZ0Zlc3QgMi5qcGc",
+      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDEwLmpwZw",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_KBSSongFest_2.jpg",
-      "originalFileName": "KYJ 2025 KBSSongFest 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_10.jpg",
+      "originalFileName": "KYJ hit the floor mv behind shoot naver 10.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIDIwMjUgS0JTU29uZ0Zlc3QgMy5qcGc",
+      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDExLmpwZw",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_KBSSongFest_3.jpg",
-      "originalFileName": "KYJ 2025 KBSSongFest 3.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_11.jpg",
+      "originalFileName": "KYJ hit the floor mv behind shoot naver 11.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIDIwMjUgS0JTU29uZ0Zlc3QgNC5qcGc",
+      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDEyLmpwZw",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_KBSSongFest_4.jpg",
-      "originalFileName": "KYJ 2025 KBSSongFest 4.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_12.jpg",
+      "originalFileName": "KYJ hit the floor mv behind shoot naver 12.jpg"
     },
     {
-      "id": "fandom-s12-UzEyIFMxOCAyMDI1IEtCU1NvbmdGZXN0LmpwZw",
+      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDEzLmpwZw",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S18_2025_KBSSongFest.jpg",
-      "originalFileName": "S12 S18 2025 KBSSongFest.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_13.jpg",
+      "originalFileName": "KYJ hit the floor mv behind shoot naver 13.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIDIwMjUgaGFudGVvIGF3YXJkcyBidHMgMS5qcGc",
+      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDguanBn",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_hanteo_awards_bts_1.jpg",
-      "originalFileName": "KYJ 2025 hanteo awards bts 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_8.jpg",
+      "originalFileName": "KYJ hit the floor mv behind shoot naver 8.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIDIwMjUgaGFudGVvIGF3YXJkcyBidHMgMi5qcGc",
+      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDIuanBn",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_2025_hanteo_awards_bts_2.jpg",
-      "originalFileName": "KYJ 2025 hanteo awards bts 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_2.jpg",
+      "originalFileName": "KYJ hit the floor mv behind shoot naver 2.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG1zbnogVGFpcGVpIGJ0cyAxLmpwZw",
+      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDkuanBn",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Taipei_bts_1.jpg",
-      "originalFileName": "KYJ msnz Taipei bts 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_9.jpg",
+      "originalFileName": "KYJ hit the floor mv behind shoot naver 9.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG1zbnogVGFpcGVpIGJ0cyAyLmpwZw",
+      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDMuanBn",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Taipei_bts_2.jpg",
-      "originalFileName": "KYJ msnz Taipei bts 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_3.jpg",
+      "originalFileName": "KYJ hit the floor mv behind shoot naver 3.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG1zbnogVGFpcGVpIGJ0cyAzLmpwZw",
+      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDQuanBn",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Taipei_bts_3.jpg",
-      "originalFileName": "KYJ msnz Taipei bts 3.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_4.jpg",
+      "originalFileName": "KYJ hit the floor mv behind shoot naver 4.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDEgMS5qcGc",
+      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDUuanBn",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D1_1.jpg",
-      "originalFileName": "KYJ msnz Seoul D1 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_5.jpg",
+      "originalFileName": "KYJ hit the floor mv behind shoot naver 5.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDEgMi5qcGc",
+      "id": "fandom-s12-S1lKIGhpdCB0aGUgZmxvb3IgbXYgYmVoaW5kIHNob290IG5hdmVyIDYuanBn",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D1_2.jpg",
-      "originalFileName": "KYJ msnz Seoul D1 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_hit_the_floor_mv_behind_shoot_naver_6.jpg",
+      "originalFileName": "KYJ hit the floor mv behind shoot naver 6.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDEgMy5qcGc",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCA0LmpwZw",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D1_3.jpg",
-      "originalFileName": "KYJ msnz Seoul D1 3.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_4.jpg",
+      "originalFileName": "KYJ blossom snap 4.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDIgMS5qcGc",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCA1LmpwZw",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D2_1.jpg",
-      "originalFileName": "KYJ msnz Seoul D2 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_5.jpg",
+      "originalFileName": "KYJ blossom snap 5.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDIgMi5qcGc",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCA2LmpwZw",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D2_2.jpg",
-      "originalFileName": "KYJ msnz Seoul D2 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_6.jpg",
+      "originalFileName": "KYJ blossom snap 6.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDIgMy5qcGc",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCA3LmpwZw",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D2_3.jpg",
-      "originalFileName": "KYJ msnz Seoul D2 3.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_7.jpg",
+      "originalFileName": "KYJ blossom snap 7.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDIgUGVyZm9ybWFuY2UgMS5qcGc",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCA4LmpwZw",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D2_Performance_1.jpg",
-      "originalFileName": "KYJ msnz Seoul D2 Performance 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_8.jpg",
+      "originalFileName": "KYJ blossom snap 8.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDIgUGVyZm9ybWFuY2UgMi5qcGc",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCA5LmpwZw",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D2_Performance_2.jpg",
-      "originalFileName": "KYJ msnz Seoul D2 Performance 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_9.jpg",
+      "originalFileName": "KYJ blossom snap 9.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDIgUGVyZm9ybWFuY2UgMy5qcGc",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxLmpwZw",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D2_Performance_3.jpg",
-      "originalFileName": "KYJ msnz Seoul D2 Performance 3.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_1.jpg",
+      "originalFileName": "KYJ blossom snap 1.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIG1zbnogU2VvdWwgRDIgUGVyZm9ybWFuY2UgNC5qcGc",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxMC5qcGc",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_msnz_Seoul_D2_Performance_4.jpg",
-      "originalFileName": "KYJ msnz Seoul D2 Performance 4.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_10.jpg",
+      "originalFileName": "KYJ blossom snap 10.jpg"
     },
     {
-      "id": "fandom-s12-UzMgUzEyIFMxOSBtc256IFNlb3VsIEQyIFBlcmZvcm1hbmNlLmpwZw",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxMi5qcGc",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S3_S12_S19_msnz_Seoul_D2_Performance.jpg",
-      "originalFileName": "S3 S12 S19 msnz Seoul D2 Performance.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_12.jpg",
+      "originalFileName": "KYJ blossom snap 12.jpg"
     },
     {
-      "id": "fandom-s12-UzExIFMxMiBTMTQgUzE4IG1zbnogU2VvdWwgRDIgUGVyZm9ybWFuY2UuanBn",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxMS5qcGc",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_S14_S18_msnz_Seoul_D2_Performance.jpg",
-      "originalFileName": "S11 S12 S14 S18 msnz Seoul D2 Performance.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_11.jpg",
+      "originalFileName": "KYJ blossom snap 11.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIEwmUCBwdC4xIGphY2tldCBkYXktMSBwYXJ0LTEgMS5qcGc",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxMy5qcGc",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_L%26P_pt.1_jacket_day-1_part-1_1.jpg",
-      "originalFileName": "KYJ L&P pt.1 jacket day-1 part-1 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_13.jpg",
+      "originalFileName": "KYJ blossom snap 13.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIEwmUCBwdC4xIGphY2tldCBkYXktMSBwYXJ0LTEgMi5qcGc",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxNC5qcGc",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_L%26P_pt.1_jacket_day-1_part-1_2.jpg",
-      "originalFileName": "KYJ L&P pt.1 jacket day-1 part-1 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_14.jpg",
+      "originalFileName": "KYJ blossom snap 14.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIEwmUCBwdC4xIGphY2tldCBkYXktMSBwYXJ0LTEgMy5qcGc",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxNi5qcGc",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_L%26P_pt.1_jacket_day-1_part-1_3.jpg",
-      "originalFileName": "KYJ L&P pt.1 jacket day-1 part-1 3.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_16.jpg",
+      "originalFileName": "KYJ blossom snap 16.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIEwmUCBwdC4xIGphY2tldCBkYXktMSBwYXJ0LTEgNC5qcGc",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxNS5qcGc",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_L%26P_pt.1_jacket_day-1_part-1_4.jpg",
-      "originalFileName": "KYJ L&P pt.1 jacket day-1 part-1 4.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_15.jpg",
+      "originalFileName": "KYJ blossom snap 15.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIEwmUCBwdC4xIGphY2tldCBkYXktMSBwYXJ0LTEgNS5qcGc",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxNy5qcGc",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_L%26P_pt.1_jacket_day-1_part-1_5.jpg",
-      "originalFileName": "KYJ L&P pt.1 jacket day-1 part-1 5.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_17.jpg",
+      "originalFileName": "KYJ blossom snap 17.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIEwmUCBwdC4xIGphY2tldCBkYXktMSBwYXJ0LTEgNi5qcGc",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxOC5qcGc",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_L%26P_pt.1_jacket_day-1_part-1_6.jpg",
-      "originalFileName": "KYJ L&P pt.1 jacket day-1 part-1 6.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_18.jpg",
+      "originalFileName": "KYJ blossom snap 18.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIEwmUCBwdC4xIGphY2tldCBkYXktMSBwYXJ0LTEgNy5qcGc",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAxOS5qcGc",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_L%26P_pt.1_jacket_day-1_part-1_7.jpg",
-      "originalFileName": "KYJ L&P pt.1 jacket day-1 part-1 7.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_19.jpg",
+      "originalFileName": "KYJ blossom snap 19.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIEdpcmxzIE5ldmVyIERpZSBNY291bnRkb3duIDI0MDUyMyAxLmpwZw",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyLmpwZw",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Girls_Never_Die_Mcountdown_240523_1.jpg",
-      "originalFileName": "KYJ Girls Never Die Mcountdown 240523 1.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_2.jpg",
+      "originalFileName": "KYJ blossom snap 2.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIEdpcmxzIE5ldmVyIERpZSBNY291bnRkb3duIDI0MDUyMyAyLmpwZw",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyMC5qcGc",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Girls_Never_Die_Mcountdown_240523_2.jpg",
-      "originalFileName": "KYJ Girls Never Die Mcountdown 240523 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_20.jpg",
+      "originalFileName": "KYJ blossom snap 20.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIEdpcmxzIE5ldmVyIERpZSBNY291bnRkb3duIDI0MDUyMyAzLmpwZw",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyMi5qcGc",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Girls_Never_Die_Mcountdown_240523_3.jpg",
-      "originalFileName": "KYJ Girls Never Die Mcountdown 240523 3.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_22.jpg",
+      "originalFileName": "KYJ blossom snap 22.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIEdpcmxzIE5ldmVyIERpZSBNY291bnRkb3duIDI0MDUyMyA0LmpwZw",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyMS5qcGc",
       "date": null,
-      "sourceYear": "2023",
+      "sourceYear": "2026",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Girls_Never_Die_Mcountdown_240523_4.jpg",
-      "originalFileName": "KYJ Girls Never Die Mcountdown 240523 4.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_21.jpg",
+      "originalFileName": "KYJ blossom snap 21.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIEdpcmxzIE5ldmVyIERpZSBNY291bnRkb3duIDI0MDUyMyA1LmpwZw",
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyMy5qcGc",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_23.jpg",
+      "originalFileName": "KYJ blossom snap 23.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyNC5qcGc",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_24.jpg",
+      "originalFileName": "KYJ blossom snap 24.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyNi5qcGc",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_26.jpg",
+      "originalFileName": "KYJ blossom snap 26.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyNS5qcGc",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_25.jpg",
+      "originalFileName": "KYJ blossom snap 25.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyNy5qcGc",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_27.jpg",
+      "originalFileName": "KYJ blossom snap 27.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyOC5qcGc",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_28.jpg",
+      "originalFileName": "KYJ blossom snap 28.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAyOS5qcGc",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_29.jpg",
+      "originalFileName": "KYJ blossom snap 29.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIGJsb3Nzb20gc25hcCAzLmpwZw",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_blossom_snap_3.jpg",
+      "originalFileName": "KYJ blossom snap 3.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIGludmluY2libGUgc2hvdyBjaGFtcGlvbiAyMzEwMTggMi5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_Girls_Never_Die_Mcountdown_240523_5.jpg",
-      "originalFileName": "KYJ Girls Never Die Mcountdown 240523 5.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_invincible_show_champion_231018_2.jpg",
+      "originalFileName": "KYJ invincible show champion 231018 2.jpg"
     },
     {
       "id": "fandom-s12-S1lKIGludmluY2libGUgc2hvdyBjaGFtcGlvbiAyMzEwMTggMS5qcGc",
@@ -2608,12 +1656,20 @@
       "originalFileName": "KYJ invincible show champion 231018 1.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGludmluY2libGUgc2hvdyBjaGFtcGlvbiAyMzEwMTggMi5qcGc",
+      "id": "fandom-s12-S1lKIGludmluY2libGUgc2hvdyBjaGFtcGlvbiAyMzEwMTggMTAuanBn",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_invincible_show_champion_231018_2.jpg",
-      "originalFileName": "KYJ invincible show champion 231018 2.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_invincible_show_champion_231018_10.jpg",
+      "originalFileName": "KYJ invincible show champion 231018 10.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIGludmluY2libGUgc2hvdyBjaGFtcGlvbiAyMzEwMTggMTEuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_invincible_show_champion_231018_11.jpg",
+      "originalFileName": "KYJ invincible show champion 231018 11.jpg"
     },
     {
       "id": "fandom-s12-S1lKIGludmluY2libGUgc2hvdyBjaGFtcGlvbiAyMzEwMTggMy5qcGc",
@@ -2632,20 +1688,20 @@
       "originalFileName": "KYJ invincible show champion 231018 4.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGludmluY2libGUgc2hvdyBjaGFtcGlvbiAyMzEwMTggNS5qcGc",
-      "date": null,
-      "sourceYear": "2023",
-      "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_invincible_show_champion_231018_5.jpg",
-      "originalFileName": "KYJ invincible show champion 231018 5.jpg"
-    },
-    {
       "id": "fandom-s12-S1lKIGludmluY2libGUgc2hvdyBjaGFtcGlvbiAyMzEwMTggNi5qcGc",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
       "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_invincible_show_champion_231018_6.jpg",
       "originalFileName": "KYJ invincible show champion 231018 6.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIGludmluY2libGUgc2hvdyBjaGFtcGlvbiAyMzEwMTggNS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_invincible_show_champion_231018_5.jpg",
+      "originalFileName": "KYJ invincible show champion 231018 5.jpg"
     },
     {
       "id": "fandom-s12-S1lKIGludmluY2libGUgc2hvdyBjaGFtcGlvbiAyMzEwMTggNy5qcGc",
@@ -2672,20 +1728,964 @@
       "originalFileName": "KYJ invincible show champion 231018 9.jpg"
     },
     {
-      "id": "fandom-s12-S1lKIGludmluY2libGUgc2hvdyBjaGFtcGlvbiAyMzEwMTggMTAuanBn",
+      "id": "fandom-s12-S1lKIHBlcmZvcm1hbnRlIG12IHNob290IGdlbmllIDEuanBlZw",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_invincible_show_champion_231018_10.jpg",
-      "originalFileName": "KYJ invincible show champion 231018 10.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_performante_mv_shoot_genie_1.jpeg",
+      "originalFileName": "KYJ performante mv shoot genie 1.jpeg"
     },
     {
-      "id": "fandom-s12-S1lKIGludmluY2libGUgc2hvdyBjaGFtcGlvbiAyMzEwMTggMTEuanBn",
+      "id": "fandom-s12-S1lKIHBlcmZvcm1hbnRlIG12IHNob290IGdlbmllIDIuanBlZw",
       "date": null,
       "sourceYear": "2023",
       "section": "promotional",
-      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_invincible_show_champion_231018_11.jpg",
-      "originalFileName": "KYJ invincible show champion 231018 11.jpg"
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_performante_mv_shoot_genie_2.jpeg",
+      "originalFileName": "KYJ performante mv shoot genie 2.jpeg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHBlcmZvcm1hbnRlIGphY2tldCBzaG9vdCBuYXZlciAxLmpwZWc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_performante_jacket_shoot_naver_1.jpeg",
+      "originalFileName": "KYJ performante jacket shoot naver 1.jpeg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHBlcmZvcm1hbnRlIGphY2tldCBzaG9vdCBuYXZlciAyLmpwZWc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_performante_jacket_shoot_naver_2.jpeg",
+      "originalFileName": "KYJ performante jacket shoot naver 2.jpeg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHBlcmZvcm1hbnRlIHN0cmVhbWluZyBzZXJ2aWNlIHByb2ZpbGUuanBn",
+      "date": null,
+      "sourceYear": "2024",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_performante_streaming_service_profile.jpg",
+      "originalFileName": "KYJ performante streaming service profile.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHByb2ZpbGUgMi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_profile_2.jpg",
+      "originalFileName": "KYJ profile 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHByb2ZpbGUgMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_profile_1.jpg",
+      "originalFileName": "KYJ profile 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHByb2ZpbGUgMy5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_profile_3.jpg",
+      "originalFileName": "KYJ profile 3.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHd0dGggaW5zdGFncmFtLnBuZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_wtth_instagram.png",
+      "originalFileName": "KYJ wtth instagram.png"
+    },
+    {
+      "id": "fandom-s12-S1lKIHd0dGggdHdpdHRlci5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_wtth_twitter.jpg",
+      "originalFileName": "KYJ wtth twitter.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHNjaGVkdWxlLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_schedule.jpg",
+      "originalFileName": "KYJ schedule.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHNpaHl1bmhhZGEgMjQxMTA2IDEuanBn",
+      "date": null,
+      "sourceYear": "2024",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_sihyunhada_241106_1.jpg",
+      "originalFileName": "KYJ sihyunhada 241106 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHNpaHl1bmhhZGEgMjQxMTA2IDIuanBn",
+      "date": null,
+      "sourceYear": "2024",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_sihyunhada_241106_2.jpg",
+      "originalFileName": "KYJ sihyunhada 241106 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHplbml0aCBqYWNrZXQgYmVoaW5kIDcuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_zenith_jacket_behind_7.jpg",
+      "originalFileName": "KYJ zenith jacket behind 7.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHplbml0aCBqYWNrZXQgYmVoaW5kIDEuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_zenith_jacket_behind_1.jpg",
+      "originalFileName": "KYJ zenith jacket behind 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHplbml0aCBqYWNrZXQgYmVoaW5kIDIuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_zenith_jacket_behind_2.jpg",
+      "originalFileName": "KYJ zenith jacket behind 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHplbml0aCBqYWNrZXQgYmVoaW5kIDMuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_zenith_jacket_behind_3.jpg",
+      "originalFileName": "KYJ zenith jacket behind 3.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHplbml0aCBqYWNrZXQgYmVoaW5kIDQuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_zenith_jacket_behind_4.jpg",
+      "originalFileName": "KYJ zenith jacket behind 4.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHplbml0aCBqYWNrZXQgYmVoaW5kIDUuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_zenith_jacket_behind_5.jpg",
+      "originalFileName": "KYJ zenith jacket behind 5.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHplbml0aCBqYWNrZXQgYmVoaW5kIDYuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_zenith_jacket_behind_6.jpg",
+      "originalFileName": "KYJ zenith jacket behind 6.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHRlYXNlciBkcm9wIGluc3RhZ3JhbS5wbmc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_teaser_drop_instagram.png",
+      "originalFileName": "KYJ teaser drop instagram.png"
+    },
+    {
+      "id": "fandom-s12-S1lKIHRlYXNlciBkcm9wIHR3aXR0ZXIuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_teaser_drop_twitter.jpg",
+      "originalFileName": "KYJ teaser drop twitter.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHRoZSBmaXJzdCBkYXkgd2UgbWV0IHR3aXR0ZXIuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_the_first_day_we_met_twitter.jpg",
+      "originalFileName": "KYJ the first day we met twitter.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHRyaXBsZVMgYnVza2luZyBldmVudCAxLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_tripleS_busking_event_1.jpg",
+      "originalFileName": "KYJ tripleS busking event 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHRyaXBsZVMgYnVza2luZyBldmVudCAyLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_tripleS_busking_event_2.jpg",
+      "originalFileName": "KYJ tripleS busking event 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHVsdGlzdCB4IHRyaXBsZVMgMi5qcGc",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_ultist_x_tripleS_2.jpg",
+      "originalFileName": "KYJ ultist x tripleS 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHVsdGlzdCB4IHRyaXBsZVMgMS5qcGc",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_ultist_x_tripleS_1.jpg",
+      "originalFileName": "KYJ ultist x tripleS 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHZhbml0eXRlZW4gMjAyMyA0LmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_vanityteen_2023_4.jpg",
+      "originalFileName": "KYJ vanityteen 2023 4.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHZhbml0eXRlZW4gMjAyMyAxLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_vanityteen_2023_1.jpg",
+      "originalFileName": "KYJ vanityteen 2023 1.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHZhbml0eXRlZW4gMjAyMyAyLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_vanityteen_2023_2.jpg",
+      "originalFileName": "KYJ vanityteen 2023 2.jpg"
+    },
+    {
+      "id": "fandom-s12-S1lKIHZhbml0eXRlZW4gMjAyMyAzLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:KYJ_vanityteen_2023_3.jpg",
+      "originalFileName": "KYJ vanityteen 2023 3.jpg"
+    },
+    {
+      "id": "fandom-s12-U0dCVy1TMyBCVFMtMiBLWUouanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-2_KYJ.jpg",
+      "originalFileName": "SGBW-S3 BTS-2 KYJ.jpg"
+    },
+    {
+      "id": "fandom-s12-U0dCVy1TMyBCVFMtMiBTMTEgUzEyIFMxNCBTMTYgUzE4IDEuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-2_S11_S12_S14_S16_S18_1.jpg",
+      "originalFileName": "SGBW-S3 BTS-2 S11 S12 S14 S16 S18 1.jpg"
+    },
+    {
+      "id": "fandom-s12-U0dCVy1TMyBCVFMtMiBTMTEgUzEyIFMxNCBTMTYgUzE4IDIuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-2_S11_S12_S14_S16_S18_2.jpg",
+      "originalFileName": "SGBW-S3 BTS-2 S11 S12 S14 S16 S18 2.jpg"
+    },
+    {
+      "id": "fandom-s12-U0dCVy1TMyBCVFMtMiBTNSBTMTIgUzE2IFMxOC5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-2_S5_S12_S16_S18.jpg",
+      "originalFileName": "SGBW-S3 BTS-2 S5 S12 S16 S18.jpg"
+    },
+    {
+      "id": "fandom-s12-U0dCVy1TMyBCVFMtMiBTOSBTMTIuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-2_S9_S12.jpg",
+      "originalFileName": "SGBW-S3 BTS-2 S9 S12.jpg"
+    },
+    {
+      "id": "fandom-s12-U0dCVy1TMyBCVFMtMSBLWUouanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-1_KYJ.jpg",
+      "originalFileName": "SGBW-S3 BTS-1 KYJ.jpg"
+    },
+    {
+      "id": "fandom-s12-U0dCVy1TMyBCVFMtMSBTNiBTMTIgMi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-1_S6_S12_2.jpg",
+      "originalFileName": "SGBW-S3 BTS-1 S6 S12 2.jpg"
+    },
+    {
+      "id": "fandom-s12-U0dCVy1TMyBCVFMtMSBTNiBTMTIgMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-1_S6_S12_1.jpg",
+      "originalFileName": "SGBW-S3 BTS-1 S6 S12 1.jpg"
+    },
+    {
+      "id": "fandom-s12-U0dCVy1TMyBCVFMtMyBLWUogMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW-S3_BTS-3_KYJ_1.jpg",
+      "originalFileName": "SGBW-S3 BTS-3 KYJ 1.jpg"
+    },
+    {
+      "id": "fandom-s12-U0dCVzMtSmVqdSBLWUogMi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW3-Jeju_KYJ_2.jpg",
+      "originalFileName": "SGBW3-Jeju KYJ 2.jpg"
+    },
+    {
+      "id": "fandom-s12-U0dCVzMtSmVqdSBLWUogMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW3-Jeju_KYJ_1.jpg",
+      "originalFileName": "SGBW3-Jeju KYJ 1.jpg"
+    },
+    {
+      "id": "fandom-s12-U0dCVzMtSmVqdSBLWUogMy5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW3-Jeju_KYJ_3.jpg",
+      "originalFileName": "SGBW3-Jeju KYJ 3.jpg"
+    },
+    {
+      "id": "fandom-s12-U0dCVzMtSmVqdSBLWUogNC5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW3-Jeju_KYJ_4.jpg",
+      "originalFileName": "SGBW3-Jeju KYJ 4.jpg"
+    },
+    {
+      "id": "fandom-s12-U0dCVzMtSmVqdSBLWUogNi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW3-Jeju_KYJ_6.jpg",
+      "originalFileName": "SGBW3-Jeju KYJ 6.jpg"
+    },
+    {
+      "id": "fandom-s12-U0dCVzMtSmVqdSBLWUogNS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW3-Jeju_KYJ_5.jpg",
+      "originalFileName": "SGBW3-Jeju KYJ 5.jpg"
+    },
+    {
+      "id": "fandom-s12-U0dCVzMtSmVqdSBLWUogNy5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:SGBW3-Jeju_KYJ_7.jpg",
+      "originalFileName": "SGBW3-Jeju KYJ 7.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEgUzIgUzEyIEEyNSBNViBkYXktMyBiZWhpbmQgMi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S1_S2_S12_A25_MV_day-3_behind_2.jpg",
+      "originalFileName": "S1 S2 S12 A25 MV day-3 behind 2.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEgUzIgUzEyIEEyNSBNViBkYXktMyBiZWhpbmQgMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S1_S2_S12_A25_MV_day-3_behind_1.jpg",
+      "originalFileName": "S1 S2 S12 A25 MV day-3 behind 1.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEgUzIgUzEyIEEyNSBNViBkYXktMyBiZWhpbmQgMy5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S1_S2_S12_A25_MV_day-3_behind_3.jpg",
+      "originalFileName": "S1 S2 S12 A25 MV day-3 behind 3.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEgUzQgUzggUzEyIEEyNSBNViBkYXktMyBiZWhpbmQuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S1_S4_S8_S12_A25_MV_day-3_behind.jpg",
+      "originalFileName": "S1 S4 S8 S12 A25 MV day-3 behind.jpg"
+    },
+    {
+      "id": "fandom-s12-UzExIFMxMiBBMjUgTVYgZGF5LTMgYmVoaW5kIDEuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_A25_MV_day-3_behind_1.jpg",
+      "originalFileName": "S11 S12 A25 MV day-3 behind 1.jpg"
+    },
+    {
+      "id": "fandom-s12-UzExIFMxMiBBMjUgTVYgZGF5LTMgYmVoaW5kIDIuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_A25_MV_day-3_behind_2.jpg",
+      "originalFileName": "S11 S12 A25 MV day-3 behind 2.jpg"
+    },
+    {
+      "id": "fandom-s12-UzExIFMxMiBBMjUgTVYgZGF5LTMgYmVoaW5kIDMuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_A25_MV_day-3_behind_3.jpg",
+      "originalFileName": "S11 S12 A25 MV day-3 behind 3.jpg"
+    },
+    {
+      "id": "fandom-s12-UzExIFMxMiBBMjUgTVYgZGF5LTMgYmVoaW5kIDQuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_A25_MV_day-3_behind_4.jpg",
+      "originalFileName": "S11 S12 A25 MV day-3 behind 4.jpg"
+    },
+    {
+      "id": "fandom-s12-UzExIFMxMiBBMjUgTVYgZGF5LTMgYmVoaW5kIDUuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_A25_MV_day-3_behind_5.jpg",
+      "originalFileName": "S11 S12 A25 MV day-3 behind 5.jpg"
+    },
+    {
+      "id": "fandom-s12-UzExIFMxMiBTMjEgYmxvc3NvbSBzbmFwIDEuanBn",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_S21_blossom_snap_1.jpg",
+      "originalFileName": "S11 S12 S21 blossom snap 1.jpg"
+    },
+    {
+      "id": "fandom-s12-UzExIFMxMiBTMjEgYmxvc3NvbSBzbmFwIDIuanBn",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_S21_blossom_snap_2.jpg",
+      "originalFileName": "S11 S12 S21 blossom snap 2.jpg"
+    },
+    {
+      "id": "fandom-s12-UzExIFMxMiBTMjEgYmxvc3NvbSBzbmFwIDMuanBn",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_S21_blossom_snap_3.jpg",
+      "originalFileName": "S11 S12 S21 blossom snap 3.jpg"
+    },
+    {
+      "id": "fandom-s12-UzExIFMxMiBTMTQgUzE4IG1zbnogU2VvdWwgRDIgUGVyZm9ybWFuY2UuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S11_S12_S14_S18_msnz_Seoul_D2_Performance.jpg",
+      "originalFileName": "S11 S12 S14 S18 msnz Seoul D2 Performance.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEyIFMxNCB0cmlwbGVTIGJ1c2tpbmcgZXZlbnQuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S14_tripleS_busking_event.jpg",
+      "originalFileName": "S12 S14 tripleS busking event.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEyIFMxNiBTMTkgUzIwIFMyMSBTMjQgQTI1IE1WIGRheS00IGJlaGluZCAxLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S16_S19_S20_S21_S24_A25_MV_day-4_behind_1.jpg",
+      "originalFileName": "S12 S16 S19 S20 S21 S24 A25 MV day-4 behind 1.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEyIFMxNiBTMTkgUzIwIFMyMSBTMjQgQTI1IE1WIGRheS00IGJlaGluZCAyLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S16_S19_S20_S21_S24_A25_MV_day-4_behind_2.jpg",
+      "originalFileName": "S12 S16 S19 S20 S21 S24 A25 MV day-4 behind 2.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEyIFMxNiBTMTkgUzIwIFMyMSBTMjQgQTI1IE1WIGRheS00IGJlaGluZCAzLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S16_S19_S20_S21_S24_A25_MV_day-4_behind_3.jpg",
+      "originalFileName": "S12 S16 S19 S20 S21 S24 A25 MV day-4 behind 3.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEyIFMxNiBuYXZlciBrYnMyNCAyNTAxMTEgMi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S16_naver_kbs24_250111_2.jpg",
+      "originalFileName": "S12 S16 naver kbs24 250111 2.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEyIFMxNiBuYXZlciBrYnMyNCAyNTAxMTEuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S16_naver_kbs24_250111.jpg",
+      "originalFileName": "S12 S16 naver kbs24 250111.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEyIFMxNyBBMjUgd2VlayAxLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S17_A25_week_1.jpg",
+      "originalFileName": "S12 S17 A25 week 1.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEyIFMxNyBoYW5saW16IHNraSBiZWhpbmQgMi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S17_hanlimz_ski_behind_2.jpg",
+      "originalFileName": "S12 S17 hanlimz ski behind 2.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEyIFMxNyBoYW5saW16IHNraSBiZWhpbmQgMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S17_hanlimz_ski_behind_1.jpg",
+      "originalFileName": "S12 S17 hanlimz ski behind 1.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEyIFMxOCAyMDI1IEtCU1NvbmdGZXN0LmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S18_2025_KBSSongFest.jpg",
+      "originalFileName": "S12 S18 2025 KBSSongFest.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEyIFMxOCBtc256IG11c2ljIHNob3cgYmVoaW5kLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S18_msnz_music_show_behind.jpg",
+      "originalFileName": "S12 S18 msnz music show behind.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEyIFMyMiBBMjUgc2hvd2Nhc2UuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S22_A25_showcase.jpg",
+      "originalFileName": "S12 S22 A25 showcase.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEyIFMyMSBBMjUgTVYgZGF5LTQgYmVoaW5kLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S21_A25_MV_day-4_behind.jpg",
+      "originalFileName": "S12 S21 A25 MV day-4 behind.jpg"
+    },
+    {
+      "id": "fandom-s12-UzEyIFMyMSBTMjQgQTI1IE1WIGRheS00IGJlaGluZC5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S12_S21_S24_A25_MV_day-4_behind.jpg",
+      "originalFileName": "S12 S21 S24 A25 MV day-4 behind.jpg"
+    },
+    {
+      "id": "fandom-s12-UzggUzEyIFMxMyBuYXZlciBtbWEgMjQxMjEwLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S8_S12_S13_naver_mma_241210.jpg",
+      "originalFileName": "S8 S12 S13 naver mma 241210.jpg"
+    },
+    {
+      "id": "fandom-s12-UzIgUzcgUzEyIFMyNCB0cmlwbGVTIGJ1c2tpbmcgZXZlbnQuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S7_S12_S24_tripleS_busking_event.jpg",
+      "originalFileName": "S2 S7 S12 S24 tripleS busking event.jpg"
+    },
+    {
+      "id": "fandom-s12-UzIgUzEyIFMxNyBoYW5saW16IHNraSBiZWhpbmQgMi5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_S17_hanlimz_ski_behind_2.jpg",
+      "originalFileName": "S2 S12 S17 hanlimz ski behind 2.jpg"
+    },
+    {
+      "id": "fandom-s12-UzIgUzEyIFMxNyBoYW5saW16IHNraSBiZWhpbmQgMS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_S17_hanlimz_ski_behind_1.jpg",
+      "originalFileName": "S2 S12 S17 hanlimz ski behind 1.jpg"
+    },
+    {
+      "id": "fandom-s12-UzIgUzEyIFMyMSBBMjUgd2VlayAyLTEuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_S21_A25_week_2-1.jpg",
+      "originalFileName": "S2 S12 S21 A25 week 2-1.jpg"
+    },
+    {
+      "id": "fandom-s12-UzIgUzEyIFMyMSBBMjUgd2VlayAyLTIuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_S21_A25_week_2-2.jpg",
+      "originalFileName": "S2 S12 S21 A25 week 2-2.jpg"
+    },
+    {
+      "id": "fandom-s12-UzIgUzEyIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDEuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_naver_music_bank_241101_1.jpg",
+      "originalFileName": "S2 S12 naver music bank 241101 1.jpg"
+    },
+    {
+      "id": "fandom-s12-UzIgUzEyIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDIuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_naver_music_bank_241101_2.jpg",
+      "originalFileName": "S2 S12 naver music bank 241101 2.jpg"
+    },
+    {
+      "id": "fandom-s12-UzIgUzEyIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDMuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_naver_music_bank_241101_3.jpg",
+      "originalFileName": "S2 S12 naver music bank 241101 3.jpg"
+    },
+    {
+      "id": "fandom-s12-UzIgUzEyIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDQuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_naver_music_bank_241101_4.jpg",
+      "originalFileName": "S2 S12 naver music bank 241101 4.jpg"
+    },
+    {
+      "id": "fandom-s12-UzIgUzEyIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDUuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_naver_music_bank_241101_5.jpg",
+      "originalFileName": "S2 S12 naver music bank 241101 5.jpg"
+    },
+    {
+      "id": "fandom-s12-UzIgUzEyIG5hdmVyIG11c2ljIGJhbmsgMjQxMTAxIDYuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S2_S12_naver_music_bank_241101_6.jpg",
+      "originalFileName": "S2 S12 naver music bank 241101 6.jpg"
+    },
+    {
+      "id": "fandom-s12-UzkgUzEyIEEyNSB3ZWVrIDEuanBn",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S9_S12_A25_week_1.jpg",
+      "originalFileName": "S9 S12 A25 week 1.jpg"
+    },
+    {
+      "id": "fandom-s12-UzMgUzcgUzEyIFMxNSBTMTcgUzE5IFMyMSBTMjQgbmF2ZXIgdHJpcGxlU2Nob29sIDI1MDEyNS5qcGc",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S3_S7_S12_S15_S17_S19_S21_S24_naver_tripleSchool_250125.jpg",
+      "originalFileName": "S3 S7 S12 S15 S17 S19 S21 S24 naver tripleSchool 250125.jpg"
+    },
+    {
+      "id": "fandom-s12-UzMgUzEyIFMxOSBtc256IFNlb3VsIEQyIFBlcmZvcm1hbmNlLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S3_S12_S19_msnz_Seoul_D2_Performance.jpg",
+      "originalFileName": "S3 S12 S19 msnz Seoul D2 Performance.jpg"
+    },
+    {
+      "id": "fandom-s12-UzMgUzggUzEyIG5hdmVyIGticzI0IDI1MDExMSAxLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S3_S8_S12_naver_kbs24_250111_1.jpg",
+      "originalFileName": "S3 S8 S12 naver kbs24 250111 1.jpg"
+    },
+    {
+      "id": "fandom-s12-UzMgUzggUzEyIG5hdmVyIGticzI0IDI1MDExMSAyLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S3_S8_S12_naver_kbs24_250111_2.jpg",
+      "originalFileName": "S3 S8 S12 naver kbs24 250111 2.jpg"
+    },
+    {
+      "id": "fandom-s12-UzUgUzEyIFMxOCBTMjMgQTI1IHdlZWsgMy0xLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S5_S12_S18_S23_A25_week_3-1.jpg",
+      "originalFileName": "S5 S12 S18 S23 A25 week 3-1.jpg"
+    },
+    {
+      "id": "fandom-s12-UzUgUzEyIFMxOCBTMjMgQTI1IHdlZWsgMy0yLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S5_S12_S18_S23_A25_week_3-2.jpg",
+      "originalFileName": "S5 S12 S18 S23 A25 week 3-2.jpg"
+    },
+    {
+      "id": "fandom-s12-UzUgUzEyIFMxOSBBMjUgTVYgZGF5LTQgYmVoaW5kLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S5_S12_S19_A25_MV_day-4_behind.jpg",
+      "originalFileName": "S5 S12 S19 A25 MV day-4 behind.jpg"
+    },
+    {
+      "id": "fandom-s12-UzYgUzEyIFMxNyBTMjEgaGFubGlteiBza2kgYmVoaW5kLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S6_S12_S17_S21_hanlimz_ski_behind.jpg",
+      "originalFileName": "S6 S12 S17 S21 hanlimz ski behind.jpg"
+    },
+    {
+      "id": "fandom-s12-UzYgUzEyIGhhbmxpbXogc2tpIGJlaGluZCAxLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S6_S12_hanlimz_ski_behind_1.jpg",
+      "originalFileName": "S6 S12 hanlimz ski behind 1.jpg"
+    },
+    {
+      "id": "fandom-s12-UzYgUzEyIGhhbmxpbXogc2tpIGJlaGluZCAyLmpwZw",
+      "date": null,
+      "sourceYear": "2023",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:S6_S12_hanlimz_ski_behind_2.jpg",
+      "originalFileName": "S6 S12 hanlimz ski behind 2.jpg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIE15IFNlY3JldCBOZXcgWm9uZSBUZWFzZXIgUG9zdGVyLmpwZWc",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_My_Secret_New_Zone_Teaser_Poster.jpeg",
+      "originalFileName": "YeonJi My Secret New Zone Teaser Poster.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIEEyNCBjb25jZXB0IHBob3RvIDEuanBlZw",
+      "date": null,
+      "sourceYear": "2024",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_A24_concept_photo_1.jpeg",
+      "originalFileName": "YeonJi A24 concept photo 1.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIEEyNCBjb25jZXB0IHBob3RvIDIuanBlZw",
+      "date": null,
+      "sourceYear": "2024",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_A24_concept_photo_2.jpeg",
+      "originalFileName": "YeonJi A24 concept photo 2.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIEEyNCBjb25jZXB0IHBob3RvIDMuanBlZw",
+      "date": null,
+      "sourceYear": "2024",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_A24_concept_photo_3.jpeg",
+      "originalFileName": "YeonJi A24 concept photo 3.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIEEyNSBjb25jZXB0IHBob3RvIDEuanBlZw",
+      "date": null,
+      "sourceYear": "2025",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_A25_concept_photo_1.jpeg",
+      "originalFileName": "YeonJi A25 concept photo 1.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIEEyNSBjb25jZXB0IHBob3RvIDIuanBn",
+      "date": null,
+      "sourceYear": "2025",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_A25_concept_photo_2.jpg",
+      "originalFileName": "YeonJi A25 concept photo 2.jpg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIEEyNSBjb25jZXB0IHBob3RvIDMuanBn",
+      "date": null,
+      "sourceYear": "2025",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_A25_concept_photo_3.jpg",
+      "originalFileName": "YeonJi A25 concept photo 3.jpg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIEEyNSBjb25jZXB0IHBob3RvIDQuanBlZw",
+      "date": null,
+      "sourceYear": "2025",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_A25_concept_photo_4.jpeg",
+      "originalFileName": "YeonJi A25 concept photo 4.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIEEyNSBjb25jZXB0IHBob3RvIDUuanBlZw",
+      "date": null,
+      "sourceYear": "2025",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_A25_concept_photo_5.jpeg",
+      "originalFileName": "YeonJi A25 concept photo 5.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIEJCIGNvbmNlcHQgcGhvdG8gMi5qcGVn",
+      "date": null,
+      "sourceYear": "2025",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_BB_concept_photo_2.jpeg",
+      "originalFileName": "YeonJi BB concept photo 2.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIEJCIGNvbmNlcHQgcGhvdG8gMS5qcGVn",
+      "date": null,
+      "sourceYear": "2025",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_BB_concept_photo_1.jpeg",
+      "originalFileName": "YeonJi BB concept photo 1.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIEwmUCBwdC4xIGNvbmNlcHQgcGhvdG8gMi5qcGVn",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_L%26P_pt.1_concept_photo_2.jpeg",
+      "originalFileName": "YeonJi L&P pt.1 concept photo 2.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIEwmUCBwdC4xIGNvbmNlcHQgcGhvdG8gMS5qcGVn",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_L%26P_pt.1_concept_photo_1.jpeg",
+      "originalFileName": "YeonJi L&P pt.1 concept photo 1.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIEwmUCBwdC4xIGNvbmNlcHQgcGhvdG8gMy5qcGVn",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_L%26P_pt.1_concept_photo_3.jpeg",
+      "originalFileName": "YeonJi L&P pt.1 concept photo 3.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIEwmUCBwdC4xIGNvbmNlcHQgcGhvdG8gNC5qcGVn",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_L%26P_pt.1_concept_photo_4.jpeg",
+      "originalFileName": "YeonJi L&P pt.1 concept photo 4.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIEwmUCBwdC4yIGNvbmNlcHQgcGhvdG8gMi5qcGVn",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_L%26P_pt.2_concept_photo_2.jpeg",
+      "originalFileName": "YeonJi L&P pt.2 concept photo 2.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIEwmUCBwdC4yIGNvbmNlcHQgcGhvdG8gMS5qcGVn",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_L%26P_pt.2_concept_photo_1.jpeg",
+      "originalFileName": "YeonJi L&P pt.2 concept photo 1.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIEwmUCBwdC4yIGNvbmNlcHQgcGhvdG8gMy5qcGVn",
+      "date": null,
+      "sourceYear": "2026",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_L%26P_pt.2_concept_photo_3.jpeg",
+      "originalFileName": "YeonJi L&P pt.2 concept photo 3.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIFZWIHRlYXNlciA0LmpwZWc",
+      "date": null,
+      "sourceYear": "2024",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_VV_teaser_4.jpeg",
+      "originalFileName": "YeonJi VV teaser 4.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIFZWIHRlYXNlciA1LmpwZWc",
+      "date": null,
+      "sourceYear": "2024",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_VV_teaser_5.jpeg",
+      "originalFileName": "YeonJi VV teaser 5.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIFZWIHRlYXNlciAxLmpwZWc",
+      "date": null,
+      "sourceYear": "2024",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_VV_teaser_1.jpeg",
+      "originalFileName": "YeonJi VV teaser 1.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIFZWIHRlYXNlciAyLmpwZWc",
+      "date": null,
+      "sourceYear": "2024",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_VV_teaser_2.jpeg",
+      "originalFileName": "YeonJi VV teaser 2.jpeg"
+    },
+    {
+      "id": "fandom-s12-WWVvbkppIFZWIHRlYXNlciAzLmpwZWc",
+      "date": null,
+      "sourceYear": "2024",
+      "section": "promotional",
+      "sourceUrl": "https://triples.fandom.com/wiki/File:YeonJi_VV_teaser_3.jpeg",
+      "originalFileName": "YeonJi VV teaser 3.jpeg"
     }
   ]
 }
